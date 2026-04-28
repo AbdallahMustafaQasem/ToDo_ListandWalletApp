@@ -477,6 +477,7 @@ private fun TransactionCard(
             }
         }
     }
+
 }
 
 @Composable
