@@ -1,0 +1,195 @@
+<resources>
+    <string name="app_name">TODo App</string>
+
+    <!-- Common -->
+    <string name="ok">OK</string>
+    <string name="cancel">Cancel</string>
+    <string name="save">Save</string>
+    <string name="delete">Delete</string>
+    <string name="back">Back</string>
+    <string name="search">Search</string>
+    <string name="close">Close</string>
+    <string name="more">More</string>
+    <string name="sort">Sort</string>
+    <string name="add">Add</string>
+
+    <!-- Todo list -->
+    <string name="title_my_todos">My Todos</string>
+    <string name="search_placeholder">Search todos…</string>
+    <string name="menu_statistics">Statistics</string>
+    <string name="menu_wallet">Wallet</string>
+    <string name="menu_language">Language</string>
+    <string name="menu_trash">Trash</string>
+    <string name="menu_about">About</string>
+    <string name="toggle_theme">Toggle theme</string>
+    <string name="fab_add_todo">Add Todo</string>
+    <string name="quick_add">Quick Add</string>
+    <string name="quick_add_placeholder">Todo title…</string>
+    <string name="full_add">Full Add</string>
+    <string name="sort_creation_date">Creation Date</string>
+    <string name="sort_due_date">Due Date</string>
+    <string name="sort_priority">Priority</string>
+    <string name="sort_alphabetical">Alphabetical</string>
+    <string name="filter_all">All</string>
+    <string name="filter_active">Active</string>
+    <string name="filter_completed">Completed</string>
+    <string name="cd_mark_complete">Mark complete</string>
+    <string name="cd_mark_incomplete">Mark incomplete</string>
+    <string name="cd_delete">Delete</string>
+    <string name="cd_complete">Complete</string>
+
+    <!-- Priority -->
+    <string name="priority_low">Low</string>
+    <string name="priority_med">Med</string>
+    <string name="priority_medium">Medium</string>
+    <string name="priority_high">High</string>
+    <string name="priority_none">None</string>
+    <string name="priority_label">Priority</string>
+
+    <!-- Trash -->
+    <string name="trash_title">Trash</string>
+    <string name="trash_empty_title">Empty Trash</string>
+    <string name="trash_empty_confirm_body">Permanently delete all %1$d items? This cannot be undone.</string>
+    <string name="trash_empty_cd">Empty trash</string>
+    <string name="delete_all">Delete All</string>
+    <string name="delete_forever">Delete Forever</string>
+    <string name="cd_restore">Restore</string>
+    <string name="cd_delete_forever">Delete forever</string>
+    <string name="trash_empty_state_title">Trash is empty</string>
+    <string name="trash_empty_state_sub">Deleted items appear here for 30 days</string>
+    <string name="trash_delete_confirm_body">\"%1$s\" will be permanently deleted. This cannot be undone.</string>
+
+    <!-- Add/Edit -->
+    <string name="title_edit_todo">Edit Todo</string>
+    <string name="title_new_todo">New Todo</string>
+    <string name="field_title_label">Title *</string>
+    <string name="field_title_placeholder">What needs to be done?</string>
+    <string name="field_description_label">Description</string>
+    <string name="field_description_placeholder">Add details (optional)</string>
+    <string name="field_due_date_label">Due Date</string>
+    <string name="field_due_date_placeholder">Select date</string>
+    <string name="field_due_time_label">Due Time</string>
+    <string name="field_due_time_placeholder">Select time</string>
+    <string name="cd_clear_date">Clear date</string>
+    <string name="button_delete_todo">Delete Todo</string>
+    <string name="dialog_delete_todo_title">Delete Todo</string>
+    <string name="dialog_delete_todo_body">Are you sure you want to delete \"%1$s\"? This cannot be undone.</string>
+    <string name="reminder_title">Reminder</string>
+    <string name="reminder_needs_date">Set a due date and time first</string>
+    <string name="reminder_notify_due">Notify at due date/time</string>
+    <string name="validation_title_required">Title is required</string>
+
+    <!-- Wallet -->
+    <string name="wallet_title">My Wallet</string>
+    <string name="wallet_manage_categories">Manage categories</string>
+    <string name="wallet_change_currency">Change currency</string>
+    <string name="wallet_set_budget">Set budget</string>
+    <string name="wallet_add_transaction">Add transaction</string>
+    <string name="wallet_transactions_title">Transactions</string>
+    <string name="wallet_overview">Overview</string>
+    <string name="wallet_income">Income</string>
+    <string name="wallet_expense">Expense</string>
+    <string name="wallet_expenses">Expenses</string>
+    <string name="wallet_current_balance">Current balance</string>
+    <string name="wallet_budgeting">Budgeting</string>
+    <string name="wallet_set_monthly_budget">Set monthly budget</string>
+    <string name="wallet_amount_spent">Amount spent: %1$s</string>
+    <string name="wallet_remaining_budget">Remaining budget: %1$s</string>
+    <string name="wallet_budget_exceeded">Budget exceeded</string>
+    <string name="wallet_filtering_search">Filtering &amp; Search</string>
+    <string name="wallet_search_hint">Search transaction, category, amount</string>
+    <string name="wallet_all_types">All types</string>
+    <string name="wallet_day">Day</string>
+    <string name="wallet_month">Month</string>
+    <string name="wallet_year">Year</string>
+    <string name="wallet_all_categories">All categories</string>
+    <string name="wallet_reports_analytics">Reports &amp; Analytics</string>
+    <string name="wallet_no_expense_data">No expense data yet</string>
+    <string name="wallet_expenses_by_category">Expenses by category</string>
+    <string name="wallet_spending_over_time">Spending over time</string>
+    <string name="wallet_no_spending_trend">No spending trend yet</string>
+    <string name="wallet_categories_title">Categories</string>
+    <string name="wallet_edit_category">Edit category</string>
+    <string name="wallet_delete_category">Delete category</string>
+    <string name="wallet_edit_transaction">Edit transaction</string>
+    <string name="wallet_delete_transaction">Delete transaction</string>
+    <string name="wallet_no_transactions">No transactions yet</string>
+    <string name="wallet_no_transactions_message">Add your first income or expense to start tracking your wallet.</string>
+    <string name="wallet_add_transaction_title">Add Transaction</string>
+    <string name="wallet_edit_transaction_title">Edit Transaction</string>
+    <string name="wallet_amount">Amount</string>
+    <string name="wallet_uncategorized">Uncategorized</string>
+    <string name="wallet_category">Category</string>
+    <string name="wallet_date_format_hint">Date (yyyy-MM-dd)</string>
+    <string name="wallet_notes">Notes</string>
+    <string name="wallet_add_category">Add Category</string>
+    <string name="wallet_edit_category_title">Edit Category</string>
+    <string name="wallet_category_name">Category name</string>
+    <string name="wallet_emoji">Emoji</string>
+    <string name="wallet_monthly_budget">Monthly Budget</string>
+    <string name="wallet_budget_amount">Budget amount</string>
+    <string name="wallet_currency_title">Choose currency symbol</string>
+    <string name="wallet_currency_no_symbol">No symbol</string>
+    <string name="wallet_category_food">Food</string>
+    <string name="wallet_category_transportation">Transportation</string>
+    <string name="wallet_category_bills">Bills</string>
+    <string name="wallet_category_entertainment">Entertainment</string>
+    <string name="language_dialog_title">Choose language</string>
+    <string name="language_system_default">System default</string>
+
+    <!-- Statistics -->
+    <string name="title_statistics">Statistics</string>
+    <string name="stats_total">Total</string>
+    <string name="stats_completed">Completed</string>
+    <string name="stats_remaining">Remaining</string>
+    <string name="stats_overdue">Overdue</string>
+    <string name="stats_completion_rate">Completion Rate</string>
+    <string name="stats_completion_suffix">completed</string>
+    <string name="stats_last_7_days">Last 7 Days</string>
+    <string name="stats_by_priority">By Priority</string>
+    <string name="stats_streak_one">1 day streak</string>
+    <string name="stats_streak_other">%1$d day streak</string>
+    <string name="stats_streak_start">Start today!</string>
+    <string name="stats_streak_keep">Keep it up!</string>
+    <string name="stats_no_data">No data yet</string>
+    <string name="stats_most_productive">Most productive</string>
+
+    <!-- About -->
+    <string name="about_title">About</string>
+    <string name="about_version">Version 2.0</string>
+    <string name="about_description">A beautiful, animated todo app built with Jetpack Compose, Material Design 3, Clean Architecture and DataStore.</string>
+
+    <!-- Day abbreviations (3 chars) -->
+    <string name="day_sun">Sun</string>
+    <string name="day_mon">Mon</string>
+    <string name="day_tue">Tue</string>
+    <string name="day_wed">Wed</string>
+    <string name="day_thu">Thu</string>
+    <string name="day_fri">Fri</string>
+    <string name="day_sat">Sat</string>
+
+    <!-- Day full names -->
+    <string name="day_sunday">Sunday</string>
+    <string name="day_monday">Monday</string>
+    <string name="day_tuesday">Tuesday</string>
+    <string name="day_wednesday">Wednesday</string>
+    <string name="day_thursday">Thursday</string>
+    <string name="day_friday">Friday</string>
+    <string name="day_saturday">Saturday</string>
+
+    <!-- Widget -->
+    <string name="widget_pending">Pending</string>
+    <string name="widget_done">Done</string>
+    <string name="widget_overdue">Overdue</string>
+    <string name="widget_all_clear">🎉 All clear — no upcoming todos</string>
+    <string name="widget_subtitle_pending_one">1 pending</string>
+    <string name="widget_subtitle_pending_other">%1$d pending</string>
+    <string name="widget_subtitle_overdue_one">1 overdue</string>
+    <string name="widget_subtitle_overdue_other">%1$d overdue</string>
+    <string name="cd_refresh">Refresh</string>
+    <string name="cd_completed">Completed</string>
+
+    <!-- Notifications -->
+    <string name="notif_mark_done">Mark Done</string>
+    <string name="notif_open_app">Open App</string>
+</resources>

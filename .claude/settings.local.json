@@ -1,0 +1,13 @@
+{
+  "permissions": {
+    "allow": [
+      "Read(//c/tmp/**)",
+      "Bash(jar tf *)",
+      "Bash(xargs -I{} sh -c 'jar tf {} 2>/dev/null | grep -i \"brightness\" | head -5 | sed \"s|^|{}: |\"')",
+      "Bash(xargs -I{} sh -c 'strings {} 2>/dev/null | grep -i \"BrightnessMedium\" | head -2')",
+      "Bash(javap -classpath /c/Users/link/.gradle/caches/8.13/transforms/81f18f60a848eb1e3e1cc2f55c53e73b/transformed/material3-release-api.jar)",
+      "Bash(xargs -I{} python3 -c \" import zipfile, sys try: z = zipfile.ZipFile\\('{}'\\) names = [n for n in z.namelist\\(\\) if 'SwipeToDismiss' in n or 'PullToRefresh' in n] if names: print\\('{}:', names[:5]\\) except: pass \")",
+      "Bash(python3 *)"
+    ]
+  }
+}
