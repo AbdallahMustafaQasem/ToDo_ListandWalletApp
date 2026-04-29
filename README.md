@@ -40,6 +40,10 @@ A native Android productivity application combining a full-featured **Todo manag
 | F-09 | Due date stores date **and** time as epoch milliseconds |
 | F-10 | Overdue, incomplete todos are flagged with a **red due-date chip** |
 | F-11 | Date/time pickers use Material Design 3 `DatePickerDialog` / `TimePickerDialog` |
+| F-12 | **Sort Options** — sort by Creation Date / Due Date / Priority / Alphabetical (persisted in DataStore) |
+| F-13 | **Subtasks** — add, check-off, and delete sub-items for any todo; progress counter shown (e.g. `2/3`) |
+| F-14 | **Recurring Todos** — set a repeat rule: None / Daily / Weekly / Monthly |
+| F-15 | **Todo Lists / Projects** — organise todos into named, colour-coded lists; assign a list per todo |
 
 ### 🗑️ Trash / Recycle Bin
 
@@ -62,8 +66,24 @@ A native Android productivity application combining a full-featured **Todo manag
 - Manage **custom categories** (icon + name).
 - Set a **monthly budget** and track spending vs. budget in real time.
 - Transaction list with filter by type (All / Income / Expense).
+- **Wallet Analytics** — pie chart of expenses by category and spending-over-time bar chart.
+- **Budget Alerts** — daily `BudgetAlertWorker` sends a push notification when monthly spending crosses 75 %, 90 %, and 100 % of the set budget (each threshold fires only once per calendar month).
 
-### 🔔 Notifications & Reminders
+### 🔒 App Lock
+
+- Optional biometric / device-credential lock screen on every app launch and resume.
+- Enabled / disabled via **App Lock** toggle in the main menu.
+- Uses `BiometricPrompt` with fallback to PIN / pattern / password.
+- Closing the lock prompt (back / cancel) exits the app.
+
+### � Calendar View
+
+- Month grid showing all months with coloured dot indicators on days that have todos.
+- Navigate forward / backward between months.
+- Tap any day to see that day's todos beneath the grid, sorted by priority.
+- Tap a todo to open its edit screen.
+
+### �� Notifications & Reminders
 
 - Exact alarm fires at the todo's due date/time when reminder is enabled.
 - Notification shows two action buttons: **Mark Done** and **Open App**.
@@ -93,6 +113,8 @@ A native Android productivity application combining a full-featured **Todo manag
 | **Wallet** | `wallet` | Transaction list, balance summary, budget tracker |
 | **Wallet Categories** | `wallet/categories` | Manage income/expense categories |
 | **About** | `about` | App name, version, and description |
+| **Calendar** | `calendar` | Month grid with todo-day indicators and daily todo list |
+| **Lists & Projects** | `lists` | Create, edit, and delete named todo lists; assign colour and emoji icon |
 
 ---
 

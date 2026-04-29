@@ -5,14 +5,15 @@ plugins {
     alias(libs.plugins.kotlin.serialization)
     alias(libs.plugins.hilt)
     alias(libs.plugins.ksp)
+    alias(libs.plugins.google.services)
 }
 
 android {
-    namespace = "com.example.todoapp"
+    namespace = "com.abdallah.taskvault"
     compileSdk = 36
 
     defaultConfig {
-        applicationId = "com.example.todoapp"
+        applicationId = "com.abdallah.taskvault"
         minSdk = 26
         targetSdk = 36
         versionCode = 1
@@ -93,6 +94,15 @@ dependencies {
 
     // DataStore
     implementation(libs.androidx.datastore.preferences)
+
+    // Biometric
+    implementation(libs.androidx.biometric)
+
+    // Firebase
+    implementation(platform(libs.firebase.bom))
+    implementation(libs.firebase.auth.ktx)
+    implementation(libs.firebase.firestore.ktx)
+    implementation(libs.play.services.auth)
 
     // Serialization
     implementation(libs.kotlinx.serialization.json)

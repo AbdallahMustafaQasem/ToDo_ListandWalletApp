@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "255927875142",
+    "project_id": "taskvault-7baf8",
+    "storage_bucket": "taskvault-7baf8.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:255927875142:android:560bfca26c3adfe42e7c47",
+        "android_client_info": {
+          "package_name": "com.abdallah.taskvault"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "255927875142-1t1u64s4u5v2h7sn06vc87p8smle0e5r.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.abdallah.taskvault",
+            "certificate_hash": "f69b2eb388f693e222687daf3a87b2ff6eb425ef"
+          }
+        },
+        {
+          "client_id": "255927875142-eri2u9ktr5sdaisi9gt1j9ej61ut3m6v.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCTykbQwD63zt_zCEcaynjQU9A21_JKGwQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "255927875142-eri2u9ktr5sdaisi9gt1j9ej61ut3m6v.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
