@@ -3,6 +3,7 @@ package com.abdallah.taskvault
 import android.content.Intent
 import android.content.res.Resources
 import android.os.Bundle
+import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 import androidx.fragment.app.FragmentActivity
 import com.abdallah.taskvault.R
 import androidx.activity.compose.setContent
@@ -10,6 +11,7 @@ import androidx.activity.enableEdgeToEdge
 import androidx.biometric.BiometricManager
 import androidx.biometric.BiometricPrompt
 import androidx.compose.foundation.isSystemInDarkTheme
+import androidx.compose.ui.res.stringResource
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material3.Surface
 import androidx.compose.runtime.LaunchedEffect
@@ -25,6 +27,7 @@ import androidx.navigation.compose.rememberNavController
 import com.abdallah.taskvault.data.preferences.UserPreferencesRepository
 import com.abdallah.taskvault.ui.AppViewModel
 import com.abdallah.taskvault.ui.SyncState
+import com.abdallah.taskvault.ui.SyncStep
 import com.abdallah.taskvault.ui.applock.AppLockScreen
 import com.abdallah.taskvault.ui.auth.LoginScreen
 import com.abdallah.taskvault.ui.auth.SyncScreen
@@ -60,6 +63,7 @@ class MainActivity : FragmentActivity() {
     private var isAppLocked by mutableStateOf(false)
 
     override fun onCreate(savedInstanceState: Bundle?) {
+        installSplashScreen()
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
 
@@ -94,7 +98,12 @@ class MainActivity : FragmentActivity() {
                 Surface(modifier = Modifier.fillMaxSize()) {
                     val currentUser by appViewModel.currentUser.collectAsState()
                     val syncState  by appViewModel.syncState.collectAsState()
-                    val syncMsg    by appViewModel.syncMessage.collectAsState()
+                    val syncStep   by appViewModel.syncStep.collectAsState()
+                    val syncMsg = when (syncStep) {
+                        SyncStep.RESTORE -> stringResource(R.string.sync_restore)
+                        SyncStep.UPLOAD  -> stringResource(R.string.sync_upload)
+                        else             -> stringResource(R.string.sync_message)
+                    }
 
                     LaunchedEffect(currentUser?.uid) {
                         if (currentUser != null && syncState == SyncState.IDLE) {
@@ -108,7 +117,7 @@ class MainActivity : FragmentActivity() {
                         SyncScreen(message = syncMsg)
                     } else if (syncState == SyncState.ERROR) {
                         SyncScreen(
-                            message  = "Could not reach the server. Check your connection.",
+                            message  = stringResource(R.string.sync_error_message),
                             isError  = true,
                             onRetry  = { appViewModel.onSignedIn() }
                         )

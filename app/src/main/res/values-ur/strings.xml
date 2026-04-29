@@ -221,4 +221,60 @@
     <string name="budget_alert_90_title">بجٹ کا 90 %% استعمال</string>
     <string name="budget_alert_75_title">بجٹ کا 75 %% استعمال</string>
     <string name="budget_alert_body">آپ نے اپنے ماہانہ بجٹ کا %1$s / %2$s (%3$d %%) خرچ کیا ہے۔</string>
+
+    <string name="profile_title">پروفائل</string>
+    <string name="profile_signout_button">سائن آؤٹ</string>
+    <string name="profile_signout_title">سائن آؤٹ</string>
+    <string name="profile_signout_message">کیا آپ واقعی سائن آؤٹ کرنا چاہتے ہیں؟</string>
+    <string name="profile_signout_confirm">سائن آؤٹ</string>
+    <string name="profile_sync_status">کلاؤڈ سنک</string>
+    <string name="profile_sync_subtitle">آپ کا ڈیٹا Firebase سے مطابقت پذیر ہے</string>
+    <string name="profile_sync_active">فعال</string>
+
+    <string name="settings_title">ترتیبات</string>
+    <string name="settings_section_account">اکاؤنٹ</string>
+    <string name="settings_section_appearance">ظاہری شکل</string>
+    <string name="settings_section_wallet">بٹوہ</string>
+    <string name="settings_section_security">سیکیورٹی</string>
+    <string name="settings_section_info">معلومات</string>
+    <string name="settings_theme">تھیم</string>
+    <string name="settings_theme_system">سسٹم</string>
+    <string name="settings_theme_light">روشن</string>
+    <string name="settings_theme_dark">تاریک</string>
+    <string name="settings_app_lock_on">بایومیٹرک لاک فعال ہے</string>
+    <string name="settings_app_lock_off">بایومیٹرک لاک غیر فعال ہے</string>
+    <string name="settings_not_signed_in">سائن ان نہیں کیا</string>
+
+    <string name="sync_title">مطابقت پذیری جاری ہے</string>
+    <string name="sync_failed_title">مطابقت پذیری ناکام</string>
+    <string name="sync_retry">دوبارہ کوشش کریں</string>
+    <string name="sync_error_message">سرور سے رابطہ نہ ہو سکا۔ اپنا کنکشن چیک کریں۔</string>
+
+    <string name="delete_account_title">اکاؤنٹ حذف کریں</string>
+    <string name="delete_account_message">یہ آپ کا اکاؤنٹ اور تمام ڈیٹا (کام، بٹوہ، فہرستیں) کلاؤڈ سے مستقل طور پر حذف کر دے گا۔ یہ عمل واپس نہیں ہو سکتا۔</string>
+    <string name="delete_account_confirm">ہمیشہ کے لیے حذف کریں</string>
+    <string name="delete_account_button">اکاؤنٹ حذف کریں</string>
+    <string name="delete_account_deleting">حذف ہو رہا ہے…</string>
+
+    <string name="wallet_change_currency">کرنسی تبدیل کریں</string>
+    <string name="wallet_currency_title">کرنسی علامت منتخب کریں</string>
+    <string name="wallet_currency_no_symbol">کوئی علامت نہیں</string>
+
+    <string name="reminder_title">یاد دہانی</string>
+    <string name="reminder_needs_date">پہلے تاریخ اور وقت مقرر کریں</string>
+
+    <string name="sync_message">آپ کا ڈیٹا سنک ہو رہا ہے…</string>
+    <string name="sync_restore">کلاؤڈ سے ڈیٹا بحال ہو رہا ہے…</string>
+    <string name="sync_upload">مقامی ڈیٹا اپلوڈ ہو رہا ہے…</string>
+
+    <string name="focus_space">آپ کی توجہ کی جگہ</string>
+    <string name="empty_default">ابھی کوئی کام نہیں۔\n+ دبائیں ایک شامل کرنے کے لیے!</string>
+    <string name="empty_active">کوئی فعال کام نہیں\n+ دبائیں ایک شامل کرنے کے لیے!</string>
+    <string name="empty_completed">ابھی تک کچھ مکمل نہیں ہوا</string>
+    <string name="empty_search">کوئی کام مطابقت نہیں رکھتا\n\"%1$s\"</string>
+
+    <string name="snackbar_deleted">\"%1$s\" حذف کر دیا گیا</string>
+    <string name="snackbar_undo">واپس کریں</string>
+
+    <string name="alarm_permission_rationale">درست الارم کی اجازت نہیں دی گئی۔ یادیں غلط ہو سکتی ہیں۔</string>
 </resources>

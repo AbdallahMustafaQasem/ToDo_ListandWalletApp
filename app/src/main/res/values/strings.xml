@@ -110,6 +110,19 @@
     <string name="settings_app_lock_on">Biometric lock is enabled</string>
     <string name="settings_app_lock_off">Biometric lock is disabled</string>
     <string name="settings_not_signed_in">Not signed in</string>
+
+    <!-- Sync screen -->
+    <string name="sync_title">Syncing</string>
+    <string name="sync_failed_title">Sync failed</string>
+    <string name="sync_retry">Retry</string>
+    <string name="sync_error_message">Could not reach the server. Check your connection.</string>
+
+    <!-- Delete Account -->
+    <string name="delete_account_title">Delete Account</string>
+    <string name="delete_account_message">This will permanently delete your account and all your data (todos, wallet, lists) from the cloud. This action cannot be undone.</string>
+    <string name="delete_account_confirm">Delete Forever</string>
+    <string name="delete_account_button">Delete Account</string>
+    <string name="delete_account_deleting">Deleting…</string>
     <string name="fab_add_todo">Add Todo</string>
     <string name="quick_add">Quick Add</string>
     <string name="quick_add_placeholder">Todo title…</string>
@@ -279,4 +292,23 @@
     <!-- Notifications -->
     <string name="notif_mark_done">Mark Done</string>
     <string name="notif_open_app">Open App</string>
+
+    <!-- Sync messages (shown during cloud sync) -->
+    <string name="sync_message">Syncing your data…</string>
+    <string name="sync_restore">Restoring your data from cloud…</string>
+    <string name="sync_upload">Uploading local data…</string>
+
+    <!-- Empty states -->
+    <string name="focus_space">Your focus space</string>
+    <string name="empty_default">No todos yet.\nTap + to add one!</string>
+    <string name="empty_active">No active todos\nTap + to add one!</string>
+    <string name="empty_completed">Nothing completed yet</string>
+    <string name="empty_search">No todos match\n\"%1$s\"</string>
+
+    <!-- Snackbar -->
+    <string name="snackbar_deleted">\"%1$s\" deleted</string>
+    <string name="snackbar_undo">Undo</string>
+
+    <!-- Permission rationale -->
+    <string name="alarm_permission_rationale">Exact alarm permission not granted. Reminders may be inexact.</string>
 </resources>

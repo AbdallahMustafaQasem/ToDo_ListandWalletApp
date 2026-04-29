@@ -221,4 +221,60 @@
 
     <string name="notif_mark_done">إنجاز</string>
     <string name="notif_open_app">فتح التطبيق</string>
+
+    <string name="profile_title">ملفي الشخصي</string>
+    <string name="profile_signout_button">تسجيل الخروج</string>
+    <string name="profile_signout_title">تسجيل الخروج</string>
+    <string name="profile_signout_message">هل أنت متأكد من تسجيل الخروج؟</string>
+    <string name="profile_signout_confirm">تسجيل الخروج</string>
+    <string name="profile_sync_status">مزامنة السحابة</string>
+    <string name="profile_sync_subtitle">بياناتك متزامنة مع Firebase</string>
+    <string name="profile_sync_active">نشطة</string>
+
+    <string name="settings_title">الإعدادات</string>
+    <string name="settings_section_account">الحساب</string>
+    <string name="settings_section_appearance">المظهر</string>
+    <string name="settings_section_wallet">المحفظة</string>
+    <string name="settings_section_security">الأمان</string>
+    <string name="settings_section_info">معلومات</string>
+    <string name="settings_theme">المظهر</string>
+    <string name="settings_theme_system">النظام</string>
+    <string name="settings_theme_light">فاتح</string>
+    <string name="settings_theme_dark">داكن</string>
+    <string name="settings_app_lock_on">القفل البيومتري مفعّل</string>
+    <string name="settings_app_lock_off">القفل البيومتري معطّل</string>
+    <string name="settings_not_signed_in">غير مسجّل الدخول</string>
+
+    <string name="sync_title">جارٍ المزامنة</string>
+    <string name="sync_failed_title">فشلت المزامنة</string>
+    <string name="sync_retry">إعادة المحاولة</string>
+    <string name="sync_error_message">تعذّر الوصول إلى الخادم. تحقق من الاتصال.</string>
+
+    <string name="delete_account_title">حذف الحساب</string>
+    <string name="delete_account_message">سيؤدي هذا إلى حذف حسابك وجميع بياناتك (المهام، المحفظة، القوائم) من السحابة بشكل دائم. لا يمكن التراجع عن هذا الإجراء.</string>
+    <string name="delete_account_confirm">حذف نهائي</string>
+    <string name="delete_account_button">حذف الحساب</string>
+    <string name="delete_account_deleting">جارٍ الحذف…</string>
+
+    <string name="wallet_change_currency">تغيير العملة</string>
+    <string name="wallet_currency_title">اختر رمز العملة</string>
+    <string name="wallet_currency_no_symbol">بدون رمز</string>
+
+    <string name="reminder_title">تذكير</string>
+    <string name="reminder_needs_date">حدّد تاريخًا ووقتًا أولاً</string>
+
+    <string name="sync_message">جارٍ مزامنة بياناتك…</string>
+    <string name="sync_restore">استعادة بياناتك من السحابة…</string>
+    <string name="sync_upload">رفع البيانات المحلية…</string>
+
+    <string name="focus_space">مساحة تركيزك</string>
+    <string name="empty_default">لا توجد مهام بعد.\nاضغط + لإضافة واحدة!</string>
+    <string name="empty_active">لا توجد مهام نشطة\nاضغط + لإضافة واحدة!</string>
+    <string name="empty_completed">لم يتم إنجاز أي شيء بعد</string>
+    <string name="empty_search">لا توجد مهام تطابق\n\"%1$s\"</string>
+
+    <string name="snackbar_deleted">\"%1$s\" تم الحذف</string>
+    <string name="snackbar_undo">تراجع</string>
+
+    <string name="alarm_permission_rationale">لم يتم منح إذن التنبيه الدقيق. قد لا تكون التذكيرات دقيقة.</string>
 </resources>

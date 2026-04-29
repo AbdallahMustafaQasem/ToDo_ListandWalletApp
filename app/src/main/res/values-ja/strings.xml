@@ -221,4 +221,60 @@
     <string name="budget_alert_90_title">予算の90%%使用</string>
     <string name="budget_alert_75_title">予算の75%%使用</string>
     <string name="budget_alert_body">月次予算の%1$s / %2$s (%3$d %%)を使用しました。</string>
+
+    <string name="profile_title">プロフィール</string>
+    <string name="profile_signout_button">サインアウト</string>
+    <string name="profile_signout_title">サインアウト</string>
+    <string name="profile_signout_message">サインアウトしてもよろしいですか？</string>
+    <string name="profile_signout_confirm">サインアウト</string>
+    <string name="profile_sync_status">クラウド同期</string>
+    <string name="profile_sync_subtitle">データはFirebaseと同期されています</string>
+    <string name="profile_sync_active">有効</string>
+
+    <string name="settings_title">設定</string>
+    <string name="settings_section_account">アカウント</string>
+    <string name="settings_section_appearance">外観</string>
+    <string name="settings_section_wallet">ウォレット</string>
+    <string name="settings_section_security">セキュリティ</string>
+    <string name="settings_section_info">情報</string>
+    <string name="settings_theme">テーマ</string>
+    <string name="settings_theme_system">システム</string>
+    <string name="settings_theme_light">ライト</string>
+    <string name="settings_theme_dark">ダーク</string>
+    <string name="settings_app_lock_on">生体認証ロックが有効</string>
+    <string name="settings_app_lock_off">生体認証ロックが無効</string>
+    <string name="settings_not_signed_in">未サインイン</string>
+
+    <string name="sync_title">同期中</string>
+    <string name="sync_failed_title">同期に失敗しました</string>
+    <string name="sync_retry">再試行</string>
+    <string name="sync_error_message">サーバーに接続できませんでした。接続を確認してください。</string>
+
+    <string name="delete_account_title">アカウントを削除</string>
+    <string name="delete_account_message">これによりアカウントとすべてのデータ（タスク、ウォレット、リスト）がクラウドから完全に削除されます。この操作は元に戻せません。</string>
+    <string name="delete_account_confirm">完全に削除</string>
+    <string name="delete_account_button">アカウントを削除</string>
+    <string name="delete_account_deleting">削除中…</string>
+
+    <string name="wallet_change_currency">通貨を変更</string>
+    <string name="wallet_currency_title">通貨記号を選択</string>
+    <string name="wallet_currency_no_symbol">記号なし</string>
+
+    <string name="reminder_title">リマインダー</string>
+    <string name="reminder_needs_date">まず日付と時刻を設定してください</string>
+
+    <string name="sync_message">データを同期しています…</string>
+    <string name="sync_restore">クラウドからデータを復元しています…</string>
+    <string name="sync_upload">ローカルデータをアップロードしています…</string>
+
+    <string name="focus_space">集中スペース</string>
+    <string name="empty_default">タスクはまだありません。\n+をタップして追加！</string>
+    <string name="empty_active">アクティブなタスクはありません\n+をタップして追加！</string>
+    <string name="empty_completed">まだ完了したものはありません</string>
+    <string name="empty_search">「%1$s」に一致するタスクはありません</string>
+
+    <string name="snackbar_deleted">\"%1$s\" を削除しました</string>
+    <string name="snackbar_undo">元に戻す</string>
+
+    <string name="alarm_permission_rationale">正確なアラーム権限が付与されていません。リマインダーが不正確になる場合があります。</string>
 </resources>

@@ -1,25 +1,28 @@
-# 📝 Todo & Wallet App
+# TaskVault — Todo & Wallet App
 
 A native Android productivity application combining a full-featured **Todo manager** with a personal **Wallet / expense tracker** — built entirely in Kotlin with Jetpack Compose and Clean Architecture.
+
+Cloud sync, Google Sign-In, biometric app lock, home screen widget, reminders, and full support for **12 languages** are all included out of the box.
 
 ---
 
 ## Table of Contents
 
 1. [Features](#features)
-2. [Screenshots / Screens](#screens)
+2. [Screens](#screens)
 3. [Architecture](#architecture)
 4. [Project Structure](#project-structure)
 5. [Tech Stack](#tech-stack)
 6. [Data Models](#data-models)
 7. [Navigation Graph](#navigation-graph)
-8. [Notifications & Reminders](#notifications--reminders)
-9. [Home Screen Widget](#home-screen-widget)
-10. [Getting Started](#getting-started)
-11. [Build & Run](#build--run)
-12. [Permissions](#permissions)
-13. [Non-Functional Notes](#non-functional-notes)
-14. [Out of Scope (v1.0)](#out-of-scope-v10)
+8. [Firebase Setup](#firebase-setup)
+9. [Language Support](#language-support)
+10. [Notifications & Reminders](#notifications--reminders)
+11. [Home Screen Widget](#home-screen-widget)
+12. [Getting Started](#getting-started)
+13. [Build & Run](#build--run)
+14. [Permissions](#permissions)
+15. [Non-Functional Notes](#non-functional-notes)
 
 ---
 
@@ -29,6 +32,7 @@ A native Android productivity application combining a full-featured **Todo manag
 
 | ID | Feature |
 |----|---------|
+| F-00 | **Google Sign-In** — one-tap authentication via Firebase Auth; all data tied to the user's account |
 | F-01 | Create todos with **title** (required), **description** (optional), **due date/time**, **priority** (None / Low / Medium / High), and **reminder** toggle |
 | F-02 | Scrollable list ordered by due date ascending; no-due-date items sort to the bottom |
 | F-03 | Tap a todo to open a pre-populated detail/edit screen |
@@ -44,6 +48,7 @@ A native Android productivity application combining a full-featured **Todo manag
 | F-13 | **Subtasks** — add, check-off, and delete sub-items for any todo; progress counter shown (e.g. `2/3`) |
 | F-14 | **Recurring Todos** — set a repeat rule: None / Daily / Weekly / Monthly |
 | F-15 | **Todo Lists / Projects** — organise todos into named, colour-coded lists; assign a list per todo |
+| F-16 | **Cloud Sync** — all todos, subtasks, lists, wallet data, and categories mirrored to Firestore in real time |
 
 ### 🗑️ Trash / Recycle Bin
 
@@ -63,18 +68,26 @@ A native Android productivity application combining a full-featured **Todo manag
 ### 💰 Wallet / Expense Tracker
 
 - Log **income** and **expense** transactions with amount, category, date, and optional notes.
+- **Floating Action Button** for adding transactions — always accessible.
 - Manage **custom categories** (icon + name).
 - Set a **monthly budget** and track spending vs. budget in real time.
 - Transaction list with filter by type (All / Income / Expense).
 - **Wallet Analytics** — pie chart of expenses by category and spending-over-time bar chart.
+- **Currency symbol** — choose from a list of common currency symbols; persisted per user.
 - **Budget Alerts** — daily `BudgetAlertWorker` sends a push notification when monthly spending crosses 75 %, 90 %, and 100 % of the set budget (each threshold fires only once per calendar month).
 
 ### 🔒 App Lock
 
 - Optional biometric / device-credential lock screen on every app launch and resume.
-- Enabled / disabled via **App Lock** toggle in the main menu.
+- Enabled / disabled via the **Settings → Security** toggle.
 - Uses `BiometricPrompt` with fallback to PIN / pattern / password.
 - Closing the lock prompt (back / cancel) exits the app.
+
+### 👤 Profile & Account
+
+- View signed-in Google account name and email.
+- **Sign out** with confirmation dialog.
+- **Delete account** — permanently erases all Firestore data (todos, wallet, lists) and removes the Firebase Auth user; guarded by a confirmation dialog.
 
 ### � Calendar View
 
@@ -105,16 +118,20 @@ A native Android productivity application combining a full-featured **Todo manag
 
 | Screen | Route | Description |
 |--------|-------|-------------|
+| **Login** | *(gate)* | Google Sign-In screen shown when not authenticated |
+| **Sync** | *(gate)* | Cloud sync progress / error screen shown after sign-in |
 | **Todo List** | `home` | Main screen with search, filters, FAB, and todo list |
 | **Add Todo** | `add` | Form to create a new todo |
 | **Edit Todo** | `detail/{todoId}` | Pre-populated form to edit or delete an existing todo |
 | **Statistics** | `statistics` | Charts and productivity stats |
 | **Trash** | `trash` | Soft-deleted todos; restore or permanently delete |
-| **Wallet** | `wallet` | Transaction list, balance summary, budget tracker |
+| **Wallet** | `wallet` | Transaction list, balance summary, budget tracker with FAB |
 | **Wallet Categories** | `wallet/categories` | Manage income/expense categories |
-| **About** | `about` | App name, version, and description |
 | **Calendar** | `calendar` | Month grid with todo-day indicators and daily todo list |
 | **Lists & Projects** | `lists` | Create, edit, and delete named todo lists; assign colour and emoji icon |
+| **Settings** | `settings` | Theme, language, currency, app lock, about |
+| **Profile** | `profile` | Account info, sign-out, delete account |
+| **About** | `about` | App name, version, and description |
 
 ---
 
@@ -155,96 +172,75 @@ The app follows strict **Clean Architecture** with three isolated layers:
 ## Project Structure
 
 ```
-com.example.todoapp
+com.abdallah.taskvault
 │
-├── TodoApplication.kt          ─ Hilt app, notification channel init
-├── MainActivity.kt             ─ Single-activity host
+├── TaskVaultApplication.kt      ─ Hilt app, notification channel init
+├── MainActivity.kt              ─ Single-activity host; handles language, theme, app lock
 │
 ├── di/
-│   ├── AppModule.kt            ─ DB, DAO, AlarmManager, NotificationManager
-│   ├── RepositoryModule.kt     ─ Binds Impl → Interface
-│   └── PreferencesModule.kt    ─ DataStore / UserPreferences
+│   ├── AppModule.kt             ─ DB, DAO, AlarmManager, NotificationManager
+│   ├── FirebaseModule.kt        ─ FirebaseAuth, FirebaseFirestore
+│   ├── RepositoryModule.kt      ─ Binds Impl → Interface
+│   └── PreferencesModule.kt     ─ DataStore / UserPreferences
 │
 ├── data/
 │   ├── local/
 │   │   ├── TodoDatabase.kt
-│   │   ├── TodoDao.kt
+│   │   ├── TodoDao.kt / SubtaskDao.kt / TodoListDao.kt
 │   │   ├── WalletDao.kt
-│   │   ├── TodoEntity.kt
+│   │   ├── TodoEntity.kt / SubtaskEntity.kt / TodoListEntity.kt
 │   │   ├── WalletTransactionEntity.kt
 │   │   ├── WalletCategoryEntity.kt
 │   │   ├── WalletBudgetEntity.kt
-│   │   └── converter/
-│   │       ├── PriorityConverter.kt
-│   │       └── TransactionTypeConverter.kt
+│   │   └── converter/  (PriorityConverter, TransactionTypeConverter)
 │   ├── mapper/
 │   │   ├── TodoMapper.kt
 │   │   └── WalletMapper.kt
 │   ├── repository/
 │   │   ├── TodoRepositoryImpl.kt
-│   │   └── WalletRepositoryImpl.kt
+│   │   ├── WalletRepositoryImpl.kt
+│   │   └── FirebaseAuthRepositoryImpl.kt
+│   ├── sync/
+│   │   └── FirebaseSyncRepository.kt  ─ Mirrors all CRUD to Firestore under users/{uid}/
 │   ├── alarm/
-│   │   ├── AlarmScheduler.kt       ─ Interface
-│   │   └── AlarmSchedulerImpl.kt   ─ AlarmManager-backed impl
+│   │   ├── AlarmScheduler.kt          ─ Interface
+│   │   └── AlarmSchedulerImpl.kt      ─ AlarmManager-backed impl
 │   ├── worker/
-│   │   ├── ReminderWorker.kt       ─ Fallback / boot reschedule
-│   │   └── TrashPurgeWorker.kt     ─ Auto-purge old trash items
+│   │   ├── ReminderWorker.kt          ─ Fallback / boot reschedule
+│   │   ├── TrashPurgeWorker.kt        ─ Auto-purge trash items > 30 days
+│   │   └── BudgetAlertWorker.kt       ─ Daily budget threshold notifications
 │   └── preferences/
 │       └── UserPreferencesRepository.kt
 │
 ├── domain/
-│   ├── model/
-│   │   ├── Todo.kt
-│   │   ├── Priority.kt
-│   │   ├── WalletTransaction.kt
-│   │   ├── WalletCategory.kt
-│   │   ├── WalletBudget.kt
-│   │   └── TransactionType.kt
-│   ├── repository/
-│   │   ├── TodoRepository.kt
-│   │   └── WalletRepository.kt
-│   ├── usecase/
-│   │   ├── GetAllTodosUseCase.kt
-│   │   ├── GetTodoByIdUseCase.kt
-│   │   ├── AddTodoUseCase.kt
-│   │   ├── UpdateTodoUseCase.kt
-│   │   ├── DeleteTodoUseCase.kt
-│   │   ├── ToggleTodoCompletionUseCase.kt
-│   │   ├── GetDeletedTodosUseCase.kt
-│   │   ├── RestoreTodoUseCase.kt
-│   │   └── PermanentlyDeleteTodoUseCase.kt
-│   └── alarm/
-│       └── AlarmScheduler.kt   ─ Domain-facing interface
+│   ├── model/  (Todo, Priority, WalletTransaction, WalletCategory, WalletBudget, TransactionType)
+│   ├── repository/  (TodoRepository, WalletRepository, AuthRepository, TodoListRepository)
+│   └── usecase/  (GetAll, GetById, Add, Update, Delete, Toggle, Restore, PermanentlyDelete)
 │
 ├── ui/
-│   ├── navigation/
-│   │   ├── NavGraph.kt
-│   │   └── Screen.kt
-│   ├── theme/
-│   │   ├── Color.kt
-│   │   ├── Theme.kt
-│   │   └── Type.kt
+│   ├── AppViewModel.kt          ─ Auth state, sync orchestration, account deletion
+│   ├── navigation/  (NavGraph.kt, Screen.kt)
+│   ├── theme/  (Color.kt, Theme.kt, Type.kt)
+│   ├── auth/
+│   │   ├── LoginScreen.kt / AuthViewModel.kt
+│   │   ├── SyncScreen.kt
+│   │   └── ProfileScreen.kt
+│   ├── settings/
+│   │   ├── SettingsScreen.kt
+│   │   └── SettingsViewModel.kt
 │   ├── todolist/
-│   │   ├── TodoListScreen.kt
-│   │   ├── TodoListViewModel.kt
-│   │   ├── TodoListUiState.kt
-│   │   └── components/
-│   │       ├── TodoItem.kt
-│   │       ├── FilterChipsRow.kt
-│   │       └── EmptyStateView.kt
-│   ├── addedit/
-│   │   ├── AddEditTodoScreen.kt
-│   │   ├── AddEditTodoViewModel.kt
-│   │   └── AddEditTodoUiState.kt
-│   ├── statistics/
-│   │   ├── StatisticsScreen.kt
-│   │   └── StatisticsViewModel.kt
-│   ├── trash/
-│   │   └── TrashScreen.kt
+│   │   ├── TodoListScreen.kt / TodoListViewModel.kt / TodoListUiState.kt
+│   │   └── components/  (TodoItem.kt, FilterChipsRow.kt, EmptyStateView.kt)
+│   ├── addedit/  (AddEditTodoScreen.kt, AddEditTodoViewModel.kt)
+│   ├── statistics/  (StatisticsScreen.kt, StatisticsViewModel.kt)
+│   ├── trash/  (TrashScreen.kt)
+│   ├── calendar/  (CalendarScreen.kt, CalendarViewModel.kt)
+│   ├── lists/  (TodoListsScreen.kt, TodoListsViewModel.kt)
+│   ├── about/  (AboutScreen.kt)
+│   ├── applock/  (AppLockScreen.kt)
 │   └── wallet/
-│       ├── WalletScreen.kt
-│       ├── WalletCategoriesScreen.kt
-│       └── WalletViewModel.kt
+│       ├── WalletScreen.kt / WalletViewModel.kt
+│       └── WalletCategoriesScreen.kt
 │
 ├── widget/
 │   ├── TodoWidget.kt               ─ GlanceAppWidget subclass
@@ -269,6 +265,8 @@ com.example.todoapp
 | Database | Room | 2.6.1 |
 | Navigation | Jetpack Navigation Compose | 2.7.7 |
 | Async | Kotlin Coroutines + Flow | 1.8.1 |
+| Auth | Firebase Authentication (Google Sign-In) | Latest |
+| Cloud DB | Firebase Firestore | Latest |
 | Widget | Jetpack Glance | 1.1.0 |
 | Background work | WorkManager | 2.9.0 |
 | Preferences | DataStore Preferences | 1.1.1 |
@@ -338,20 +336,78 @@ data class WalletBudget(
 ## Navigation Graph
 
 ```
-NavGraph (startDestination = home)
-├── home                    ─ TodoListScreen
-├── add                     ─ AddEditTodoScreen (new)
-├── detail/{todoId}         ─ AddEditTodoScreen (edit) + deep link
-├── statistics              ─ StatisticsScreen
-├── about                   ─ AboutScreen
-├── trash                   ─ TrashScreen
-├── wallet                  ─ WalletScreen
-└── wallet/categories       ─ WalletCategoriesScreen
+MainActivity (gates)
+├── LoginScreen             ─ shown when currentUser == null
+├── SyncScreen              ─ shown during / after first sign-in sync
+└── NavGraph (startDestination = home)
+    ├── home                    ─ TodoListScreen
+    ├── add                     ─ AddEditTodoScreen (new)
+    ├── detail/{todoId}         ─ AddEditTodoScreen (edit) + deep link
+    ├── statistics              ─ StatisticsScreen
+    ├── trash                   ─ TrashScreen
+    ├── wallet                  ─ WalletScreen
+    ├── wallet/categories       ─ WalletCategoriesScreen
+    ├── calendar                ─ CalendarScreen
+    ├── lists                   ─ TodoListsScreen
+    ├── settings                ─ SettingsScreen
+    ├── profile                 ─ ProfileScreen
+    └── about                   ─ AboutScreen
 ```
 
 Deep links into `detail/{todoId}` are handled from notification `PendingIntent` using the URI pattern `todoapp://detail/{todoId}`.
 
 Screen transitions use slide + fade animations (300 ms).
+
+---
+
+## Firebase Setup
+
+> The app requires a Firebase project to build and run cloud features.
+
+1. Create a project at [console.firebase.google.com](https://console.firebase.google.com).
+2. Add an **Android app** with package name `com.abdallah.taskvault`.
+3. Enable **Google Sign-In** under *Authentication → Sign-in method*.
+4. Enable **Cloud Firestore** (start in test mode during development).
+5. Add your debug **SHA-1** fingerprint under *Project Settings → Your apps*:
+   ```bash
+   ./gradlew signingReport
+   ```
+6. Download `google-services.json` and place it in the `app/` directory.
+
+### Firestore Data Structure
+
+```
+users/{uid}/
+  ├── todos/           ─ TodoEntity documents
+  ├── subtasks/        ─ SubtaskEntity documents
+  ├── todoLists/       ─ TodoListEntity documents
+  ├── transactions/    ─ WalletTransactionEntity documents
+  ├── categories/      ─ WalletCategoryEntity documents
+  └── budget/          ─ WalletBudgetEntity document
+```
+
+---
+
+## Language Support
+
+The app ships with **12 fully localised languages**. Every user-facing string is translated — including UI labels, empty states, dialogs, notifications, sync messages, and error strings.
+
+| Code | Language |
+|------|----------|
+| `default` | English |
+| `ar` | العربية (Arabic) |
+| `bn` | বাংলা (Bengali) |
+| `de` | Deutsch (German) |
+| `es` | Español (Spanish) |
+| `fr` | Français (French) |
+| `hi` | हिन्दी (Hindi) |
+| `ja` | 日本語 (Japanese) |
+| `pt` | Português (Portuguese) |
+| `ru` | Русский (Russian) |
+| `ur` | اردو (Urdu) |
+| `zh` | 中文 (Chinese) |
+
+Language is selectable at runtime from **Settings → Language** without restarting.
 
 ---
 
@@ -433,6 +489,7 @@ Built with **Jetpack Glance** (no manual `RemoteViews`).
 - Android Studio Hedgehog (2023.1.1) or newer
 - JDK 11+
 - Android SDK with API 36 installed
+- A Firebase project with `google-services.json` placed in `app/` (see [Firebase Setup](#firebase-setup))
 
 ### Clone
 
@@ -508,21 +565,6 @@ Android Studio will sync Gradle automatically.
 | NF-05 | ProGuard/R8 rules are configured for Room, Hilt, and kotlinx.serialization. |
 | NF-06 | Domain layer has zero Android imports — all use cases are unit-testable without Robolectric. |
 | NF-07 | Kotlin 2.0+ with the Compose compiler plugin; no separate `kotlinCompilerExtensionVersion` needed. |
-
----
-
-## Out of Scope (v1.0)
-
-The following are **not** included in version 1.0:
-
-- Cloud sync or backend integration
-- Multiple lists / categories / tags for todos
-- Recurring todos
-- Shared / collaborative todos
-- Lock-screen widgets
-- Wear OS companion app
-- iOS or any cross-platform target
-- In-app purchases
 
 ---
 

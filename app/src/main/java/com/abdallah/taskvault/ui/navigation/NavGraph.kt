@@ -61,12 +61,10 @@ fun NavGraph(
                 onNavigateToAdd        = { navController.navigate(Screen.Add.route) },
                 onNavigateToDetail     = { todoId -> navController.navigate(Screen.Detail.createRoute(todoId)) },
                 onNavigateToStatistics = { navController.navigate(Screen.Statistics.route) },
-                onNavigateToAbout      = { navController.navigate(Screen.About.route) },
                 onNavigateToTrash      = { navController.navigate(Screen.Trash.route) },
                 onNavigateToWallet     = { navController.navigate(Screen.Wallet.route) },
                 onNavigateToCalendar   = { navController.navigate(Screen.Calendar.route) },
                 onNavigateToLists      = { navController.navigate(Screen.TodoLists.route) },
-                onNavigateToProfile    = { navController.navigate(Screen.Profile.route) },
                 onNavigateToSettings   = { navController.navigate(Screen.Settings.route) }
             )
         }

@@ -223,6 +223,7 @@ class FirebaseSyncRepository @Inject constructor(
             Log.d("TaskVault", "[FirebaseSync] Fetched ${catSnap.size()} wallet categories")
             catSnap.documents.forEach { doc ->
                 val id = doc.getLong("id") ?: return@forEach
+                if (id == 0L) { doc.reference.delete().await(); return@forEach }
                 walletDao.insertCategory(
                     WalletCategoryEntity(
                         id        = id,
@@ -281,6 +282,7 @@ class FirebaseSyncRepository @Inject constructor(
             Log.d("TaskVault", "[FirebaseSync] Fetched ${txSnap.size()} transactions")
             txSnap.documents.forEach { doc ->
                 val id = doc.getLong("id") ?: return@forEach
+                if (id == 0L) { doc.reference.delete().await(); return@forEach }
                 walletDao.insertTransaction(
                     WalletTransactionEntity(
                         id         = id,

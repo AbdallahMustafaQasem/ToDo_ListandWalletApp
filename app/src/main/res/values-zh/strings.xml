@@ -221,4 +221,60 @@
     <string name="budget_alert_90_title">已使用 90 %% 预算</string>
     <string name="budget_alert_75_title">已使用 75 %% 预算</string>
     <string name="budget_alert_body">您已花费每月预算的 %1$s / %2$s (%3$d %%)。</string>
+
+    <string name="profile_title">个人资料</string>
+    <string name="profile_signout_button">退出登录</string>
+    <string name="profile_signout_title">退出登录</string>
+    <string name="profile_signout_message">确定要退出登录吗？</string>
+    <string name="profile_signout_confirm">退出登录</string>
+    <string name="profile_sync_status">云同步</string>
+    <string name="profile_sync_subtitle">您的数据已与Firebase同步</string>
+    <string name="profile_sync_active">已激活</string>
+
+    <string name="settings_title">设置</string>
+    <string name="settings_section_account">账户</string>
+    <string name="settings_section_appearance">外观</string>
+    <string name="settings_section_wallet">钱包</string>
+    <string name="settings_section_security">安全</string>
+    <string name="settings_section_info">信息</string>
+    <string name="settings_theme">主题</string>
+    <string name="settings_theme_system">跟随系统</string>
+    <string name="settings_theme_light">浅色</string>
+    <string name="settings_theme_dark">深色</string>
+    <string name="settings_app_lock_on">生物识别锁定已启用</string>
+    <string name="settings_app_lock_off">生物识别锁定已禁用</string>
+    <string name="settings_not_signed_in">未登录</string>
+
+    <string name="sync_title">同步中</string>
+    <string name="sync_failed_title">同步失败</string>
+    <string name="sync_retry">重试</string>
+    <string name="sync_error_message">无法连接到服务器，请检查您的网络连接。</string>
+
+    <string name="delete_account_title">删除账户</string>
+    <string name="delete_account_message">这将永久删除您的账户及所有数据（任务、钱包、列表）。此操作无法撤销。</string>
+    <string name="delete_account_confirm">永久删除</string>
+    <string name="delete_account_button">删除账户</string>
+    <string name="delete_account_deleting">删除中…</string>
+
+    <string name="wallet_change_currency">更改货币</string>
+    <string name="wallet_currency_title">选择货币符号</string>
+    <string name="wallet_currency_no_symbol">无符号</string>
+
+    <string name="reminder_title">提醒</string>
+    <string name="reminder_needs_date">请先设置日期和时间</string>
+
+    <string name="sync_message">正在同步您的数据…</string>
+    <string name="sync_restore">正在从云端恢复数据…</string>
+    <string name="sync_upload">正在上传本地数据…</string>
+
+    <string name="focus_space">您的专注空间</string>
+    <string name="empty_default">暂无任务。\n点击 + 添加一个！</string>
+    <string name="empty_active">没有活跃任务\n点击 + 添加一个！</string>
+    <string name="empty_completed">尚未完成任何任务</string>
+    <string name="empty_search">没有与\n"%1$s"匹配的任务</string>
+
+    <string name="snackbar_deleted">已删除"%1$s"</string>
+    <string name="snackbar_undo">撤销</string>
+
+    <string name="alarm_permission_rationale">未授予精确闹钟权限，提醒可能不准确。</string>
 </resources>

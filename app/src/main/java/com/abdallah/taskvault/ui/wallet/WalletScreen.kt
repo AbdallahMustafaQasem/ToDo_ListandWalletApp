@@ -5,6 +5,7 @@ import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
@@ -41,6 +42,7 @@ import androidx.compose.material3.OutlinedButton
 import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.SingleChoiceSegmentedButtonRow
+import androidx.compose.material3.FloatingActionButton
 import androidx.compose.material3.SnackbarHost
 import androidx.compose.material3.SnackbarHostState
 import androidx.compose.material3.Surface
@@ -153,6 +155,15 @@ fun WalletScreen(
 
     Scaffold(
         snackbarHost = { SnackbarHost(snackbarHostState) },
+        floatingActionButton = {
+            FloatingActionButton(
+                onClick        = { editingTransaction = null; showTransactionSheet = true },
+                containerColor = MaterialTheme.colorScheme.primary,
+                contentColor   = MaterialTheme.colorScheme.onPrimary
+            ) {
+                Icon(Icons.Default.Add, contentDescription = stringResource(R.string.wallet_add_transaction))
+            }
+        },
         topBar = {
             TopAppBar(
                 title = { Text(stringResource(R.string.wallet_title)) },
@@ -165,17 +176,8 @@ fun WalletScreen(
                     IconButton(onClick = onNavigateToCategories) {
                         Icon(Icons.Default.Edit, contentDescription = stringResource(R.string.wallet_manage_categories))
                     }
-                    IconButton(onClick = { showCurrencyDialog = true }) {
-                        Icon(Icons.Default.AttachMoney, contentDescription = stringResource(R.string.wallet_change_currency))
-                    }
                     IconButton(onClick = { showBudgetDialog = true }) {
                         Icon(Icons.Default.AccountBalanceWallet, contentDescription = stringResource(R.string.wallet_set_budget))
-                    }
-                    IconButton(onClick = {
-                        editingTransaction = null
-                        showTransactionSheet = true
-                    }) {
-                        Icon(Icons.Default.Add, contentDescription = stringResource(R.string.wallet_add_transaction))
                     }
                 },
                 colors = TopAppBarDefaults.topAppBarColors(
@@ -193,6 +195,7 @@ fun WalletScreen(
                 .fillMaxSize()
                 .padding(paddingValues)
                 .padding(horizontal = 16.dp),
+            contentPadding = PaddingValues(bottom = 88.dp),
             verticalArrangement = Arrangement.spacedBy(16.dp)
         ) {
             item {

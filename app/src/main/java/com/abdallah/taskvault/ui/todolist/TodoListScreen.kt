@@ -6,9 +6,9 @@ import androidx.activity.compose.rememberLauncherForActivityResult
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.compose.animation.*
 import androidx.compose.animation.core.*
+import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.foundation.background
 import androidx.compose.foundation.combinedClickable
-import androidx.compose.foundation.gestures.detectTapGestures
 import androidx.compose.foundation.interaction.MutableInteractionSource
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
@@ -24,7 +24,6 @@ import androidx.compose.material3.pulltorefresh.rememberPullToRefreshState
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.input.pointer.pointerInput
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
@@ -38,23 +37,16 @@ import com.abdallah.taskvault.ui.todolist.components.TodoItem
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 
-private data class LanguageOption(
-    val code: String?,
-    val label: String
-)
-
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun TodoListScreen(
     onNavigateToAdd: () -> Unit,
     onNavigateToDetail: (Long) -> Unit,
     onNavigateToStatistics: () -> Unit = {},
-    onNavigateToAbout: (() -> Unit)? = null,
     onNavigateToTrash: () -> Unit = {},
     onNavigateToWallet: () -> Unit = {},
     onNavigateToCalendar: () -> Unit = {},
     onNavigateToLists: () -> Unit = {},
-    onNavigateToProfile: () -> Unit = {},
     onNavigateToSettings: () -> Unit = {},
     viewModel: TodoListViewModel = hiltViewModel()
 ) {
@@ -65,67 +57,15 @@ fun TodoListScreen(
 
     var showSearch by remember { mutableStateOf(false) }
     var showMenu   by remember { mutableStateOf(false) }
-    var showSortMenu by remember { mutableStateOf(false) }
     var showQuickAdd by remember { mutableStateOf(false) }
-    var showLanguageDialog by remember { mutableStateOf(false) }
-    val systemDefaultLabel = stringResource(R.string.language_system_default)
 
-    val languageOptions = listOf(
-        LanguageOption(code = null, label = systemDefaultLabel),
-        LanguageOption(code = "en", label = "English"),
-        LanguageOption(code = "ar", label = "العربية"),
-        LanguageOption(code = "bn", label = "বাংলা"),
-        LanguageOption(code = "de", label = "Deutsch"),
-        LanguageOption(code = "es", label = "Español"),
-        LanguageOption(code = "fr", label = "Français"),
-        LanguageOption(code = "hi", label = "हिन्दी"),
-        LanguageOption(code = "ja", label = "日本語"),
-        LanguageOption(code = "pt", label = "Português"),
-        LanguageOption(code = "ru", label = "Русский"),
-        LanguageOption(code = "ur", label = "اردو"),
-        LanguageOption(code = "zh", label = "中文"),
-    )
-
-    if (showLanguageDialog) {
-        AlertDialog(
-            onDismissRequest = { showLanguageDialog = false },
-            title = { Text(stringResource(R.string.language_dialog_title)) },
-            text = {
-                Column(verticalArrangement = Arrangement.spacedBy(4.dp)) {
-                    languageOptions.forEach { option ->
-                        Row(
-                            modifier = Modifier
-                                .fillMaxWidth()
-                                .pointerInput(option.code) {
-                                    detectTapGestures {
-                                        viewModel.onLanguageSelected(option.code)
-                                        showLanguageDialog = false
-                                    }
-                                }
-                                .padding(vertical = 6.dp),
-                            verticalAlignment = Alignment.CenterVertically
-                        ) {
-                            RadioButton(
-                                selected = uiState.languageCode == option.code,
-                                onClick = {
-                                    viewModel.onLanguageSelected(option.code)
-                                    showLanguageDialog = false
-                                }
-                            )
-                            Spacer(Modifier.width(12.dp))
-                            Text(option.label)
-                        }
-                    }
-                }
-            },
-            confirmButton = {},
-            dismissButton = {
-                TextButton(onClick = { showLanguageDialog = false }) {
-                    Text(stringResource(R.string.cancel))
-                }
-            }
-        )
-    }
+    val strAlarmRationale  = stringResource(R.string.alarm_permission_rationale)
+    val strSnackbarDeleted = stringResource(R.string.snackbar_deleted)
+    val strSnackbarUndo    = stringResource(R.string.snackbar_undo)
+    val strEmptyDefault    = stringResource(R.string.empty_default)
+    val strEmptyActive     = stringResource(R.string.empty_active)
+    val strEmptyCompleted  = stringResource(R.string.empty_completed)
+    val strEmptySearch     = stringResource(R.string.empty_search)
 
     // FAB extends when list is scrolled to top
     val isScrolledDown by remember {
@@ -150,7 +90,7 @@ fun TodoListScreen(
     LaunchedEffect(uiState.showExactAlarmRationale) {
         if (uiState.showExactAlarmRationale) {
             snackbarHostState.showSnackbar(
-                message  = "Exact alarm permission not granted. Reminders may be inexact.",
+                message  = strAlarmRationale,
                 duration = SnackbarDuration.Long
             )
             viewModel.dismissExactAlarmRationale()
@@ -212,17 +152,6 @@ fun TodoListScreen(
                                 )
                             } else {
                                 Column(verticalArrangement = Arrangement.spacedBy(6.dp)) {
-                                    Surface(
-                                        color = MaterialTheme.colorScheme.onPrimaryContainer.copy(alpha = 0.14f),
-                                        shape = RoundedCornerShape(999.dp)
-                                    ) {
-                                        Text(
-                                            text = "Your focus space",
-                                            modifier = Modifier.padding(horizontal = 10.dp, vertical = 4.dp),
-                                            style = MaterialTheme.typography.labelMedium,
-                                            color = MaterialTheme.colorScheme.onPrimaryContainer
-                                        )
-                                    }
                                     Row(verticalAlignment = Alignment.CenterVertically) {
                                         Text(
                                             stringResource(R.string.title_my_todos),
@@ -256,7 +185,7 @@ fun TodoListScreen(
                         }
                     },
                     actions = {
-                        // Search
+                        // Search toggle
                         IconButton(onClick = {
                             showSearch = !showSearch
                             if (!showSearch) viewModel.onSearchQueryChanged("")
@@ -266,42 +195,14 @@ fun TodoListScreen(
                                 contentDescription = if (showSearch) stringResource(R.string.close) else stringResource(R.string.search)
                             )
                         }
+                        // Wallet shortcut
                         IconButton(onClick = onNavigateToWallet) {
                             Icon(
                                 imageVector = Icons.Default.AccountBalanceWallet,
                                 contentDescription = stringResource(R.string.menu_wallet)
                             )
                         }
-                        // Sort
-                        IconButton(onClick = { showSortMenu = true }) {
-                            Icon(Icons.Default.Sort, contentDescription = stringResource(R.string.sort))
-                        }
-                        DropdownMenu(
-                            expanded        = showSortMenu,
-                            onDismissRequest = { showSortMenu = false }
-                        ) {
-                            SortOrder.entries.forEach { order ->
-                                DropdownMenuItem(
-                                    text = {
-                                        Text(
-                                            text  = stringResource(order.displayNameRes()),
-                                            fontWeight = if (uiState.sortOrder == order)
-                                                FontWeight.Bold else FontWeight.Normal
-                                        )
-                                    },
-                                    leadingIcon = {
-                                        if (uiState.sortOrder == order) {
-                                            Icon(Icons.Default.Check, contentDescription = null)
-                                        }
-                                    },
-                                    onClick = {
-                                        viewModel.onSortOrderChanged(order)
-                                        showSortMenu = false
-                                    }
-                                )
-                            }
-                        }
-                        // More (statistics + about)
+                        // Overflow menu
                         IconButton(onClick = { showMenu = true }) {
                             Icon(Icons.Default.MoreVert, contentDescription = stringResource(R.string.more))
                         }
@@ -309,45 +210,60 @@ fun TodoListScreen(
                             expanded        = showMenu,
                             onDismissRequest = { showMenu = false }
                         ) {
+                            // ── Sort ─────────────────────────────────
                             DropdownMenuItem(
-                                text           = { Text(stringResource(R.string.menu_statistics)) },
-                                leadingIcon    = { Icon(Icons.Default.BarChart, null) },
-                                onClick        = {
-                                    showMenu = false
-                                    onNavigateToStatistics()
-                                }
+                                text        = { Text(stringResource(R.string.sort), style = MaterialTheme.typography.labelMedium, color = MaterialTheme.colorScheme.primary) },
+                                onClick     = {},
+                                enabled     = false,
+                                leadingIcon = { Icon(Icons.Default.Sort, null, tint = MaterialTheme.colorScheme.primary) }
+                            )
+                            SortOrder.entries.forEach { order ->
+                                DropdownMenuItem(
+                                    text = {
+                                        Text(
+                                            text       = stringResource(order.displayNameRes()),
+                                            fontWeight = if (uiState.sortOrder == order) FontWeight.Bold else FontWeight.Normal
+                                        )
+                                    },
+                                    leadingIcon = {
+                                        if (uiState.sortOrder == order)
+                                            Icon(Icons.Default.Check, contentDescription = null)
+                                        else
+                                            Spacer(Modifier.size(24.dp))
+                                    },
+                                    onClick = {
+                                        viewModel.onSortOrderChanged(order)
+                                        showMenu = false
+                                    }
+                                )
+                            }
+                            HorizontalDivider(modifier = Modifier.padding(vertical = 4.dp))
+                            // ── Navigate ────────────────────────────
+                            DropdownMenuItem(
+                                text        = { Text(stringResource(R.string.menu_statistics)) },
+                                leadingIcon = { Icon(Icons.Default.BarChart, null) },
+                                onClick     = { showMenu = false; onNavigateToStatistics() }
                             )
                             DropdownMenuItem(
-                                text = { Text(stringResource(R.string.menu_trash)) },
-                                leadingIcon = { Icon(Icons.Default.Delete, null) },
-                                onClick = {
-                                    showMenu = false
-                                    onNavigateToTrash()
-                                }
-                            )
-                            DropdownMenuItem(
-                                text = { Text(stringResource(R.string.menu_calendar)) },
+                                text        = { Text(stringResource(R.string.menu_calendar)) },
                                 leadingIcon = { Icon(Icons.Default.CalendarMonth, null) },
-                                onClick = {
-                                    showMenu = false
-                                    onNavigateToCalendar()
-                                }
+                                onClick     = { showMenu = false; onNavigateToCalendar() }
                             )
                             DropdownMenuItem(
-                                text = { Text(stringResource(R.string.menu_lists)) },
+                                text        = { Text(stringResource(R.string.menu_lists)) },
                                 leadingIcon = { Icon(Icons.Default.List, null) },
-                                onClick = {
-                                    showMenu = false
-                                    onNavigateToLists()
-                                }
+                                onClick     = { showMenu = false; onNavigateToLists() }
                             )
                             DropdownMenuItem(
-                                text = { Text(stringResource(R.string.settings_title)) },
+                                text        = { Text(stringResource(R.string.menu_trash)) },
+                                leadingIcon = { Icon(Icons.Default.Delete, null) },
+                                onClick     = { showMenu = false; onNavigateToTrash() }
+                            )
+                            HorizontalDivider(modifier = Modifier.padding(vertical = 4.dp))
+                            DropdownMenuItem(
+                                text        = { Text(stringResource(R.string.settings_title)) },
                                 leadingIcon = { Icon(Icons.Default.Settings, null) },
-                                onClick = {
-                                    showMenu = false
-                                    onNavigateToSettings()
-                                }
+                                onClick     = { showMenu = false; onNavigateToSettings() }
                             )
                         }
                     },
@@ -417,10 +333,10 @@ fun TodoListScreen(
                 uiState.filteredTodos.isEmpty() -> {
                     val emptyMsg = when {
                         uiState.searchQuery.isNotBlank() ->
-                            "No todos match\n\"${uiState.searchQuery}\""
-                        uiState.filter == FilterOption.ACTIVE    -> "No active todos\nTap + to add one!"
-                        uiState.filter == FilterOption.COMPLETED -> "Nothing completed yet"
-                        else                                      -> "No todos yet.\nTap + to add one!"
+                            strEmptySearch.format(uiState.searchQuery)
+                        uiState.filter == FilterOption.ACTIVE    -> strEmptyActive
+                        uiState.filter == FilterOption.COMPLETED -> strEmptyCompleted
+                        else                                      -> strEmptyDefault
                     }
                     EmptyStateView(message = emptyMsg)
                 }
@@ -474,8 +390,8 @@ fun TodoListScreen(
                                         viewModel.onDeleteTodo(todo)
                                         scope.launch {
                                             val result = snackbarHostState.showSnackbar(
-                                                message     = "\"${todo.title}\" deleted",
-                                                actionLabel = "Undo",
+                                                message     = strSnackbarDeleted.format(todo.title),
+                                                actionLabel = strSnackbarUndo,
                                                 duration    = SnackbarDuration.Short
                                             )
                                             if (result == SnackbarResult.ActionPerformed) {
@@ -498,6 +414,7 @@ fun TodoListScreen(
 
 // ── Extended FAB with long-press gesture ─────────────────────────────────────
 
+@OptIn(ExperimentalFoundationApi::class)
 @Composable
 private fun ExtendedFabWithLongPress(
     isScrolledDown: Boolean,

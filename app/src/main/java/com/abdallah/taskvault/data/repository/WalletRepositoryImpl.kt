@@ -42,11 +42,12 @@ class WalletRepositoryImpl @Inject constructor(
 
     override suspend fun upsertTransaction(transaction: WalletTransaction) {
         if (transaction.id == 0L) {
-            walletDao.insertTransaction(transaction.toEntity())
+            val newId = walletDao.insertTransaction(transaction.toEntity())
+            sync.syncTransaction(transaction.copy(id = newId))
         } else {
             walletDao.updateTransaction(transaction.toEntity())
+            sync.syncTransaction(transaction)
         }
-        sync.syncTransaction(transaction)
     }
 
     override suspend fun deleteTransaction(id: Long) {
@@ -56,11 +57,12 @@ class WalletRepositoryImpl @Inject constructor(
 
     override suspend fun upsertCategory(category: WalletCategory) {
         if (category.id == 0L) {
-            walletDao.insertCategory(category.toEntity())
+            val newId = walletDao.insertCategory(category.toEntity())
+            sync.syncCategory(category.copy(id = newId))
         } else {
             walletDao.updateCategory(category.toEntity())
+            sync.syncCategory(category)
         }
-        sync.syncCategory(category)
     }
 
     override suspend fun deleteCategory(id: Long) {

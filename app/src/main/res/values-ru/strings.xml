@@ -221,4 +221,60 @@
     <string name="budget_alert_90_title">Использовано 90 %% бюджета</string>
     <string name="budget_alert_75_title">Использовано 75 %% бюджета</string>
     <string name="budget_alert_body">Вы потратили %1$s / %2$s (%3$d %%) ежемесячного бюджета.</string>
+
+    <string name="profile_title">Профиль</string>
+    <string name="profile_signout_button">Выйти</string>
+    <string name="profile_signout_title">Выход</string>
+    <string name="profile_signout_message">Вы уверены, что хотите выйти?</string>
+    <string name="profile_signout_confirm">Выйти</string>
+    <string name="profile_sync_status">Синхронизация с облаком</string>
+    <string name="profile_sync_subtitle">Ваши данные синхронизированы с Firebase</string>
+    <string name="profile_sync_active">Активна</string>
+
+    <string name="settings_title">Настройки</string>
+    <string name="settings_section_account">Аккаунт</string>
+    <string name="settings_section_appearance">Внешний вид</string>
+    <string name="settings_section_wallet">Кошелёк</string>
+    <string name="settings_section_security">Безопасность</string>
+    <string name="settings_section_info">Информация</string>
+    <string name="settings_theme">Тема</string>
+    <string name="settings_theme_system">Системная</string>
+    <string name="settings_theme_light">Светлая</string>
+    <string name="settings_theme_dark">Тёмная</string>
+    <string name="settings_app_lock_on">Биометрическая блокировка включена</string>
+    <string name="settings_app_lock_off">Биометрическая блокировка выключена</string>
+    <string name="settings_not_signed_in">Не выполнен вход</string>
+
+    <string name="sync_title">Синхронизация</string>
+    <string name="sync_failed_title">Ошибка синхронизации</string>
+    <string name="sync_retry">Повторить</string>
+    <string name="sync_error_message">Не удалось подключиться к серверу. Проверьте соединение.</string>
+
+    <string name="delete_account_title">Удалить аккаунт</string>
+    <string name="delete_account_message">Это навсегда удалит ваш аккаунт и все данные (задачи, кошелёк, списки) из облака. Это действие нельзя отменить.</string>
+    <string name="delete_account_confirm">Удалить навсегда</string>
+    <string name="delete_account_button">Удалить аккаунт</string>
+    <string name="delete_account_deleting">Удаление…</string>
+
+    <string name="wallet_change_currency">Изменить валюту</string>
+    <string name="wallet_currency_title">Выбрать символ валюты</string>
+    <string name="wallet_currency_no_symbol">Без символа</string>
+
+    <string name="reminder_title">Напоминание</string>
+    <string name="reminder_needs_date">Сначала укажите дату и время</string>
+
+    <string name="sync_message">Синхронизация данных…</string>
+    <string name="sync_restore">Восстановление данных из облака…</string>
+    <string name="sync_upload">Загрузка локальных данных…</string>
+
+    <string name="focus_space">Ваше пространство фокуса</string>
+    <string name="empty_default">Задач пока нет.\nНажмите +, чтобы добавить!</string>
+    <string name="empty_active">Нет активных задач\nНажмите +, чтобы добавить!</string>
+    <string name="empty_completed">Ещё ничего не выполнено</string>
+    <string name="empty_search">Задачи не найдены\n«%1$s»</string>
+
+    <string name="snackbar_deleted">\"%1$s\" удалено</string>
+    <string name="snackbar_undo">Отменить</string>
+
+    <string name="alarm_permission_rationale">Разрешение на точные будильники не предоставлено. Напоминания могут быть неточными.</string>
 </resources>

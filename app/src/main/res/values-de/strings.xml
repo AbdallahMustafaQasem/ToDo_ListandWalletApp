@@ -175,8 +175,65 @@
     <string name="cd_refresh">Aktualisieren</string>
     <string name="cd_completed">Erledigt</string>
 
-    <string name="notif_mark_done">Erledigt</string>
+    <string name="notif_mark_done">Erledigt markieren</string>
     <string name="notif_open_app">App öffnen</string>
+
+    <string name="profile_title">Profil</string>
+    <string name="profile_signout_button">Abmelden</string>
+    <string name="profile_signout_title">Abmelden</string>
+    <string name="profile_signout_message">Möchten Sie sich wirklich abmelden?</string>
+    <string name="profile_signout_confirm">Abmelden</string>
+    <string name="profile_sync_status">Cloud-Synchronisation</string>
+    <string name="profile_sync_subtitle">Ihre Daten werden mit Firebase synchronisiert</string>
+    <string name="profile_sync_active">Aktiv</string>
+
+    <string name="settings_title">Einstellungen</string>
+    <string name="settings_section_account">Konto</string>
+    <string name="settings_section_appearance">Erscheinungsbild</string>
+    <string name="settings_section_wallet">Geldbörse</string>
+    <string name="settings_section_security">Sicherheit</string>
+    <string name="settings_section_info">Info</string>
+    <string name="settings_theme">Design</string>
+    <string name="settings_theme_system">System</string>
+    <string name="settings_theme_light">Hell</string>
+    <string name="settings_theme_dark">Dunkel</string>
+    <string name="settings_app_lock_on">Biometrische Sperre aktiviert</string>
+    <string name="settings_app_lock_off">Biometrische Sperre deaktiviert</string>
+    <string name="settings_not_signed_in">Nicht angemeldet</string>
+
+    <string name="sync_title">Synchronisierung</string>
+    <string name="sync_failed_title">Synchronisierung fehlgeschlagen</string>
+    <string name="sync_retry">Erneut versuchen</string>
+    <string name="sync_error_message">Server nicht erreichbar. Überprüfen Sie Ihre Verbindung.</string>
+
+    <string name="delete_account_title">Konto löschen</string>
+    <string name="delete_account_message">Dadurch werden Ihr Konto und alle Ihre Daten (Aufgaben, Geldbörse, Listen) dauerhaft aus der Cloud gelöscht. Diese Aktion kann nicht rückgängig gemacht werden.</string>
+    <string name="delete_account_confirm">Für immer löschen</string>
+    <string name="delete_account_button">Konto löschen</string>
+    <string name="delete_account_deleting">Wird gelöscht…</string>
+
+    <string name="wallet_change_currency">Währung ändern</string>
+    <string name="wallet_currency_title">Währungssymbol wählen</string>
+    <string name="wallet_currency_no_symbol">Kein Symbol</string>
+
+    <string name="reminder_title">Erinnerung</string>
+    <string name="reminder_needs_date">Zuerst Datum und Uhrzeit festlegen</string>
+
+    <string name="sync_message">Ihre Daten werden synchronisiert…</string>
+    <string name="sync_restore">Daten aus der Cloud wiederherstellen…</string>
+    <string name="sync_upload">Lokale Daten werden hochgeladen…</string>
+
+    <string name="focus_space">Ihr Fokusbereich</string>
+    <string name="empty_default">Noch keine Aufgaben.\nTippen Sie auf +, um eine hinzuzufügen!</string>
+    <string name="empty_active">Keine aktiven Aufgaben\nTippen Sie auf +, um eine hinzuzufügen!</string>
+    <string name="empty_completed">Noch nichts erledigt</string>
+    <string name="empty_search">Keine Aufgaben entsprechen\n\"%1$s\"</string>
+
+    <string name="snackbar_deleted">\"%1$s\" gelöscht</string>
+    <string name="snackbar_undo">Rückgängig</string>
+
+    <string name="alarm_permission_rationale">Berechtigung für genaue Alarme nicht erteilt. Erinnerungen könnten ungenau sein.</string>
+
     <string name="sort_creation_date">Erstellungsdatum</string>
     <string name="login_title">Willkommen zurück</string>
     <string name="login_subtitle">Melden Sie sich an, um Aufgaben und Geldbörse auf allen Geräten zu synchronisieren.</string>

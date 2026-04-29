@@ -42,13 +42,23 @@
 -keepclasseswithmembers class **$$serializer {
     kotlinx.serialization.KSerializer serializer(...);
 }
--keep,includedescriptorclasses class com.example.todoapp.**$$serializer { *; }
--keepclassmembers class com.example.todoapp.** {
+-keep,includedescriptorclasses class com.abdallah.taskvault.**$$serializer { *; }
+-keepclassmembers class com.abdallah.taskvault.** {
     *** Companion;
 }
--keepclasseswithmembers class com.example.todoapp.** {
+-keepclasseswithmembers class com.abdallah.taskvault.** {
     kotlinx.serialization.KSerializer serializer(...);
 }
+
+# ---- Google Sign-In / Play Services Auth ----
+-keep class com.google.android.gms.auth.** { *; }
+-keep class com.google.android.gms.common.** { *; }
+-keepattributes Signature
+-keepattributes *Annotation*
+
+# ---- Firebase Auth + Firestore ----
+-keep class com.google.firebase.** { *; }
+-dontwarn com.google.firebase.**
 
 # ---- Glance ----
 -keep class androidx.glance.** { *; }

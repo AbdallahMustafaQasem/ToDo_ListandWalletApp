@@ -221,4 +221,60 @@
     <string name="budget_alert_90_title">বাজেটের 90 %% ব্যবহার</string>
     <string name="budget_alert_75_title">বাজেটের 75 %% ব্যবহার</string>
     <string name="budget_alert_body">আপনি আপনার মাসিক বাজেটের %1$s / %2$s (%3$d %%) খরচ করেছেন।</string>
+
+    <string name="profile_title">প্রোফাইল</string>
+    <string name="profile_signout_button">সাইন আউট</string>
+    <string name="profile_signout_title">সাইন আউট</string>
+    <string name="profile_signout_message">আপনি কি সাইন আউট করতে চান?</string>
+    <string name="profile_signout_confirm">সাইন আউট</string>
+    <string name="profile_sync_status">ক্লাউড সিঙ্ক</string>
+    <string name="profile_sync_subtitle">আপনার ডেটা Firebase-এর সাথে সিঙ্ক করা হয়েছে</string>
+    <string name="profile_sync_active">সক্রিয়</string>
+
+    <string name="settings_title">সেটিংস</string>
+    <string name="settings_section_account">অ্যাকাউন্ট</string>
+    <string name="settings_section_appearance">চেহারা</string>
+    <string name="settings_section_wallet">ওয়ালেট</string>
+    <string name="settings_section_security">নিরাপত্তা</string>
+    <string name="settings_section_info">তথ্য</string>
+    <string name="settings_theme">থিম</string>
+    <string name="settings_theme_system">সিস্টেম</string>
+    <string name="settings_theme_light">লাইট</string>
+    <string name="settings_theme_dark">ডার্ক</string>
+    <string name="settings_app_lock_on">বায়োমেট্রিক লক সক্ষম</string>
+    <string name="settings_app_lock_off">বায়োমেট্রিক লক অক্ষম</string>
+    <string name="settings_not_signed_in">সাইন ইন করা হয়নি</string>
+
+    <string name="sync_title">সিঙ্ক হচ্ছে</string>
+    <string name="sync_failed_title">সিঙ্ক ব্যর্থ হয়েছে</string>
+    <string name="sync_retry">পুনরায় চেষ্টা করুন</string>
+    <string name="sync_error_message">সার্ভারে সংযোগ করা যায়নি। আপনার সংযোগ পরীক্ষা করুন।</string>
+
+    <string name="delete_account_title">অ্যাকাউন্ট মুছুন</string>
+    <string name="delete_account_message">এটি আপনার অ্যাকাউন্ট এবং সমস্ত ডেটা (কাজ, ওয়ালেট, তালিকা) ক্লাউড থেকে স্থায়ীভাবে মুছে ফেলবে। এই ক্রিয়া পূর্বাবস্থায় ফেরানো যাবে না।</string>
+    <string name="delete_account_confirm">চিরতরে মুছুন</string>
+    <string name="delete_account_button">অ্যাকাউন্ট মুছুন</string>
+    <string name="delete_account_deleting">মুছে ফেলা হচ্ছে…</string>
+
+    <string name="wallet_change_currency">মুদ্রা পরিবর্তন করুন</string>
+    <string name="wallet_currency_title">মুদ্রা প্রতীক বেছে নিন</string>
+    <string name="wallet_currency_no_symbol">কোনো প্রতীক নেই</string>
+
+    <string name="reminder_title">অনুস্মারক</string>
+    <string name="reminder_needs_date">প্রথমে তারিখ ও সময় নির্ধারণ করুন</string>
+
+    <string name="sync_message">আপনার ডেটা সিঙ্ক হচ্ছে…</string>
+    <string name="sync_restore">ক্লাউড থেকে ডেটা পুনরুদ্ধার হচ্ছে…</string>
+    <string name="sync_upload">স্থানীয় ডেটা আপলোড হচ্ছে…</string>
+
+    <string name="focus_space">আপনার মনোযোগ স্থান</string>
+    <string name="empty_default">এখনো কোনো কাজ নেই।\n+ চাপুন একটি যোগ করতে!</string>
+    <string name="empty_active">কোনো সক্রিয় কাজ নেই\n+ চাপুন একটি যোগ করতে!</string>
+    <string name="empty_completed">এখনো কিছু সম্পন্ন হয়নি</string>
+    <string name="empty_search">কোনো কাজ মেলেনি\n\"%1$s\"</string>
+
+    <string name="snackbar_deleted">\"%1$s\" মুছে ফেলা হয়েছে</string>
+    <string name="snackbar_undo">পূর্বাবস্থায় ফেরান</string>
+
+    <string name="alarm_permission_rationale">সঠিক অ্যালার্ম অনুমতি দেওয়া হয়নি। অনুস্মারক অনির্ভুল হতে পারে।</string>
 </resources>

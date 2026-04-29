@@ -19,6 +19,7 @@ import kotlinx.coroutines.tasks.await
 import javax.inject.Inject
 
 enum class SyncState { IDLE, SYNCING, DONE, ERROR }
+enum class SyncStep  { IDLE, RESTORE, UPLOAD }
 enum class DeleteAccountState { IDLE, DELETING, DONE, ERROR }
 
 @HiltViewModel
@@ -37,8 +38,8 @@ class AppViewModel @Inject constructor(
     private val _syncState = MutableStateFlow(SyncState.IDLE)
     val syncState: StateFlow<SyncState> = _syncState.asStateFlow()
 
-    private val _syncMessage = MutableStateFlow("Syncing your data…")
-    val syncMessage: StateFlow<String> = _syncMessage.asStateFlow()
+    private val _syncStep = MutableStateFlow(SyncStep.IDLE)
+    val syncStep: StateFlow<SyncStep> = _syncStep.asStateFlow()
 
     private val _deleteAccountState = MutableStateFlow(DeleteAccountState.IDLE)
     val deleteAccountState: StateFlow<DeleteAccountState> = _deleteAccountState.asStateFlow()
@@ -53,13 +54,13 @@ class AppViewModel @Inject constructor(
 
             try {
                 // Step 1 — pull cloud data into Room
-                _syncMessage.value = "Restoring your data from cloud…"
+                _syncStep.value = SyncStep.RESTORE
                 Log.d(TAG, "[AppViewModel] Starting restoreFromCloud()")
                 val restored = syncRepository.restoreFromCloud()
                 Log.d(TAG, "[AppViewModel] restoreFromCloud() result=$restored")
 
                 // Step 2 — push Room data to cloud (covers first-time users)
-                _syncMessage.value = "Uploading local data…"
+                _syncStep.value = SyncStep.UPLOAD
                 Log.d(TAG, "[AppViewModel] Starting syncAll()")
                 val todos        = todoRepository.getAllTodos().first()
                 val lists        = todoListRepository.getAllLists().first()
@@ -71,9 +72,11 @@ class AppViewModel @Inject constructor(
                 syncRepository.syncAll(todos, lists, transactions, categories, budget)
                 Log.d(TAG, "[AppViewModel] syncAll() complete")
 
+                _syncStep.value = SyncStep.IDLE
                 _syncState.value = SyncState.DONE
             } catch (e: Exception) {
                 Log.e(TAG, "[AppViewModel] Sync FAILED: ${e.message}", e)
+                _syncStep.value = SyncStep.IDLE
                 _syncState.value = SyncState.ERROR
             }
         }

@@ -221,4 +221,60 @@
     <string name="budget_alert_90_title">90 %% do orçamento usado</string>
     <string name="budget_alert_75_title">75 %% do orçamento usado</string>
     <string name="budget_alert_body">Você gastou %1$s / %2$s (%3$d %%) do seu orçamento mensal.</string>
+
+    <string name="profile_title">Perfil</string>
+    <string name="profile_signout_button">Sair</string>
+    <string name="profile_signout_title">Sair</string>
+    <string name="profile_signout_message">Tem certeza de que deseja sair?</string>
+    <string name="profile_signout_confirm">Sair</string>
+    <string name="profile_sync_status">Sincronização em nuvem</string>
+    <string name="profile_sync_subtitle">Seus dados estão sincronizados com Firebase</string>
+    <string name="profile_sync_active">Ativa</string>
+
+    <string name="settings_title">Configurações</string>
+    <string name="settings_section_account">Conta</string>
+    <string name="settings_section_appearance">Aparência</string>
+    <string name="settings_section_wallet">Carteira</string>
+    <string name="settings_section_security">Segurança</string>
+    <string name="settings_section_info">Informações</string>
+    <string name="settings_theme">Tema</string>
+    <string name="settings_theme_system">Sistema</string>
+    <string name="settings_theme_light">Claro</string>
+    <string name="settings_theme_dark">Escuro</string>
+    <string name="settings_app_lock_on">Bloqueio biométrico ativado</string>
+    <string name="settings_app_lock_off">Bloqueio biométrico desativado</string>
+    <string name="settings_not_signed_in">Não conectado</string>
+
+    <string name="sync_title">Sincronizando</string>
+    <string name="sync_failed_title">Falha na sincronização</string>
+    <string name="sync_retry">Tentar novamente</string>
+    <string name="sync_error_message">Não foi possível conectar ao servidor. Verifique sua conexão.</string>
+
+    <string name="delete_account_title">Excluir conta</string>
+    <string name="delete_account_message">Isso excluirá permanentemente sua conta e todos os seus dados (tarefas, carteira, listas) da nuvem. Esta ação não pode ser desfeita.</string>
+    <string name="delete_account_confirm">Excluir para sempre</string>
+    <string name="delete_account_button">Excluir conta</string>
+    <string name="delete_account_deleting">Excluindo…</string>
+
+    <string name="wallet_change_currency">Alterar moeda</string>
+    <string name="wallet_currency_title">Escolher símbolo de moeda</string>
+    <string name="wallet_currency_no_symbol">Sem símbolo</string>
+
+    <string name="reminder_title">Lembrete</string>
+    <string name="reminder_needs_date">Defina uma data e hora primeiro</string>
+
+    <string name="sync_message">Sincronizando seus dados…</string>
+    <string name="sync_restore">Restaurando seus dados da nuvem…</string>
+    <string name="sync_upload">Enviando dados locais…</string>
+
+    <string name="focus_space">Seu espaço de foco</string>
+    <string name="empty_default">Nenhuma tarefa ainda.\nToque em + para adicionar uma!</string>
+    <string name="empty_active">Nenhuma tarefa ativa\nToque em + para adicionar uma!</string>
+    <string name="empty_completed">Nada foi concluído ainda</string>
+    <string name="empty_search">Nenhuma tarefa corresponde a\n\"%1$s\"</string>
+
+    <string name="snackbar_deleted">\"%1$s\" excluído</string>
+    <string name="snackbar_undo">Desfazer</string>
+
+    <string name="alarm_permission_rationale">Permissão de alarme exato não concedida. Os lembretes podem ser imprecisos.</string>
 </resources>

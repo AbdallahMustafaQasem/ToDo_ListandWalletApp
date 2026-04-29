@@ -221,4 +221,60 @@
 
     <string name="notif_mark_done">Terminer</string>
     <string name="notif_open_app">Ouvrir l\'appli</string>
+
+    <string name="profile_title">Profil</string>
+    <string name="profile_signout_button">Se déconnecter</string>
+    <string name="profile_signout_title">Déconnexion</string>
+    <string name="profile_signout_message">Êtes-vous sûr de vouloir vous déconnecter ?</string>
+    <string name="profile_signout_confirm">Se déconnecter</string>
+    <string name="profile_sync_status">Synchronisation cloud</string>
+    <string name="profile_sync_subtitle">Vos données sont synchronisées sur Firebase</string>
+    <string name="profile_sync_active">Active</string>
+
+    <string name="settings_title">Paramètres</string>
+    <string name="settings_section_account">Compte</string>
+    <string name="settings_section_appearance">Apparence</string>
+    <string name="settings_section_wallet">Portefeuille</string>
+    <string name="settings_section_security">Sécurité</string>
+    <string name="settings_section_info">Informations</string>
+    <string name="settings_theme">Thème</string>
+    <string name="settings_theme_system">Système</string>
+    <string name="settings_theme_light">Clair</string>
+    <string name="settings_theme_dark">Sombre</string>
+    <string name="settings_app_lock_on">Verrouillage biométrique activé</string>
+    <string name="settings_app_lock_off">Verrouillage biométrique désactivé</string>
+    <string name="settings_not_signed_in">Non connecté</string>
+
+    <string name="sync_title">Synchronisation</string>
+    <string name="sync_failed_title">Échec de la synchronisation</string>
+    <string name="sync_retry">Réessayer</string>
+    <string name="sync_error_message">Impossible de joindre le serveur. Vérifiez votre connexion.</string>
+
+    <string name="delete_account_title">Supprimer le compte</string>
+    <string name="delete_account_message">Cela supprimera définitivement votre compte et toutes vos données (tâches, portefeuille, listes) du cloud. Cette action est irréversible.</string>
+    <string name="delete_account_confirm">Supprimer définitivement</string>
+    <string name="delete_account_button">Supprimer le compte</string>
+    <string name="delete_account_deleting">Suppression…</string>
+
+    <string name="wallet_change_currency">Changer de devise</string>
+    <string name="wallet_currency_title">Choisir le symbole de devise</string>
+    <string name="wallet_currency_no_symbol">Sans symbole</string>
+
+    <string name="reminder_title">Rappel</string>
+    <string name="reminder_needs_date">Définissez d\'abord une date et une heure</string>
+
+    <string name="sync_message">Synchronisation de vos données…</string>
+    <string name="sync_restore">Restauration de vos données depuis le cloud…</string>
+    <string name="sync_upload">Envoi des données locales…</string>
+
+    <string name="focus_space">Votre espace de concentration</string>
+    <string name="empty_default">Aucune tâche pour l\'instant.\nAppuyez sur + pour en ajouter !</string>
+    <string name="empty_active">Aucune tâche active\nAppuyez sur + pour en ajouter !</string>
+    <string name="empty_completed">Rien n\'a encore été terminé</string>
+    <string name="empty_search">Aucune tâche ne correspond à\n\"%1$s\"</string>
+
+    <string name="snackbar_deleted">\"%1$s\" supprimé</string>
+    <string name="snackbar_undo">Annuler</string>
+
+    <string name="alarm_permission_rationale">Permission d\'alarme exacte non accordée. Les rappels peuvent être imprécis.</string>
 </resources>
