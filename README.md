@@ -1,8 +1,8 @@
-# TaskVault — Todo & Wallet App
+# TaskVault — All-in-One Productivity App
 
-A native Android productivity application combining a full-featured **Todo manager** with a personal **Wallet / expense tracker** — built entirely in Kotlin with Jetpack Compose and Clean Architecture.
+A native Android productivity application built entirely in **Kotlin** with **Jetpack Compose** and **Clean Architecture**.
 
-Cloud sync, Google Sign-In, biometric app lock, home screen widget, reminders, and full support for **12 languages** are all included out of the box.
+TaskVault brings together todo management, a personal wallet, notes, memoirs, a password vault, habit tracking, bill reminders, contact management, and a **collaborative task assignment system** — all backed by Firebase and available in **12 languages**.
 
 ---
 
@@ -16,8 +16,8 @@ Cloud sync, Google Sign-In, biometric app lock, home screen widget, reminders, a
 6. [Data Models](#data-models)
 7. [Navigation Graph](#navigation-graph)
 8. [Firebase Setup](#firebase-setup)
-9. [Language Support](#language-support)
-10. [Notifications & Reminders](#notifications--reminders)
+9. [Push Notifications](#push-notifications)
+10. [Language Support](#language-support)
 11. [Home Screen Widget](#home-screen-widget)
 12. [Getting Started](#getting-started)
 13. [Build & Run](#build--run)
@@ -32,85 +32,133 @@ Cloud sync, Google Sign-In, biometric app lock, home screen widget, reminders, a
 
 | ID | Feature |
 |----|---------|
-| F-00 | **Google Sign-In** — one-tap authentication via Firebase Auth; all data tied to the user's account |
-| F-01 | Create todos with **title** (required), **description** (optional), **due date/time**, **priority** (None / Low / Medium / High), and **reminder** toggle |
-| F-02 | Scrollable list ordered by due date ascending; no-due-date items sort to the bottom |
-| F-03 | Tap a todo to open a pre-populated detail/edit screen |
+| F-01 | Create todos with **title**, **description**, **due date/time**, **priority** (None / Low / Medium / High), and **reminder** toggle |
+| F-02 | Scrollable list ordered by due date; no-date items sort to bottom |
+| F-03 | Tap to open a pre-populated edit screen |
 | F-04 | Update any field and save changes |
-| F-05 | Delete via swipe-to-dismiss or the Delete button; **Snackbar with Undo** appears for 4 seconds |
-| F-06 | Mark complete/incomplete via checkbox; completed items show strikethrough + reduced opacity |
-| F-07 | Filter by **All / Active / Completed** (state reset on relaunch) |
-| F-08 | Search todos by title (in-memory, on the current filtered list) |
-| F-09 | Due date stores date **and** time as epoch milliseconds |
-| F-10 | Overdue, incomplete todos are flagged with a **red due-date chip** |
-| F-11 | Date/time pickers use Material Design 3 `DatePickerDialog` / `TimePickerDialog` |
-| F-12 | **Sort Options** — sort by Creation Date / Due Date / Priority / Alphabetical (persisted in DataStore) |
-| F-13 | **Subtasks** — add, check-off, and delete sub-items for any todo; progress counter shown (e.g. `2/3`) |
-| F-14 | **Recurring Todos** — set a repeat rule: None / Daily / Weekly / Monthly |
-| F-15 | **Todo Lists / Projects** — organise todos into named, colour-coded lists; assign a list per todo |
-| F-16 | **Cloud Sync** — all todos, subtasks, lists, wallet data, and categories mirrored to Firestore in real time |
+| F-05 | Delete via swipe-to-dismiss or button; **Snackbar Undo** for 4 seconds |
+| F-06 | Mark complete/incomplete via checkbox; strikethrough + reduced opacity |
+| F-07 | Filter by **All / Active / Completed** |
+| F-08 | In-memory search by title |
+| F-09 | Overdue incomplete todos show a **red due-date chip** |
+| F-10 | **Sort** by Creation Date / Due Date / Priority / Alphabetical (persisted) |
+| F-11 | **Subtasks** — add, check-off, delete sub-items; progress counter shown (e.g. `2/3`) |
+| F-12 | **Recurring Todos** — None / Daily / Weekly / Monthly |
+| F-13 | **Todo Lists / Projects** — colour-coded named lists; assign a list per todo |
+| F-14 | **Cloud Sync** — all data mirrored to Firestore in real time |
 
 ### 🗑️ Trash / Recycle Bin
 
 - Deleted todos are soft-deleted and moved to the Trash screen.
-- Items in Trash can be **permanently deleted** or **restored** to the active list.
-- A background `TrashPurgeWorker` (WorkManager) auto-purges trash items older than 30 days.
+- Items can be **permanently deleted** or **restored**.
+- `TrashPurgeWorker` (WorkManager) auto-purges items older than 30 days.
 
 ### 📊 Statistics Screen
 
-- **Completion rate** — animated dual-ring chart.
-- **Weekly activity** — bar chart of todos completed over the last 7 days.
-- **Priority breakdown** — count by None / Low / Medium / High.
-- **Current streak** — consecutive days with at least one completion.
-- **Most productive day** — day-of-week with the highest completion count.
-- **Overdue count** — number of active past-due todos.
+- Completion rate — animated dual-ring chart.
+- Weekly activity — bar chart of completions over the last 7 days.
+- Priority breakdown — count by None / Low / Medium / High.
+- Current streak — consecutive days with at least one completion.
+- Most productive day and overdue count.
 
 ### 💰 Wallet / Expense Tracker
 
-- Log **income** and **expense** transactions with amount, category, date, and optional notes.
-- **Floating Action Button** for adding transactions — always accessible.
+- Log **income** and **expense** transactions with amount, category, date, and notes.
 - Manage **custom categories** (icon + name).
 - Set a **monthly budget** and track spending vs. budget in real time.
-- Transaction list with filter by type (All / Income / Expense).
-- **Wallet Analytics** — pie chart of expenses by category and spending-over-time bar chart.
-- **Currency symbol** — choose from a list of common currency symbols; persisted per user.
-- **Budget Alerts** — daily `BudgetAlertWorker` sends a push notification when monthly spending crosses 75 %, 90 %, and 100 % of the set budget (each threshold fires only once per calendar month).
+- Filter transactions by All / Income / Expense.
+- **Wallet Analytics** — pie chart by category and spending-over-time bar chart.
+- **Currency symbol** — choose from common symbols; persisted per user.
+- **Budget Alerts** — `BudgetAlertWorker` sends a notification when monthly spending crosses 75 %, 90 %, and 100 % of budget (each threshold fires once per calendar month).
+
+### 📝 Notes
+
+- Create rich text notes with a title and body.
+- Full-screen detail editor with auto-save.
+- List with search and date ordering.
+
+### 📖 Memoirs / Journal
+
+- Personal journal entries with title, body, and timestamp.
+- Chronological list with detail editor.
+
+### 🔐 Password Vault
+
+- Store service name, username, and encrypted password.
+- Copy credentials to clipboard.
+- Biometric-protected access.
+
+### 🏃 Habit Tracker
+
+- Define habits with a name, icon, and target frequency.
+- Check off completions per day.
+- Streak counting and progress indicator.
+
+### 🧾 Bill Reminders
+
+- Track upcoming bills with name, amount, and due date.
+- Overdue and due-soon indicators.
+- `BillReminderReceiver` fires a notification when a bill is due.
+
+### 👥 Contacts
+
+- Manage a contact list (name, user ID, avatar colour) used as quick-pick assignees in the Task Assignment flow.
+
+### 🤝 Task Assignment System
+
+A full collaborative workflow for delegating tasks to other app users.
+
+#### Assign Task (`assign`)
+- **Title**, **description**, **priority**, and **due date** fields.
+- Pick assignees from your **Contacts** list (chip selection with avatar initials).
+- Or enter any user's **UID** manually for users not in your contacts.
+- Submits to Firestore `task_assignments` collection and writes a notification document to each assignee.
+
+#### Assigned to Me (`assigned_to_me`)
+- Shows all tasks assigned to the **current user** from Firestore.
+- Filter chips: All / Pending / Accepted / In Progress / Completed / Declined.
+- Each card shows title, description, priority, due date, assigner name, and a status badge.
+- Action buttons advance the workflow:
+  - **Pending** → Accept or Decline
+  - **Accepted** → Start
+  - **In Progress** → Complete
+- Every status change writes a notification document back to the **assigner**.
+
+#### Assignment Stats (`assign_stats`)
+- Fetches all tasks the current user has **assigned to others**.
+- **3 summary cards** — Total assigned, Acceptance %, Completion %.
+- **Status breakdown** — progress bar per status showing count and proportion.
+- **Recent 5 assignments** — task name, assignees, due date, priority colour, status badge.
+
+### 🔔 Push Notifications (FCM)
+
+- **New assignment** — when a task is assigned to you, a system notification appears: *"X assigned you 'Task Name'"*.
+- **Status update** — when an assignee updates the status of your task, you receive: *"X updated 'Task Name' to IN_PROGRESS"*.
+- Powered by `MyFirebaseMessagingService` (FCM) + `AssignmentNotificationManager` (Firestore real-time listener).
+- Device FCM token saved to `users/{uid}/fcmToken` and refreshed automatically.
+- Works while the app is **open or backgrounded**. For delivery when the app is fully killed, deploy the included Firebase Cloud Functions trigger (see [Push Notifications](#push-notifications)).
 
 ### 🔒 App Lock
 
-- Optional biometric / device-credential lock screen on every app launch and resume.
-- Enabled / disabled via the **Settings → Security** toggle.
-- Uses `BiometricPrompt` with fallback to PIN / pattern / password.
-- Closing the lock prompt (back / cancel) exits the app.
+- Optional biometric / device-credential lock on every launch and resume.
+- Enabled via **Settings → Security**.
+- `BiometricPrompt` with PIN / pattern / password fallback.
+- Closing the lock prompt exits the app.
 
 ### 👤 Profile & Account
 
-- View signed-in Google account name and email.
+- View Google account name and email.
 - **Sign out** with confirmation dialog.
-- **Delete account** — permanently erases all Firestore data (todos, wallet, lists) and removes the Firebase Auth user; guarded by a confirmation dialog.
+- **Delete account** — erases all Firestore data and removes Firebase Auth user.
 
-### � Calendar View
+### 📅 Calendar View
 
-- Month grid showing all months with coloured dot indicators on days that have todos.
-- Navigate forward / backward between months.
-- Tap any day to see that day's todos beneath the grid, sorted by priority.
-- Tap a todo to open its edit screen.
+- Month grid with coloured dot indicators on days that have todos.
+- Tap a day to see that day's todos; tap a todo to edit it.
 
-### �� Notifications & Reminders
+### 📊 Analytics
 
-- Exact alarm fires at the todo's due date/time when reminder is enabled.
-- Notification shows two action buttons: **Mark Done** and **Open App**.
-- Tapping **Mark Done** marks the todo complete without opening the app.
-- Alarms survive **device reboot** via `BootReceiver`.
-- Graceful degradation to inexact alarms on API 31+ if exact-alarm permission is not granted.
-
-### 📱 Home Screen Widget
-
-- 4×2 Glance widget showing up to 5 upcoming non-completed todos.
-- Checkbox on each row marks the todo complete from the home screen.
-- **+ Add** button opens the Add Todo screen.
-- Refresh button reloads data from Room.
-- Supports light **and** dark mode.
+- Firebase Analytics screen-view tracking on every navigation event.
 
 ---
 
@@ -118,20 +166,36 @@ Cloud sync, Google Sign-In, biometric app lock, home screen widget, reminders, a
 
 | Screen | Route | Description |
 |--------|-------|-------------|
-| **Login** | *(gate)* | Google Sign-In screen shown when not authenticated |
-| **Sync** | *(gate)* | Cloud sync progress / error screen shown after sign-in |
-| **Todo List** | `home` | Main screen with search, filters, FAB, and todo list |
+| **Login** | *(gate)* | Google Sign-In; shown when not authenticated |
+| **Sync** | *(gate)* | Cloud sync progress / error after sign-in |
+| **Dashboard** | `dashboard` | Feature-grid home with summary chips |
+| **Todo List** | `home` | Search, filters, FAB, and todo list |
 | **Add Todo** | `add` | Form to create a new todo |
-| **Edit Todo** | `detail/{todoId}` | Pre-populated form to edit or delete an existing todo |
+| **Edit Todo** | `detail/{todoId}` | Pre-populated form; deep-link target |
 | **Statistics** | `statistics` | Charts and productivity stats |
-| **Trash** | `trash` | Soft-deleted todos; restore or permanently delete |
-| **Wallet** | `wallet` | Transaction list, balance summary, budget tracker with FAB |
+| **Trash** | `trash` | Restore or permanently delete soft-deleted todos |
+| **Wallet** | `wallet` | Transaction list, balance, budget tracker |
 | **Wallet Categories** | `wallet/categories` | Manage income/expense categories |
-| **Calendar** | `calendar` | Month grid with todo-day indicators and daily todo list |
-| **Lists & Projects** | `lists` | Create, edit, and delete named todo lists; assign colour and emoji icon |
-| **Settings** | `settings` | Theme, language, currency, app lock, about |
+| **Calendar** | `calendar` | Month grid with daily todo list |
+| **Lists & Projects** | `lists` | Create and manage named todo lists |
+| **Notes** | `notes` | Note list |
+| **Note Detail** | `notes/detail?noteId={id}` | Full-screen note editor |
+| **Memoirs** | `memoirs` | Journal entry list |
+| **Memoir Detail** | `memoirs/detail?memoirId={id}` | Journal editor |
+| **Passwords** | `passwords` | Password vault list |
+| **Password Detail** | `passwords/detail?passwordId={id}` | Add / edit password entry |
+| **Habits** | `habits` | Habit list with streak and progress |
+| **Habit Detail** | `habits/detail?habitId={id}` | Create / edit habit |
+| **Bills** | `bills` | Bill list with due-date indicators |
+| **Bill Detail** | `bills/detail?billId={id}` | Add / edit bill |
+| **Contacts** | `contacts` | Manage contacts used for task assignment |
+| **Assign Task** | `assign` | Assign a task to other users |
+| **Assigned to Me** | `assigned_to_me` | View and action tasks assigned to you |
+| **Assignment Stats** | `assign_stats` | Stats for tasks you have assigned |
+| **Search** | `search` | Global search across todos, notes, memoirs, passwords |
+| **Settings** | `settings` | Theme, language, currency, app lock |
 | **Profile** | `profile` | Account info, sign-out, delete account |
-| **About** | `about` | App name, version, and description |
+| **About** | `about` | App version and description |
 
 ---
 
@@ -140,30 +204,29 @@ Cloud sync, Google Sign-In, biometric app lock, home screen widget, reminders, a
 The app follows strict **Clean Architecture** with three isolated layers:
 
 ```
-┌─────────────────────────────────────────┐
-│          Presentation Layer             │
-│  Composables  ──►  ViewModel  ──►  UI State │
-│  (com.example.todoapp.ui)               │
-└────────────────────┬────────────────────┘
-                     │ uses UseCases
-┌────────────────────▼────────────────────┐
-│            Domain Layer                 │
-│  UseCases  ──►  Repository (interface)  │
-│  Todo / Wallet models, Priority enum    │
-│  (com.example.todoapp.domain)           │
-└────────────────────┬────────────────────┘
-                     │ implements
-┌────────────────────▼────────────────────┐
-│             Data Layer                  │
-│  RepositoryImpl ──► DAO ──► Room DB     │
-│  AlarmScheduler, Workers, Preferences   │
-│  (com.example.todoapp.data)             │
-└─────────────────────────────────────────┘
+┌────────────────────────────────────────────┐
+│           Presentation Layer               │
+│  Composables  ──►  ViewModel  ──►  UiState │
+│  (com.abdallah.taskvault.ui)               │
+└─────────────────────┬──────────────────────┘
+                      │ uses
+┌─────────────────────▼──────────────────────┐
+│              Domain Layer                  │
+│  Repository interfaces + Domain models     │
+│  (com.abdallah.taskvault.domain)           │
+└─────────────────────┬──────────────────────┘
+                      │ implements
+┌─────────────────────▼──────────────────────┐
+│               Data Layer                   │
+│  RepositoryImpl ──► DAO ──► Room DB        │
+│  Firebase Firestore, FCM, WorkManager      │
+│  (com.abdallah.taskvault.data)             │
+└────────────────────────────────────────────┘
 ```
 
-- **Domain layer** has **zero Android framework imports** — pure Kotlin only.
+- **Domain layer** has zero Android framework imports — pure Kotlin only.
 - All database I/O runs on `Dispatchers.IO`.
-- Repository exposes `Flow<List<T>>` for reactive UI updates.
+- Repositories expose `Flow<List<T>>` for reactive UI updates.
 - ViewModels use `viewModelScope` and `stateIn` to convert flows to `StateFlow`.
 - No `LiveData` — `StateFlow` and `SharedFlow` only.
 
@@ -174,160 +237,165 @@ The app follows strict **Clean Architecture** with three isolated layers:
 ```
 com.abdallah.taskvault
 │
-├── TaskVaultApplication.kt      ─ Hilt app, notification channel init
-├── MainActivity.kt              ─ Single-activity host; handles language, theme, app lock
+├── MainActivity.kt              ─ Single-activity host; language, theme, app lock, FCM listener
+├── TodoApplication.kt           ─ Hilt app entry point
 │
 ├── di/
-│   ├── AppModule.kt             ─ DB, DAO, AlarmManager, NotificationManager
+│   ├── AppModule.kt             ─ DB, DAOs, AlarmManager, NotificationManager (2 channels)
 │   ├── FirebaseModule.kt        ─ FirebaseAuth, FirebaseFirestore
-│   ├── RepositoryModule.kt      ─ Binds Impl → Interface
+│   ├── RepositoryModule.kt      ─ Binds Impl → Interface for all repositories
 │   └── PreferencesModule.kt     ─ DataStore / UserPreferences
 │
 ├── data/
 │   ├── local/
 │   │   ├── TodoDatabase.kt
-│   │   ├── TodoDao.kt / SubtaskDao.kt / TodoListDao.kt
-│   │   ├── WalletDao.kt
-│   │   ├── TodoEntity.kt / SubtaskEntity.kt / TodoListEntity.kt
-│   │   ├── WalletTransactionEntity.kt
-│   │   ├── WalletCategoryEntity.kt
-│   │   ├── WalletBudgetEntity.kt
-│   │   └── converter/  (PriorityConverter, TransactionTypeConverter)
-│   ├── mapper/
-│   │   ├── TodoMapper.kt
-│   │   └── WalletMapper.kt
+│   │   ├── TodoDao / SubtaskDao / TodoListDao / WalletDao
+│   │   ├── NoteDao / MemoirDao / PasswordDao
+│   │   ├── HabitDao / BillDao / ContactDao
+│   │   └── Entities + converters
 │   ├── repository/
 │   │   ├── TodoRepositoryImpl.kt
 │   │   ├── WalletRepositoryImpl.kt
+│   │   ├── NoteRepositoryImpl.kt
+│   │   ├── MemoirRepositoryImpl.kt
+│   │   ├── PasswordRepositoryImpl.kt
+│   │   ├── HabitRepositoryImpl.kt
+│   │   ├── BillRepositoryImpl.kt
+│   │   ├── ContactRepositoryImpl.kt
+│   │   ├── TaskAssignmentRepositoryImpl.kt  ─ Firestore-backed; writes notifications on assign + status change
 │   │   └── FirebaseAuthRepositoryImpl.kt
 │   ├── sync/
-│   │   └── FirebaseSyncRepository.kt  ─ Mirrors all CRUD to Firestore under users/{uid}/
+│   │   └── FirebaseSyncRepository.kt        ─ Mirrors Room data to Firestore on sign-in
 │   ├── alarm/
-│   │   ├── AlarmScheduler.kt          ─ Interface
-│   │   └── AlarmSchedulerImpl.kt      ─ AlarmManager-backed impl
+│   │   ├── AlarmScheduler.kt
+│   │   └── AlarmSchedulerImpl.kt
 │   ├── worker/
-│   │   ├── ReminderWorker.kt          ─ Fallback / boot reschedule
-│   │   ├── TrashPurgeWorker.kt        ─ Auto-purge trash items > 30 days
-│   │   └── BudgetAlertWorker.kt       ─ Daily budget threshold notifications
+│   │   ├── TrashPurgeWorker.kt
+│   │   └── BudgetAlertWorker.kt
 │   └── preferences/
 │       └── UserPreferencesRepository.kt
 │
 ├── domain/
-│   ├── model/  (Todo, Priority, WalletTransaction, WalletCategory, WalletBudget, TransactionType)
-│   ├── repository/  (TodoRepository, WalletRepository, AuthRepository, TodoListRepository)
-│   └── usecase/  (GetAll, GetById, Add, Update, Delete, Toggle, Restore, PermanentlyDelete)
+│   ├── model/
+│   │   ├── Todo, Priority, SubTask, TodoList
+│   │   ├── WalletTransaction, WalletCategory, WalletBudget, TransactionType
+│   │   ├── Note, Memoir, Password, Habit, Bill, Contact
+│   │   └── TaskAssignment, AssignmentStatus
+│   ├── repository/   (interface per domain)
+│   └── usecase/      (GetAll, Add, Update, Delete, Toggle, Restore…)
+│
+├── service/
+│   ├── MyFirebaseMessagingService.kt        ─ FCM token refresh + displays push notifications
+│   └── AssignmentNotificationManager.kt     ─ Firestore real-time listener → local notifications
 │
 ├── ui/
 │   ├── AppViewModel.kt          ─ Auth state, sync orchestration, account deletion
 │   ├── navigation/  (NavGraph.kt, Screen.kt)
-│   ├── theme/  (Color.kt, Theme.kt, Type.kt)
-│   ├── auth/
-│   │   ├── LoginScreen.kt / AuthViewModel.kt
-│   │   ├── SyncScreen.kt
-│   │   └── ProfileScreen.kt
-│   ├── settings/
-│   │   ├── SettingsScreen.kt
-│   │   └── SettingsViewModel.kt
-│   ├── todolist/
-│   │   ├── TodoListScreen.kt / TodoListViewModel.kt / TodoListUiState.kt
-│   │   └── components/  (TodoItem.kt, FilterChipsRow.kt, EmptyStateView.kt)
-│   ├── addedit/  (AddEditTodoScreen.kt, AddEditTodoViewModel.kt)
-│   ├── statistics/  (StatisticsScreen.kt, StatisticsViewModel.kt)
-│   ├── trash/  (TrashScreen.kt)
-│   ├── calendar/  (CalendarScreen.kt, CalendarViewModel.kt)
-│   ├── lists/  (TodoListsScreen.kt, TodoListsViewModel.kt)
-│   ├── about/  (AboutScreen.kt)
-│   ├── applock/  (AppLockScreen.kt)
-│   └── wallet/
-│       ├── WalletScreen.kt / WalletViewModel.kt
-│       └── WalletCategoriesScreen.kt
+│   ├── theme/       (Color, Theme, Type)
+│   ├── dashboard/   (DashboardScreen, DashboardViewModel)
+│   ├── auth/        (LoginScreen, SyncScreen, ProfileScreen)
+│   ├── settings/    (SettingsScreen, SettingsViewModel)
+│   ├── todolist/    (TodoListScreen, TodoListViewModel, components/)
+│   ├── addedit/     (AddEditTodoScreen, AddEditTodoViewModel)
+│   ├── statistics/  (StatisticsScreen, StatisticsViewModel)
+│   ├── trash/       (TrashScreen)
+│   ├── calendar/    (CalendarScreen, CalendarViewModel)
+│   ├── lists/       (TodoListsScreen, TodoListsViewModel)
+│   ├── wallet/      (WalletScreen, WalletViewModel, WalletCategoriesScreen)
+│   ├── notes/       (NoteListScreen, NoteDetailScreen, NoteViewModel)
+│   ├── memoirs/     (MemoirListScreen, MemoirDetailScreen, MemoirViewModel)
+│   ├── passwords/   (PasswordListScreen, PasswordDetailScreen, PasswordViewModel)
+│   ├── habits/      (HabitListScreen, HabitDetailScreen, HabitViewModel)
+│   ├── bills/       (BillListScreen, BillDetailScreen, BillViewModel)
+│   ├── contacts/    (ContactListScreen, ContactViewModel)
+│   ├── assign/
+│   │   ├── TaskAssignmentScreen.kt + ViewModel   ─ Assign task to others
+│   │   ├── AssignedToMeScreen.kt + ViewModel     ─ View & action tasks assigned to you
+│   │   └── AssignmentStatsScreen.kt + ViewModel  ─ Stats for tasks you assigned
+│   ├── search/      (SearchScreen, SearchViewModel)
+│   ├── about/       (AboutScreen)
+│   └── applock/     (AppLockScreen)
+│
+├── analytics/
+│   └── AnalyticsHelper + AnalyticsEntryPoint    ─ Firebase Analytics screen tracking
 │
 ├── widget/
-│   ├── TodoWidget.kt               ─ GlanceAppWidget subclass
-│   ├── TodoWidgetReceiver.kt       ─ GlanceAppWidgetReceiver
+│   ├── TodoWidget.kt / TodoWidgetReceiver.kt
 │   └── TodoWidgetStateDefinition.kt
 │
 └── receiver/
-    ├── ReminderBroadcastReceiver.kt    ─ Fires notification on alarm
-    ├── BootReceiver.kt                 ─ BOOT_COMPLETED → reschedule alarms
-    └── NotificationActionReceiver.kt   ─ Handles "Mark Done" from notification
+    ├── ReminderBroadcastReceiver.kt
+    ├── BillReminderReceiver.kt
+    ├── BootReceiver.kt
+    └── NotificationActionReceiver.kt
 ```
 
 ---
 
 ## Tech Stack
 
-| Category | Library / Tool | Version |
-|----------|---------------|---------|
-| Language | Kotlin | 2.0.0 |
-| UI | Jetpack Compose + Material Design 3 | BOM 2024.06.00 |
-| DI | Hilt (Dagger) | 2.51.1 |
-| Database | Room | 2.6.1 |
-| Navigation | Jetpack Navigation Compose | 2.7.7 |
-| Async | Kotlin Coroutines + Flow | 1.8.1 |
-| Auth | Firebase Authentication (Google Sign-In) | Latest |
-| Cloud DB | Firebase Firestore | Latest |
-| Widget | Jetpack Glance | 1.1.0 |
-| Background work | WorkManager | 2.9.0 |
-| Preferences | DataStore Preferences | 1.1.1 |
-| Serialization | kotlinx.serialization JSON | 1.7.1 |
-| Annotation processing | KSP | 2.0.0-1.0.22 |
-| Build system | Gradle Kotlin DSL | AGP 8.5.0 |
-| Min SDK | Android 8.0 (API 26) | — |
-| Target / Compile SDK | Android 36 | — |
-| JVM target | Java 11 | — |
+| Category | Library / Tool |
+|----------|---------------|
+| Language | Kotlin 2.0+ |
+| UI | Jetpack Compose + Material Design 3 |
+| DI | Hilt (Dagger) |
+| Database | Room |
+| Navigation | Jetpack Navigation Compose |
+| Async | Kotlin Coroutines + Flow |
+| Auth | Firebase Authentication (Google Sign-In) |
+| Cloud DB | Firebase Firestore |
+| Push | Firebase Cloud Messaging (FCM) |
+| Widget | Jetpack Glance |
+| Background | WorkManager |
+| Preferences | DataStore Preferences |
+| Serialization | kotlinx.serialization JSON |
+| Annotation processing | KSP |
+| Build system | Gradle Kotlin DSL |
+| Min SDK | Android 8.0 (API 26) |
+| Target / Compile SDK | Android 36 |
+| JVM target | Java 11 |
 
 ---
 
 ## Data Models
+
+### `TaskAssignment` (Domain / Firestore)
+
+```kotlin
+data class TaskAssignment(
+    val id: String = "",
+    val title: String,
+    val description: String = "",
+    val priority: Priority = Priority.NONE,
+    val dueDateMillis: Long? = null,
+    val assignerId: String,
+    val assignerName: String,
+    val assigneeIds: List<String>,
+    val assigneeNames: List<String>,
+    val status: AssignmentStatus = AssignmentStatus.PENDING,
+    val createdAtMillis: Long = System.currentTimeMillis()
+)
+
+enum class AssignmentStatus {
+    PENDING, ACCEPTED, IN_PROGRESS, COMPLETED, DECLINED
+}
+```
 
 ### `TodoEntity` (Room)
 
 ```kotlin
 @Entity(tableName = "todos")
 data class TodoEntity(
-    val id: Long = 0,               // Auto-generated primary key
-    val title: String,              // Required, max 100 chars
-    val description: String = "",   // Optional, max 500 chars
+    val id: Long = 0,
+    val title: String,
+    val description: String = "",
     val isCompleted: Boolean = false,
-    val isDeleted: Boolean = false,  // Soft-delete flag (Trash)
-    val dueDateMillis: Long? = null, // Epoch ms; null = no due date
+    val isDeleted: Boolean = false,
+    val dueDateMillis: Long? = null,
     val priority: Priority = Priority.NONE,
     val reminderEnabled: Boolean = false,
     val createdAtMillis: Long,
     val updatedAtMillis: Long
-)
-```
-
-### `Priority` Enum (Domain)
-
-```kotlin
-enum class Priority { NONE, LOW, MEDIUM, HIGH }
-```
-
-Stored in Room via `PriorityConverter` (String ↔ enum).
-
-### `WalletTransaction` (Domain)
-
-```kotlin
-data class WalletTransaction(
-    val id: Long = 0,
-    val type: TransactionType,  // INCOME | EXPENSE
-    val amount: Double,
-    val categoryId: Long?,
-    val categoryName: String,
-    val categoryIcon: String,
-    val dateMillis: Long,
-    val notes: String = ""
-)
-```
-
-### `WalletBudget` (Domain)
-
-```kotlin
-data class WalletBudget(
-    val id: Long = 1,
-    val monthlyBudget: Double
 )
 ```
 
@@ -338,8 +406,9 @@ data class WalletBudget(
 ```
 MainActivity (gates)
 ├── LoginScreen             ─ shown when currentUser == null
-├── SyncScreen              ─ shown during / after first sign-in sync
-└── NavGraph (startDestination = home)
+├── SyncScreen              ─ shown during first sign-in sync
+└── NavGraph (startDestination = dashboard)
+    ├── dashboard               ─ DashboardScreen
     ├── home                    ─ TodoListScreen
     ├── add                     ─ AddEditTodoScreen (new)
     ├── detail/{todoId}         ─ AddEditTodoScreen (edit) + deep link
@@ -349,48 +418,125 @@ MainActivity (gates)
     ├── wallet/categories       ─ WalletCategoriesScreen
     ├── calendar                ─ CalendarScreen
     ├── lists                   ─ TodoListsScreen
+    ├── notes                   ─ NoteListScreen
+    ├── notes/detail?noteId={}  ─ NoteDetailScreen
+    ├── memoirs                 ─ MemoirListScreen
+    ├── memoirs/detail?…        ─ MemoirDetailScreen
+    ├── passwords               ─ PasswordListScreen
+    ├── passwords/detail?…      ─ PasswordDetailScreen
+    ├── habits                  ─ HabitListScreen
+    ├── habits/detail?…         ─ HabitDetailScreen
+    ├── bills                   ─ BillListScreen
+    ├── bills/detail?…          ─ BillDetailScreen
+    ├── contacts                ─ ContactListScreen
+    ├── assign                  ─ TaskAssignmentScreen
+    ├── assigned_to_me          ─ AssignedToMeScreen
+    ├── assign_stats            ─ AssignmentStatsScreen
+    ├── search                  ─ SearchScreen
     ├── settings                ─ SettingsScreen
     ├── profile                 ─ ProfileScreen
     └── about                   ─ AboutScreen
 ```
 
-Deep links into `detail/{todoId}` are handled from notification `PendingIntent` using the URI pattern `todoapp://detail/{todoId}`.
-
-Screen transitions use slide + fade animations (300 ms).
+Screen transitions use slide + fade animations (300 ms). Deep links into `detail/{todoId}` use the URI pattern `todoapp://detail/{todoId}`.
 
 ---
 
 ## Firebase Setup
 
-> The app requires a Firebase project to build and run cloud features.
+> The app requires a Firebase project to build and run.
 
 1. Create a project at [console.firebase.google.com](https://console.firebase.google.com).
 2. Add an **Android app** with package name `com.abdallah.taskvault`.
 3. Enable **Google Sign-In** under *Authentication → Sign-in method*.
 4. Enable **Cloud Firestore** (start in test mode during development).
-5. Add your debug **SHA-1** fingerprint under *Project Settings → Your apps*:
+5. Enable **Firebase Cloud Messaging** under *Project Settings → Cloud Messaging*.
+6. Add your debug **SHA-1** fingerprint under *Project Settings → Your apps*:
    ```bash
    ./gradlew signingReport
    ```
-6. Download `google-services.json` and place it in the `app/` directory.
+7. Download `google-services.json` and place it in the `app/` directory.
 
 ### Firestore Data Structure
 
 ```
+task_assignments/{assignmentId}/
+  ├── title, description, priority, dueDateMillis
+  ├── assignerId, assignerName
+  ├── assigneeIds[], assigneeNames[]
+  ├── status, createdAtMillis
+
 users/{uid}/
-  ├── todos/           ─ TodoEntity documents
-  ├── subtasks/        ─ SubtaskEntity documents
-  ├── todoLists/       ─ TodoListEntity documents
-  ├── transactions/    ─ WalletTransactionEntity documents
-  ├── categories/      ─ WalletCategoryEntity documents
-  └── budget/          ─ WalletBudgetEntity document
+  ├── fcmToken                   ─ device push token (saved on login / token refresh)
+  ├── todos/                     ─ TodoEntity documents
+  ├── subtasks/                  ─ SubtaskEntity documents
+  ├── todoLists/                 ─ TodoListEntity documents
+  ├── transactions/              ─ WalletTransactionEntity documents
+  ├── categories/                ─ WalletCategoryEntity documents
+  ├── budget/                    ─ WalletBudgetEntity document
+  └── notifications/{id}/
+        ├── type                 ─ "task_assigned" | "status_updated"
+        ├── title                ─ task title
+        ├── fromName, fromId     ─ sender
+        ├── assignmentId
+        ├── newStatus            ─ (status_updated only)
+        ├── read                 ─ false → shown, then marked true
+        └── timestamp
 ```
+
+---
+
+## Push Notifications
+
+The app uses two mechanisms together:
+
+### 1 — Firestore Real-Time Listener (foreground + backgrounded app)
+
+`AssignmentNotificationManager` starts listening on `users/{uid}/notifications` the moment the user logs in. Any new unread document triggers a local system notification immediately.
+
+| Trigger | Who receives | Notification text |
+|---------|-------------|-------------------|
+| Task assigned via `assignTask()` | Each **assignee** | *"X assigned you 'Task Name'"* |
+| Status updated via `updateStatus()` | The **assigner** | *"X updated 'Task Name' to IN_PROGRESS"* |
+
+### 2 — Firebase Cloud Messaging (killed app)
+
+`MyFirebaseMessagingService` handles incoming FCM data payloads and shows a system notification.
+
+To deliver push when the app is fully killed, deploy a **Firebase Cloud Function** that triggers on new documents in `users/{uid}/notifications` and sends an FCM message to the stored `fcmToken`. Example trigger (Node.js):
+
+```js
+exports.onNewNotification = functions.firestore
+  .document("users/{uid}/notifications/{notifId}")
+  .onCreate(async (snap, context) => {
+    const uid = context.params.uid;
+    const data = snap.data();
+    const userDoc = await admin.firestore().doc(`users/${uid}`).get();
+    const token = userDoc.data()?.fcmToken;
+    if (!token) return;
+    await admin.messaging().send({
+      token,
+      data: {
+        type: data.type,
+        title: data.title,
+        body: `${data.fromName} — ${data.title}`,
+      },
+    });
+  });
+```
+
+### Notification Channels
+
+| Channel ID | Name | Purpose |
+|------------|------|---------|
+| `todo_reminders` | Todo Reminders | Due-date alarm notifications |
+| `task_assignments` | Task Assignments | Assignment and status-update notifications |
 
 ---
 
 ## Language Support
 
-The app ships with **12 fully localised languages**. Every user-facing string is translated — including UI labels, empty states, dialogs, notifications, sync messages, and error strings.
+Every user-facing string is fully localised across **12 languages**, including UI labels, empty states, dialogs, notifications, error strings, and all assignment/notification copy.
 
 | Code | Language |
 |------|----------|
@@ -411,41 +557,6 @@ Language is selectable at runtime from **Settings → Language** without restart
 
 ---
 
-## Notifications & Reminders
-
-### Alarm Strategy
-
-- Uses `AlarmManager.setExactAndAllowWhileIdle()` for scheduling.
-- Alarm ID = `todo.id.toInt()` (unique per todo).
-- On API 31+: checks `canScheduleExactAlarms()`; falls back to `setAndAllowWhileIdle()` (inexact) with an in-app Snackbar warning.
-- `PendingIntent` flags: `FLAG_UPDATE_CURRENT | FLAG_IMMUTABLE`.
-- Rescheduled or cancelled whenever due date / reminder toggle changes.
-
-### Notification Channel
-
-| Property | Value |
-|----------|-------|
-| Channel ID | `"todo_reminders"` |
-| Name | `"Todo Reminders"` |
-| Importance | `IMPORTANCE_HIGH` |
-| Sound | Default |
-| Vibration | Enabled |
-
-### Notification Structure
-
-```
-Title:   <todo title>
-Body:    <todo description> or "No description added."
-Actions: [Mark Done]  →  marks complete (no app open)
-         [Open App]   →  deep-links to detail/{todoId}
-```
-
-### Boot Rescheduling
-
-`BootReceiver` listens for `BOOT_COMPLETED` and `LOCKED_BOOT_COMPLETED`, queries all active reminders (`reminderEnabled = true`, `isCompleted = false`, `dueDateMillis > now`), and reschedules each alarm using `AlarmSchedulerImpl`.
-
----
-
 ## Home Screen Widget
 
 Built with **Jetpack Glance** (no manual `RemoteViews`).
@@ -453,11 +564,8 @@ Built with **Jetpack Glance** (no manual `RemoteViews`).
 | Property | Value |
 |----------|-------|
 | Size | 4×2 cells (min 250×110 dp), resizable |
-| Data source | Room DB via DataStore-backed `GlanceStateDefinition` |
-| Update trigger | Programmatic (`TodoWidget.updateAll(context)`) |
-| Theme | Respects system light/dark mode |
-
-### Widget Layout
+| Data source | Room DB via `GlanceStateDefinition` |
+| Theme | Respects system light / dark mode |
 
 ```
 ┌──────────────────────────────────────┐
@@ -465,20 +573,18 @@ Built with **Jetpack Glance** (no manual `RemoteViews`).
 ├──────────────────────────────────────┤
 │  [ ] Buy groceries    — Tomorrow     │
 │  [ ] Call dentist     — Overdue      │
-│  [ ] Read book        — No date      │  ← up to 5 rows
+│  [ ] Read book        — No date      │
 ├──────────────────────────────────────┤
 │              [+ Add Todo]            │
 └──────────────────────────────────────┘
 ```
 
-### Widget Interactions
-
 | Element | Action |
 |---------|--------|
-| Row checkbox | `ActionCallback` → `ToggleTodoCompletionUseCase` → widget refresh |
-| Todo row tap | Opens app to `detail/{todoId}` |
-| + Add button | Opens app to Add Todo screen |
-| Refresh icon | Reloads state from DB and re-renders |
+| Row checkbox | Marks todo complete; widget refreshes |
+| Todo row tap | Opens `detail/{todoId}` |
+| + Add button | Opens Add Todo screen |
+| Refresh icon | Reloads from DB |
 
 ---
 
@@ -488,8 +594,8 @@ Built with **Jetpack Glance** (no manual `RemoteViews`).
 
 - Android Studio Hedgehog (2023.1.1) or newer
 - JDK 11+
-- Android SDK with API 36 installed
-- A Firebase project with `google-services.json` placed in `app/` (see [Firebase Setup](#firebase-setup))
+- Android SDK API 36
+- A Firebase project with `google-services.json` in `app/` (see [Firebase Setup](#firebase-setup))
 
 ### Clone
 
@@ -500,45 +606,30 @@ cd TODoApp
 
 ### Open in Android Studio
 
-`File → Open` → select the `TODoApp` folder.
-
-Android Studio will sync Gradle automatically.
+`File → Open` → select the `TODoApp` folder. Gradle syncs automatically.
 
 ---
 
 ## Build & Run
 
-**Debug build:**
-
 ```bash
+# Debug build
 ./gradlew assembleDebug
-```
 
-**Release build** (requires signing config):
-
-```bash
+# Release build (requires signing config)
 ./gradlew assembleRelease
-```
 
-**Install on connected device:**
-
-```bash
+# Install on connected device
 ./gradlew installDebug
-```
 
-**Run unit tests:**
-
-```bash
+# Unit tests
 ./gradlew test
-```
 
-**Run instrumented tests:**
-
-```bash
+# Instrumented tests
 ./gradlew connectedAndroidTest
 ```
 
-> **Note:** The Room schema is exported to `app/schemas/`. Commit this directory to track database migrations.
+> Room schema files are exported to `app/schemas/`. Commit this directory to track migrations.
 
 ---
 
@@ -549,7 +640,7 @@ Android Studio will sync Gradle automatically.
 | `RECEIVE_BOOT_COMPLETED` | Reschedule alarms after device reboot |
 | `SCHEDULE_EXACT_ALARM` | Exact alarm for reminders (API 31+) |
 | `USE_EXACT_ALARM` | Exact alarm without user approval (API 33+) |
-| `POST_NOTIFICATIONS` | Show reminder notifications (API 33+, runtime) |
+| `POST_NOTIFICATIONS` | Show notifications (API 33+, runtime prompt) |
 | `VIBRATE` | Notification vibration |
 
 ---
@@ -558,13 +649,15 @@ Android Studio will sync Gradle automatically.
 
 | ID | Note |
 |----|------|
-| NF-01 | App does not crash on cold start. Room migration support is in place (`exportSchema = true`). |
-| NF-02 | All database and IO operations run off the main thread. `StrictMode` is enabled in debug builds. |
-| NF-03 | Compose recompositions are minimized via `remember`, `derivedStateOf`, and stable data classes. |
-| NF-04 | The widget never performs direct DB access on the main thread; all loading goes through a coroutine scope in `GlanceAppWidget.provideGlance`. |
-| NF-05 | ProGuard/R8 rules are configured for Room, Hilt, and kotlinx.serialization. |
+| NF-01 | Room migration support in place (`exportSchema = true`); no crash on cold start. |
+| NF-02 | All DB and IO operations run off the main thread. |
+| NF-03 | Compose recompositions minimised via `remember`, `derivedStateOf`, and stable data classes. |
+| NF-04 | Widget never performs DB access on the main thread; all loading goes through a coroutine scope in `GlanceAppWidget.provideGlance`. |
+| NF-05 | ProGuard/R8 rules configured for Room, Hilt, and kotlinx.serialization. |
 | NF-06 | Domain layer has zero Android imports — all use cases are unit-testable without Robolectric. |
-| NF-07 | Kotlin 2.0+ with the Compose compiler plugin; no separate `kotlinCompilerExtensionVersion` needed. |
+| NF-07 | FCM token is refreshed automatically via `MyFirebaseMessagingService.onNewToken()` and saved to Firestore. |
+| NF-08 | Firestore notification documents are marked `read = true` immediately after display to prevent duplicate notifications. |
+| NF-09 | `AssignmentNotificationManager` skips the first Firestore snapshot to avoid re-showing already-seen notifications on app start. |
 
 ---
 
