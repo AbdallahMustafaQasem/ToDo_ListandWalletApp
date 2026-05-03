@@ -11,6 +11,7 @@
     <string name="more">और</string>
     <string name="sort">क्रम</string>
     <string name="add">जोड़ें</string>
+    <string name="edit">संपादित करें</string>
 
     <string name="title_my_todos">मेरे कार्य</string>
     <string name="search_placeholder">कार्य खोजें…</string>
@@ -143,7 +144,26 @@
 
     <string name="about_title">जानकारी</string>
     <string name="about_version">संस्करण 2.0</string>
-    <string name="about_description">Jetpack Compose, Material Design 3, क्लीन आर्किटेक्चर और DataStore से बना एक सुंदर, एनिमेटेड टूडू ऐप।</string>
+    <string name="about_tagline">आपका ऑल-इन-वन प्रोडक्टिविटी साथी</string>
+    <string name="about_description">TaskVault आपको संगठित रहने में मदद करता है — शक्तिशाली टास्क प्रबंधन, सुरक्षित नोट्स, व्यक्तिगत मेमोइर, पासवर्ड स्टोरेज, आदत ट्रैकिंग, बिल रिमाइंडर और पूर्ण वॉलेट — Material Design 3 से सुंदर बनाया गया।</string>
+    <string name="about_features_title">आप क्या कर सकते हैं</string>
+    <string name="about_feature_tasks">सब-टास्क, प्राथमिकता और रिमाइंडर वाले टास्क</string>
+    <string name="about_feature_notes">समृद्ध सामग्री वाले सुरक्षित नोट्स</string>
+    <string name="about_feature_memoirs">मूड ट्रैकिंग वाले व्यक्तिगत मेमोइर</string>
+    <string name="about_feature_passwords">जेनरेटर वाला पासवर्ड वॉल्ट</string>
+    <string name="about_feature_wallet">बजट और श्रेणी वाला वॉलेट</string>
+    <string name="about_feature_habits">स्ट्रीक वाला दैनिक आदत ट्रैकर</string>
+    <string name="about_feature_bills">नोटिफिकेशन वाले बिल रिमाइंडर</string>
+    <string name="about_feature_sync">Firebase क्लाउड सिंक</string>
+    <string name="about_enjoying">TaskVault पसंद आ रहा है?</string>
+    <string name="about_rate">रेट करें</string>
+    <string name="about_share">ऐप शेयर करें</string>
+    <string name="about_share_message">TaskVault देखें — एक शानदार प्रोडक्टिविटी ऐप! %1$s</string>
+    <string name="about_share_via">इसके द्वारा शेयर करें</string>
+    <string name="about_built_with">बनाया गया</string>
+    <string name="about_developer_label">डेवलपर</string>
+    <string name="about_developer_name">Abdallah Mustafa</string>
+    <string name="about_footer">❤ और Kotlin से बनाया गया</string>
 
     <string name="day_sun">रवि</string>
     <string name="day_mon">सोम</string>
@@ -230,6 +250,10 @@
     <string name="profile_sync_status">क्लाउड सिंक</string>
     <string name="profile_sync_subtitle">आपका डेटा Firebase से सिंक है</string>
     <string name="profile_sync_active">सक्रिय</string>
+    <string name="profile_user_id">आपका यूजर आईडी</string>
+    <string name="profile_copy_id">आईडी कॉपी करें</string>
+    <string name="profile_id_copied">यूजर आईडी कॉपी हो गया</string>
+    <string name="profile_user_id_hint">इस आईडी को साझा करें ताकि अन्य लोग आपको संपर्क के रूप में जोड़ सकें और आपको कार्य सौंप सकें</string>
 
     <string name="settings_title">सेटिंग्स</string>
     <string name="settings_section_account">खाता</string>
@@ -277,4 +301,185 @@
     <string name="snackbar_undo">पूर्ववत करें</string>
 
     <string name="alarm_permission_rationale">सटीक अलार्म अनुमति नहीं दी गई। अनुस्मारक सटीक नहीं हो सकते।</string>
+
+    <!-- Dashboard -->
+    <string name="dashboard_greeting_morning">सुप्रभात,</string>
+    <string name="dashboard_greeting_afternoon">नमस्ते,</string>
+    <string name="dashboard_greeting_evening">शुभ संध्या,</string>
+    <string name="dashboard_greeting_night">शुभ रात्रि,</string>
+    <string name="dashboard_features_title">सुविधाएँ</string>
+    <string name="dashboard_feature_tasks">कार्य</string>
+    <string name="dashboard_tasks_subtitle">%1$d सक्रिय</string>
+    <string name="dashboard_feature_notes">नोट्स</string>
+    <string name="dashboard_notes_subtitle">%1$d सहेजे</string>
+    <string name="dashboard_feature_memoirs">संस्मरण</string>
+    <string name="dashboard_memoirs_subtitle">%1$d प्रविष्टियाँ</string>
+    <string name="dashboard_wallet_subtitle">वित्त ट्रैक करें</string>
+    <string name="dashboard_calendar_subtitle">शेड्यूल देखें</string>
+    <string name="dashboard_stats_subtitle">प्रगति देखें</string>
+    <string name="dashboard_tasks_count">%1$d कार्य</string>
+    <string name="dashboard_notes_count">%1$d नोट्स</string>
+    <string name="dashboard_memoirs_count">%1$d संस्मरण</string>
+
+    <!-- Notes -->
+    <string name="notes_title">नोट्स</string>
+    <string name="notes_search_placeholder">नोट्स खोजें…</string>
+    <string name="notes_fab_new">नया नोट</string>
+    <string name="notes_empty_default">अभी कोई नोट नहीं\n+ दबाएँ बनाने के लिए</string>
+    <string name="notes_empty_search">कोई नोट नहीं मिला</string>
+    <string name="note_detail_title">नोट</string>
+    <string name="note_field_title_placeholder">शीर्षक</string>
+    <string name="note_field_content_placeholder">लिखना शुरू करें…</string>
+    <string name="note_color_label">रंग</string>
+    <string name="note_pin">पिन करें</string>
+    <string name="note_unpin">अनपिन करें</string>
+
+    <!-- Memoirs -->
+    <string name="memoirs_title">संस्मरण</string>
+    <string name="memoirs_search_placeholder">संस्मरण खोजें…</string>
+    <string name="memoirs_fab_new">नया संस्मरण</string>
+    <string name="memoirs_empty_default">अभी कोई संस्मरण नहीं\n+ दबाएँ पहला लिखने के लिए</string>
+    <string name="memoirs_empty_search">कोई संस्मरण नहीं मिला</string>
+    <string name="memoir_detail_title">संस्मरण</string>
+    <string name="memoir_mood_label">मनोदशा</string>
+    <string name="memoir_mood_question">आज आप कैसा महसूस कर रहे हैं?</string>
+    <string name="memoir_field_title_placeholder">शीर्षक (वैकल्पिक)</string>
+    <string name="memoir_field_content_placeholder">अपने दिन के बारे में लिखें…</string>
+
+    <!-- Passwords -->
+    <string name="passwords_title">पासवर्ड</string>
+    <string name="passwords_search_placeholder">पासवर्ड खोजें…</string>
+    <string name="passwords_fab_new">नया पासवर्ड</string>
+    <string name="passwords_empty_default">कोई पासवर्ड सहेजा नहीं गया\n+ दबाएँ जोड़ने के लिए</string>
+    <string name="passwords_empty_search">कोई पासवर्ड नहीं मिला</string>
+    <string name="password_detail_new">नया पासवर्ड</string>
+    <string name="password_detail_edit">पासवर्ड संपादित करें</string>
+    <string name="password_field_title">खाता / ऐप का नाम</string>
+    <string name="password_field_username">उपयोगकर्ता नाम / ईमेल</string>
+    <string name="password_field_password">पासवर्ड</string>
+    <string name="password_field_url">वेबसाइट URL</string>
+    <string name="password_field_notes">नोट्स (वैकल्पिक)</string>
+    <string name="password_show">पासवर्ड दिखाएँ</string>
+    <string name="password_hide">पासवर्ड छुपाएँ</string>
+    <string name="password_copy">पासवर्ड कॉपी करें</string>
+    <string name="password_security_note">पासवर्ड स्थानीय रूप से संग्रहीत हैं और Firebase खाते के साथ सिंक किए गए हैं।</string>
+    <string name="dashboard_passwords_subtitle">%1$d सहेजे</string>
+
+    <!-- Password Generator -->
+    <string name="gen_password_title">पासवर्ड जेनरेटर</string>
+    <string name="gen_length">लंबाई: %1$d</string>
+    <string name="gen_regenerate">पुनर्जनन</string>
+    <string name="gen_use">उपयोग करें</string>
+
+    <!-- Search -->
+    <string name="search_title">खोजें</string>
+    <string name="search_empty_default">टास्क, नोट्स, मेमोइर और पासवर्ड में खोजने के लिए टाइप करें</string>
+    <string name="search_empty_results">कोई परिणाम नहीं मिला</string>
+    <string name="search_section_tasks">%1$d टास्क</string>
+    <string name="search_section_notes">%1$d नोट्स</string>
+    <string name="search_section_memoirs">%1$d मेमोइर</string>
+    <string name="search_section_passwords">%1$d पासवर्ड</string>
+
+    <!-- Habits -->
+    <string name="habits_title">आदतें</string>
+    <string name="habits_fab_new">नई आदत</string>
+    <string name="habits_empty_default">अभी तक कोई आदत नहीं। अपनी पहली आदत बनाने के लिए + दबाएं!</string>
+    <string name="habit_detail_new">नई आदत</string>
+    <string name="habit_detail_edit">आदत संपादित करें</string>
+    <string name="habit_field_name">आदत का नाम</string>
+    <string name="habit_field_description">विवरण</string>
+    <string name="habit_field_emoji">इमोजी</string>
+    <string name="habit_done_today">आज किया</string>
+    <string name="habit_mark_done">पूर्ण के रूप में चिह्नित करें</string>
+    <string name="habit_streak">🔥 %1$d दिन की सीरीज</string>
+    <string name="dashboard_habits_subtitle">%1$d सक्रिय</string>
+
+    <!-- Bills -->
+    <string name="bills_title">बिल</string>
+    <string name="bills_fab_new">बिल जोड़ें</string>
+    <string name="bills_empty_default">अभी तक कोई बिल नहीं। अपना पहला बिल जोड़ने के लिए + दबाएं!</string>
+    <string name="bill_detail_new">नया बिल</string>
+    <string name="bill_detail_edit">बिल संपादित करें</string>
+    <string name="bill_field_name">बिल का नाम</string>
+    <string name="bill_field_amount">राशि</string>
+    <string name="bill_field_due_day">भुगतान दिन</string>
+    <string name="bill_field_category">श्रेणी</string>
+    <string name="bill_field_notes">नोट्स</string>
+    <string name="bill_field_reminder_enabled">रिमाइंडर सक्षम करें</string>
+    <string name="bill_reminder_days">%1$d दिन पहले याद दिलाएं</string>
+    <string name="bill_mark_paid">भुगतान किया गया चिह्नित करें</string>
+    <string name="bill_paid">भुगतान किया गया</string>
+    <string name="bill_overdue">अतिक्रम</string>
+    <string name="bill_due_soon">जल्द ही भुगतान</string>
+    <string name="bill_schedule_next">अगला: %1$s</string>
+    <string name="bill_reminder_title">बिल रिमाइंडर</string>
+    <string name="bill_reminder_body">%1$s के लिए %2$s जल्द ही भुगतान</string>
+    <string name="dashboard_bills_subtitle">%1$d जल्द ही भुगतान</string>
+
+    <!-- Mood Trend -->
+    <string name="mood_trend_title">इस महीने का मूड ट्रेंड</string>
+
+    <string name="contacts_title">संपर्क</string>
+    <string name="contacts_add">संपर्क जोड़ें</string>
+    <string name="contacts_edit">संपर्क संपादित करें</string>
+    <string name="contacts_search">संपर्क खोजें…</string>
+    <string name="contacts_empty">अभी कोई संपर्क नहीं</string>
+    <string name="contacts_empty_hint">पहला संपर्क जोड़ने के लिए + दबाएं</string>
+    <string name="contacts_field_user_id">यूजर आईडी</string>
+    <string name="contacts_field_name">नाम</string>
+    <string name="contacts_field_role">भूमिका (वैकल्पिक)</string>
+    <string name="dashboard_contacts_subtitle">अपनी टीम प्रबंधित करें</string>
+
+    <string name="assign_title">टास्क असाइन करें</string>
+    <string name="assign_field_title">टास्क शीर्षक</string>
+    <string name="assign_field_description">विवरण</string>
+    <string name="assign_field_priority">प्राथमिकता</string>
+    <string name="assign_field_due_date">नियत तारीख</string>
+    <string name="assign_no_date">कोई तारीख चयनित नहीं</string>
+    <string name="assign_section_assignees">कार्यभारी</string>
+    <string name="assign_manage_contacts">प्रबंधित करें</string>
+    <string name="assign_no_contacts">अभी कोई संपर्क नहीं</string>
+    <string name="assign_add_contacts">संपर्क जोड़ें</string>
+    <string name="assign_manual_user_id">या यूजर आईडी दर्ज करें</string>
+    <string name="assign_manual_hint">अपने संपर्कों से बाहर किसी को जोड़ें</string>
+    <string name="assign_selected_count">%1$d चयनित</string>
+    <string name="assign_submit">असाइन करें</string>
+    <string name="assign_clear">साफ करें</string>
+    <string name="assign_error_title">शीर्षक आवश्यक है</string>
+    <string name="assign_error_assignee">कम से कम एक कार्यभारी चुनें</string>
+    <string name="assign_success">टास्क सफलतापूर्वक असाइन किया गया!</string>
+    <string name="dashboard_assign_subtitle">दूसरों को असाइन करें</string>
+    <string name="dashboard_assigned_to_me_subtitle">आपको सौंपे गए टास्क</string>
+    <string name="dashboard_assign_stats_subtitle">सौंपे गए टास्क ट्रैक करें</string>
+    <string name="assign_stats_title">असाइनमेंट आँकड़े</string>
+    <string name="assign_stats_total">कुल</string>
+    <string name="assign_stats_acceptance">स्वीकृति दर</string>
+    <string name="assign_stats_completion">पूर्णता दर</string>
+    <string name="assign_stats_breakdown">स्थिति विश्लेषण</string>
+    <string name="assign_stats_recent">हाल के असाइनमेंट</string>
+    <string name="assign_stats_assignees">को: %1$s</string>
+
+    <!-- AssignedToMe screen -->
+    <string name="assigned_to_me_title">मुझे सौंपे गए</string>
+    <string name="assigned_refresh">रीफ्रेश करें</string>
+    <string name="assigned_filter_all">सभी</string>
+    <string name="assigned_retry">पुनः प्रयास करें</string>
+    <string name="assigned_empty">अभी कोई असाइनमेंट नहीं</string>
+    <string name="assigned_empty_hint">आपको सौंपे गए टास्क यहाँ दिखेंगे</string>
+    <string name="assigned_by">%1$s द्वारा सौंपा गया</string>
+    <string name="assigned_decline">अस्वीकार करें</string>
+    <string name="assigned_accept">स्वीकार करें</string>
+    <string name="assigned_start">शुरू करें</string>
+    <string name="assigned_complete">पूर्ण करें</string>
+    <string name="assigned_completed_label">पूर्ण</string>
+    <string name="assigned_declined_label">अस्वीकृत</string>
+    <string name="assigned_status_pending">लंबित</string>
+    <string name="assigned_status_accepted">स्वीकृत</string>
+    <string name="assigned_status_in_progress">प्रगति में</string>
+    <string name="assigned_status_completed">पूर्ण</string>
+    <string name="assigned_status_declined">अस्वीकृत</string>
+    <string name="notif_assigned_title">नया टास्क सौंपा गया</string>
+    <string name="notif_assigned_body">%1$s ने आपको "%2$s" सौंपा</string>
+    <string name="notif_status_title">टास्क की स्थिति अपडेट हुई</string>
+    <string name="notif_status_body">%1$s ने "%2$s" को %3$s में अपडेट किया</string>
 </resources>

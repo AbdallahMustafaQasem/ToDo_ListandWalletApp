@@ -11,6 +11,7 @@
     <string name="more">Más</string>
     <string name="sort">Ordenar</string>
     <string name="add">Añadir</string>
+    <string name="edit">Editar</string>
 
     <string name="title_my_todos">Mis tareas</string>
     <string name="search_placeholder">Buscar tareas…</string>
@@ -143,7 +144,26 @@
 
     <string name="about_title">Acerca de</string>
     <string name="about_version">Versión 2.0</string>
-    <string name="about_description">Una aplicación de tareas hermosa y animada, creada con Jetpack Compose, Material Design 3, arquitectura limpia y DataStore.</string>
+    <string name="about_tagline">Tu compañero de productividad todo en uno</string>
+    <string name="about_description">TaskVault te ayuda a mantenerte organizado con gestión de tareas, notas seguras, memorias personales, almacenamiento de contraseñas, seguimiento de hábitos, recordatorios de facturas y una billetera completa — diseñado con Material Design 3.</string>
+    <string name="about_features_title">Qué Puedes Hacer</string>
+    <string name="about_feature_tasks">Tareas con subtareas, prioridades y recordatorios</string>
+    <string name="about_feature_notes">Notas seguras con contenido enriquecido</string>
+    <string name="about_feature_memoirs">Memorias personales con seguimiento de humor</string>
+    <string name="about_feature_passwords">Bóveda de contraseñas con generador</string>
+    <string name="about_feature_wallet">Billetera con presupuestos y categorías</string>
+    <string name="about_feature_habits">Seguimiento diario de hábitos con rachas</string>
+    <string name="about_feature_bills">Recordatorios de facturas con notificaciones</string>
+    <string name="about_feature_sync">Sincronización en la nube con Firebase</string>
+    <string name="about_enjoying">¿Disfrutas TaskVault?</string>
+    <string name="about_rate">Califícanos</string>
+    <string name="about_share">Compartir App</string>
+    <string name="about_share_message">¡Descubre TaskVault — una app de productividad increíble! %1$s</string>
+    <string name="about_share_via">Compartir vía</string>
+    <string name="about_built_with">Construido Con</string>
+    <string name="about_developer_label">Desarrollado por</string>
+    <string name="about_developer_name">Abdallah Mustafa</string>
+    <string name="about_footer">Hecho con ❤ en Kotlin</string>
 
     <string name="day_sun">Dom</string>
     <string name="day_mon">Lun</string>
@@ -230,6 +250,10 @@
     <string name="profile_sync_status">Sincronización en la nube</string>
     <string name="profile_sync_subtitle">Tus datos están sincronizados con Firebase</string>
     <string name="profile_sync_active">Activa</string>
+    <string name="profile_user_id">Tu ID de Usuario</string>
+    <string name="profile_copy_id">Copiar ID</string>
+    <string name="profile_id_copied">ID de usuario copiado</string>
+    <string name="profile_user_id_hint">Comparte este ID para que otros puedan añadirte como contacto y asignarte tareas</string>
 
     <string name="settings_title">Ajustes</string>
     <string name="settings_section_account">Cuenta</string>
@@ -277,4 +301,185 @@
     <string name="snackbar_undo">Deshacer</string>
 
     <string name="alarm_permission_rationale">Permiso de alarma exacta no concedido. Los recordatorios pueden ser inexactos.</string>
+
+    <!-- Dashboard -->
+    <string name="dashboard_greeting_morning">Buenos días,</string>
+    <string name="dashboard_greeting_afternoon">Buenas tardes,</string>
+    <string name="dashboard_greeting_evening">Buenas noches,</string>
+    <string name="dashboard_greeting_night">Buenas noches,</string>
+    <string name="dashboard_features_title">Funciones</string>
+    <string name="dashboard_feature_tasks">Tareas</string>
+    <string name="dashboard_tasks_subtitle">%1$d activas</string>
+    <string name="dashboard_feature_notes">Notas</string>
+    <string name="dashboard_notes_subtitle">%1$d guardadas</string>
+    <string name="dashboard_feature_memoirs">Memorias</string>
+    <string name="dashboard_memoirs_subtitle">%1$d entradas</string>
+    <string name="dashboard_wallet_subtitle">Controlar finanzas</string>
+    <string name="dashboard_calendar_subtitle">Ver horario</string>
+    <string name="dashboard_stats_subtitle">Ver progreso</string>
+    <string name="dashboard_tasks_count">%1$d tareas</string>
+    <string name="dashboard_notes_count">%1$d notas</string>
+    <string name="dashboard_memoirs_count">%1$d memorias</string>
+
+    <!-- Notes -->
+    <string name="notes_title">Notas</string>
+    <string name="notes_search_placeholder">Buscar notas…</string>
+    <string name="notes_fab_new">Nueva nota</string>
+    <string name="notes_empty_default">No hay notas aún\nToca + para crear una</string>
+    <string name="notes_empty_search">No se encontraron notas</string>
+    <string name="note_detail_title">Nota</string>
+    <string name="note_field_title_placeholder">Título</string>
+    <string name="note_field_content_placeholder">Comienza a escribir…</string>
+    <string name="note_color_label">Color</string>
+    <string name="note_pin">Fijar</string>
+    <string name="note_unpin">Desfijar</string>
+
+    <!-- Memoirs -->
+    <string name="memoirs_title">Memorias</string>
+    <string name="memoirs_search_placeholder">Buscar memorias…</string>
+    <string name="memoirs_fab_new">Nueva memoria</string>
+    <string name="memoirs_empty_default">No hay memorias aún\nToca + para escribir la primera</string>
+    <string name="memoirs_empty_search">No se encontraron memorias</string>
+    <string name="memoir_detail_title">Memoria</string>
+    <string name="memoir_mood_label">Estado de ánimo</string>
+    <string name="memoir_mood_question">¿Cómo te sientes hoy?</string>
+    <string name="memoir_field_title_placeholder">Título (opcional)</string>
+    <string name="memoir_field_content_placeholder">Escribe sobre tu día…</string>
+
+    <!-- Passwords -->
+    <string name="passwords_title">Contraseñas</string>
+    <string name="passwords_search_placeholder">Buscar contraseñas…</string>
+    <string name="passwords_fab_new">Nueva contraseña</string>
+    <string name="passwords_empty_default">No hay contraseñas guardadas\nToca + para agregar una</string>
+    <string name="passwords_empty_search">No se encontraron contraseñas</string>
+    <string name="password_detail_new">Nueva contraseña</string>
+    <string name="password_detail_edit">Editar contraseña</string>
+    <string name="password_field_title">Cuenta / Nombre de la app</string>
+    <string name="password_field_username">Usuario / Correo</string>
+    <string name="password_field_password">Contraseña</string>
+    <string name="password_field_url">URL del sitio</string>
+    <string name="password_field_notes">Notas (opcional)</string>
+    <string name="password_show">Mostrar contraseña</string>
+    <string name="password_hide">Ocultar contraseña</string>
+    <string name="password_copy">Copiar contraseña</string>
+    <string name="password_security_note">Las contraseñas se almacenan localmente y se sincronizan con tu cuenta de Firebase.</string>
+    <string name="dashboard_passwords_subtitle">%1$d guardadas</string>
+
+    <!-- Password Generator -->
+    <string name="gen_password_title">Generador de Contraseñas</string>
+    <string name="gen_length">Longitud: %1$d</string>
+    <string name="gen_regenerate">Regenerar</string>
+    <string name="gen_use">Usar</string>
+
+    <!-- Search -->
+    <string name="search_title">Buscar</string>
+    <string name="search_empty_default">Escribe para buscar en tareas, notas, memorias y contraseñas</string>
+    <string name="search_empty_results">No se encontraron resultados</string>
+    <string name="search_section_tasks">%1$d tareas</string>
+    <string name="search_section_notes">%1$d notas</string>
+    <string name="search_section_memoirs">%1$d memorias</string>
+    <string name="search_section_passwords">%1$d contraseñas</string>
+
+    <!-- Habits -->
+    <string name="habits_title">Hábitos</string>
+    <string name="habits_fab_new">Nuevo Hábito</string>
+    <string name="habits_empty_default">No hay hábitos aún. ¡Toca + para crear tu primer hábito!</string>
+    <string name="habit_detail_new">Nuevo Hábito</string>
+    <string name="habit_detail_edit">Editar Hábito</string>
+    <string name="habit_field_name">Nombre del Hábito</string>
+    <string name="habit_field_description">Descripción</string>
+    <string name="habit_field_emoji">Emoji</string>
+    <string name="habit_done_today">Hecho hoy</string>
+    <string name="habit_mark_done">Marcar como hecho</string>
+    <string name="habit_streak">🔥 Racha de %1$d días</string>
+    <string name="dashboard_habits_subtitle">%1$d activos</string>
+
+    <!-- Bills -->
+    <string name="bills_title">Facturas</string>
+    <string name="bills_fab_new">Añadir Factura</string>
+    <string name="bills_empty_default">No hay facturas aún. ¡Toca + para añadir tu primera factura!</string>
+    <string name="bill_detail_new">Nueva Factura</string>
+    <string name="bill_detail_edit">Editar Factura</string>
+    <string name="bill_field_name">Nombre de la Factura</string>
+    <string name="bill_field_amount">Cantidad</string>
+    <string name="bill_field_due_day">Día de Vencimiento</string>
+    <string name="bill_field_category">Categoría</string>
+    <string name="bill_field_notes">Notas</string>
+    <string name="bill_field_reminder_enabled">Activar Recordatorio</string>
+    <string name="bill_reminder_days">Recordar %1$d días antes</string>
+    <string name="bill_mark_paid">Marcar como Pagada</string>
+    <string name="bill_paid">Pagada</string>
+    <string name="bill_overdue">Vencida</string>
+    <string name="bill_due_soon">Próxima a Vencer</string>
+    <string name="bill_schedule_next">Siguiente: %1$s</string>
+    <string name="bill_reminder_title">Recordatorio de Factura</string>
+    <string name="bill_reminder_body">%1$s por %2$s próxima a vencer</string>
+    <string name="dashboard_bills_subtitle">%1$d próximas a vencer</string>
+
+    <!-- Mood Trend -->
+    <string name="mood_trend_title">Tendencia de Humor este Mes</string>
+
+    <string name="contacts_title">Contactos</string>
+    <string name="contacts_add">Añadir Contacto</string>
+    <string name="contacts_edit">Editar Contacto</string>
+    <string name="contacts_search">Buscar contactos…</string>
+    <string name="contacts_empty">No hay contactos aún</string>
+    <string name="contacts_empty_hint">Toca + para añadir tu primer contacto</string>
+    <string name="contacts_field_user_id">ID de Usuario</string>
+    <string name="contacts_field_name">Nombre</string>
+    <string name="contacts_field_role">Rol (opcional)</string>
+    <string name="dashboard_contacts_subtitle">Gestiona tu equipo</string>
+
+    <string name="assign_title">Asignar Tarea</string>
+    <string name="assign_field_title">Título de la Tarea</string>
+    <string name="assign_field_description">Descripción</string>
+    <string name="assign_field_priority">Prioridad</string>
+    <string name="assign_field_due_date">Fecha Límite</string>
+    <string name="assign_no_date">Sin fecha seleccionada</string>
+    <string name="assign_section_assignees">Asignados</string>
+    <string name="assign_manage_contacts">Gestionar</string>
+    <string name="assign_no_contacts">No hay contactos aún</string>
+    <string name="assign_add_contacts">Añadir Contactos</string>
+    <string name="assign_manual_user_id">O ingresa un ID de usuario</string>
+    <string name="assign_manual_hint">Añade a alguien no en tus contactos</string>
+    <string name="assign_selected_count">%1$d seleccionados</string>
+    <string name="assign_submit">Asignar</string>
+    <string name="assign_clear">Limpiar</string>
+    <string name="assign_error_title">El título es obligatorio</string>
+    <string name="assign_error_assignee">Selecciona al menos un asignado</string>
+    <string name="assign_success">¡Tarea asignada con éxito!</string>
+    <string name="dashboard_assign_subtitle">Asignar a otros</string>
+    <string name="dashboard_assigned_to_me_subtitle">Tareas asignadas a ti</string>
+    <string name="dashboard_assign_stats_subtitle">Seguimiento de tus tareas asignadas</string>
+    <string name="assign_stats_title">Estadísticas de asignación</string>
+    <string name="assign_stats_total">Total</string>
+    <string name="assign_stats_acceptance">Aceptación</string>
+    <string name="assign_stats_completion">Finalización</string>
+    <string name="assign_stats_breakdown">Desglose por estado</string>
+    <string name="assign_stats_recent">Asignaciones recientes</string>
+    <string name="assign_stats_assignees">Para: %1$s</string>
+
+    <!-- AssignedToMe screen -->
+    <string name="assigned_to_me_title">Asignadas a mí</string>
+    <string name="assigned_refresh">Actualizar</string>
+    <string name="assigned_filter_all">Todo</string>
+    <string name="assigned_retry">Reintentar</string>
+    <string name="assigned_empty">Sin asignaciones aún</string>
+    <string name="assigned_empty_hint">Las tareas asignadas a ti aparecerán aquí</string>
+    <string name="assigned_by">Asignado por %1$s</string>
+    <string name="assigned_decline">Rechazar</string>
+    <string name="assigned_accept">Aceptar</string>
+    <string name="assigned_start">Iniciar</string>
+    <string name="assigned_complete">Completar</string>
+    <string name="assigned_completed_label">Completada</string>
+    <string name="assigned_declined_label">Rechazada</string>
+    <string name="assigned_status_pending">Pendiente</string>
+    <string name="assigned_status_accepted">Aceptada</string>
+    <string name="assigned_status_in_progress">En progreso</string>
+    <string name="assigned_status_completed">Completada</string>
+    <string name="assigned_status_declined">Rechazada</string>
+    <string name="notif_assigned_title">Nueva tarea asignada</string>
+    <string name="notif_assigned_body">%1$s te asignó "%2$s"</string>
+    <string name="notif_status_title">Estado de tarea actualizado</string>
+    <string name="notif_status_body">%1$s actualizó "%2$s" a %3$s</string>
 </resources>

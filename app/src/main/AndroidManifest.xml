@@ -53,6 +53,11 @@
             </intent-filter>
         </receiver>
 
+        <!-- Bill Reminder BroadcastReceiver -->
+        <receiver
+            android:name=".receiver.BillReminderReceiver"
+            android:exported="false" />
+
         <!-- Boot Receiver (reschedule alarms after reboot) -->
         <receiver
             android:name=".receiver.BootReceiver"
@@ -62,6 +67,18 @@
                 <action android:name="android.intent.action.LOCKED_BOOT_COMPLETED" />
             </intent-filter>
         </receiver>
+
+        <!-- Firebase Cloud Messaging -->
+        <service
+            android:name=".service.MyFirebaseMessagingService"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+            </intent-filter>
+        </service>
+        <meta-data
+            android:name="com.google.firebase.messaging.default_notification_channel_id"
+            android:value="task_assignments" />
 
         <!-- Disable default WorkManager initializer so HiltWorkerFactory can be used -->
         <provider

@@ -11,6 +11,7 @@
     <string name="more">更多</string>
     <string name="sort">排序</string>
     <string name="add">添加</string>
+    <string name="edit">编辑</string>
 
     <string name="title_my_todos">我的待办</string>
     <string name="search_placeholder">搜索待办…</string>
@@ -143,7 +144,26 @@
 
     <string name="about_title">关于</string>
     <string name="about_version">版本 2.0</string>
-    <string name="about_description">一款优雅的动画待办应用，基于 Jetpack Compose、Material Design 3、Clean 架构和 DataStore。</string>
+    <string name="about_tagline">您的一站式生产力助手</string>
+    <string name="about_description">TaskVault 帮助您保持井然有序，提供强大的任务管理、安全笔记、个人回忆、密码存储、习惯追踪、账单提醒和完整钱包 — 采用 Material Design 3 精心打造。</string>
+    <string name="about_features_title">您可以做什么</string>
+    <string name="about_feature_tasks">含子任务、优先级和提醒的任务</string>
+    <string name="about_feature_notes">安全笔记与丰富内容</string>
+    <string name="about_feature_memoirs">个人回忆与心情追踪</string>
+    <string name="about_feature_passwords">密码保险库与生成器</string>
+    <string name="about_feature_wallet">钱包与预算和分类</string>
+    <string name="about_feature_habits">每日习惯追踪与连续记录</string>
+    <string name="about_feature_bills">账单提醒与通知</string>
+    <string name="about_feature_sync">Firebase 云端同步</string>
+    <string name="about_enjoying">喜欢 TaskVault 吗？</string>
+    <string name="about_rate">给我们评分</string>
+    <string name="about_share">分享应用</string>
+    <string name="about_share_message">来试试 TaskVault — 一款出色的生产力应用！%1$s</string>
+    <string name="about_share_via">分享至</string>
+    <string name="about_built_with">技术栈</string>
+    <string name="about_developer_label">开发者</string>
+    <string name="about_developer_name">Abdallah Mustafa</string>
+    <string name="about_footer">用 ❤ 和 Kotlin 打造</string>
 
     <string name="day_sun">日</string>
     <string name="day_mon">一</string>
@@ -230,6 +250,10 @@
     <string name="profile_sync_status">云同步</string>
     <string name="profile_sync_subtitle">您的数据已与Firebase同步</string>
     <string name="profile_sync_active">已激活</string>
+    <string name="profile_user_id">您的用户ID</string>
+    <string name="profile_copy_id">复制ID</string>
+    <string name="profile_id_copied">用户ID已复制</string>
+    <string name="profile_user_id_hint">分享此ID，让其他人可以将您添加为联系人并分配任务给您</string>
 
     <string name="settings_title">设置</string>
     <string name="settings_section_account">账户</string>
@@ -277,4 +301,185 @@
     <string name="snackbar_undo">撤销</string>
 
     <string name="alarm_permission_rationale">未授予精确闹钟权限，提醒可能不准确。</string>
+
+    <!-- Dashboard -->
+    <string name="dashboard_greeting_morning">早上好，</string>
+    <string name="dashboard_greeting_afternoon">下午好，</string>
+    <string name="dashboard_greeting_evening">晚上好，</string>
+    <string name="dashboard_greeting_night">晚安，</string>
+    <string name="dashboard_features_title">功能</string>
+    <string name="dashboard_feature_tasks">任务</string>
+    <string name="dashboard_tasks_subtitle">%1$d 活跃</string>
+    <string name="dashboard_feature_notes">笔记</string>
+    <string name="dashboard_notes_subtitle">%1$d 已保存</string>
+    <string name="dashboard_feature_memoirs">回忆录</string>
+    <string name="dashboard_memoirs_subtitle">%1$d 条目</string>
+    <string name="dashboard_wallet_subtitle">财务追踪</string>
+    <string name="dashboard_calendar_subtitle">查看日程</string>
+    <string name="dashboard_stats_subtitle">查看进度</string>
+    <string name="dashboard_tasks_count">%1$d 任务</string>
+    <string name="dashboard_notes_count">%1$d 笔记</string>
+    <string name="dashboard_memoirs_count">%1$d 回忆录</string>
+
+    <!-- Notes -->
+    <string name="notes_title">笔记</string>
+    <string name="notes_search_placeholder">搜索笔记…</string>
+    <string name="notes_fab_new">新建笔记</string>
+    <string name="notes_empty_default">还没有笔记\n点击+创建</string>
+    <string name="notes_empty_search">未找到笔记</string>
+    <string name="note_detail_title">笔记</string>
+    <string name="note_field_title_placeholder">标题</string>
+    <string name="note_field_content_placeholder">开始写作…</string>
+    <string name="note_color_label">颜色</string>
+    <string name="note_pin">置顶</string>
+    <string name="note_unpin">取消置顶</string>
+
+    <!-- Memoirs -->
+    <string name="memoirs_title">回忆录</string>
+    <string name="memoirs_search_placeholder">搜索回忆录…</string>
+    <string name="memoirs_fab_new">新建回忆录</string>
+    <string name="memoirs_empty_default">还没有回忆录\n点击+写下第一篇</string>
+    <string name="memoirs_empty_search">未找到回忆录</string>
+    <string name="memoir_detail_title">回忆录</string>
+    <string name="memoir_mood_label">心情</string>
+    <string name="memoir_mood_question">你今天感觉怎么样？</string>
+    <string name="memoir_field_title_placeholder">标题（可选）</string>
+    <string name="memoir_field_content_placeholder">写下你的一天…</string>
+
+    <!-- Passwords -->
+    <string name="passwords_title">密码</string>
+    <string name="passwords_search_placeholder">搜索密码…</string>
+    <string name="passwords_fab_new">新建密码</string>
+    <string name="passwords_empty_default">暂无保存的密码\n点击+添加</string>
+    <string name="passwords_empty_search">未找到密码</string>
+    <string name="password_detail_new">新建密码</string>
+    <string name="password_detail_edit">编辑密码</string>
+    <string name="password_field_title">账户 / 应用名称</string>
+    <string name="password_field_username">用户名 / 邮箱</string>
+    <string name="password_field_password">密码</string>
+    <string name="password_field_url">网站 URL</string>
+    <string name="password_field_notes">备注（可选）</string>
+    <string name="password_show">显示密码</string>
+    <string name="password_hide">隐藏密码</string>
+    <string name="password_copy">复制密码</string>
+    <string name="password_security_note">密码存储在本地并与您的 Firebase 账户同步。</string>
+    <string name="dashboard_passwords_subtitle">%1$d 已保存</string>
+
+    <!-- Password Generator -->
+    <string name="gen_password_title">密码生成器</string>
+    <string name="gen_length">长度：%1$d</string>
+    <string name="gen_regenerate">重新生成</string>
+    <string name="gen_use">使用</string>
+
+    <!-- Search -->
+    <string name="search_title">搜索</string>
+    <string name="search_empty_default">输入以搜索任务、笔记、回忆和密码</string>
+    <string name="search_empty_results">未找到结果</string>
+    <string name="search_section_tasks">%1$d 个任务</string>
+    <string name="search_section_notes">%1$d 个笔记</string>
+    <string name="search_section_memoirs">%1$d 个回忆</string>
+    <string name="search_section_passwords">%1$d 个密码</string>
+
+    <!-- Habits -->
+    <string name="habits_title">习惯</string>
+    <string name="habits_fab_new">新习惯</string>
+    <string name="habits_empty_default">还没有习惯。点击 + 创建您的第一个习惯！</string>
+    <string name="habit_detail_new">新习惯</string>
+    <string name="habit_detail_edit">编辑习惯</string>
+    <string name="habit_field_name">习惯名称</string>
+    <string name="habit_field_description">描述</string>
+    <string name="habit_field_emoji">表情符号</string>
+    <string name="habit_done_today">今天完成</string>
+    <string name="habit_mark_done">标记为完成</string>
+    <string name="habit_streak">🔥 连续 %1$d 天</string>
+    <string name="dashboard_habits_subtitle">%1$d 个活跃</string>
+
+    <!-- Bills -->
+    <string name="bills_title">账单</string>
+    <string name="bills_fab_new">添加账单</string>
+    <string name="bills_empty_default">还没有账单。点击 + 添加您的第一个账单！</string>
+    <string name="bill_detail_new">新账单</string>
+    <string name="bill_detail_edit">编辑账单</string>
+    <string name="bill_field_name">账单名称</string>
+    <string name="bill_field_amount">金额</string>
+    <string name="bill_field_due_day">到期日</string>
+    <string name="bill_field_category">类别</string>
+    <string name="bill_field_notes">备注</string>
+    <string name="bill_field_reminder_enabled">启用提醒</string>
+    <string name="bill_reminder_days">提前 %1$d 天提醒</string>
+    <string name="bill_mark_paid">标记为已支付</string>
+    <string name="bill_paid">已支付</string>
+    <string name="bill_overdue">逾期</string>
+    <string name="bill_due_soon">即将到期</string>
+    <string name="bill_schedule_next">下次：%1$s</string>
+    <string name="bill_reminder_title">账单提醒</string>
+    <string name="bill_reminder_body">%1$s 的 %2$s 即将到期</string>
+    <string name="dashboard_bills_subtitle">%1$d 即将到期</string>
+
+    <!-- Mood Trend -->
+    <string name="mood_trend_title">本月心情趋势</string>
+
+    <string name="contacts_title">联系人</string>
+    <string name="contacts_add">添加联系人</string>
+    <string name="contacts_edit">编辑联系人</string>
+    <string name="contacts_search">搜索联系人…</string>
+    <string name="contacts_empty">还没有联系人</string>
+    <string name="contacts_empty_hint">点击 + 添加您的第一个联系人</string>
+    <string name="contacts_field_user_id">用户ID</string>
+    <string name="contacts_field_name">显示名称</string>
+    <string name="contacts_field_role">角色（可选）</string>
+    <string name="dashboard_contacts_subtitle">管理您的团队</string>
+
+    <string name="assign_title">分配任务</string>
+    <string name="assign_field_title">任务标题</string>
+    <string name="assign_field_description">描述</string>
+    <string name="assign_field_priority">优先级</string>
+    <string name="assign_field_due_date">截止日期</string>
+    <string name="assign_no_date">未选择日期</string>
+    <string name="assign_section_assignees">受理人</string>
+    <string name="assign_manage_contacts">管理</string>
+    <string name="assign_no_contacts">还没有联系人</string>
+    <string name="assign_add_contacts">添加联系人</string>
+    <string name="assign_manual_user_id">或输入用户ID</string>
+    <string name="assign_manual_hint">添加不在您联系人中的人</string>
+    <string name="assign_selected_count">已选择 %1$d 人</string>
+    <string name="assign_submit">分配</string>
+    <string name="assign_clear">清除</string>
+    <string name="assign_error_title">标题为必填项</string>
+    <string name="assign_error_assignee">请至少选择一个受理人</string>
+    <string name="assign_success">任务分配成功！</string>
+    <string name="dashboard_assign_subtitle">分配给他人</string>
+    <string name="dashboard_assigned_to_me_subtitle">分配给您的任务</string>
+    <string name="dashboard_assign_stats_subtitle">跟踪您分配的任务</string>
+    <string name="assign_stats_title">分配统计</string>
+    <string name="assign_stats_total">总计</string>
+    <string name="assign_stats_acceptance">接受率</string>
+    <string name="assign_stats_completion">完成率</string>
+    <string name="assign_stats_breakdown">状态分布</string>
+    <string name="assign_stats_recent">最近分配</string>
+    <string name="assign_stats_assignees">至: %1$s</string>
+
+    <!-- AssignedToMe screen -->
+    <string name="assigned_to_me_title">分配给我的</string>
+    <string name="assigned_refresh">刷新</string>
+    <string name="assigned_filter_all">全部</string>
+    <string name="assigned_retry">重试</string>
+    <string name="assigned_empty">暂无任务分配</string>
+    <string name="assigned_empty_hint">分配给您的任务将显示在这里</string>
+    <string name="assigned_by">由 %1$s 分配</string>
+    <string name="assigned_decline">拒绝</string>
+    <string name="assigned_accept">接受</string>
+    <string name="assigned_start">开始</string>
+    <string name="assigned_complete">完成</string>
+    <string name="assigned_completed_label">已完成</string>
+    <string name="assigned_declined_label">已拒绝</string>
+    <string name="assigned_status_pending">待处理</string>
+    <string name="assigned_status_accepted">已接受</string>
+    <string name="assigned_status_in_progress">进行中</string>
+    <string name="assigned_status_completed">已完成</string>
+    <string name="assigned_status_declined">已拒绝</string>
+    <string name="notif_assigned_title">新任务已分配</string>
+    <string name="notif_assigned_body">%1$s 将"%2$s"分配给您</string>
+    <string name="notif_status_title">任务状态已更新</string>
+    <string name="notif_status_body">%1$s 将"%2$s"更新为 %3$s</string>
 </resources>

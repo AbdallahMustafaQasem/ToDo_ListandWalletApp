@@ -11,6 +11,7 @@
     <string name="more">مزید</string>
     <string name="sort">ترتیب</string>
     <string name="add">شامل</string>
+    <string name="edit">ترمیم</string>
 
     <string name="title_my_todos">میرے کام</string>
     <string name="search_placeholder">کام تلاش کریں…</string>
@@ -143,7 +144,26 @@
 
     <string name="about_title">تعارف</string>
     <string name="about_version">ورژن 2.0</string>
-    <string name="about_description">Jetpack Compose، Material Design 3، کلین آرکیٹیکچر اور DataStore سے بنا ایک خوبصورت، اینیمیٹڈ ٹو ڈو ایپ۔</string>
+    <string name="about_tagline">آپ کا آل ان ون پروڈکٹیویٹی ساتھی</string>
+    <string name="about_description">TaskVault آپ کو منظم رہنے میں مدد کرتا ہے — طاقتور ٹاسک مینیجمنٹ، محفوظ نوٹس، ذاتی یادداشتیں، پاسورڈ اسٹوریج، عادت ٹریکنگ، بل یاد دہانیاں اور مکمل والیٹ — Material Design 3 سے خوبصورتی سے بنایا گیا۔</string>
+    <string name="about_features_title">آپ کیا کر سکتے ہیں</string>
+    <string name="about_feature_tasks">ذیلی ٹاسک، ترجیحات اور یاد دہانیاں والے ٹاسک</string>
+    <string name="about_feature_notes">بھرپور مواد والے محفوظ نوٹس</string>
+    <string name="about_feature_memoirs">موڈ ٹریکنگ والی ذاتی یادداشتیں</string>
+    <string name="about_feature_passwords">جنریٹر والا پاسورڈ والٹ</string>
+    <string name="about_feature_wallet">بجٹ اور اقسام والا والیٹ</string>
+    <string name="about_feature_habits">سلسلے والا روزانہ عادت ٹریکر</string>
+    <string name="about_feature_bills">اطلاعات والی بل یاد دہانیاں</string>
+    <string name="about_feature_sync">Firebase کلاؤڈ سنک</string>
+    <string name="about_enjoying">TaskVault پسند آ رہا ہے؟</string>
+    <string name="about_rate">ریٹ کریں</string>
+    <string name="about_share">ایپ شیئر کریں</string>
+    <string name="about_share_message">TaskVault دیکھیں — ایک شاندار پروڈکٹیویٹی ایپ! %1$s</string>
+    <string name="about_share_via">اس کے ذریعے شیئر کریں</string>
+    <string name="about_built_with">بنایا گیا</string>
+    <string name="about_developer_label">ڈویلپر</string>
+    <string name="about_developer_name">Abdallah Mustafa</string>
+    <string name="about_footer">❤ اور Kotlin سے بنایا گیا</string>
 
     <string name="day_sun">اتوار</string>
     <string name="day_mon">پیر</string>
@@ -230,6 +250,10 @@
     <string name="profile_sync_status">کلاؤڈ سنک</string>
     <string name="profile_sync_subtitle">آپ کا ڈیٹا Firebase سے مطابقت پذیر ہے</string>
     <string name="profile_sync_active">فعال</string>
+    <string name="profile_user_id">آپ کا یوزر آئی ڈی</string>
+    <string name="profile_copy_id">آئی ڈی کاپی کریں</string>
+    <string name="profile_id_copied">یوزر آئی ڈی کاپی ہو گیا</string>
+    <string name="profile_user_id_hint">یہ آئی ڈی شیئر کریں تاکہ دوسرے آپ کو رابطے کے طور پر شامل کر سکیں اور آپ کو ٹاسک تفویض کر سکیں</string>
 
     <string name="settings_title">ترتیبات</string>
     <string name="settings_section_account">اکاؤنٹ</string>
@@ -277,4 +301,185 @@
     <string name="snackbar_undo">واپس کریں</string>
 
     <string name="alarm_permission_rationale">درست الارم کی اجازت نہیں دی گئی۔ یادیں غلط ہو سکتی ہیں۔</string>
+
+    <!-- Dashboard -->
+    <string name="dashboard_greeting_morning">صبح بخیر،</string>
+    <string name="dashboard_greeting_afternoon">دوپہر بخیر،</string>
+    <string name="dashboard_greeting_evening">شام بخیر،</string>
+    <string name="dashboard_greeting_night">شب بخیر،</string>
+    <string name="dashboard_features_title">خصوصیات</string>
+    <string name="dashboard_feature_tasks">کام</string>
+    <string name="dashboard_tasks_subtitle">%1$d فعال</string>
+    <string name="dashboard_feature_notes">نوٹس</string>
+    <string name="dashboard_notes_subtitle">%1$d محفوظ</string>
+    <string name="dashboard_feature_memoirs">یادداشتیں</string>
+    <string name="dashboard_memoirs_subtitle">%1$d اندراج</string>
+    <string name="dashboard_wallet_subtitle">مالیات ٹریک کریں</string>
+    <string name="dashboard_calendar_subtitle">شیڈول دیکھیں</string>
+    <string name="dashboard_stats_subtitle">پیش رفت دیکھیں</string>
+    <string name="dashboard_tasks_count">%1$d کام</string>
+    <string name="dashboard_notes_count">%1$d نوٹس</string>
+    <string name="dashboard_memoirs_count">%1$d یادداشتیں</string>
+
+    <!-- Notes -->
+    <string name="notes_title">نوٹس</string>
+    <string name="notes_search_placeholder">نوٹس تلاش کریں…</string>
+    <string name="notes_fab_new">نیا نوٹ</string>
+    <string name="notes_empty_default">ابھی کوئی نوٹ نہیں\n+ دبائیں بنانے کے لیے</string>
+    <string name="notes_empty_search">کوئی نوٹ نہیں ملا</string>
+    <string name="note_detail_title">نوٹ</string>
+    <string name="note_field_title_placeholder">عنوان</string>
+    <string name="note_field_content_placeholder">لکھنا شروع کریں…</string>
+    <string name="note_color_label">رنگ</string>
+    <string name="note_pin">پن کریں</string>
+    <string name="note_unpin">پن ہٹائیں</string>
+
+    <!-- Memoirs -->
+    <string name="memoirs_title">یادداشتیں</string>
+    <string name="memoirs_search_placeholder">یادداشتیں تلاش کریں…</string>
+    <string name="memoirs_fab_new">نئی یادداشت</string>
+    <string name="memoirs_empty_default">ابھی کوئی یادداشت نہیں\n+ دبائیں پہلی لکھنے کے لیے</string>
+    <string name="memoirs_empty_search">کوئی یادداشت نہیں ملی</string>
+    <string name="memoir_detail_title">یادداشت</string>
+    <string name="memoir_mood_label">موڈ</string>
+    <string name="memoir_mood_question">آج آپ کیسا محسوس کر رہے ہیں؟</string>
+    <string name="memoir_field_title_placeholder">عنوان (اختیاری)</string>
+    <string name="memoir_field_content_placeholder">اپنے دن کے بارے میں لکھیں…</string>
+
+    <!-- Passwords -->
+    <string name="passwords_title">پاسورڈز</string>
+    <string name="passwords_search_placeholder">پاسورڈ تلاش کریں…</string>
+    <string name="passwords_fab_new">نیا پاسورڈ</string>
+    <string name="passwords_empty_default">کوئی پاسورڈ محفوظ نہیں\n+ دبائیں شامل کرنے کے لیے</string>
+    <string name="passwords_empty_search">کوئی پاسورڈ نہیں ملا</string>
+    <string name="password_detail_new">نیا پاسورڈ</string>
+    <string name="password_detail_edit">پاسورڈ ترمیم کریں</string>
+    <string name="password_field_title">اکاؤنٹ / ایپ کا نام</string>
+    <string name="password_field_username">صارف نام / ای میل</string>
+    <string name="password_field_password">پاسورڈ</string>
+    <string name="password_field_url">ویب سائٹ URL</string>
+    <string name="password_field_notes">نوٹس (اختیاری)</string>
+    <string name="password_show">پاسورڈ دکھائیں</string>
+    <string name="password_hide">پاسورڈ چھپائیں</string>
+    <string name="password_copy">پاسورڈ کاپی کریں</string>
+    <string name="password_security_note">پاسورڈز مقامی طور پر محفوظ ہیں اور Firebase اکاؤنٹ کے ساتھ ہم آہنگ کیے گئے ہیں۔</string>
+    <string name="dashboard_passwords_subtitle">%1$d محفوظ</string>
+
+    <!-- Password Generator -->
+    <string name="gen_password_title">پاسورڈ جنریٹر</string>
+    <string name="gen_length">لمبائی: %1$d</string>
+    <string name="gen_regenerate">پھر سے بنائیں</string>
+    <string name="gen_use">استعمال کریں</string>
+
+    <!-- Search -->
+    <string name="search_title">تلاش کریں</string>
+    <string name="search_empty_default">ٹاسکس، نوٹس، یادوں اور پاسورڈز میں تلاش کرنے کے لیے ٹائپ کریں</string>
+    <string name="search_empty_results">کوئی نتیجہ نہیں ملا</string>
+    <string name="search_section_tasks">%1$d ٹاسکس</string>
+    <string name="search_section_notes">%1$d نوٹس</string>
+    <string name="search_section_memoirs">%1$d یادوں</string>
+    <string name="search_section_passwords">%1$d پاسورڈز</string>
+
+    <!-- Habits -->
+    <string name="habits_title">عادتیں</string>
+    <string name="habits_fab_new">نیا عادت</string>
+    <string name="habits_empty_default">ابھی تک کوئی عادت نہیں۔ اپنی پہلی عادت بنانے کے لیے + دبائیں!</string>
+    <string name="habit_detail_new">نیا عادت</string>
+    <string name="habit_detail_edit">عادت ترمیم کریں</string>
+    <string name="habit_field_name">عادت کا نام</string>
+    <string name="habit_field_description">تفصیل</string>
+    <string name="habit_field_emoji">ایموجی</string>
+    <string name="habit_done_today">آج مکمل</string>
+    <string name="habit_mark_done">مکمل کے طور پر نشان زد</string>
+    <string name="habit_streak">🔥 %1$d دن کی سلسلہ</string>
+    <string name="dashboard_habits_subtitle">%1$d فعال</string>
+
+    <!-- Bills -->
+    <string name="bills_title">بل</string>
+    <string name="bills_fab_new">بل شامل کریں</string>
+    <string name="bills_empty_default">ابھی تک کوئی بل نہیں۔ اپنا پہلا بل شامل کرنے کے لیے + دبائیں!</string>
+    <string name="bill_detail_new">نیا بل</string>
+    <string name="bill_detail_edit">بل ترمیم کریں</string>
+    <string name="bill_field_name">بل کا نام</string>
+    <string name="bill_field_amount">رقم</string>
+    <string name="bill_field_due_day">ادائیگی دن</string>
+    <string name="bill_field_category">قسم</string>
+    <string name="bill_field_notes">نوٹس</string>
+    <string name="bill_field_reminder_enabled">یاد دہانی فعال کریں</string>
+    <string name="bill_reminder_days">%1$d دن پہلے یاد دلائیں</string>
+    <string name="bill_mark_paid">ادا شدہ کے طور پر نشان زد</string>
+    <string name="bill_paid">ادا شدہ</string>
+    <string name="bill_overdue">گزرا ہوا</string>
+    <string name="bill_due_soon">جلد ادائیگی</string>
+    <string name="bill_schedule_next">اگلا: %1$s</string>
+    <string name="bill_reminder_title">بل یاد دہانی</string>
+    <string name="bill_reminder_body">%2$s کے لیے %1$s جلد ادائیگی</string>
+    <string name="dashboard_bills_subtitle">%1$d جلد ادائیگی</string>
+
+    <!-- Mood Trend -->
+    <string name="mood_trend_title">اس مہینے کا موڑ رجحان</string>
+
+    <string name="contacts_title">رابطے</string>
+    <string name="contacts_add">رابطہ شامل کریں</string>
+    <string name="contacts_edit">رابطہ تبدیل کریں</string>
+    <string name="contacts_search">رابطے تلاش کریں…</string>
+    <string name="contacts_empty">ابھی کوئی رابطہ نہیں</string>
+    <string name="contacts_empty_hint">پہلا رابطہ شامل کرنے کے لیے + دبائیں</string>
+    <string name="contacts_field_user_id">یوزر آئی ڈی</string>
+    <string name="contacts_field_name">نام</string>
+    <string name="contacts_field_role">کردار (اختیاری)</string>
+    <string name="dashboard_contacts_subtitle">اپنی ٹیم کا انتظام کریں</string>
+
+    <string name="assign_title">ٹاسک تفویض کریں</string>
+    <string name="assign_field_title">ٹاسک کا عنوان</string>
+    <string name="assign_field_description">تفصیل</string>
+    <string name="assign_field_priority">ترجیح</string>
+    <string name="assign_field_due_date">آخری تاریخ</string>
+    <string name="assign_no_date">کوئی تاریخ منتخب نہیں</string>
+    <string name="assign_section_assignees">مقرر کردہ</string>
+    <string name="assign_manage_contacts">انتظام</string>
+    <string name="assign_no_contacts">ابھی کوئی رابطہ نہیں</string>
+    <string name="assign_add_contacts">رابطے شامل کریں</string>
+    <string name="assign_manual_user_id">یا یوزر آئی ڈی درج کریں</string>
+    <string name="assign_manual_hint">اپنے رابطوں سے باہر کسی کو شامل کریں</string>
+    <string name="assign_selected_count">%1$d منتخب</string>
+    <string name="assign_submit">تفویض کریں</string>
+    <string name="assign_clear">صاف کریں</string>
+    <string name="assign_error_title">عنوان ضروری ہے</string>
+    <string name="assign_error_assignee">کم از کم ایک مقرر کردہ منتخب کریں</string>
+    <string name="assign_success">ٹاسک کامیابی سے تفویض ہو گیا!</string>
+    <string name="dashboard_assign_subtitle">دوسروں کو تفویض کریں</string>
+    <string name="dashboard_assigned_to_me_subtitle">آپ کو سونپے گئے ٹاسک</string>
+    <string name="dashboard_assign_stats_subtitle">اپنے تفویض کردہ ٹاسک ٹریک کریں</string>
+    <string name="assign_stats_title">تفویض کے اعداد و شمار</string>
+    <string name="assign_stats_total">کل</string>
+    <string name="assign_stats_acceptance">قبولیت کی شرح</string>
+    <string name="assign_stats_completion">تکمیل کی شرح</string>
+    <string name="assign_stats_breakdown">حیثیت کی تفصیل</string>
+    <string name="assign_stats_recent">حالیہ تفویضات</string>
+    <string name="assign_stats_assignees">کو: %1$s</string>
+
+    <!-- AssignedToMe screen -->
+    <string name="assigned_to_me_title">مجھے سونپے گئے</string>
+    <string name="assigned_refresh">تازہ کریں</string>
+    <string name="assigned_filter_all">سب</string>
+    <string name="assigned_retry">دوبارہ کوشش کریں</string>
+    <string name="assigned_empty">ابھی کوئی تفویض نہیں</string>
+    <string name="assigned_empty_hint">آپ کو سونپے گئے ٹاسک یہاں نظر آئیں گے</string>
+    <string name="assigned_by">%1$s کی طرف سے سونپا گیا</string>
+    <string name="assigned_decline">مسترد کریں</string>
+    <string name="assigned_accept">قبول کریں</string>
+    <string name="assigned_start">شروع کریں</string>
+    <string name="assigned_complete">مکمل کریں</string>
+    <string name="assigned_completed_label">مکمل</string>
+    <string name="assigned_declined_label">مسترد</string>
+    <string name="assigned_status_pending">زیر التواء</string>
+    <string name="assigned_status_accepted">قبول شدہ</string>
+    <string name="assigned_status_in_progress">جاری</string>
+    <string name="assigned_status_completed">مکمل</string>
+    <string name="assigned_status_declined">مسترد</string>
+    <string name="notif_assigned_title">نیا ٹاسک سونپا گیا</string>
+    <string name="notif_assigned_body">%1$s نے آپ کو "%2$s" سونپا</string>
+    <string name="notif_status_title">ٹاسک کی حیثیت اپڈیٹ ہوئی</string>
+    <string name="notif_status_body">%1$s نے "%2$s" کو %3$s میں اپڈیٹ کیا</string>
 </resources>

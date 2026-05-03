@@ -7,14 +7,18 @@ import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.filled.ArrowBack
 import androidx.compose.material.icons.automirrored.filled.Logout
+import androidx.compose.material.icons.filled.ContentCopy
 import androidx.compose.material.icons.filled.DeleteForever
+import androidx.compose.material.icons.filled.Fingerprint
 import androidx.compose.material3.*
 import androidx.compose.runtime.*
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
+import androidx.compose.ui.platform.LocalClipboardManager
 import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.text.AnnotatedString
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
@@ -35,8 +39,18 @@ fun ProfileScreen(
     val deleteState by appViewModel.deleteAccountState.collectAsStateWithLifecycle()
     val deleteError by appViewModel.deleteAccountError.collectAsStateWithLifecycle()
     val context = LocalContext.current
+    val clipboardManager = LocalClipboardManager.current
+    val snackbarHostState = remember { SnackbarHostState() }
     var showSignOutDialog by remember { mutableStateOf(false) }
     var showDeleteDialog by remember { mutableStateOf(false) }
+    var copiedId by remember { mutableStateOf(false) }
+
+    LaunchedEffect(copiedId) {
+        if (copiedId) {
+            snackbarHostState.showSnackbar(context.getString(R.string.profile_id_copied))
+            copiedId = false
+        }
+    }
 
     LaunchedEffect(deleteState) {
         if (deleteState == DeleteAccountState.DONE) {
@@ -111,6 +125,7 @@ fun ProfileScreen(
     }
 
     Scaffold(
+        snackbarHost = { SnackbarHost(snackbarHostState) },
         topBar = {
             TopAppBar(
                 title = { Text(stringResource(R.string.profile_title)) },
@@ -167,6 +182,46 @@ fun ProfileScreen(
                     style = MaterialTheme.typography.bodyMedium,
                     color = MaterialTheme.colorScheme.onSurfaceVariant
                 )
+            }
+
+            // User ID card
+            currentUser?.uid?.let { uid ->
+                ElevatedCard(
+                    modifier = Modifier.fillMaxWidth(),
+                    shape    = RoundedCornerShape(16.dp)
+                ) {
+                    ListItem(
+                        leadingContent = {
+                            Icon(Icons.Default.Fingerprint, null, tint = MaterialTheme.colorScheme.primary)
+                        },
+                        headlineContent = { Text(stringResource(R.string.profile_user_id)) },
+                        supportingContent = {
+                            Text(
+                                text  = uid,
+                                style = MaterialTheme.typography.bodySmall,
+                                color = MaterialTheme.colorScheme.onSurfaceVariant
+                            )
+                        },
+                        trailingContent = {
+                            IconButton(onClick = {
+                                clipboardManager.setText(AnnotatedString(uid))
+                                copiedId = true
+                            }) {
+                                Icon(
+                                    Icons.Default.ContentCopy,
+                                    contentDescription = stringResource(R.string.profile_copy_id),
+                                    tint = MaterialTheme.colorScheme.primary
+                                )
+                            }
+                        }
+                    )
+                    Text(
+                        text     = stringResource(R.string.profile_user_id_hint),
+                        style    = MaterialTheme.typography.labelSmall,
+                        color    = MaterialTheme.colorScheme.onSurfaceVariant.copy(alpha = 0.7f),
+                        modifier = Modifier.padding(start = 16.dp, end = 16.dp, bottom = 12.dp)
+                    )
+                }
             }
 
             HorizontalDivider()

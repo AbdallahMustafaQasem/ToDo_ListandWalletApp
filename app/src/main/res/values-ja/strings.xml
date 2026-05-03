@@ -11,6 +11,7 @@
     <string name="more">もっと見る</string>
     <string name="sort">並べ替え</string>
     <string name="add">追加</string>
+    <string name="edit">編集</string>
 
     <string name="title_my_todos">マイタスク</string>
     <string name="search_placeholder">タスクを検索…</string>
@@ -143,7 +144,26 @@
 
     <string name="about_title">アプリについて</string>
     <string name="about_version">バージョン 2.0</string>
-    <string name="about_description">Jetpack Compose、Material Design 3、クリーンアーキテクチャ、DataStore で作られた美しくアニメーションされた ToDo アプリ。</string>
+    <string name="about_tagline">オールインワンの生産性パートナー</string>
+    <string name="about_description">TaskVaultはタスク管理、安全なメモ、個人的な日記、パスワード保管庫、習慣トラッカー、請求書リマインダー、ウォレットで整理整頓をサポートします — Material Design 3で美しく設計されています。</string>
+    <string name="about_features_title">できること</string>
+    <string name="about_feature_tasks">サブタスク、優先度、リマインダー付きタスク</string>
+    <string name="about_feature_notes">リッチコンテンツ付き安全なメモ</string>
+    <string name="about_feature_memoirs">気分トラッキング付き個人日記</string>
+    <string name="about_feature_passwords">ジェネレーター付きパスワード保管庫</string>
+    <string name="about_feature_wallet">予算とカテゴリ付きウォレット</string>
+    <string name="about_feature_habits">連続記録付き毎日の習慣トラッカー</string>
+    <string name="about_feature_bills">通知付き請求書リマインダー</string>
+    <string name="about_feature_sync">Firebaseクラウド同期</string>
+    <string name="about_enjoying">TaskVaultを楽しんでいますか？</string>
+    <string name="about_rate">評価する</string>
+    <string name="about_share">アプリを共有</string>
+    <string name="about_share_message">TaskVaultをチェック — 素晴らしい生産性アプリです！%1$s</string>
+    <string name="about_share_via">共有方法</string>
+    <string name="about_built_with">使用技術</string>
+    <string name="about_developer_label">開発者</string>
+    <string name="about_developer_name">Abdallah Mustafa</string>
+    <string name="about_footer">❤ と Kotlin で作られました</string>
 
     <string name="day_sun">日</string>
     <string name="day_mon">月</string>
@@ -230,6 +250,10 @@
     <string name="profile_sync_status">クラウド同期</string>
     <string name="profile_sync_subtitle">データはFirebaseと同期されています</string>
     <string name="profile_sync_active">有効</string>
+    <string name="profile_user_id">あなたのユーザーID</string>
+    <string name="profile_copy_id">IDをコピー</string>
+    <string name="profile_id_copied">ユーザーIDをコピーしました</string>
+    <string name="profile_user_id_hint">このIDを共有して、他の人があなたを連絡先に追加しタスクを割り当てられるようにしましょう</string>
 
     <string name="settings_title">設定</string>
     <string name="settings_section_account">アカウント</string>
@@ -277,4 +301,185 @@
     <string name="snackbar_undo">元に戻す</string>
 
     <string name="alarm_permission_rationale">正確なアラーム権限が付与されていません。リマインダーが不正確になる場合があります。</string>
+
+    <!-- Dashboard -->
+    <string name="dashboard_greeting_morning">おはようございます、</string>
+    <string name="dashboard_greeting_afternoon">こんにちは、</string>
+    <string name="dashboard_greeting_evening">こんばんは、</string>
+    <string name="dashboard_greeting_night">おやすみなさい、</string>
+    <string name="dashboard_features_title">機能</string>
+    <string name="dashboard_feature_tasks">タスク</string>
+    <string name="dashboard_tasks_subtitle">%1$d アクティブ</string>
+    <string name="dashboard_feature_notes">ノート</string>
+    <string name="dashboard_notes_subtitle">%1$d 保存済み</string>
+    <string name="dashboard_feature_memoirs">回顧録</string>
+    <string name="dashboard_memoirs_subtitle">%1$d エントリ</string>
+    <string name="dashboard_wallet_subtitle">財務管理</string>
+    <string name="dashboard_calendar_subtitle">スケジュール表示</string>
+    <string name="dashboard_stats_subtitle">進捗を見る</string>
+    <string name="dashboard_tasks_count">%1$d タスク</string>
+    <string name="dashboard_notes_count">%1$d ノート</string>
+    <string name="dashboard_memoirs_count">%1$d 回顧録</string>
+
+    <!-- Notes -->
+    <string name="notes_title">ノート</string>
+    <string name="notes_search_placeholder">ノートを検索…</string>
+    <string name="notes_fab_new">新しいノート</string>
+    <string name="notes_empty_default">まだノートがありません\n＋をタップして作成</string>
+    <string name="notes_empty_search">ノートが見つかりません</string>
+    <string name="note_detail_title">ノート</string>
+    <string name="note_field_title_placeholder">タイトル</string>
+    <string name="note_field_content_placeholder">書き始めてください…</string>
+    <string name="note_color_label">色</string>
+    <string name="note_pin">ピン留め</string>
+    <string name="note_unpin">ピン解除</string>
+
+    <!-- Memoirs -->
+    <string name="memoirs_title">回顧録</string>
+    <string name="memoirs_search_placeholder">回顧録を検索…</string>
+    <string name="memoirs_fab_new">新しい回顧録</string>
+    <string name="memoirs_empty_default">まだ回顧録がありません\n＋をタップして最初の回顧録を書く</string>
+    <string name="memoirs_empty_search">回顧録が見つかりません</string>
+    <string name="memoir_detail_title">回顧録</string>
+    <string name="memoir_mood_label">気分</string>
+    <string name="memoir_mood_question">今日の気分はいかがですか？</string>
+    <string name="memoir_field_title_placeholder">タイトル（任意）</string>
+    <string name="memoir_field_content_placeholder">今日のことを書いてください…</string>
+
+    <!-- Passwords -->
+    <string name="passwords_title">パスワード</string>
+    <string name="passwords_search_placeholder">パスワードを検索…</string>
+    <string name="passwords_fab_new">新しいパスワード</string>
+    <string name="passwords_empty_default">パスワードが保存されていません\n＋をタップして追加</string>
+    <string name="passwords_empty_search">パスワードが見つかりません</string>
+    <string name="password_detail_new">新しいパスワード</string>
+    <string name="password_detail_edit">パスワードを編集</string>
+    <string name="password_field_title">アカウント / アプリ名</string>
+    <string name="password_field_username">ユーザー名 / メール</string>
+    <string name="password_field_password">パスワード</string>
+    <string name="password_field_url">ウェブサイト URL</string>
+    <string name="password_field_notes">メモ（任意）</string>
+    <string name="password_show">パスワードを表示</string>
+    <string name="password_hide">パスワードを非表示</string>
+    <string name="password_copy">パスワードをコピー</string>
+    <string name="password_security_note">パスワードはローカルに保存され、Firebaseアカウントと同期されます。</string>
+    <string name="dashboard_passwords_subtitle">%1$d 保存済み</string>
+
+    <!-- Password Generator -->
+    <string name="gen_password_title">パスワード生成器</string>
+    <string name="gen_length">長さ: %1$d</string>
+    <string name="gen_regenerate">再生成</string>
+    <string name="gen_use">使用</string>
+
+    <!-- Search -->
+    <string name="search_title">検索</string>
+    <string name="search_empty_default">タスク、メモ、日記、パスワードを検索するには入力してください</string>
+    <string name="search_empty_results">結果が見つかりませんでした</string>
+    <string name="search_section_tasks">%1$d タスク</string>
+    <string name="search_section_notes">%1$d メモ</string>
+    <string name="search_section_memoirs">%1$d 日記</string>
+    <string name="search_section_passwords">%1$d パスワード</string>
+
+    <!-- Habits -->
+    <string name="habits_title">習慣</string>
+    <string name="habits_fab_new">新しい習慣</string>
+    <string name="habits_empty_default">まだ習慣がありません。+ をタップして最初の習慣を作成しましょう！</string>
+    <string name="habit_detail_new">新しい習慣</string>
+    <string name="habit_detail_edit">習慣を編集</string>
+    <string name="habit_field_name">習慣名</string>
+    <string name="habit_field_description">説明</string>
+    <string name="habit_field_emoji">絵文字</string>
+    <string name="habit_done_today">今日完了</string>
+    <string name="habit_mark_done">完了としてマーク</string>
+    <string name="habit_streak">🔥 %1$d日連続</string>
+    <string name="dashboard_habits_subtitle">%1$d アクティブ</string>
+
+    <!-- Bills -->
+    <string name="bills_title">請求書</string>
+    <string name="bills_fab_new">請求書を追加</string>
+    <string name="bills_empty_default">まだ請求書がありません。+ をタップして最初の請求書を追加しましょう！</string>
+    <string name="bill_detail_new">新しい請求書</string>
+    <string name="bill_detail_edit">請求書を編集</string>
+    <string name="bill_field_name">請求書名</string>
+    <string name="bill_field_amount">金額</string>
+    <string name="bill_field_due_day">支払日</string>
+    <string name="bill_field_category">カテゴリ</string>
+    <string name="bill_field_notes">メモ</string>
+    <string name="bill_field_reminder_enabled">リマインダーを有効にする</string>
+    <string name="bill_reminder_days">%1$d日前にリマインド</string>
+    <string name="bill_mark_paid">支払済みとしてマーク</string>
+    <string name="bill_paid">支払済み</string>
+    <string name="bill_overdue">期限切れ</string>
+    <string name="bill_due_soon">支払い間近</string>
+    <string name="bill_schedule_next">次回: %1$s</string>
+    <string name="bill_reminder_title">請求書リマインダー</string>
+    <string name="bill_reminder_body">%2$sの%1$sが支払い間近です</string>
+    <string name="dashboard_bills_subtitle">%1$d 支払い間近</string>
+
+    <!-- Mood Trend -->
+    <string name="mood_trend_title">今月の気分トレンド</string>
+
+    <string name="contacts_title">連絡先</string>
+    <string name="contacts_add">連絡先を追加</string>
+    <string name="contacts_edit">連絡先を編集</string>
+    <string name="contacts_search">連絡先を検索…</string>
+    <string name="contacts_empty">連絡先がありません</string>
+    <string name="contacts_empty_hint">+をタップして最初の連絡先を追加</string>
+    <string name="contacts_field_user_id">ユーザーID</string>
+    <string name="contacts_field_name">表示名</string>
+    <string name="contacts_field_role">役割（任意）</string>
+    <string name="dashboard_contacts_subtitle">チームを管理</string>
+
+    <string name="assign_title">タスクを割り当て</string>
+    <string name="assign_field_title">タスクタイトル</string>
+    <string name="assign_field_description">説明</string>
+    <string name="assign_field_priority">優先度</string>
+    <string name="assign_field_due_date">期限</string>
+    <string name="assign_no_date">日付未選択</string>
+    <string name="assign_section_assignees">担当者</string>
+    <string name="assign_manage_contacts">管理</string>
+    <string name="assign_no_contacts">連絡先がまだありません</string>
+    <string name="assign_add_contacts">連絡先を追加</string>
+    <string name="assign_manual_user_id">またはユーザーIDを入力</string>
+    <string name="assign_manual_hint">連絡先にない人を追加</string>
+    <string name="assign_selected_count">%1$d 件選択</string>
+    <string name="assign_submit">割り当て</string>
+    <string name="assign_clear">クリア</string>
+    <string name="assign_error_title">タイトルは必須です</string>
+    <string name="assign_error_assignee">少なくとも1人の担当者を選択してください</string>
+    <string name="assign_success">タスクが正常に割り当てられました！</string>
+    <string name="dashboard_assign_subtitle">他の人に割り当て</string>
+    <string name="dashboard_assigned_to_me_subtitle">自分に割り当てられたタスク</string>
+    <string name="dashboard_assign_stats_subtitle">割り当てたタスクを追跡</string>
+    <string name="assign_stats_title">割り当て統計</string>
+    <string name="assign_stats_total">合計</string>
+    <string name="assign_stats_acceptance">受諾率</string>
+    <string name="assign_stats_completion">完了率</string>
+    <string name="assign_stats_breakdown">ステータス別内訳</string>
+    <string name="assign_stats_recent">最近の割り当て</string>
+    <string name="assign_stats_assignees">宛先: %1$s</string>
+
+    <!-- AssignedToMe screen -->
+    <string name="assigned_to_me_title">自分に割り当てられた</string>
+    <string name="assigned_refresh">更新</string>
+    <string name="assigned_filter_all">すべて</string>
+    <string name="assigned_retry">再試行</string>
+    <string name="assigned_empty">まだ割り当てはありません</string>
+    <string name="assigned_empty_hint">自分に割り当てられたタスクがここに表示されます</string>
+    <string name="assigned_by">%1$s から割り当て</string>
+    <string name="assigned_decline">拒否</string>
+    <string name="assigned_accept">承認</string>
+    <string name="assigned_start">開始</string>
+    <string name="assigned_complete">完了</string>
+    <string name="assigned_completed_label">完了済み</string>
+    <string name="assigned_declined_label">拒否済み</string>
+    <string name="assigned_status_pending">保留中</string>
+    <string name="assigned_status_accepted">承認済み</string>
+    <string name="assigned_status_in_progress">進行中</string>
+    <string name="assigned_status_completed">完了済み</string>
+    <string name="assigned_status_declined">拒否済み</string>
+    <string name="notif_assigned_title">新しいタスクが割り当てられました</string>
+    <string name="notif_assigned_body">%1$s があなたに "%2$s" を割り当てました</string>
+    <string name="notif_status_title">タスクのステータスが更新されました</string>
+    <string name="notif_status_body">%1$s が "%2$s" を %3$s に更新しました</string>
 </resources>

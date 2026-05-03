@@ -15,9 +15,15 @@ import com.abdallah.taskvault.data.local.converter.TransactionTypeConverter
         WalletCategoryEntity::class,
         WalletBudgetEntity::class,
         SubtaskEntity::class,
-        TodoListEntity::class
+        TodoListEntity::class,
+        NoteEntity::class,
+        MemoirEntity::class,
+        PasswordEntity::class,
+        HabitEntity::class,
+        BillEntity::class,
+        ContactEntity::class
     ],
-    version = 4,
+    version = 9,
     exportSchema = true
 )
 @TypeConverters(PriorityConverter::class, TransactionTypeConverter::class)
@@ -26,6 +32,12 @@ abstract class TodoDatabase : RoomDatabase() {
     abstract fun walletDao(): WalletDao
     abstract fun subtaskDao(): SubtaskDao
     abstract fun todoListDao(): TodoListDao
+    abstract fun noteDao(): NoteDao
+    abstract fun memoirDao(): MemoirDao
+    abstract fun passwordDao(): PasswordDao
+    abstract fun habitDao(): HabitDao
+    abstract fun billDao(): BillDao
+    abstract fun contactDao(): ContactDao
 
     companion object {
         const val DATABASE_NAME = "todo_database"
@@ -68,6 +80,115 @@ abstract class TodoDatabase : RoomDatabase() {
                     CREATE TABLE IF NOT EXISTS wallet_budget (
                         id INTEGER PRIMARY KEY NOT NULL,
                         monthly_budget REAL NOT NULL
+                    )
+                    """.trimIndent()
+                )
+            }
+        }
+
+        val MIGRATION_8_9 = object : Migration(8, 9) {
+            override fun migrate(db: SupportSQLiteDatabase) {
+                db.execSQL(
+                    """
+                    CREATE TABLE IF NOT EXISTS contacts (
+                        id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,
+                        user_id TEXT NOT NULL,
+                        display_name TEXT NOT NULL,
+                        role TEXT NOT NULL DEFAULT '',
+                        avatar_color TEXT NOT NULL DEFAULT '#6750A4',
+                        added_at INTEGER NOT NULL
+                    )
+                    """.trimIndent()
+                )
+                db.execSQL("CREATE UNIQUE INDEX IF NOT EXISTS index_contacts_user_id ON contacts(user_id)")
+            }
+        }
+
+        val MIGRATION_7_8 = object : Migration(7, 8) {
+            override fun migrate(db: SupportSQLiteDatabase) {
+                db.execSQL(
+                    """
+                    CREATE TABLE IF NOT EXISTS bills (
+                        id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,
+                        name TEXT NOT NULL,
+                        amount REAL NOT NULL,
+                        due_day INTEGER NOT NULL,
+                        category TEXT NOT NULL DEFAULT 'Other',
+                        notes TEXT NOT NULL DEFAULT '',
+                        is_paid INTEGER NOT NULL DEFAULT 0,
+                        reminder_enabled INTEGER NOT NULL DEFAULT 0,
+                        reminder_days_before INTEGER NOT NULL DEFAULT 1,
+                        next_due_date_millis INTEGER NOT NULL,
+                        created_at INTEGER NOT NULL
+                    )
+                    """.trimIndent()
+                )
+            }
+        }
+
+        val MIGRATION_6_7 = object : Migration(6, 7) {
+            override fun migrate(db: SupportSQLiteDatabase) {
+                db.execSQL(
+                    """
+                    CREATE TABLE IF NOT EXISTS habits (
+                        id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,
+                        name TEXT NOT NULL,
+                        description TEXT NOT NULL DEFAULT '',
+                        color_hex TEXT NOT NULL DEFAULT '#6750A4',
+                        emoji TEXT NOT NULL DEFAULT '⭐',
+                        streak INTEGER NOT NULL DEFAULT 0,
+                        longest_streak INTEGER NOT NULL DEFAULT 0,
+                        last_completed_date TEXT,
+                        created_at INTEGER NOT NULL
+                    )
+                    """.trimIndent()
+                )
+            }
+        }
+
+        val MIGRATION_5_6 = object : Migration(5, 6) {
+            override fun migrate(db: SupportSQLiteDatabase) {
+                db.execSQL(
+                    """
+                    CREATE TABLE IF NOT EXISTS passwords (
+                        id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,
+                        title TEXT NOT NULL,
+                        username TEXT NOT NULL DEFAULT '',
+                        password TEXT NOT NULL,
+                        url TEXT NOT NULL DEFAULT '',
+                        notes TEXT NOT NULL DEFAULT '',
+                        created_at_millis INTEGER NOT NULL,
+                        updated_at_millis INTEGER NOT NULL
+                    )
+                    """.trimIndent()
+                )
+            }
+        }
+
+        val MIGRATION_4_5 = object : Migration(4, 5) {
+            override fun migrate(db: SupportSQLiteDatabase) {
+                db.execSQL(
+                    """
+                    CREATE TABLE IF NOT EXISTS notes (
+                        id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,
+                        title TEXT NOT NULL,
+                        content TEXT NOT NULL,
+                        color_hex TEXT NOT NULL DEFAULT '#6750A4',
+                        is_pinned INTEGER NOT NULL DEFAULT 0,
+                        created_at_millis INTEGER NOT NULL,
+                        updated_at_millis INTEGER NOT NULL
+                    )
+                    """.trimIndent()
+                )
+                db.execSQL(
+                    """
+                    CREATE TABLE IF NOT EXISTS memoirs (
+                        id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,
+                        title TEXT NOT NULL,
+                        content TEXT NOT NULL,
+                        mood TEXT NOT NULL DEFAULT '😊',
+                        date_millis INTEGER NOT NULL,
+                        created_at_millis INTEGER NOT NULL
                     )
                     """.trimIndent()
                 )

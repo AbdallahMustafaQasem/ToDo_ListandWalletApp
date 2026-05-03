@@ -11,6 +11,7 @@
     <string name="more">المزيد</string>
     <string name="sort">ترتيب</string>
     <string name="add">إضافة</string>
+    <string name="edit">تعديل</string>
 
     <string name="title_my_todos">مهامي</string>
     <string name="search_placeholder">البحث في المهام…</string>
@@ -190,7 +191,26 @@
 
     <string name="about_title">حول التطبيق</string>
     <string name="about_version">الإصدار 2.0</string>
-    <string name="about_description">تطبيق مهام أنيق ومتحرك، مبني باستخدام Jetpack Compose وMaterial Design 3 والبنية النظيفة وDataStore.</string>
+    <string name="about_tagline">رفيقك الشامل للإنتاجية</string>
+    <string name="about_description">يساعدك TaskVault على التنظيم مع إدارة مهام قوية، ملاحظات آمنة، مذكرات شخصية، تخزين كلمات المرور، تتبع العادات، تذكيرات الفواتير، ومحفظة كاملة — مصمم بجمال مع Material Design 3.</string>
+    <string name="about_features_title">ما يمكنك فعله</string>
+    <string name="about_feature_tasks">مهام بمهام فرعية وأولويات وتذكيرات</string>
+    <string name="about_feature_notes">ملاحظات آمنة بمحتوى غني</string>
+    <string name="about_feature_memoirs">مذكرات شخصية مع تتبع المزاج</string>
+    <string name="about_feature_passwords">خزنة كلمات مرور مع مولد</string>
+    <string name="about_feature_wallet">محفظة مع ميزانيات وفئات</string>
+    <string name="about_feature_habits">تتبع عادات يومي مع سلاسل</string>
+    <string name="about_feature_bills">تذكيرات فواتير مع إشعارات</string>
+    <string name="about_feature_sync">مزامنة سحابية مع Firebase</string>
+    <string name="about_enjoying">هل تستمتع بـ TaskVault؟</string>
+    <string name="about_rate">قيمنا</string>
+    <string name="about_share">مشاركة التطبيق</string>
+    <string name="about_share_message">جرب TaskVault — تطبيق إنتاجية مذهل! %1$s</string>
+    <string name="about_share_via">مشاركة عبر</string>
+    <string name="about_built_with">مبني بواسطة</string>
+    <string name="about_developer_label">تم التطوير بواسطة</string>
+    <string name="about_developer_name">عبدالله مصطفى</string>
+    <string name="about_footer">صنع بـ ❤ في Kotlin</string>
 
     <string name="day_sun">أحد</string>
     <string name="day_mon">إثن</string>
@@ -230,6 +250,10 @@
     <string name="profile_sync_status">مزامنة السحابة</string>
     <string name="profile_sync_subtitle">بياناتك متزامنة مع Firebase</string>
     <string name="profile_sync_active">نشطة</string>
+    <string name="profile_user_id">معرف المستخدم الخاص بك</string>
+    <string name="profile_copy_id">نسخ المعرف</string>
+    <string name="profile_id_copied">تم نسخ معرف المستخدم</string>
+    <string name="profile_user_id_hint">شارك هذا المعرف ليتمكن الآخرون من إضافتك كجهة اتصال وتعيين مهام لك</string>
 
     <string name="settings_title">الإعدادات</string>
     <string name="settings_section_account">الحساب</string>
@@ -277,4 +301,185 @@
     <string name="snackbar_undo">تراجع</string>
 
     <string name="alarm_permission_rationale">لم يتم منح إذن التنبيه الدقيق. قد لا تكون التذكيرات دقيقة.</string>
+
+    <!-- Dashboard -->
+    <string name="dashboard_greeting_morning">صباح الخير،</string>
+    <string name="dashboard_greeting_afternoon">مساء الخير،</string>
+    <string name="dashboard_greeting_evening">مساء النور،</string>
+    <string name="dashboard_greeting_night">طابت ليلتك،</string>
+    <string name="dashboard_features_title">الميزات</string>
+    <string name="dashboard_feature_tasks">المهام</string>
+    <string name="dashboard_tasks_subtitle">%1$d نشطة</string>
+    <string name="dashboard_feature_notes">الملاحظات</string>
+    <string name="dashboard_notes_subtitle">%1$d محفوظة</string>
+    <string name="dashboard_feature_memoirs">المذكرات</string>
+    <string name="dashboard_memoirs_subtitle">%1$d مدخلات</string>
+    <string name="dashboard_wallet_subtitle">تتبع الشؤون المالية</string>
+    <string name="dashboard_calendar_subtitle">عرض الجدول</string>
+    <string name="dashboard_stats_subtitle">عرض التقدم</string>
+    <string name="dashboard_tasks_count">%1$d مهام</string>
+    <string name="dashboard_notes_count">%1$d ملاحظات</string>
+    <string name="dashboard_memoirs_count">%1$d مذكرات</string>
+
+    <!-- Notes -->
+    <string name="notes_title">الملاحظات</string>
+    <string name="notes_search_placeholder">البحث في الملاحظات…</string>
+    <string name="notes_fab_new">ملاحظة جديدة</string>
+    <string name="notes_empty_default">لا توجد ملاحظات بعد\nاضغط + لإنشاء واحدة</string>
+    <string name="notes_empty_search">لم يتم العثور على ملاحظات</string>
+    <string name="note_detail_title">ملاحظة</string>
+    <string name="note_field_title_placeholder">العنوان</string>
+    <string name="note_field_content_placeholder">ابدأ الكتابة…</string>
+    <string name="note_color_label">اللون</string>
+    <string name="note_pin">تثبيت</string>
+    <string name="note_unpin">إلغاء التثبيت</string>
+
+    <!-- Memoirs -->
+    <string name="memoirs_title">المذكرات</string>
+    <string name="memoirs_search_placeholder">البحث في المذكرات…</string>
+    <string name="memoirs_fab_new">مذكرة جديدة</string>
+    <string name="memoirs_empty_default">لا توجد مذكرات بعد\nاضغط + لكتابة أولى مذكراتك</string>
+    <string name="memoirs_empty_search">لم يتم العثور على مذكرات</string>
+    <string name="memoir_detail_title">مذكرة</string>
+    <string name="memoir_mood_label">المزاج</string>
+    <string name="memoir_mood_question">كيف حالك اليوم؟</string>
+    <string name="memoir_field_title_placeholder">العنوان (اختياري)</string>
+    <string name="memoir_field_content_placeholder">اكتب عن يومك…</string>
+
+    <!-- Passwords -->
+    <string name="passwords_title">كلمات المرور</string>
+    <string name="passwords_search_placeholder">البحث في كلمات المرور…</string>
+    <string name="passwords_fab_new">كلمة مرور جديدة</string>
+    <string name="passwords_empty_default">لا توجد كلمات مرور محفوظة\nاضغط + لإضافة واحدة</string>
+    <string name="passwords_empty_search">لم يتم العثور على كلمات مرور</string>
+    <string name="password_detail_new">كلمة مرور جديدة</string>
+    <string name="password_detail_edit">تعديل كلمة المرور</string>
+    <string name="password_field_title">اسم الحساب / التطبيق</string>
+    <string name="password_field_username">اسم المستخدم / البريد الإلكتروني</string>
+    <string name="password_field_password">كلمة المرور</string>
+    <string name="password_field_url">رابط الموقع</string>
+    <string name="password_field_notes">ملاحظات (اختياري)</string>
+    <string name="password_show">إظهار كلمة المرور</string>
+    <string name="password_hide">إخفاء كلمة المرور</string>
+    <string name="password_copy">نسخ كلمة المرور</string>
+    <string name="password_security_note">كلمات المرور مخزنة محلياً ومزامنة مع حساب Firebase الخاص بك. حافظ على أمان حسابك.</string>
+    <string name="dashboard_passwords_subtitle">%1$d محفوظة</string>
+
+    <!-- Password Generator -->
+    <string name="gen_password_title">مولد كلمة المرور</string>
+    <string name="gen_length">الطول: %1$d</string>
+    <string name="gen_regenerate">إعادة إنشاء</string>
+    <string name="gen_use">استخدام</string>
+
+    <!-- Search -->
+    <string name="search_title">بحث</string>
+    <string name="search_empty_default">اكتب للبحث في المهام والملاحظات والمذكرات وكلمات المرور</string>
+    <string name="search_empty_results">لم يتم العثور على نتائج</string>
+    <string name="search_section_tasks">%1$d مهام</string>
+    <string name="search_section_notes">%1$d ملاحظات</string>
+    <string name="search_section_memoirs">%1$d مذكرات</string>
+    <string name="search_section_passwords">%1$d كلمات مرور</string>
+
+    <!-- Habits -->
+    <string name="habits_title">العادات</string>
+    <string name="habits_fab_new">عادة جديدة</string>
+    <string name="habits_empty_default">لا توجد عادات بعد. اضغط + لإنشاء عادتك الأولى!</string>
+    <string name="habit_detail_new">عادة جديدة</string>
+    <string name="habit_detail_edit">تعديل العادة</string>
+    <string name="habit_field_name">اسم العادة</string>
+    <string name="habit_field_description">الوصف</string>
+    <string name="habit_field_emoji">رمز تعبيري</string>
+    <string name="habit_done_today">تم اليوم</string>
+    <string name="habit_mark_done">تم كـمكتمل</string>
+    <string name="habit_streak">🔥 سلسلة %1$d يوم</string>
+    <string name="dashboard_habits_subtitle">%1$d نشطة</string>
+
+    <!-- Bills -->
+    <string name="bills_title">الفواتير</string>
+    <string name="bills_fab_new">إضافة فاتورة</string>
+    <string name="bills_empty_default">لا توجد فواتير بعد. اضغط + لإضافة فاتورتك الأولى!</string>
+    <string name="bill_detail_new">فاتورة جديدة</string>
+    <string name="bill_detail_edit">تعديل الفاتورة</string>
+    <string name="bill_field_name">اسم الفاتورة</string>
+    <string name="bill_field_amount">المبلغ</string>
+    <string name="bill_field_due_day">يوم الاستحقاق</string>
+    <string name="bill_field_category">الفئة</string>
+    <string name="bill_field_notes">ملاحظات</string>
+    <string name="bill_field_reminder_enabled">تفعيل التذكير</string>
+    <string name="bill_reminder_days">تذكير %1$d يوم قبل</string>
+    <string name="bill_mark_paid">تم كمدفوع</string>
+    <string name="bill_paid">مدفوع</string>
+    <string name="bill_overdue">متأخر</string>
+    <string name="bill_due_soon">قريب الاستحقاق</string>
+    <string name="bill_schedule_next">التالي: %1$s</string>
+    <string name="bill_reminder_title">تذكير الفاتورة</string>
+    <string name="bill_reminder_body">%1$s مقابل %2$s قريب الاستحقاق</string>
+    <string name="dashboard_bills_subtitle">%1$d قريب الاستحقاق</string>
+
+    <!-- Mood Trend -->
+    <string name="mood_trend_title">اتجاه المزاج هذا الشهر</string>
+
+    <string name="contacts_title">جهات الاتصال</string>
+    <string name="contacts_add">إضافة جهة اتصال</string>
+    <string name="contacts_edit">تعديل جهة اتصال</string>
+    <string name="contacts_search">بحث في جهات الاتصال…</string>
+    <string name="contacts_empty">لا توجد جهات اتصال بعد</string>
+    <string name="contacts_empty_hint">اضغط + لإضافة أول جهة اتصال</string>
+    <string name="contacts_field_user_id">معرف المستخدم</string>
+    <string name="contacts_field_name">الاسم</string>
+    <string name="contacts_field_role">الدور (اختياري)</string>
+    <string name="dashboard_contacts_subtitle">إدارة فريقك</string>
+
+    <string name="assign_title">تعيين مهمة</string>
+    <string name="assign_field_title">عنوان المهمة</string>
+    <string name="assign_field_description">الوصف</string>
+    <string name="assign_field_priority">الأولوية</string>
+    <string name="assign_field_due_date">تاريخ الاستحقاق</string>
+    <string name="assign_no_date">لم يتم تحديد تاريخ</string>
+    <string name="assign_section_assignees">المعينون</string>
+    <string name="assign_manage_contacts">إدارة</string>
+    <string name="assign_no_contacts">لا توجد جهات اتصال بعد</string>
+    <string name="assign_add_contacts">إضافة جهات اتصال</string>
+    <string name="assign_manual_user_id">أو أدخل معرف المستخدم مباشرة</string>
+    <string name="assign_manual_hint">أضف شخصاً غير موجود في جهات اتصالك</string>
+    <string name="assign_selected_count">%1$d مُحدد</string>
+    <string name="assign_submit">تعيين</string>
+    <string name="assign_clear">مسح</string>
+    <string name="assign_error_title">العنوان مطلوب</string>
+    <string name="assign_error_assignee">حدد شخصاً واحداً على الأقل</string>
+    <string name="assign_success">تم تعيين المهمة بنجاح!</string>
+    <string name="dashboard_assign_subtitle">تعيين للآخرين</string>
+    <string name="dashboard_assigned_to_me_subtitle">المهام المُسندة إليك</string>
+    <string name="dashboard_assign_stats_subtitle">تتبع مهامك المُسندة</string>
+    <string name="assign_stats_title">إحصائيات التعيين</string>
+    <string name="assign_stats_total">الإجمالي</string>
+    <string name="assign_stats_acceptance">نسبة القبول</string>
+    <string name="assign_stats_completion">نسبة الإتمام</string>
+    <string name="assign_stats_breakdown">توزيع الحالات</string>
+    <string name="assign_stats_recent">المهام الأخيرة</string>
+    <string name="assign_stats_assignees">إلى: %1$s</string>
+
+    <!-- AssignedToMe screen -->
+    <string name="assigned_to_me_title">المهام المُسندة إليّ</string>
+    <string name="assigned_refresh">تحديث</string>
+    <string name="assigned_filter_all">الكل</string>
+    <string name="assigned_retry">إعادة المحاولة</string>
+    <string name="assigned_empty">لا توجد مهام مُسندة بعد</string>
+    <string name="assigned_empty_hint">ستظهر هنا المهام التي أُسندت إليك</string>
+    <string name="assigned_by">أُسندت بواسطة %1$s</string>
+    <string name="assigned_decline">رفض</string>
+    <string name="assigned_accept">قبول</string>
+    <string name="assigned_start">بدء</string>
+    <string name="assigned_complete">إتمام</string>
+    <string name="assigned_completed_label">مكتملة</string>
+    <string name="assigned_declined_label">مرفوضة</string>
+    <string name="assigned_status_pending">في الانتظار</string>
+    <string name="assigned_status_accepted">مقبولة</string>
+    <string name="assigned_status_in_progress">قيد التنفيذ</string>
+    <string name="assigned_status_completed">مكتملة</string>
+    <string name="assigned_status_declined">مرفوضة</string>
+    <string name="notif_assigned_title">مهمة جديدة مُسندة</string>
+    <string name="notif_assigned_body">%1$s أسند إليك "%2$s"</string>
+    <string name="notif_status_title">تم تحديث حالة المهمة</string>
+    <string name="notif_status_body">%1$s غيّر حالة "%2$s" إلى %3$s</string>
 </resources>

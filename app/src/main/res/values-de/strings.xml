@@ -11,6 +11,7 @@
     <string name="more">Mehr</string>
     <string name="sort">Sortieren</string>
     <string name="add">Hinzufügen</string>
+    <string name="edit">Bearbeiten</string>
 
     <string name="title_my_todos">Meine Aufgaben</string>
     <string name="search_placeholder">Aufgaben suchen…</string>
@@ -146,7 +147,26 @@
 
     <string name="about_title">Info</string>
     <string name="about_version">Version 2.0</string>
-    <string name="about_description">Eine schöne, animierte Aufgaben-App, gebaut mit Jetpack Compose, Material Design 3, Clean Architecture und DataStore.</string>
+    <string name="about_tagline">Ihr All-in-One Produktivitätsbegleiter</string>
+    <string name="about_description">TaskVault hilft Ihnen organisiert zu bleiben mit Aufgabenverwaltung, sicheren Notizen, persönlichen Memoiren, Passwortspeicher, Gewohnheitstracking, Rechnungserinnerungen und einer Brieftasche — gestaltet mit Material Design 3.</string>
+    <string name="about_features_title">Was Sie tun können</string>
+    <string name="about_feature_tasks">Aufgaben mit Unteraufgaben, Prioritäten und Erinnerungen</string>
+    <string name="about_feature_notes">Sichere Notizen mit reichem Inhalt</string>
+    <string name="about_feature_memoirs">Persönliche Memoiren mit Stimmungstracking</string>
+    <string name="about_feature_passwords">Passworttresor mit Generator</string>
+    <string name="about_feature_wallet">Brieftasche mit Budgets und Kategorien</string>
+    <string name="about_feature_habits">Tägliches Gewohnheitstracking mit Serien</string>
+    <string name="about_feature_bills">Rechnungserinnerungen mit Benachrichtigungen</string>
+    <string name="about_feature_sync">Cloud-Synchronisierung mit Firebase</string>
+    <string name="about_enjoying">Gefällt Ihnen TaskVault?</string>
+    <string name="about_rate">Bewerten</string>
+    <string name="about_share">App Teilen</string>
+    <string name="about_share_message">Entdecken Sie TaskVault — eine tolle Produktivitäts-App! %1$s</string>
+    <string name="about_share_via">Teilen über</string>
+    <string name="about_built_with">Gebaut Mit</string>
+    <string name="about_developer_label">Entwickelt von</string>
+    <string name="about_developer_name">Abdallah Mustafa</string>
+    <string name="about_footer">Gemacht mit ❤ in Kotlin</string>
 
     <string name="day_sun">So</string>
     <string name="day_mon">Mo</string>
@@ -186,6 +206,10 @@
     <string name="profile_sync_status">Cloud-Synchronisation</string>
     <string name="profile_sync_subtitle">Ihre Daten werden mit Firebase synchronisiert</string>
     <string name="profile_sync_active">Aktiv</string>
+    <string name="profile_user_id">Ihre Benutzer-ID</string>
+    <string name="profile_copy_id">ID kopieren</string>
+    <string name="profile_id_copied">Benutzer-ID kopiert</string>
+    <string name="profile_user_id_hint">Teilen Sie diese ID, damit andere Sie als Kontakt hinzufügen und Ihnen Aufgaben zuweisen können</string>
 
     <string name="settings_title">Einstellungen</string>
     <string name="settings_section_account">Konto</string>
@@ -278,4 +302,185 @@
     <string name="budget_alert_90_title">90 %% des Budgets verbraucht</string>
     <string name="budget_alert_75_title">75 %% des Budgets verbraucht</string>
     <string name="budget_alert_body">Sie haben %1$s / %2$s (%3$d %%) Ihres monatlichen Budgets ausgegeben.</string>
+
+    <!-- Dashboard -->
+    <string name="dashboard_greeting_morning">Guten Morgen,</string>
+    <string name="dashboard_greeting_afternoon">Guten Tag,</string>
+    <string name="dashboard_greeting_evening">Guten Abend,</string>
+    <string name="dashboard_greeting_night">Gute Nacht,</string>
+    <string name="dashboard_features_title">Funktionen</string>
+    <string name="dashboard_feature_tasks">Aufgaben</string>
+    <string name="dashboard_tasks_subtitle">%1$d aktiv</string>
+    <string name="dashboard_feature_notes">Notizen</string>
+    <string name="dashboard_notes_subtitle">%1$d gespeichert</string>
+    <string name="dashboard_feature_memoirs">Memoiren</string>
+    <string name="dashboard_memoirs_subtitle">%1$d Einträge</string>
+    <string name="dashboard_wallet_subtitle">Finanzen verfolgen</string>
+    <string name="dashboard_calendar_subtitle">Zeitplan anzeigen</string>
+    <string name="dashboard_stats_subtitle">Fortschritt anzeigen</string>
+    <string name="dashboard_tasks_count">%1$d Aufgaben</string>
+    <string name="dashboard_notes_count">%1$d Notizen</string>
+    <string name="dashboard_memoirs_count">%1$d Memoiren</string>
+
+    <!-- Notes -->
+    <string name="notes_title">Notizen</string>
+    <string name="notes_search_placeholder">Notizen suchen…</string>
+    <string name="notes_fab_new">Neue Notiz</string>
+    <string name="notes_empty_default">Noch keine Notizen\nTippen Sie + zum Erstellen</string>
+    <string name="notes_empty_search">Keine Notizen gefunden</string>
+    <string name="note_detail_title">Notiz</string>
+    <string name="note_field_title_placeholder">Titel</string>
+    <string name="note_field_content_placeholder">Beginnen Sie zu schreiben…</string>
+    <string name="note_color_label">Farbe</string>
+    <string name="note_pin">Anheften</string>
+    <string name="note_unpin">Lösen</string>
+
+    <!-- Memoirs -->
+    <string name="memoirs_title">Memoiren</string>
+    <string name="memoirs_search_placeholder">Memoiren suchen…</string>
+    <string name="memoirs_fab_new">Neues Memoir</string>
+    <string name="memoirs_empty_default">Noch keine Memoiren\nTippen Sie +, um Ihr erstes zu schreiben</string>
+    <string name="memoirs_empty_search">Keine Memoiren gefunden</string>
+    <string name="memoir_detail_title">Memoir</string>
+    <string name="memoir_mood_label">Stimmung</string>
+    <string name="memoir_mood_question">Wie fühlen Sie sich heute?</string>
+    <string name="memoir_field_title_placeholder">Titel (optional)</string>
+    <string name="memoir_field_content_placeholder">Schreiben Sie über Ihren Tag…</string>
+
+    <!-- Passwords -->
+    <string name="passwords_title">Passwörter</string>
+    <string name="passwords_search_placeholder">Passwörter suchen…</string>
+    <string name="passwords_fab_new">Neues Passwort</string>
+    <string name="passwords_empty_default">Keine Passwörter gespeichert\nTippen Sie + zum Hinzufügen</string>
+    <string name="passwords_empty_search">Keine Passwörter gefunden</string>
+    <string name="password_detail_new">Neues Passwort</string>
+    <string name="password_detail_edit">Passwort bearbeiten</string>
+    <string name="password_field_title">Konto / App-Name</string>
+    <string name="password_field_username">Benutzername / E-Mail</string>
+    <string name="password_field_password">Passwort</string>
+    <string name="password_field_url">Website-URL</string>
+    <string name="password_field_notes">Notizen (optional)</string>
+    <string name="password_show">Passwort anzeigen</string>
+    <string name="password_hide">Passwort verbergen</string>
+    <string name="password_copy">Passwort kopieren</string>
+    <string name="password_security_note">Passwörter werden lokal gespeichert und mit Ihrem Firebase-Konto synchronisiert.</string>
+    <string name="dashboard_passwords_subtitle">%1$d gespeichert</string>
+
+    <!-- Password Generator -->
+    <string name="gen_password_title">Passwort-Generator</string>
+    <string name="gen_length">Länge: %1$d</string>
+    <string name="gen_regenerate">Regenerieren</string>
+    <string name="gen_use">Verwenden</string>
+
+    <!-- Search -->
+    <string name="search_title">Suchen</string>
+    <string name="search_empty_default">Tippen Sie, um in Aufgaben, Notizen, Memoiren und Passwörtern zu suchen</string>
+    <string name="search_empty_results">Keine Ergebnisse gefunden</string>
+    <string name="search_section_tasks">%1$d Aufgaben</string>
+    <string name="search_section_notes">%1$d Notizen</string>
+    <string name="search_section_memoirs">%1$d Memoiren</string>
+    <string name="search_section_passwords">%1$d Passwörter</string>
+
+    <!-- Habits -->
+    <string name="habits_title">Gewohnheiten</string>
+    <string name="habits_fab_new">Neue Gewohnheit</string>
+    <string name="habits_empty_default">Noch keine Gewohnheiten. Tippen Sie auf +, um Ihre erste Gewohnheit zu erstellen!</string>
+    <string name="habit_detail_new">Neue Gewohnheit</string>
+    <string name="habit_detail_edit">Gewohnheit bearbeiten</string>
+    <string name="habit_field_name">Name der Gewohnheit</string>
+    <string name="habit_field_description">Beschreibung</string>
+    <string name="habit_field_emoji">Emoji</string>
+    <string name="habit_done_today">Heute erledigt</string>
+    <string name="habit_mark_done">Als erledigt markieren</string>
+    <string name="habit_streak">🔥 %1$d Tage Serie</string>
+    <string name="dashboard_habits_subtitle">%1$d aktiv</string>
+
+    <!-- Bills -->
+    <string name="bills_title">Rechnungen</string>
+    <string name="bills_fab_new">Rechnung hinzufügen</string>
+    <string name="bills_empty_default">Noch keine Rechnungen. Tippen Sie auf +, um Ihre erste Rechnung hinzuzufügen!</string>
+    <string name="bill_detail_new">Neue Rechnung</string>
+    <string name="bill_detail_edit">Rechnung bearbeiten</string>
+    <string name="bill_field_name">Name der Rechnung</string>
+    <string name="bill_field_amount">Betrag</string>
+    <string name="bill_field_due_day">Fälligkeitstag</string>
+    <string name="bill_field_category">Kategorie</string>
+    <string name="bill_field_notes">Notizen</string>
+    <string name="bill_field_reminder_enabled">Erinnerung aktivieren</string>
+    <string name="bill_reminder_days">%1$d Tage zuvor erinnern</string>
+    <string name="bill_mark_paid">Als bezahlt markieren</string>
+    <string name="bill_paid">Bezahlt</string>
+    <string name="bill_overdue">Überfällig</string>
+    <string name="bill_due_soon">Bald fällig</string>
+    <string name="bill_schedule_next">Nächste: %1$s</string>
+    <string name="bill_reminder_title">Rechnungserinnerung</string>
+    <string name="bill_reminder_body">%1$s für %2$s bald fällig</string>
+    <string name="dashboard_bills_subtitle">%1$d bald fällig</string>
+
+    <!-- Mood Trend -->
+    <string name="mood_trend_title">Stimmungs-Trend diesen Monat</string>
+
+    <string name="contacts_title">Kontakte</string>
+    <string name="contacts_add">Kontakt hinzufügen</string>
+    <string name="contacts_edit">Kontakt bearbeiten</string>
+    <string name="contacts_search">Kontakte suchen…</string>
+    <string name="contacts_empty">Noch keine Kontakte</string>
+    <string name="contacts_empty_hint">Tippen Sie +, um Ihren ersten Kontakt hinzuzufügen</string>
+    <string name="contacts_field_user_id">Benutzer-ID</string>
+    <string name="contacts_field_name">Name</string>
+    <string name="contacts_field_role">Rolle (optional)</string>
+    <string name="dashboard_contacts_subtitle">Ihr Team verwalten</string>
+
+    <string name="assign_title">Aufgabe zuweisen</string>
+    <string name="assign_field_title">Aufgabentitel</string>
+    <string name="assign_field_description">Beschreibung</string>
+    <string name="assign_field_priority">Priorität</string>
+    <string name="assign_field_due_date">Fälligkeitsdatum</string>
+    <string name="assign_no_date">Kein Datum gewählt</string>
+    <string name="assign_section_assignees">Zugewiesene</string>
+    <string name="assign_manage_contacts">Verwalten</string>
+    <string name="assign_no_contacts">Noch keine Kontakte</string>
+    <string name="assign_add_contacts">Kontakte hinzufügen</string>
+    <string name="assign_manual_user_id">Oder Benutzer-ID eingeben</string>
+    <string name="assign_manual_hint">Jemanden hinzufügen, der nicht in Ihren Kontakten ist</string>
+    <string name="assign_selected_count">%1$d ausgewählt</string>
+    <string name="assign_submit">Zuweisen</string>
+    <string name="assign_clear">Leeren</string>
+    <string name="assign_error_title">Titel ist erforderlich</string>
+    <string name="assign_error_assignee">Wählen Sie mindestens einen Zugewiesenen</string>
+    <string name="assign_success">Aufgabe erfolgreich zugewiesen!</string>
+    <string name="dashboard_assign_subtitle">Anderen zuweisen</string>
+    <string name="dashboard_assigned_to_me_subtitle">Dir zugewiesene Aufgaben</string>
+    <string name="dashboard_assign_stats_subtitle">Zugewiesene Aufgaben verfolgen</string>
+    <string name="assign_stats_title">Zuteilungsstatistik</string>
+    <string name="assign_stats_total">Gesamt</string>
+    <string name="assign_stats_acceptance">Akzeptanzrate</string>
+    <string name="assign_stats_completion">Abschlussrate</string>
+    <string name="assign_stats_breakdown">Statusaufschlüsselung</string>
+    <string name="assign_stats_recent">Letzte Zuteilungen</string>
+    <string name="assign_stats_assignees">An: %1$s</string>
+
+    <!-- AssignedToMe screen -->
+    <string name="assigned_to_me_title">Mir zugewiesen</string>
+    <string name="assigned_refresh">Aktualisieren</string>
+    <string name="assigned_filter_all">Alle</string>
+    <string name="assigned_retry">Wiederholen</string>
+    <string name="assigned_empty">Noch keine Zuweisungen</string>
+    <string name="assigned_empty_hint">Dir zugewiesene Aufgaben erscheinen hier</string>
+    <string name="assigned_by">Zugewiesen von %1$s</string>
+    <string name="assigned_decline">Ablehnen</string>
+    <string name="assigned_accept">Akzeptieren</string>
+    <string name="assigned_start">Starten</string>
+    <string name="assigned_complete">Abschließen</string>
+    <string name="assigned_completed_label">Abgeschlossen</string>
+    <string name="assigned_declined_label">Abgelehnt</string>
+    <string name="assigned_status_pending">Ausstehend</string>
+    <string name="assigned_status_accepted">Akzeptiert</string>
+    <string name="assigned_status_in_progress">In Bearbeitung</string>
+    <string name="assigned_status_completed">Abgeschlossen</string>
+    <string name="assigned_status_declined">Abgelehnt</string>
+    <string name="notif_assigned_title">Neue Aufgabe zugewiesen</string>
+    <string name="notif_assigned_body">%1$s hat Ihnen "%2$s" zugewiesen</string>
+    <string name="notif_status_title">Aufgabenstatus aktualisiert</string>
+    <string name="notif_status_body">%1$s hat "%2$s" auf %3$s aktualisiert</string>
 </resources>

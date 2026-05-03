@@ -11,6 +11,7 @@
     <string name="more">Ещё</string>
     <string name="sort">Сортировка</string>
     <string name="add">Добавить</string>
+    <string name="edit">Редактировать</string>
 
     <string name="title_my_todos">Мои задачи</string>
     <string name="search_placeholder">Поиск задач…</string>
@@ -143,7 +144,26 @@
 
     <string name="about_title">О приложении</string>
     <string name="about_version">Версия 2.0</string>
-    <string name="about_description">Красивое анимированное приложение задач, построенное на Jetpack Compose, Material Design 3, чистой архитектуре и DataStore.</string>
+    <string name="about_tagline">Ваш универсальный помощник продуктивности</string>
+    <string name="about_description">TaskVault помогает оставаться организованным с управлением задачами, защищёнными заметками, личными мемуарами, хранилищем паролей, трекером привычек, напоминаниями о счетах и кошельком — создано с Material Design 3.</string>
+    <string name="about_features_title">Что вы можете делать</string>
+    <string name="about_feature_tasks">Задачи с подзадачами, приоритетами и напоминаниями</string>
+    <string name="about_feature_notes">Защищённые заметки с богатым контентом</string>
+    <string name="about_feature_memoirs">Личные мемуары с отслеживанием настроения</string>
+    <string name="about_feature_passwords">Хранилище паролей с генератором</string>
+    <string name="about_feature_wallet">Кошелёк с бюджетами и категориями</string>
+    <string name="about_feature_habits">Ежедневный трекер привычек с сериями</string>
+    <string name="about_feature_bills">Напоминания о счетах с уведомлениями</string>
+    <string name="about_feature_sync">Облачная синхронизация с Firebase</string>
+    <string name="about_enjoying">Нравится TaskVault?</string>
+    <string name="about_rate">Оценить</string>
+    <string name="about_share">Поделиться</string>
+    <string name="about_share_message">Попробуйте TaskVault — отличное приложение для продуктивности! %1$s</string>
+    <string name="about_share_via">Поделиться через</string>
+    <string name="about_built_with">Создано с</string>
+    <string name="about_developer_label">Разработано</string>
+    <string name="about_developer_name">Abdallah Mustafa</string>
+    <string name="about_footer">Сделано с ❤ на Kotlin</string>
 
     <string name="day_sun">Вс</string>
     <string name="day_mon">Пн</string>
@@ -230,6 +250,10 @@
     <string name="profile_sync_status">Синхронизация с облаком</string>
     <string name="profile_sync_subtitle">Ваши данные синхронизированы с Firebase</string>
     <string name="profile_sync_active">Активна</string>
+    <string name="profile_user_id">Ваш ID пользователя</string>
+    <string name="profile_copy_id">Копировать ID</string>
+    <string name="profile_id_copied">ID пользователя скопирован</string>
+    <string name="profile_user_id_hint">Поделитесь этим ID, чтобы другие могли добавить вас в контакты и назначить задачи</string>
 
     <string name="settings_title">Настройки</string>
     <string name="settings_section_account">Аккаунт</string>
@@ -277,4 +301,185 @@
     <string name="snackbar_undo">Отменить</string>
 
     <string name="alarm_permission_rationale">Разрешение на точные будильники не предоставлено. Напоминания могут быть неточными.</string>
+
+    <!-- Dashboard -->
+    <string name="dashboard_greeting_morning">Доброе утро,</string>
+    <string name="dashboard_greeting_afternoon">Добрый день,</string>
+    <string name="dashboard_greeting_evening">Добрый вечер,</string>
+    <string name="dashboard_greeting_night">Спокойной ночи,</string>
+    <string name="dashboard_features_title">Функции</string>
+    <string name="dashboard_feature_tasks">Задачи</string>
+    <string name="dashboard_tasks_subtitle">%1$d активных</string>
+    <string name="dashboard_feature_notes">Заметки</string>
+    <string name="dashboard_notes_subtitle">%1$d сохранено</string>
+    <string name="dashboard_feature_memoirs">Мемуары</string>
+    <string name="dashboard_memoirs_subtitle">%1$d записей</string>
+    <string name="dashboard_wallet_subtitle">Управление финансами</string>
+    <string name="dashboard_calendar_subtitle">Просмотр расписания</string>
+    <string name="dashboard_stats_subtitle">Просмотр прогресса</string>
+    <string name="dashboard_tasks_count">%1$d задач</string>
+    <string name="dashboard_notes_count">%1$d заметок</string>
+    <string name="dashboard_memoirs_count">%1$d мемуаров</string>
+
+    <!-- Notes -->
+    <string name="notes_title">Заметки</string>
+    <string name="notes_search_placeholder">Поиск заметок…</string>
+    <string name="notes_fab_new">Новая заметка</string>
+    <string name="notes_empty_default">Нет заметок\nНажмите + чтобы создать</string>
+    <string name="notes_empty_search">Заметки не найдены</string>
+    <string name="note_detail_title">Заметка</string>
+    <string name="note_field_title_placeholder">Заголовок</string>
+    <string name="note_field_content_placeholder">Начните писать…</string>
+    <string name="note_color_label">Цвет</string>
+    <string name="note_pin">Закрепить</string>
+    <string name="note_unpin">Открепить</string>
+
+    <!-- Memoirs -->
+    <string name="memoirs_title">Мемуары</string>
+    <string name="memoirs_search_placeholder">Поиск мемуаров…</string>
+    <string name="memoirs_fab_new">Новый мемуар</string>
+    <string name="memoirs_empty_default">Нет мемуаров\nНажмите + чтобы написать первый</string>
+    <string name="memoirs_empty_search">Мемуары не найдены</string>
+    <string name="memoir_detail_title">Мемуар</string>
+    <string name="memoir_mood_label">Настроение</string>
+    <string name="memoir_mood_question">Как вы себя чувствуете сегодня?</string>
+    <string name="memoir_field_title_placeholder">Заголовок (необязательно)</string>
+    <string name="memoir_field_content_placeholder">Напишите о вашем дне…</string>
+
+    <!-- Passwords -->
+    <string name="passwords_title">Пароли</string>
+    <string name="passwords_search_placeholder">Поиск паролей…</string>
+    <string name="passwords_fab_new">Новый пароль</string>
+    <string name="passwords_empty_default">Нет сохранённых паролей\nНажмите + чтобы добавить</string>
+    <string name="passwords_empty_search">Пароли не найдены</string>
+    <string name="password_detail_new">Новый пароль</string>
+    <string name="password_detail_edit">Редактировать пароль</string>
+    <string name="password_field_title">Аккаунт / Название приложения</string>
+    <string name="password_field_username">Имя пользователя / Email</string>
+    <string name="password_field_password">Пароль</string>
+    <string name="password_field_url">URL сайта</string>
+    <string name="password_field_notes">Заметки (необязательно)</string>
+    <string name="password_show">Показать пароль</string>
+    <string name="password_hide">Скрыть пароль</string>
+    <string name="password_copy">Скопировать пароль</string>
+    <string name="password_security_note">Пароли хранятся локально и синхронизируются с вашим аккаунтом Firebase.</string>
+    <string name="dashboard_passwords_subtitle">%1$d сохранено</string>
+
+    <!-- Password Generator -->
+    <string name="gen_password_title">Генератор паролей</string>
+    <string name="gen_length">Длина: %1$d</string>
+    <string name="gen_regenerate">Регенерировать</string>
+    <string name="gen_use">Использовать</string>
+
+    <!-- Search -->
+    <string name="search_title">Поиск</string>
+    <string name="search_empty_default">Введите для поиска в задачах, заметках, мемуарах и паролях</string>
+    <string name="search_empty_results">Результаты не найдены</string>
+    <string name="search_section_tasks">%1$d задач</string>
+    <string name="search_section_notes">%1$d заметок</string>
+    <string name="search_section_memoirs">%1$d мемуаров</string>
+    <string name="search_section_passwords">%1$d паролей</string>
+
+    <!-- Habits -->
+    <string name="habits_title">Привычки</string>
+    <string name="habits_fab_new">Новая привычка</string>
+    <string name="habits_empty_default">Привычек пока нет. Нажмите +, чтобы создать свою первую привычку!</string>
+    <string name="habit_detail_new">Новая привычка</string>
+    <string name="habit_detail_edit">Редактировать привычку</string>
+    <string name="habit_field_name">Название привычки</string>
+    <string name="habit_field_description">Описание</string>
+    <string name="habit_field_emoji">Эмодзи</string>
+    <string name="habit_done_today">Сделано сегодня</string>
+    <string name="habit_mark_done">Отметить как выполненное</string>
+    <string name="habit_streak">🔥 Серия %1$d дней</string>
+    <string name="dashboard_habits_subtitle">%1$d активных</string>
+
+    <!-- Bills -->
+    <string name="bills_title">Счета</string>
+    <string name="bills_fab_new">Добавить счет</string>
+    <string name="bills_empty_default">Счетов пока нет. Нажмите +, чтобы добавить свой первый счет!</string>
+    <string name="bill_detail_new">Новый счет</string>
+    <string name="bill_detail_edit">Редактировать счет</string>
+    <string name="bill_field_name">Название счета</string>
+    <string name="bill_field_amount">Сумма</string>
+    <string name="bill_field_due_day">День оплаты</string>
+    <string name="bill_field_category">Категория</string>
+    <string name="bill_field_notes">Заметки</string>
+    <string name="bill_field_reminder_enabled">Включить напоминание</string>
+    <string name="bill_reminder_days">Напомнить за %1$d дней</string>
+    <string name="bill_mark_paid">Отметить как оплаченный</string>
+    <string name="bill_paid">Оплачено</string>
+    <string name="bill_overdue">Просрочено</string>
+    <string name="bill_due_soon">Скоро оплата</string>
+    <string name="bill_schedule_next">Следующий: %1$s</string>
+    <string name="bill_reminder_title">Напоминание о счете</string>
+    <string name="bill_reminder_body">%1$s для %2$s скоро подлежит оплате</string>
+    <string name="dashboard_bills_subtitle">%1$d скоро оплата</string>
+
+    <!-- Mood Trend -->
+    <string name="mood_trend_title">Тренд настроения в этом месяце</string>
+
+    <string name="contacts_title">Контакты</string>
+    <string name="contacts_add">Добавить контакт</string>
+    <string name="contacts_edit">Редактировать контакт</string>
+    <string name="contacts_search">Поиск контактов…</string>
+    <string name="contacts_empty">Контактов пока нет</string>
+    <string name="contacts_empty_hint">Нажмите +, чтобы добавить первый контакт</string>
+    <string name="contacts_field_user_id">ID пользователя</string>
+    <string name="contacts_field_name">Имя</string>
+    <string name="contacts_field_role">Роль (необязательно)</string>
+    <string name="dashboard_contacts_subtitle">Управляйте командой</string>
+
+    <string name="assign_title">Назначить задачу</string>
+    <string name="assign_field_title">Название задачи</string>
+    <string name="assign_field_description">Описание</string>
+    <string name="assign_field_priority">Приоритет</string>
+    <string name="assign_field_due_date">Срок выполнения</string>
+    <string name="assign_no_date">Дата не выбрана</string>
+    <string name="assign_section_assignees">Исполнители</string>
+    <string name="assign_manage_contacts">Управление</string>
+    <string name="assign_no_contacts">Контактов пока нет</string>
+    <string name="assign_add_contacts">Добавить контакты</string>
+    <string name="assign_manual_user_id">Или введите ID пользователя</string>
+    <string name="assign_manual_hint">Добавьте кого-то не из ваших контактов</string>
+    <string name="assign_selected_count">%1$d выбрано</string>
+    <string name="assign_submit">Назначить</string>
+    <string name="assign_clear">Очистить</string>
+    <string name="assign_error_title">Название обязательно</string>
+    <string name="assign_error_assignee">Выберите хотя бы одного исполнителя</string>
+    <string name="assign_success">Задача успешно назначена!</string>
+    <string name="dashboard_assign_subtitle">Назначить другим</string>
+    <string name="dashboard_assigned_to_me_subtitle">Задачи, назначенные вам</string>
+    <string name="dashboard_assign_stats_subtitle">Отслеживайте назначенные задачи</string>
+    <string name="assign_stats_title">Статистика назначений</string>
+    <string name="assign_stats_total">Всего</string>
+    <string name="assign_stats_acceptance">Принятие</string>
+    <string name="assign_stats_completion">Выполнение</string>
+    <string name="assign_stats_breakdown">Разбивка по статусам</string>
+    <string name="assign_stats_recent">Последние назначения</string>
+    <string name="assign_stats_assignees">Кому: %1$s</string>
+
+    <!-- AssignedToMe screen -->
+    <string name="assigned_to_me_title">Назначено мне</string>
+    <string name="assigned_refresh">Обновить</string>
+    <string name="assigned_filter_all">Все</string>
+    <string name="assigned_retry">Повторить</string>
+    <string name="assigned_empty">Назначений пока нет</string>
+    <string name="assigned_empty_hint">Задачи, назначенные вам, появятся здесь</string>
+    <string name="assigned_by">Назначено от %1$s</string>
+    <string name="assigned_decline">Отклонить</string>
+    <string name="assigned_accept">Принять</string>
+    <string name="assigned_start">Начать</string>
+    <string name="assigned_complete">Завершить</string>
+    <string name="assigned_completed_label">Завершено</string>
+    <string name="assigned_declined_label">Отклонено</string>
+    <string name="assigned_status_pending">Ожидает</string>
+    <string name="assigned_status_accepted">Принято</string>
+    <string name="assigned_status_in_progress">В процессе</string>
+    <string name="assigned_status_completed">Завершено</string>
+    <string name="assigned_status_declined">Отклонено</string>
+    <string name="notif_assigned_title">Новая задача назначена</string>
+    <string name="notif_assigned_body">%1$s назначил вам "%2$s"</string>
+    <string name="notif_status_title">Статус задачи обновлён</string>
+    <string name="notif_status_body">%1$s обновил "%2$s" на %3$s</string>
 </resources>

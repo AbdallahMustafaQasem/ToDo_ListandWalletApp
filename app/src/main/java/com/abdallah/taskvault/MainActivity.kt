@@ -25,6 +25,7 @@ import androidx.core.content.ContextCompat
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.compose.rememberNavController
 import com.abdallah.taskvault.data.preferences.UserPreferencesRepository
+import com.abdallah.taskvault.service.AssignmentNotificationManager
 import com.abdallah.taskvault.ui.AppViewModel
 import com.abdallah.taskvault.ui.SyncState
 import com.abdallah.taskvault.ui.SyncStep
@@ -55,6 +56,9 @@ class MainActivity : FragmentActivity() {
     @Inject
     lateinit var userPreferencesRepository: UserPreferencesRepository
 
+    @Inject
+    lateinit var assignmentNotificationManager: AssignmentNotificationManager
+
     private val appViewModel: AppViewModel by viewModels()
 
     // Emits a route to navigate to; null = do nothing
@@ -74,7 +78,7 @@ class MainActivity : FragmentActivity() {
         isAppLocked = appLockEnabled
 
         // On a fresh launch, pick the start destination from the intent
-        val startDestination = resolveRoute(intent) ?: Screen.Home.route
+        val startDestination = resolveRoute(intent) ?: Screen.Dashboard.route
 
         val darkThemeFlow = userPreferencesRepository.isDarkTheme
             .stateIn(lifecycleScope, SharingStarted.Eagerly, null)
@@ -108,6 +112,11 @@ class MainActivity : FragmentActivity() {
                     LaunchedEffect(currentUser?.uid) {
                         if (currentUser != null && syncState == SyncState.IDLE) {
                             appViewModel.onSignedIn()
+                        }
+                        if (currentUser != null) {
+                            assignmentNotificationManager.startListening(currentUser!!.uid)
+                        } else {
+                            assignmentNotificationManager.stopListening()
                         }
                     }
 
