@@ -21,9 +21,12 @@ import com.abdallah.taskvault.data.local.converter.TransactionTypeConverter
         PasswordEntity::class,
         HabitEntity::class,
         BillEntity::class,
-        ContactEntity::class
+        ContactEntity::class,
+        TagEntity::class,
+        TodoTagCrossRef::class,
+        CommentEntity::class
     ],
-    version = 9,
+    version = 11,
     exportSchema = true
 )
 @TypeConverters(PriorityConverter::class, TransactionTypeConverter::class)
@@ -38,6 +41,8 @@ abstract class TodoDatabase : RoomDatabase() {
     abstract fun habitDao(): HabitDao
     abstract fun billDao(): BillDao
     abstract fun contactDao(): ContactDao
+    abstract fun tagDao(): TagDao
+    abstract fun commentDao(): CommentDao
 
     companion object {
         const val DATABASE_NAME = "todo_database"
@@ -83,6 +88,51 @@ abstract class TodoDatabase : RoomDatabase() {
                     )
                     """.trimIndent()
                 )
+            }
+        }
+
+        val MIGRATION_10_11 = object : Migration(10, 11) {
+            override fun migrate(db: SupportSQLiteDatabase) {
+                db.execSQL(
+                    """
+                    CREATE TABLE IF NOT EXISTS comments (
+                        id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,
+                        todo_id INTEGER NOT NULL,
+                        author_name TEXT NOT NULL DEFAULT '',
+                        text TEXT NOT NULL,
+                        timestamp_millis INTEGER NOT NULL,
+                        FOREIGN KEY(todo_id) REFERENCES todos(id) ON DELETE CASCADE
+                    )
+                    """.trimIndent()
+                )
+                db.execSQL("CREATE INDEX IF NOT EXISTS index_comments_todo_id ON comments(todo_id)")
+            }
+        }
+
+        val MIGRATION_9_10 = object : Migration(9, 10) {
+            override fun migrate(db: SupportSQLiteDatabase) {
+                db.execSQL(
+                    """
+                    CREATE TABLE IF NOT EXISTS tags (
+                        id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,
+                        name TEXT NOT NULL,
+                        color_hex TEXT NOT NULL DEFAULT '#6750A4'
+                    )
+                    """.trimIndent()
+                )
+                db.execSQL(
+                    """
+                    CREATE TABLE IF NOT EXISTS todo_tags (
+                        todo_id INTEGER NOT NULL,
+                        tag_id INTEGER NOT NULL,
+                        PRIMARY KEY(todo_id, tag_id),
+                        FOREIGN KEY(todo_id) REFERENCES todos(id) ON DELETE CASCADE,
+                        FOREIGN KEY(tag_id) REFERENCES tags(id) ON DELETE CASCADE
+                    )
+                    """.trimIndent()
+                )
+                db.execSQL("CREATE INDEX IF NOT EXISTS index_todo_tags_todo_id ON todo_tags(todo_id)")
+                db.execSQL("CREATE INDEX IF NOT EXISTS index_todo_tags_tag_id ON todo_tags(tag_id)")
             }
         }
 

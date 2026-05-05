@@ -31,6 +31,7 @@ import com.abdallah.taskvault.ui.SyncState
 import com.abdallah.taskvault.ui.SyncStep
 import com.abdallah.taskvault.ui.applock.AppLockScreen
 import com.abdallah.taskvault.ui.auth.LoginScreen
+import com.abdallah.taskvault.ui.onboarding.OnboardingScreen
 import com.abdallah.taskvault.ui.auth.SyncScreen
 import com.abdallah.taskvault.ui.navigation.NavGraph
 import com.abdallah.taskvault.ui.navigation.Screen
@@ -76,6 +77,7 @@ class MainActivity : FragmentActivity() {
 
         val appLockEnabled = runBlocking { userPreferencesRepository.appLockEnabled.first() }
         isAppLocked = appLockEnabled
+        val onboardingDone = runBlocking { userPreferencesRepository.onboardingComplete.first() }
 
         // On a fresh launch, pick the start destination from the intent
         val startDestination = resolveRoute(intent) ?: Screen.Dashboard.route
@@ -129,6 +131,15 @@ class MainActivity : FragmentActivity() {
                             message  = stringResource(R.string.sync_error_message),
                             isError  = true,
                             onRetry  = { appViewModel.onSignedIn() }
+                        )
+                    } else if (!onboardingDone) {
+                        OnboardingScreen(
+                            onFinish = {
+                                lifecycleScope.launch {
+                                    userPreferencesRepository.setOnboardingComplete(true)
+                                }
+                                recreate()
+                            }
                         )
                     } else if (isAppLocked) {
                         AppLockScreen(

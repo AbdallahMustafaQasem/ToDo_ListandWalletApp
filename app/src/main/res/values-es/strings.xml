@@ -379,6 +379,9 @@
     <string name="search_section_notes">%1$d notas</string>
     <string name="search_section_memoirs">%1$d memorias</string>
     <string name="search_section_passwords">%1$d contraseñas</string>
+    <string name="search_section_contacts">%1$d contactos</string>
+    <string name="search_section_habits">%1$d hábitos</string>
+    <string name="search_section_bills">%1$d facturas</string>
 
     <!-- Habits -->
     <string name="habits_title">Hábitos</string>
@@ -482,4 +485,45 @@
     <string name="notif_assigned_body">%1$s te asignó "%2$s"</string>
     <string name="notif_status_title">Estado de tarea actualizado</string>
     <string name="notif_status_body">%1$s actualizó "%2$s" a %3$s</string>
+
+    <!-- New feature strings -->
+    <string name="filter_today">Hoy</string>
+    <string name="filter_upcoming">Próximas</string>
+    <string name="quick_add">Agregar rápido</string>
+    <string name="quick_add_placeholder">Ej: Llamar al médico mañana a las 3 pm…</string>
+    <string name="full_add">Agregar completo</string>
+    <string name="sort_due_date">Fecha de vencimiento</string>
+    <string name="sort_priority">Prioridad</string>
+    <string name="sort_alphabetical">Alfabético</string>
+    <string name="fab_add_todo">Agregar tarea</string>
+    <string name="menu_export">Exportar tareas</string>
+    <string name="delete_account_title">Eliminar cuenta</string>
+    <string name="delete_account_message">Se eliminarán permanentemente tu cuenta y todos tus datos. Esta acción no se puede deshacer.</string>
+    <string name="delete_account_confirm">Eliminar para siempre</string>
+    <string name="delete_account_button">Eliminar cuenta</string>
+    <string name="delete_account_deleting">Eliminando…</string>
+    <string name="pomodoro_title">Temporizador Pomodoro</string>
+    <string name="pomodoro_phase_work">Enfoque</string>
+    <string name="pomodoro_phase_short_break">Descanso corto</string>
+    <string name="pomodoro_phase_long_break">Descanso largo</string>
+    <string name="pomodoro_start">Iniciar</string>
+    <string name="pomodoro_pause">Pausar</string>
+    <string name="pomodoro_reset">Reiniciar</string>
+    <string name="pomodoro_skip">Saltar</string>
+    <string name="pomodoro_session">Sesiones completadas: %d</string>
+    <string name="pomodoro_completed">Sesiones</string>
+    <string name="pomodoro_focus_min">Min. de enfoque</string>
+    <string name="dashboard_pomodoro_title">Pomodoro</string>
+    <string name="dashboard_pomodoro_subtitle">Enfoque • sesiones de 25 min</string>
+    <string name="onboard_title_1">Gestiona tus tareas</string>
+    <string name="onboard_desc_1">Crea, organiza y completa tus tareas con recordatorios inteligentes.</string>
+    <string name="onboard_title_2">Busca todo</string>
+    <string name="onboard_desc_2">Encuentra al instante tareas, notas, hábitos, facturas y más.</string>
+    <string name="onboard_title_3">Controla tus finanzas</string>
+    <string name="onboard_desc_3">Monitorea tu cartera, establece presupuestos y no pierdas ninguna factura.</string>
+    <string name="onboard_title_4">Colabora con otros</string>
+    <string name="onboard_desc_4">Asigna tareas, rastrea el progreso y mantente sincronizado con tu equipo.</string>
+    <string name="onboard_skip">Omitir</string>
+    <string name="onboard_next">Siguiente</string>
+    <string name="onboard_get_started">Comenzar</string>
 </resources>

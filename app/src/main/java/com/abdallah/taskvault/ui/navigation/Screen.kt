@@ -42,4 +42,5 @@ sealed class Screen(val route: String) {
     object TaskAssignment : Screen("assign")
     object AssignedToMe : Screen("assigned_to_me")
     object AssignmentStats : Screen("assign_stats")
+    object Pomodoro : Screen("pomodoro")
 }

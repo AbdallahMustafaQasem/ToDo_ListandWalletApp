@@ -12,9 +12,12 @@ import com.abdallah.taskvault.data.repository.HabitRepositoryImpl
 import com.abdallah.taskvault.data.repository.MemoirRepositoryImpl
 import com.abdallah.taskvault.data.repository.NoteRepositoryImpl
 import com.abdallah.taskvault.data.repository.PasswordRepositoryImpl
+import com.abdallah.taskvault.data.repository.CommentRepositoryImpl
+import com.abdallah.taskvault.data.repository.TagRepositoryImpl
 import com.abdallah.taskvault.data.repository.TaskAssignmentRepositoryImpl
 import com.abdallah.taskvault.data.repository.TodoRepositoryImpl
 import com.abdallah.taskvault.domain.repository.AuthRepository
+import com.abdallah.taskvault.domain.repository.CommentRepository
 import com.abdallah.taskvault.domain.repository.ContactRepository
 import com.abdallah.taskvault.domain.repository.BillRepository
 import com.abdallah.taskvault.domain.repository.HabitRepository
@@ -22,6 +25,7 @@ import com.abdallah.taskvault.domain.repository.MemoirRepository
 import com.abdallah.taskvault.domain.repository.NoteRepository
 import com.abdallah.taskvault.domain.repository.PasswordRepository
 import com.abdallah.taskvault.domain.repository.SubtaskRepository
+import com.abdallah.taskvault.domain.repository.TagRepository
 import com.abdallah.taskvault.domain.repository.TodoListRepository
 import com.abdallah.taskvault.domain.repository.TaskAssignmentRepository
 import com.abdallah.taskvault.domain.repository.TodoRepository
@@ -87,4 +91,12 @@ abstract class RepositoryModule {
     @Binds
     @Singleton
     abstract fun bindTaskAssignmentRepository(impl: TaskAssignmentRepositoryImpl): TaskAssignmentRepository
+
+    @Binds
+    @Singleton
+    abstract fun bindTagRepository(impl: TagRepositoryImpl): TagRepository
+
+    @Binds
+    @Singleton
+    abstract fun bindCommentRepository(impl: CommentRepositoryImpl): CommentRepository
 }

@@ -379,6 +379,9 @@
     <string name="search_section_notes">%1$d ملاحظات</string>
     <string name="search_section_memoirs">%1$d مذكرات</string>
     <string name="search_section_passwords">%1$d كلمات مرور</string>
+    <string name="search_section_contacts">%1$d جهات اتصال</string>
+    <string name="search_section_habits">%1$d عادات</string>
+    <string name="search_section_bills">%1$d فواتير</string>
 
     <!-- Habits -->
     <string name="habits_title">العادات</string>
@@ -482,4 +485,45 @@
     <string name="notif_assigned_body">%1$s أسند إليك "%2$s"</string>
     <string name="notif_status_title">تم تحديث حالة المهمة</string>
     <string name="notif_status_body">%1$s غيّر حالة "%2$s" إلى %3$s</string>
+
+    <!-- New feature strings -->
+    <string name="filter_today">اليوم</string>
+    <string name="filter_upcoming">قادمة</string>
+    <string name="quick_add">إضافة سريعة</string>
+    <string name="quick_add_placeholder">مثال: اتصل بالطبيب غداً الساعة 3م…</string>
+    <string name="full_add">إضافة كاملة</string>
+    <string name="sort_due_date">تاريخ الاستحقاق</string>
+    <string name="sort_priority">الأولوية</string>
+    <string name="sort_alphabetical">أبجدي</string>
+    <string name="fab_add_todo">إضافة مهمة</string>
+    <string name="menu_export">تصدير المهام</string>
+    <string name="delete_account_title">حذف الحساب</string>
+    <string name="delete_account_message">سيؤدي هذا إلى حذف حسابك وجميع بياناتك نهائياً. لا يمكن التراجع عن هذا الإجراء.</string>
+    <string name="delete_account_confirm">حذف نهائي</string>
+    <string name="delete_account_button">حذف الحساب</string>
+    <string name="delete_account_deleting">جارٍ الحذف…</string>
+    <string name="pomodoro_title">مؤقت بومودورو</string>
+    <string name="pomodoro_phase_work">تركيز</string>
+    <string name="pomodoro_phase_short_break">استراحة قصيرة</string>
+    <string name="pomodoro_phase_long_break">استراحة طويلة</string>
+    <string name="pomodoro_start">ابدأ</string>
+    <string name="pomodoro_pause">إيقاف مؤقت</string>
+    <string name="pomodoro_reset">إعادة ضبط</string>
+    <string name="pomodoro_skip">تخطي</string>
+    <string name="pomodoro_session">الجلسات المكتملة: %d</string>
+    <string name="pomodoro_completed">الجلسات</string>
+    <string name="pomodoro_focus_min">دقائق تركيز</string>
+    <string name="dashboard_pomodoro_title">بومودورو</string>
+    <string name="dashboard_pomodoro_subtitle">تركيز • جلسات 25 دقيقة</string>
+    <string name="onboard_title_1">إدارة مهامك</string>
+    <string name="onboard_desc_1">أنشئ مهامك ونظّمها وأكملها مع تذكيرات ذكية ومهام متكررة.</string>
+    <string name="onboard_title_2">ابحث عن كل شيء</string>
+    <string name="onboard_desc_2">ابحث فوراً عن المهام والملاحظات والعادات والفواتير والمزيد.</string>
+    <string name="onboard_title_3">تتبع أموالك</string>
+    <string name="onboard_desc_3">راقب محفظتك وحدد ميزانياتك ولا تفوّت أي فاتورة.</string>
+    <string name="onboard_title_4">تعاون مع الآخرين</string>
+    <string name="onboard_desc_4">أسند المهام لجهات الاتصال وتتبع التقدم وابق متزامناً مع فريقك.</string>
+    <string name="onboard_skip">تخطي</string>
+    <string name="onboard_next">التالي</string>
+    <string name="onboard_get_started">ابدأ الآن</string>
 </resources>

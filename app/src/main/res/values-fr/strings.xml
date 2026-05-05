@@ -379,6 +379,9 @@
     <string name="search_section_notes">%1$d notes</string>
     <string name="search_section_memoirs">%1$d mémoires</string>
     <string name="search_section_passwords">%1$d mots de passe</string>
+    <string name="search_section_contacts">%1$d contacts</string>
+    <string name="search_section_habits">%1$d habitudes</string>
+    <string name="search_section_bills">%1$d factures</string>
 
     <!-- Habits -->
     <string name="habits_title">Habitudes</string>
@@ -482,4 +485,45 @@
     <string name="notif_assigned_body">%1$s vous a assigné "%2$s"</string>
     <string name="notif_status_title">Statut de tâche mis à jour</string>
     <string name="notif_status_body">%1$s a mis à jour "%2$s" en %3$s</string>
+
+    <!-- New feature strings -->
+    <string name="filter_today">Aujourd\'hui</string>
+    <string name="filter_upcoming">À venir</string>
+    <string name="quick_add">Ajout rapide</string>
+    <string name="quick_add_placeholder">Ex : Appeler le médecin demain à 15h…</string>
+    <string name="full_add">Ajout complet</string>
+    <string name="sort_due_date">Date d\'échéance</string>
+    <string name="sort_priority">Priorité</string>
+    <string name="sort_alphabetical">Alphabétique</string>
+    <string name="fab_add_todo">Ajouter une tâche</string>
+    <string name="menu_export">Exporter les tâches</string>
+    <string name="delete_account_title">Supprimer le compte</string>
+    <string name="delete_account_message">Votre compte et toutes vos données seront supprimés définitivement. Cette action est irréversible.</string>
+    <string name="delete_account_confirm">Supprimer définitivement</string>
+    <string name="delete_account_button">Supprimer le compte</string>
+    <string name="delete_account_deleting">Suppression en cours…</string>
+    <string name="pomodoro_title">Minuteur Pomodoro</string>
+    <string name="pomodoro_phase_work">Concentration</string>
+    <string name="pomodoro_phase_short_break">Pause courte</string>
+    <string name="pomodoro_phase_long_break">Pause longue</string>
+    <string name="pomodoro_start">Démarrer</string>
+    <string name="pomodoro_pause">Pause</string>
+    <string name="pomodoro_reset">Réinitialiser</string>
+    <string name="pomodoro_skip">Passer</string>
+    <string name="pomodoro_session">Sessions complétées : %d</string>
+    <string name="pomodoro_completed">Sessions</string>
+    <string name="pomodoro_focus_min">Min. de concentration</string>
+    <string name="dashboard_pomodoro_title">Pomodoro</string>
+    <string name="dashboard_pomodoro_subtitle">Concentration • sessions de 25 min</string>
+    <string name="onboard_title_1">Gérez vos tâches</string>
+    <string name="onboard_desc_1">Créez, organisez et accomplissez vos tâches avec des rappels intelligents.</string>
+    <string name="onboard_title_2">Recherchez tout</string>
+    <string name="onboard_desc_2">Trouvez instantanément des tâches, notes, habitudes, factures et plus encore.</string>
+    <string name="onboard_title_3">Suivez vos finances</string>
+    <string name="onboard_desc_3">Surveillez votre portefeuille, définissez des budgets et ne manquez aucune facture.</string>
+    <string name="onboard_title_4">Collaborez avec les autres</string>
+    <string name="onboard_desc_4">Assignez des tâches, suivez la progression et restez synchronisé avec votre équipe.</string>
+    <string name="onboard_skip">Passer</string>
+    <string name="onboard_next">Suivant</string>
+    <string name="onboard_get_started">Commencer</string>
 </resources>

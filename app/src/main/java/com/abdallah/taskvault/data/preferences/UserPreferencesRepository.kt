@@ -32,6 +32,7 @@ class UserPreferencesRepository @Inject constructor(
         val LANGUAGE_CODE = stringPreferencesKey("language_code")
         val WALLET_CURRENCY_SYMBOL = stringPreferencesKey("wallet_currency_symbol")
         val APP_LOCK_ENABLED = booleanPreferencesKey("app_lock_enabled")
+        val ONBOARDING_COMPLETE = booleanPreferencesKey("onboarding_complete")
     }
 
     val isDarkTheme: Flow<Boolean?> = context.dataStore.data.map { prefs ->
@@ -84,5 +85,13 @@ class UserPreferencesRepository @Inject constructor(
 
     suspend fun setAppLockEnabled(enabled: Boolean) {
         context.dataStore.edit { it[Keys.APP_LOCK_ENABLED] = enabled }
+    }
+
+    val onboardingComplete: Flow<Boolean> = context.dataStore.data.map { prefs ->
+        prefs[Keys.ONBOARDING_COMPLETE] ?: false
+    }
+
+    suspend fun setOnboardingComplete(complete: Boolean) {
+        context.dataStore.edit { it[Keys.ONBOARDING_COMPLETE] = complete }
     }
 }

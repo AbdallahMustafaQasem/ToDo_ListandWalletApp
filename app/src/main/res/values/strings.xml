@@ -129,8 +129,9 @@
     <string name="delete_account_button">Delete Account</string>
     <string name="delete_account_deleting">Deleting…</string>
     <string name="fab_add_todo">Add Todo</string>
+    <string name="menu_export">Export Tasks</string>
     <string name="quick_add">Quick Add</string>
-    <string name="quick_add_placeholder">Todo title…</string>
+    <string name="quick_add_placeholder">e.g. Call doctor tomorrow at 3pm…</string>
     <string name="full_add">Full Add</string>
     <string name="sort_due_date">Due Date</string>
     <string name="sort_priority">Priority</string>
@@ -138,6 +139,8 @@
     <string name="filter_all">All</string>
     <string name="filter_active">Active</string>
     <string name="filter_completed">Completed</string>
+    <string name="filter_today">Today</string>
+    <string name="filter_upcoming">Next 7 Days</string>
     <string name="cd_mark_complete">Mark complete</string>
     <string name="cd_mark_incomplete">Mark incomplete</string>
     <string name="cd_delete">Delete</string>
@@ -407,12 +410,15 @@
 
     <!-- Search -->
     <string name="search_title">Search</string>
-    <string name="search_empty_default">Type to search across todos, notes, memoirs, and passwords</string>
+    <string name="search_empty_default">Search across tasks, notes, memoirs, passwords, contacts, habits, and bills</string>
     <string name="search_empty_results">No results found</string>
     <string name="search_section_tasks">%1$d tasks</string>
     <string name="search_section_notes">%1$d notes</string>
     <string name="search_section_memoirs">%1$d memoirs</string>
     <string name="search_section_passwords">%1$d passwords</string>
+    <string name="search_section_contacts">%1$d contacts</string>
+    <string name="search_section_habits">%1$d habits</string>
+    <string name="search_section_bills">%1$d bills</string>
 
     <!-- Habits -->
     <string name="habits_title">Habits</string>
@@ -464,6 +470,34 @@
     <string name="contacts_field_name">Display Name</string>
     <string name="contacts_field_role">Role (optional)</string>
     <string name="dashboard_contacts_subtitle">Manage your team</string>
+
+    <!-- Pomodoro -->
+    <string name="pomodoro_title">Pomodoro Timer</string>
+    <string name="pomodoro_phase_work">Focus</string>
+    <string name="pomodoro_phase_short_break">Short Break</string>
+    <string name="pomodoro_phase_long_break">Long Break</string>
+    <string name="pomodoro_start">Start</string>
+    <string name="pomodoro_pause">Pause</string>
+    <string name="pomodoro_reset">Reset</string>
+    <string name="pomodoro_skip">Skip</string>
+    <string name="pomodoro_session">Sessions completed: %d</string>
+    <string name="pomodoro_completed">Sessions</string>
+    <string name="pomodoro_focus_min">Focus min</string>
+    <string name="dashboard_pomodoro_title">Pomodoro</string>
+    <string name="dashboard_pomodoro_subtitle">Focus &#8226; 25 min sessions</string>
+
+    <!-- Onboarding -->
+    <string name="onboard_title_1">Manage Your Tasks</string>
+    <string name="onboard_desc_1">Create, organize, and complete your todos with smart reminders and recurring tasks.</string>
+    <string name="onboard_title_2">Search Everything</string>
+    <string name="onboard_desc_2">Instantly find tasks, notes, habits, bills, contacts, and more from one search bar.</string>
+    <string name="onboard_title_3">Track Your Finances</string>
+    <string name="onboard_desc_3">Monitor your wallet, set budgets, and never miss a bill with built-in reminders.</string>
+    <string name="onboard_title_4">Collaborate with Others</string>
+    <string name="onboard_desc_4">Assign tasks to contacts, track progress, and stay in sync with your team.</string>
+    <string name="onboard_skip">Skip</string>
+    <string name="onboard_next">Next</string>
+    <string name="onboard_get_started">Get Started</string>
 
     <!-- Task Assignment -->
     <string name="assign_title">Assign Task</string>

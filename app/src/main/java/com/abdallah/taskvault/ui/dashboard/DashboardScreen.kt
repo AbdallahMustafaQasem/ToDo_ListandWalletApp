@@ -44,6 +44,7 @@ fun DashboardScreen(
     onNavigateToAssign: () -> Unit,
     onNavigateToAssignedToMe: () -> Unit,
     onNavigateToAssignmentStats: () -> Unit,
+    onNavigateToPomodoro: () -> Unit,
     viewModel: DashboardViewModel = hiltViewModel()
 ) {
     val uiState by viewModel.uiState.collectAsStateWithLifecycle()
@@ -278,6 +279,14 @@ fun DashboardScreen(
                         modifier = Modifier.weight(1f)
                     )
                 }
+                FeatureCard(
+                    title    = stringResource(R.string.dashboard_pomodoro_title),
+                    subtitle = stringResource(R.string.dashboard_pomodoro_subtitle),
+                    icon     = Icons.Default.Timer,
+                    gradient = listOf(Color(0xFFAD1457), Color(0xFFEC407A)),
+                    onClick  = onNavigateToPomodoro,
+                    modifier = Modifier.fillMaxWidth()
+                )
             }
 
             Spacer(Modifier.height(16.dp))

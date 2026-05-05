@@ -6,6 +6,7 @@ import android.app.NotificationManager
 import android.content.Context
 import android.os.Build
 import androidx.room.Room
+import com.abdallah.taskvault.data.local.CommentDao
 import com.abdallah.taskvault.data.local.MemoirDao
 import com.abdallah.taskvault.data.local.NoteDao
 import com.abdallah.taskvault.data.local.BillDao
@@ -13,6 +14,7 @@ import com.abdallah.taskvault.data.local.ContactDao
 import com.abdallah.taskvault.data.local.HabitDao
 import com.abdallah.taskvault.data.local.PasswordDao
 import com.abdallah.taskvault.data.local.SubtaskDao
+import com.abdallah.taskvault.data.local.TagDao
 import com.abdallah.taskvault.data.local.TodoDao
 import com.abdallah.taskvault.data.local.TodoDatabase
 import com.abdallah.taskvault.data.local.TodoListDao
@@ -45,6 +47,8 @@ object AppModule {
         .addMigrations(TodoDatabase.MIGRATION_6_7)
         .addMigrations(TodoDatabase.MIGRATION_7_8)
         .addMigrations(TodoDatabase.MIGRATION_8_9)
+        .addMigrations(TodoDatabase.MIGRATION_9_10)
+        .addMigrations(TodoDatabase.MIGRATION_10_11)
         .build()
 
     @Provides
@@ -86,6 +90,14 @@ object AppModule {
     @Provides
     @Singleton
     fun provideContactDao(database: TodoDatabase): ContactDao = database.contactDao()
+
+    @Provides
+    @Singleton
+    fun provideTagDao(database: TodoDatabase): TagDao = database.tagDao()
+
+    @Provides
+    @Singleton
+    fun provideCommentDao(database: TodoDatabase): CommentDao = database.commentDao()
 
     @Provides
     @Singleton

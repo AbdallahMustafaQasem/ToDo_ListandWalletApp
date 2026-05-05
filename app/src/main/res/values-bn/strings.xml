@@ -379,6 +379,9 @@
     <string name="search_section_notes">%1$d নোট</string>
     <string name="search_section_memoirs">%1$d মেমোয়ার</string>
     <string name="search_section_passwords">%1$d পাসওয়ার্ড</string>
+    <string name="search_section_contacts">%1$d পরিচিতি</string>
+    <string name="search_section_habits">%1$d অভ্যাস</string>
+    <string name="search_section_bills">%1$d বিল</string>
 
     <!-- Habits -->
     <string name="habits_title">অভ্যাস</string>
@@ -482,4 +485,45 @@
     <string name="notif_assigned_body">%1$s আপনাকে "%2$s" বরাদ্দ করেছেন</string>
     <string name="notif_status_title">টাস্কের অবস্থা আপডেট হয়েছে</string>
     <string name="notif_status_body">%1$s "%2$s" এর অবস্থা %3$s করেছেন</string>
+
+    <!-- New feature strings -->
+    <string name="filter_today">আজ</string>
+    <string name="filter_upcoming">আসন্ন</string>
+    <string name="quick_add">দ্রুত যোগ করুন</string>
+    <string name="quick_add_placeholder">যেমন: আগামীকাল বিকেল ৩টায় ডাক্তারকে ফোন করুন…</string>
+    <string name="full_add">সম্পূর্ণ যোগ করুন</string>
+    <string name="sort_due_date">নির্ধারিত তারিখ</string>
+    <string name="sort_priority">অগ্রাধিকার</string>
+    <string name="sort_alphabetical">বর্ণানুক্রমিক</string>
+    <string name="fab_add_todo">কাজ যোগ করুন</string>
+    <string name="menu_export">কাজ রপ্তানি করুন</string>
+    <string name="delete_account_title">অ্যাকাউন্ট মুছুন</string>
+    <string name="delete_account_message">আপনার অ্যাকাউন্ট এবং সমস্ত ডেটা স্থায়ীভাবে মুছে যাবে। এই ক্রিয়া পূর্বাবস্থায় ফেরানো যাবে না।</string>
+    <string name="delete_account_confirm">চিরতরে মুছুন</string>
+    <string name="delete_account_button">অ্যাকাউন্ট মুছুন</string>
+    <string name="delete_account_deleting">মুছে ফেলা হচ্ছে…</string>
+    <string name="pomodoro_title">পোমোডোরো টাইমার</string>
+    <string name="pomodoro_phase_work">মনোযোগ</string>
+    <string name="pomodoro_phase_short_break">ছোট বিরতি</string>
+    <string name="pomodoro_phase_long_break">দীর্ঘ বিরতি</string>
+    <string name="pomodoro_start">শুরু করুন</string>
+    <string name="pomodoro_pause">বিরতি দিন</string>
+    <string name="pomodoro_reset">রিসেট করুন</string>
+    <string name="pomodoro_skip">এড়িয়ে যান</string>
+    <string name="pomodoro_session">সম্পন্ন সেশন: %d</string>
+    <string name="pomodoro_completed">সেশন</string>
+    <string name="pomodoro_focus_min">মনোযোগের মিনিট</string>
+    <string name="dashboard_pomodoro_title">পোমোডোরো</string>
+    <string name="dashboard_pomodoro_subtitle">মনোযোগ • ২৫ মিনিটের সেশন</string>
+    <string name="onboard_title_1">আপনার কাজ পরিচালনা করুন</string>
+    <string name="onboard_desc_1">স্মার্ট রিমাইন্ডার দিয়ে কাজ তৈরি, সংগঠিত ও সম্পন্ন করুন।</string>
+    <string name="onboard_title_2">সব কিছু খুঁজুন</string>
+    <string name="onboard_desc_2">কাজ, নোট, অভ্যাস, বিল এবং আরও অনেক কিছু তাৎক্ষণিকভাবে খুঁজুন।</string>
+    <string name="onboard_title_3">অর্থ ট্র্যাক করুন</string>
+    <string name="onboard_desc_3">আপনার ওয়ালেট পর্যবেক্ষণ করুন, বাজেট নির্ধারণ করুন এবং কোনো বিল মিস করবেন না।</string>
+    <string name="onboard_title_4">অন্যদের সাথে সহযোগিতা করুন</string>
+    <string name="onboard_desc_4">কাজ বরাদ্দ করুন, অগ্রগতি ট্র্যাক করুন এবং দলের সাথে সমন্বিত থাকুন।</string>
+    <string name="onboard_skip">এড়িয়ে যান</string>
+    <string name="onboard_next">পরবর্তী</string>
+    <string name="onboard_get_started">শুরু করুন</string>
 </resources>

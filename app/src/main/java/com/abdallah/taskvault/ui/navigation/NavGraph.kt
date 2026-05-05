@@ -52,6 +52,7 @@ import com.abdallah.taskvault.ui.notes.NoteDetailScreen
 import com.abdallah.taskvault.ui.notes.NoteListScreen
 import com.abdallah.taskvault.ui.passwords.PasswordDetailScreen
 import com.abdallah.taskvault.ui.passwords.PasswordListScreen
+import com.abdallah.taskvault.ui.pomodoro.PomodoroScreen
 import com.abdallah.taskvault.ui.search.SearchScreen
 import com.abdallah.taskvault.ui.settings.SettingsScreen
 import com.abdallah.taskvault.ui.lists.TodoListsScreen
@@ -116,7 +117,8 @@ fun NavGraph(
                 onNavigateToContacts   = { navController.navigate(Screen.Contacts.route) },
                 onNavigateToAssign     = { navController.navigate(Screen.TaskAssignment.route) },
                 onNavigateToAssignedToMe = { navController.navigate(Screen.AssignedToMe.route) },
-                onNavigateToAssignmentStats = { navController.navigate(Screen.AssignmentStats.route) }
+                onNavigateToAssignmentStats = { navController.navigate(Screen.AssignmentStats.route) },
+                onNavigateToPomodoro = { navController.navigate(Screen.Pomodoro.route) }
             )
         }
 
@@ -257,7 +259,10 @@ fun NavGraph(
                 onNavigateToTodo  = { navController.navigate(Screen.Detail.createRoute(it)) },
                 onNavigateToNote  = { navController.navigate(Screen.NoteDetail.createRoute(it)) },
                 onNavigateToMemoir= { navController.navigate(Screen.MemoirDetail.createRoute(it)) },
-                onNavigateToPassword={ navController.navigate(Screen.PasswordDetail.createRoute(it)) }
+                onNavigateToPassword={ navController.navigate(Screen.PasswordDetail.createRoute(it)) },
+                onNavigateToContacts = { navController.navigate(Screen.Contacts.route) },
+                onNavigateToHabit = { navController.navigate(Screen.HabitDetail.createRoute(it)) },
+                onNavigateToBill  = { navController.navigate(Screen.BillDetail.createRoute(it)) }
             )
         }
 
@@ -308,6 +313,10 @@ fun NavGraph(
 
         composable(Screen.AssignmentStats.route) {
             AssignmentStatsScreen(onNavigateBack = { navController.popBackStack() })
+        }
+
+        composable(Screen.Pomodoro.route) {
+            PomodoroScreen(onNavigateBack = { navController.popBackStack() })
         }
     }
 }

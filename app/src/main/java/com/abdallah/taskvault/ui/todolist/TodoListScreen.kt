@@ -1,6 +1,7 @@
 package com.abdallah.taskvault.ui.todolist
 
 import android.Manifest
+import android.content.Intent
 import android.os.Build
 import androidx.activity.compose.rememberLauncherForActivityResult
 import androidx.activity.result.contract.ActivityResultContracts
@@ -34,8 +35,12 @@ import com.abdallah.taskvault.data.preferences.SortOrder
 import com.abdallah.taskvault.ui.todolist.components.EmptyStateView
 import com.abdallah.taskvault.ui.todolist.components.FilterChipsRow
 import com.abdallah.taskvault.ui.todolist.components.TodoItem
+import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.fillMaxSize
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
+import androidx.compose.ui.platform.LocalContext
+import com.abdallah.taskvault.ui.common.ConfettiEffect
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -55,9 +60,11 @@ fun TodoListScreen(
     val scope = rememberCoroutineScope()
     val listState = rememberLazyListState()
 
+    val context = LocalContext.current
     var showSearch by remember { mutableStateOf(false) }
     var showMenu   by remember { mutableStateOf(false) }
     var showQuickAdd by remember { mutableStateOf(false) }
+    var showConfetti by remember { mutableStateOf(false) }
 
     val strAlarmRationale  = stringResource(R.string.alarm_permission_rationale)
     val strSnackbarDeleted = stringResource(R.string.snackbar_deleted)
@@ -105,17 +112,14 @@ fun TodoListScreen(
                 showQuickAdd = false
                 onNavigateToAdd()
             },
-            onQuickAdd = { title ->
-                scope.launch {
-                    // delegated to ViewModel via a quick-add approach
-                    // (just navigate to add with pre-filled title — simplest safe approach)
-                    showQuickAdd = false
-                    onNavigateToAdd()
-                }
+            onQuickAdd = { rawInput ->
+                viewModel.quickAddTodo(rawInput)
+                showQuickAdd = false
             }
         )
     }
 
+    Box(modifier = Modifier.fillMaxSize()) {
     Scaffold(
         snackbarHost = {
             SnackbarHost(snackbarHostState) { data ->
@@ -265,6 +269,23 @@ fun TodoListScreen(
                                 leadingIcon = { Icon(Icons.Default.Settings, null) },
                                 onClick     = { showMenu = false; onNavigateToSettings() }
                             )
+                            HorizontalDivider(modifier = Modifier.padding(vertical = 4.dp))
+                            DropdownMenuItem(
+                                text        = { Text(stringResource(R.string.menu_export)) },
+                                leadingIcon = { Icon(Icons.Default.Share, null) },
+                                onClick     = {
+                                    showMenu = false
+                                    scope.launch {
+                                        val csv = viewModel.exportCsv()
+                                        val intent = Intent(Intent.ACTION_SEND).apply {
+                                            type = "text/plain"
+                                            putExtra(Intent.EXTRA_TEXT, csv)
+                                            putExtra(Intent.EXTRA_SUBJECT, "TaskVault Export")
+                                        }
+                                        context.startActivity(Intent.createChooser(intent, null))
+                                    }
+                                }
+                            )
                         }
                     },
                     colors = TopAppBarDefaults.topAppBarColors(
@@ -384,6 +405,7 @@ fun TodoListScreen(
                                     todo            = todo,
                                     onCheckedChange = { isChecked ->
                                         viewModel.onToggleCompletion(todo, isChecked)
+                                        if (isChecked) showConfetti = true
                                     },
                                     onClick         = { onNavigateToDetail(todo.id) },
                                     onDismiss       = {
@@ -401,6 +423,7 @@ fun TodoListScreen(
                                     },
                                     onComplete      = {
                                         viewModel.onToggleCompletion(todo, !todo.isCompleted)
+                                        if (!todo.isCompleted) showConfetti = true
                                     }
                                 )
                             }
@@ -409,7 +432,14 @@ fun TodoListScreen(
                 }
             }
         }
-    }
+    } // Scaffold
+
+    ConfettiEffect(
+        active   = showConfetti,
+        modifier = Modifier.fillMaxSize(),
+        onFinished = { showConfetti = false }
+    )
+    } // outer Box
 }
 
 // ── Extended FAB with long-press gesture ─────────────────────────────────────
@@ -469,9 +499,16 @@ private fun QuickAddBottomSheet(
     onFullAdd: () -> Unit,
     onQuickAdd: (String) -> Unit
 ) {
-    var title by remember { mutableStateOf("") }
+    var input by remember { mutableStateOf("") }
     val sheetState = rememberModalBottomSheetState(skipPartiallyExpanded = true)
-    val scope = rememberCoroutineScope()
+    val parsed = remember(input) {
+        com.abdallah.taskvault.util.NaturalLanguageParser.parse(input)
+    }
+    val dateLabel = remember(parsed.dueDateMillis) {
+        parsed.dueDateMillis?.let {
+            java.text.SimpleDateFormat("EEE, MMM d 'at' h:mm a", java.util.Locale.getDefault()).format(java.util.Date(it))
+        }
+    }
 
     ModalBottomSheet(
         onDismissRequest = onDismiss,
@@ -484,7 +521,7 @@ private fun QuickAddBottomSheet(
                 .fillMaxWidth()
                 .padding(horizontal = 20.dp)
                 .padding(bottom = 32.dp),
-            verticalArrangement = Arrangement.spacedBy(16.dp)
+            verticalArrangement = Arrangement.spacedBy(12.dp)
         ) {
             Text(
                 stringResource(R.string.quick_add),
@@ -492,13 +529,23 @@ private fun QuickAddBottomSheet(
                 fontWeight = FontWeight.Bold
             )
             OutlinedTextField(
-                value         = title,
-                onValueChange = { title = it },
+                value         = input,
+                onValueChange = { input = it },
                 placeholder   = { Text(stringResource(R.string.quick_add_placeholder)) },
                 singleLine    = true,
                 modifier      = Modifier.fillMaxWidth(),
                 shape         = RoundedCornerShape(12.dp)
             )
+            // NLP date preview chip
+            androidx.compose.animation.AnimatedVisibility(visible = dateLabel != null) {
+                dateLabel?.let {
+                    SuggestionChip(
+                        onClick = {},
+                        label   = { Text("📅 $it", style = MaterialTheme.typography.labelMedium) },
+                        icon    = null
+                    )
+                }
+            }
             Row(
                 modifier             = Modifier.fillMaxWidth(),
                 horizontalArrangement = Arrangement.spacedBy(12.dp)
@@ -511,12 +558,8 @@ private fun QuickAddBottomSheet(
                     Text(stringResource(R.string.full_add))
                 }
                 Button(
-                    onClick  = {
-                        if (title.isNotBlank()) {
-                            onQuickAdd(title)
-                        }
-                    },
-                    enabled  = title.isNotBlank(),
+                    onClick  = { if (input.isNotBlank()) onQuickAdd(input) },
+                    enabled  = input.isNotBlank(),
                     modifier = Modifier.weight(1f),
                     shape    = RoundedCornerShape(12.dp)
                 ) {

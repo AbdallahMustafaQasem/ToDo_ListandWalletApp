@@ -66,4 +66,6 @@ private fun FilterOption.displayNameRes(): Int = when (this) {
     FilterOption.ALL       -> R.string.filter_all
     FilterOption.ACTIVE    -> R.string.filter_active
     FilterOption.COMPLETED -> R.string.filter_completed
+    FilterOption.TODAY     -> R.string.filter_today
+    FilterOption.UPCOMING  -> R.string.filter_upcoming
 }

@@ -4,7 +4,7 @@ import com.abdallah.taskvault.data.preferences.SortOrder
 import com.abdallah.taskvault.domain.model.Todo
 
 enum class FilterOption {
-    ALL, ACTIVE, COMPLETED
+    ALL, ACTIVE, COMPLETED, TODAY, UPCOMING
 }
 
 data class TodoListUiState(

@@ -29,6 +29,9 @@ fun SearchScreen(
     onNavigateToNote: (Long) -> Unit,
     onNavigateToMemoir: (Long) -> Unit,
     onNavigateToPassword: (Long) -> Unit,
+    onNavigateToContacts: () -> Unit = {},
+    onNavigateToHabit: (Long) -> Unit = {},
+    onNavigateToBill: (Long) -> Unit = {},
     viewModel: SearchViewModel = hiltViewModel()
 ) {
     val state by viewModel.uiState.collectAsState()
@@ -72,7 +75,10 @@ fun SearchScreen(
                     onTodoClick = onNavigateToTodo,
                     onNoteClick = onNavigateToNote,
                     onMemoirClick = onNavigateToMemoir,
-                    onPasswordClick = onNavigateToPassword
+                    onPasswordClick = onNavigateToPassword,
+                    onContactClick = { onNavigateToContacts() },
+                    onHabitClick = onNavigateToHabit,
+                    onBillClick = onNavigateToBill
                 )
             }
         }
@@ -111,7 +117,10 @@ private fun SearchResults(
     onTodoClick: (Long) -> Unit,
     onNoteClick: (Long) -> Unit,
     onMemoirClick: (Long) -> Unit,
-    onPasswordClick: (Long) -> Unit
+    onPasswordClick: (Long) -> Unit,
+    onContactClick: (Long) -> Unit,
+    onHabitClick: (Long) -> Unit,
+    onBillClick: (Long) -> Unit
 ) {
     LazyColumn(contentPadding = PaddingValues(vertical = 8.dp)) {
         if (state.todos.isNotEmpty()) {
@@ -136,6 +145,24 @@ private fun SearchResults(
             item { SectionHeader(stringResource(R.string.search_section_passwords, state.passwords.size), Icons.Default.Lock) }
             items(state.passwords, key = { "pwd_${it.id}" }) { result ->
                 ResultRow(result) { onPasswordClick(result.id) }
+            }
+        }
+        if (state.contacts.isNotEmpty()) {
+            item { SectionHeader(stringResource(R.string.search_section_contacts, state.contacts.size), Icons.Default.People) }
+            items(state.contacts, key = { "contact_${it.id}" }) { result ->
+                ResultRow(result) { onContactClick(result.id) }
+            }
+        }
+        if (state.habits.isNotEmpty()) {
+            item { SectionHeader(stringResource(R.string.search_section_habits, state.habits.size), Icons.Default.Loop) }
+            items(state.habits, key = { "habit_${it.id}" }) { result ->
+                ResultRow(result) { onHabitClick(result.id) }
+            }
+        }
+        if (state.bills.isNotEmpty()) {
+            item { SectionHeader(stringResource(R.string.search_section_bills, state.bills.size), Icons.Default.Receipt) }
+            items(state.bills, key = { "bill_${it.id}" }) { result ->
+                ResultRow(result) { onBillClick(result.id) }
             }
         }
         item { Spacer(Modifier.height(32.dp)) }
@@ -165,6 +192,9 @@ private fun ResultRow(result: SearchResult, onClick: () -> Unit) {
         SearchResultType.NOTE     -> Icons.Default.StickyNote2
         SearchResultType.MEMOIR   -> Icons.Default.MenuBook
         SearchResultType.PASSWORD -> Icons.Default.Lock
+        SearchResultType.CONTACT  -> Icons.Default.People
+        SearchResultType.HABIT    -> Icons.Default.Loop
+        SearchResultType.BILL     -> Icons.Default.Receipt
     }
     ListItem(
         modifier = Modifier.clickable(onClick = onClick),

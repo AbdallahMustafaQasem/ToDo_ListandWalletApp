@@ -482,4 +482,45 @@
     <string name="notif_assigned_body">%1$s 将"%2$s"分配给您</string>
     <string name="notif_status_title">任务状态已更新</string>
     <string name="notif_status_body">%1$s 将"%2$s"更新为 %3$s</string>
+
+    <!-- New feature strings -->
+    <string name="filter_today">今天</string>
+    <string name="filter_upcoming">即将到来</string>
+    <string name="quick_add">快速添加</string>
+    <string name="quick_add_placeholder">例如：明天下午3点给医生打电话…</string>
+    <string name="full_add">完整添加</string>
+    <string name="sort_due_date">截止日期</string>
+    <string name="sort_priority">优先级</string>
+    <string name="sort_alphabetical">字母顺序</string>
+    <string name="fab_add_todo">添加任务</string>
+    <string name="menu_export">导出任务</string>
+    <string name="delete_account_title">删除账户</string>
+    <string name="delete_account_message">您的账户和所有数据将被永久删除，此操作无法撤销。</string>
+    <string name="delete_account_confirm">永久删除</string>
+    <string name="delete_account_button">删除账户</string>
+    <string name="delete_account_deleting">删除中…</string>
+    <string name="pomodoro_title">番茄计时器</string>
+    <string name="pomodoro_phase_work">专注</string>
+    <string name="pomodoro_phase_short_break">短休息</string>
+    <string name="pomodoro_phase_long_break">长休息</string>
+    <string name="pomodoro_start">开始</string>
+    <string name="pomodoro_pause">暂停</string>
+    <string name="pomodoro_reset">重置</string>
+    <string name="pomodoro_skip">跳过</string>
+    <string name="pomodoro_session">已完成会话：%d</string>
+    <string name="pomodoro_completed">会话</string>
+    <string name="pomodoro_focus_min">专注分钟</string>
+    <string name="dashboard_pomodoro_title">番茄钟</string>
+    <string name="dashboard_pomodoro_subtitle">专注 • 25分钟会话</string>
+    <string name="onboard_title_1">管理您的任务</string>
+    <string name="onboard_desc_1">通过智能提醒创建、整理和完成您的任务。</string>
+    <string name="onboard_title_2">搜索一切</string>
+    <string name="onboard_desc_2">即时查找任务、笔记、习惯、账单等内容。</string>
+    <string name="onboard_title_3">追踪财务</string>
+    <string name="onboard_desc_3">监控钱包、设定预算，不错过任何账单。</string>
+    <string name="onboard_title_4">与他人协作</string>
+    <string name="onboard_desc_4">分配任务、追踪进度，与团队保持同步。</string>
+    <string name="onboard_skip">跳过</string>
+    <string name="onboard_next">下一步</string>
+    <string name="onboard_get_started">开始使用</string>
 </resources>

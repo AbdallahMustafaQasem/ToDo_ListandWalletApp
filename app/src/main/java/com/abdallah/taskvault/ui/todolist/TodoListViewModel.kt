@@ -8,10 +8,13 @@ import com.abdallah.taskvault.data.preferences.SortOrder
 import com.abdallah.taskvault.data.preferences.UserPreferencesRepository
 import com.abdallah.taskvault.domain.model.Priority
 import com.abdallah.taskvault.domain.model.Todo
+import java.util.Calendar
 import com.abdallah.taskvault.domain.usecase.AddTodoUseCase
 import com.abdallah.taskvault.domain.usecase.DeleteTodoUseCase
+import com.abdallah.taskvault.domain.usecase.ExportTodosUseCase
 import com.abdallah.taskvault.domain.usecase.GetAllTodosUseCase
 import com.abdallah.taskvault.domain.usecase.ToggleTodoCompletionUseCase
+import com.abdallah.taskvault.util.NaturalLanguageParser
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.delay
@@ -25,6 +28,7 @@ class TodoListViewModel @Inject constructor(
     private val addTodoUseCase: AddTodoUseCase,
     private val deleteTodoUseCase: DeleteTodoUseCase,
     private val toggleTodoCompletionUseCase: ToggleTodoCompletionUseCase,
+    private val exportTodosUseCase: ExportTodosUseCase,
     private val alarmManager: AlarmManager,
     private val userPreferencesRepository: UserPreferencesRepository
 ) : ViewModel() {
@@ -130,6 +134,20 @@ class TodoListViewModel @Inject constructor(
         }
     }
 
+    fun quickAddTodo(rawInput: String) {
+        val parsed = NaturalLanguageParser.parse(rawInput)
+        val now = System.currentTimeMillis()
+        val todo = com.abdallah.taskvault.domain.model.Todo(
+            title = parsed.title,
+            createdAtMillis = now,
+            updatedAtMillis = now,
+            dueDateMillis = parsed.dueDateMillis
+        )
+        viewModelScope.launch { addTodoUseCase(todo) }
+    }
+
+    suspend fun exportCsv(): String = exportTodosUseCase.asCsv()
+
     fun onUndoDelete() {
         undoJob?.cancel()
         val todo = lastDeletedTodo ?: return
@@ -181,10 +199,27 @@ class TodoListViewModel @Inject constructor(
         query: String,
         sortOrder: SortOrder
     ): List<Todo> {
+        val todayStart = Calendar.getInstance().apply {
+            set(Calendar.HOUR_OF_DAY, 0); set(Calendar.MINUTE, 0)
+            set(Calendar.SECOND, 0); set(Calendar.MILLISECOND, 0)
+        }.timeInMillis
+        val todayEnd = todayStart + 86_400_000L - 1L
+        val sevenDaysEnd = todayStart + 7 * 86_400_000L - 1L
+
         val filtered = when (filter) {
-            FilterOption.ALL       -> todos
-            FilterOption.ACTIVE    -> todos.filter { !it.isCompleted }
-            FilterOption.COMPLETED -> todos.filter { it.isCompleted }
+            FilterOption.ALL      -> todos.filter { !it.isDeleted }
+            FilterOption.ACTIVE   -> todos.filter { !it.isCompleted && !it.isDeleted }
+            FilterOption.COMPLETED-> todos.filter { it.isCompleted && !it.isDeleted }
+            FilterOption.TODAY    -> todos.filter {
+                !it.isDeleted && !it.isCompleted &&
+                it.dueDateMillis != null &&
+                it.dueDateMillis in todayStart..todayEnd
+            }
+            FilterOption.UPCOMING -> todos.filter {
+                !it.isDeleted && !it.isCompleted &&
+                it.dueDateMillis != null &&
+                it.dueDateMillis in todayStart..sevenDaysEnd
+            }
         }
         val queried = if (query.isBlank()) filtered
         else filtered.filter {

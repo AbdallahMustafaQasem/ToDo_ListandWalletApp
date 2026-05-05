@@ -379,6 +379,9 @@
     <string name="search_section_notes">%1$d नोट्स</string>
     <string name="search_section_memoirs">%1$d मेमोइर</string>
     <string name="search_section_passwords">%1$d पासवर्ड</string>
+    <string name="search_section_contacts">%1$d संपर्क</string>
+    <string name="search_section_habits">%1$d आदतें</string>
+    <string name="search_section_bills">%1$d बिल</string>
 
     <!-- Habits -->
     <string name="habits_title">आदतें</string>
@@ -482,4 +485,45 @@
     <string name="notif_assigned_body">%1$s ने आपको "%2$s" सौंपा</string>
     <string name="notif_status_title">टास्क की स्थिति अपडेट हुई</string>
     <string name="notif_status_body">%1$s ने "%2$s" को %3$s में अपडेट किया</string>
+
+    <!-- New feature strings -->
+    <string name="filter_today">आज</string>
+    <string name="filter_upcoming">आगामी</string>
+    <string name="quick_add">त्वरित जोड़ें</string>
+    <string name="quick_add_placeholder">उदा: कल 3 बजे डॉक्टर को फोन करें…</string>
+    <string name="full_add">पूर्ण जोड़ें</string>
+    <string name="sort_due_date">नियत तारीख</string>
+    <string name="sort_priority">प्राथमिकता</string>
+    <string name="sort_alphabetical">वर्णमाला</string>
+    <string name="fab_add_todo">कार्य जोड़ें</string>
+    <string name="menu_export">कार्य निर्यात करें</string>
+    <string name="delete_account_title">खाता हटाएं</string>
+    <string name="delete_account_message">आपका खाता और सभी डेटा स्थायी रूप से हटा दिया जाएगा। यह क्रिया पूर्ववत नहीं की जा सकती।</string>
+    <string name="delete_account_confirm">हमेशा के लिए हटाएं</string>
+    <string name="delete_account_button">खाता हटाएं</string>
+    <string name="delete_account_deleting">हटाया जा रहा है…</string>
+    <string name="pomodoro_title">पोमोडोरो टाइमर</string>
+    <string name="pomodoro_phase_work">फ़ोकस</string>
+    <string name="pomodoro_phase_short_break">छोटा ब्रेक</string>
+    <string name="pomodoro_phase_long_break">लंबा ब्रेक</string>
+    <string name="pomodoro_start">शुरू करें</string>
+    <string name="pomodoro_pause">रोकें</string>
+    <string name="pomodoro_reset">रीसेट</string>
+    <string name="pomodoro_skip">छोड़ें</string>
+    <string name="pomodoro_session">पूर्ण सत्र: %d</string>
+    <string name="pomodoro_completed">सत्र</string>
+    <string name="pomodoro_focus_min">फ़ोकस मिनट</string>
+    <string name="dashboard_pomodoro_title">पोमोडोरो</string>
+    <string name="dashboard_pomodoro_subtitle">फ़ोकस • 25 मिनट सत्र</string>
+    <string name="onboard_title_1">अपने कार्य प्रबंधित करें</string>
+    <string name="onboard_desc_1">स्मार्ट रिमाइंडर के साथ कार्य बनाएं, व्यवस्थित करें और पूरा करें।</string>
+    <string name="onboard_title_2">सब कुछ खोजें</string>
+    <string name="onboard_desc_2">कार्य, नोट्स, आदतें, बिल और बहुत कुछ तुरंत खोजें।</string>
+    <string name="onboard_title_3">वित्त ट्रैक करें</string>
+    <string name="onboard_desc_3">अपना वॉलेट मॉनिटर करें, बजट सेट करें और कोई बिल न चूकें।</string>
+    <string name="onboard_title_4">दूसरों के साथ सहयोग करें</string>
+    <string name="onboard_desc_4">कार्य सौंपें, प्रगति ट्रैक करें और टीम के साथ समन्वित रहें।</string>
+    <string name="onboard_skip">छोड़ें</string>
+    <string name="onboard_next">अगला</string>
+    <string name="onboard_get_started">शुरू करें</string>
 </resources>

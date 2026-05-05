@@ -482,4 +482,45 @@
     <string name="notif_assigned_body">%1$s نے آپ کو "%2$s" سونپا</string>
     <string name="notif_status_title">ٹاسک کی حیثیت اپڈیٹ ہوئی</string>
     <string name="notif_status_body">%1$s نے "%2$s" کو %3$s میں اپڈیٹ کیا</string>
+
+    <!-- New feature strings -->
+    <string name="filter_today">آج</string>
+    <string name="filter_upcoming">آنے والے</string>
+    <string name="quick_add">فوری اضافہ</string>
+    <string name="quick_add_placeholder">مثال: کل 3 بجے ڈاکٹر کو فون کریں…</string>
+    <string name="full_add">مکمل اضافہ</string>
+    <string name="sort_due_date">مقررہ تاریخ</string>
+    <string name="sort_priority">ترجیح</string>
+    <string name="sort_alphabetical">حروف تہجی</string>
+    <string name="fab_add_todo">کام شامل کریں</string>
+    <string name="menu_export">کام برآمد کریں</string>
+    <string name="delete_account_title">اکاؤنٹ حذف کریں</string>
+    <string name="delete_account_message">آپ کا اکاؤنٹ اور تمام ڈیٹا مستقل طور پر حذف ہو جائے گا۔ یہ عمل واپس نہیں ہو سکتا۔</string>
+    <string name="delete_account_confirm">ہمیشہ کے لیے حذف کریں</string>
+    <string name="delete_account_button">اکاؤنٹ حذف کریں</string>
+    <string name="delete_account_deleting">حذف ہو رہا ہے…</string>
+    <string name="pomodoro_title">پوموڈورو ٹائمر</string>
+    <string name="pomodoro_phase_work">توجہ</string>
+    <string name="pomodoro_phase_short_break">مختصر وقفہ</string>
+    <string name="pomodoro_phase_long_break">طویل وقفہ</string>
+    <string name="pomodoro_start">شروع کریں</string>
+    <string name="pomodoro_pause">روکیں</string>
+    <string name="pomodoro_reset">دوبارہ ترتیب دیں</string>
+    <string name="pomodoro_skip">چھوڑیں</string>
+    <string name="pomodoro_session">مکمل سیشن: %d</string>
+    <string name="pomodoro_completed">سیشن</string>
+    <string name="pomodoro_focus_min">توجہ کے منٹ</string>
+    <string name="dashboard_pomodoro_title">پوموڈورو</string>
+    <string name="dashboard_pomodoro_subtitle">توجہ • 25 منٹ کے سیشن</string>
+    <string name="onboard_title_1">اپنے کام منظم کریں</string>
+    <string name="onboard_desc_1">ذہین یاد دہانیوں کے ساتھ کام بنائیں، ترتیب دیں اور مکمل کریں۔</string>
+    <string name="onboard_title_2">سب کچھ تلاش کریں</string>
+    <string name="onboard_desc_2">کام، نوٹس، عادات، بل اور مزید فوری تلاش کریں۔</string>
+    <string name="onboard_title_3">مالیات ٹریک کریں</string>
+    <string name="onboard_desc_3">اپنا بٹوہ مانیٹر کریں، بجٹ مقرر کریں اور کوئی بل نہ چھوڑیں۔</string>
+    <string name="onboard_title_4">دوسروں کے ساتھ تعاون کریں</string>
+    <string name="onboard_desc_4">کام سونپیں، پیشرفت ٹریک کریں اور ٹیم کے ساتھ ہم آہنگ رہیں۔</string>
+    <string name="onboard_skip">چھوڑیں</string>
+    <string name="onboard_next">اگلا</string>
+    <string name="onboard_get_started">شروع کریں</string>
 </resources>

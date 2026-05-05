@@ -379,6 +379,9 @@
     <string name="search_section_notes">%1$d заметок</string>
     <string name="search_section_memoirs">%1$d мемуаров</string>
     <string name="search_section_passwords">%1$d паролей</string>
+    <string name="search_section_contacts">%1$d контактов</string>
+    <string name="search_section_habits">%1$d привычек</string>
+    <string name="search_section_bills">%1$d счетов</string>
 
     <!-- Habits -->
     <string name="habits_title">Привычки</string>
@@ -482,4 +485,45 @@
     <string name="notif_assigned_body">%1$s назначил вам "%2$s"</string>
     <string name="notif_status_title">Статус задачи обновлён</string>
     <string name="notif_status_body">%1$s обновил "%2$s" на %3$s</string>
+
+    <!-- New feature strings -->
+    <string name="filter_today">Сегодня</string>
+    <string name="filter_upcoming">Предстоящие</string>
+    <string name="quick_add">Быстрое добавление</string>
+    <string name="quick_add_placeholder">Например: позвонить врачу завтра в 15:00…</string>
+    <string name="full_add">Полное добавление</string>
+    <string name="sort_due_date">Срок выполнения</string>
+    <string name="sort_priority">Приоритет</string>
+    <string name="sort_alphabetical">По алфавиту</string>
+    <string name="fab_add_todo">Добавить задачу</string>
+    <string name="menu_export">Экспорт задач</string>
+    <string name="delete_account_title">Удалить аккаунт</string>
+    <string name="delete_account_message">Ваш аккаунт и все данные будут удалены безвозвратно. Это действие нельзя отменить.</string>
+    <string name="delete_account_confirm">Удалить навсегда</string>
+    <string name="delete_account_button">Удалить аккаунт</string>
+    <string name="delete_account_deleting">Удаление…</string>
+    <string name="pomodoro_title">Таймер Помодоро</string>
+    <string name="pomodoro_phase_work">Фокус</string>
+    <string name="pomodoro_phase_short_break">Короткий перерыв</string>
+    <string name="pomodoro_phase_long_break">Длинный перерыв</string>
+    <string name="pomodoro_start">Старт</string>
+    <string name="pomodoro_pause">Пауза</string>
+    <string name="pomodoro_reset">Сбросить</string>
+    <string name="pomodoro_skip">Пропустить</string>
+    <string name="pomodoro_session">Завершённых сессий: %d</string>
+    <string name="pomodoro_completed">Сессий</string>
+    <string name="pomodoro_focus_min">Минут фокуса</string>
+    <string name="dashboard_pomodoro_title">Помодоро</string>
+    <string name="dashboard_pomodoro_subtitle">Фокус • сессии по 25 минут</string>
+    <string name="onboard_title_1">Управляйте задачами</string>
+    <string name="onboard_desc_1">Создавайте, организуйте и выполняйте задачи с умными напоминаниями.</string>
+    <string name="onboard_title_2">Ищите всё</string>
+    <string name="onboard_desc_2">Мгновенно находите задачи, заметки, привычки, счета и многое другое.</string>
+    <string name="onboard_title_3">Следите за финансами</string>
+    <string name="onboard_desc_3">Контролируйте кошелёк, устанавливайте бюджеты и не пропускайте счета.</string>
+    <string name="onboard_title_4">Работайте в команде</string>
+    <string name="onboard_desc_4">Назначайте задачи, отслеживайте прогресс и будьте синхронизированы с командой.</string>
+    <string name="onboard_skip">Пропустить</string>
+    <string name="onboard_next">Далее</string>
+    <string name="onboard_get_started">Начать</string>
 </resources>

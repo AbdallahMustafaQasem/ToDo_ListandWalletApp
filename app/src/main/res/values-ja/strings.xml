@@ -379,6 +379,9 @@
     <string name="search_section_notes">%1$d メモ</string>
     <string name="search_section_memoirs">%1$d 日記</string>
     <string name="search_section_passwords">%1$d パスワード</string>
+    <string name="search_section_contacts">%1$d 連絡先</string>
+    <string name="search_section_habits">%1$d 習慣</string>
+    <string name="search_section_bills">%1$d 請求書</string>
 
     <!-- Habits -->
     <string name="habits_title">習慣</string>
@@ -482,4 +485,45 @@
     <string name="notif_assigned_body">%1$s があなたに "%2$s" を割り当てました</string>
     <string name="notif_status_title">タスクのステータスが更新されました</string>
     <string name="notif_status_body">%1$s が "%2$s" を %3$s に更新しました</string>
+
+    <!-- New feature strings -->
+    <string name="filter_today">今日</string>
+    <string name="filter_upcoming">近日中</string>
+    <string name="quick_add">クイック追加</string>
+    <string name="quick_add_placeholder">例: 明日3時に医者に電話…</string>
+    <string name="full_add">詳細追加</string>
+    <string name="sort_due_date">期限日</string>
+    <string name="sort_priority">優先度</string>
+    <string name="sort_alphabetical">アルファベット順</string>
+    <string name="fab_add_todo">タスクを追加</string>
+    <string name="menu_export">タスクをエクスポート</string>
+    <string name="delete_account_title">アカウントを削除</string>
+    <string name="delete_account_message">アカウントとすべてのデータが完全に削除されます。この操作は元に戻せません。</string>
+    <string name="delete_account_confirm">完全に削除</string>
+    <string name="delete_account_button">アカウントを削除</string>
+    <string name="delete_account_deleting">削除中…</string>
+    <string name="pomodoro_title">ポモドーロタイマー</string>
+    <string name="pomodoro_phase_work">集中</string>
+    <string name="pomodoro_phase_short_break">短い休憩</string>
+    <string name="pomodoro_phase_long_break">長い休憩</string>
+    <string name="pomodoro_start">開始</string>
+    <string name="pomodoro_pause">一時停止</string>
+    <string name="pomodoro_reset">リセット</string>
+    <string name="pomodoro_skip">スキップ</string>
+    <string name="pomodoro_session">完了セッション数: %d</string>
+    <string name="pomodoro_completed">セッション</string>
+    <string name="pomodoro_focus_min">集中時間（分）</string>
+    <string name="dashboard_pomodoro_title">ポモドーロ</string>
+    <string name="dashboard_pomodoro_subtitle">集中 • 25分セッション</string>
+    <string name="onboard_title_1">タスクを管理</string>
+    <string name="onboard_desc_1">スマートなリマインダーでタスクを作成・整理・完了しましょう。</string>
+    <string name="onboard_title_2">何でも検索</string>
+    <string name="onboard_desc_2">タスク、ノート、習慣、請求書などを即座に検索できます。</string>
+    <string name="onboard_title_3">家計を管理</string>
+    <string name="onboard_desc_3">ウォレットを監視し、予算を設定して請求書を見逃さない。</string>
+    <string name="onboard_title_4">チームで協力</string>
+    <string name="onboard_desc_4">タスクを割り当て、進捗を追跡し、チームと同期しましょう。</string>
+    <string name="onboard_skip">スキップ</string>
+    <string name="onboard_next">次へ</string>
+    <string name="onboard_get_started">始める</string>
 </resources>
