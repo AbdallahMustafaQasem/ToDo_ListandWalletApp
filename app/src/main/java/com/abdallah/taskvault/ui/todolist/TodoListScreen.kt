@@ -40,7 +40,9 @@ import androidx.compose.foundation.layout.fillMaxSize
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 import androidx.compose.ui.platform.LocalContext
+import com.abdallah.taskvault.domain.model.Priority
 import com.abdallah.taskvault.ui.common.ConfettiEffect
+import com.abdallah.taskvault.ui.common.VoiceInputButton
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -135,6 +137,47 @@ fun TodoListScreen(
         },
         topBar = {
             Column {
+                AnimatedContent(
+                    targetState = uiState.isSelectionMode,
+                    transitionSpec = { fadeIn(tween(200)) togetherWith fadeOut(tween(200)) },
+                    label = "selectionBar"
+                ) { inSelection ->
+                if (inSelection) {
+                    TopAppBar(
+                        title = { Text("${uiState.selectedIds.size} selected") },
+                        navigationIcon = {
+                            IconButton(onClick = { viewModel.onClearSelection() }) {
+                                Icon(Icons.Default.Close, contentDescription = "Cancel")
+                            }
+                        },
+                        actions = {
+                            IconButton(onClick = { viewModel.onSelectAll() }) {
+                                Icon(Icons.Default.SelectAll, contentDescription = "Select all")
+                            }
+                            IconButton(onClick = { viewModel.onBulkComplete() }) {
+                                Icon(Icons.Default.CheckCircle, contentDescription = "Complete")
+                            }
+                            var showPriorityMenu by remember { mutableStateOf(false) }
+                            IconButton(onClick = { showPriorityMenu = true }) {
+                                Icon(Icons.Default.Flag, contentDescription = "Set priority")
+                            }
+                            DropdownMenu(expanded = showPriorityMenu, onDismissRequest = { showPriorityMenu = false }) {
+                                Priority.entries.forEach { p ->
+                                    DropdownMenuItem(
+                                        text = { Text(p.name.lowercase().replaceFirstChar { it.uppercase() }) },
+                                        onClick = { viewModel.onBulkSetPriority(p); showPriorityMenu = false }
+                                    )
+                                }
+                            }
+                            IconButton(onClick = { viewModel.onBulkDelete() }) {
+                                Icon(Icons.Default.Delete, contentDescription = "Delete", tint = MaterialTheme.colorScheme.error)
+                            }
+                        },
+                        colors = TopAppBarDefaults.topAppBarColors(
+                            containerColor = MaterialTheme.colorScheme.secondaryContainer
+                        )
+                    )
+                } else {
                 TopAppBar(
                     title = {
                         AnimatedContent(
@@ -295,6 +338,8 @@ fun TodoListScreen(
                         actionIconContentColor = MaterialTheme.colorScheme.onPrimaryContainer
                     )
                 )
+                } // end else
+                } // end AnimatedContent
                 Surface(
                     modifier = Modifier.fillMaxWidth(),
                     color = MaterialTheme.colorScheme.surface,
@@ -403,11 +448,20 @@ fun TodoListScreen(
                             ) {
                                 TodoItem(
                                     todo            = todo,
+                                    isSelected      = todo.id in uiState.selectedIds,
                                     onCheckedChange = { isChecked ->
-                                        viewModel.onToggleCompletion(todo, isChecked)
-                                        if (isChecked) showConfetti = true
+                                        if (uiState.isSelectionMode) {
+                                            viewModel.onToggleSelect(todo.id)
+                                        } else {
+                                            viewModel.onToggleCompletion(todo, isChecked)
+                                            if (isChecked) showConfetti = true
+                                        }
                                     },
-                                    onClick         = { onNavigateToDetail(todo.id) },
+                                    onClick         = {
+                                        if (uiState.isSelectionMode) viewModel.onToggleSelect(todo.id)
+                                        else onNavigateToDetail(todo.id)
+                                    },
+                                    onLongClick     = { viewModel.onLongPressTodo(todo.id) },
                                     onDismiss       = {
                                         viewModel.onDeleteTodo(todo)
                                         scope.launch {
@@ -528,14 +582,21 @@ private fun QuickAddBottomSheet(
                 style      = MaterialTheme.typography.titleMedium,
                 fontWeight = FontWeight.Bold
             )
-            OutlinedTextField(
-                value         = input,
-                onValueChange = { input = it },
-                placeholder   = { Text(stringResource(R.string.quick_add_placeholder)) },
-                singleLine    = true,
-                modifier      = Modifier.fillMaxWidth(),
-                shape         = RoundedCornerShape(12.dp)
-            )
+            Row(
+                modifier = Modifier.fillMaxWidth(),
+                verticalAlignment = Alignment.CenterVertically,
+                horizontalArrangement = Arrangement.spacedBy(4.dp)
+            ) {
+                OutlinedTextField(
+                    value         = input,
+                    onValueChange = { input = it },
+                    placeholder   = { Text(stringResource(R.string.quick_add_placeholder)) },
+                    singleLine    = true,
+                    modifier      = Modifier.weight(1f),
+                    shape         = RoundedCornerShape(12.dp)
+                )
+                VoiceInputButton(onResult = { input = it })
+            }
             // NLP date preview chip
             androidx.compose.animation.AnimatedVisibility(visible = dateLabel != null) {
                 dateLabel?.let {

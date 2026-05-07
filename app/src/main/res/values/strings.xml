@@ -556,4 +556,84 @@
     <string name="notif_assigned_body">%1$s assigned you "%2$s"</string>
     <string name="notif_status_title">Task Status Updated</string>
     <string name="notif_status_body">%1$s updated "%2$s" to %3$s</string>
+
+    <!-- Recurrence descriptions (visual picker) -->
+    <string name="recurrence_none_desc">Does not repeat</string>
+    <string name="recurrence_daily_desc">Repeats every day</string>
+    <string name="recurrence_weekly_desc">Repeats every week</string>
+    <string name="recurrence_monthly_desc">Repeats every month</string>
+
+    <!-- Task Templates -->
+    <string name="templates_title">Task Templates</string>
+    <string name="templates_subtitle">Save reusable task structures</string>
+    <string name="templates_add">New Template</string>
+    <string name="templates_empty">No templates yet. Tap + to create one.</string>
+    <string name="templates_name_label">Template Name</string>
+    <string name="templates_task_title_label">Default Task Title</string>
+    <string name="templates_use">Use Template</string>
+
+    <!-- Backup &amp; Restore -->
+    <string name="backup_title">Backup &amp; Restore</string>
+    <string name="backup_subtitle">Export or import your task data</string>
+    <string name="backup_create_title">Create Backup</string>
+    <string name="backup_create_desc">Export all tasks to a JSON file you can save or share.</string>
+    <string name="backup_create_btn">Save Backup</string>
+    <string name="backup_share">Share backup file</string>
+    <string name="backup_restore_title">Restore Backup</string>
+    <string name="backup_restore_desc">Pick a previously exported backup file to import tasks.</string>
+    <string name="backup_restore_btn">Choose File</string>
+    <string name="backup_restore_warning">Restoring will add tasks from the backup file to your existing tasks. Duplicates may occur.</string>
+
+    <!-- Focus Mode -->
+    <string name="focus_mode_title">Focus Mode</string>
+    <string name="focus_mark_done">Mark as Done</string>
+
+    <!-- Voice Input -->
+    <string name="voice_input_prompt">Say your task…</string>
+    <string name="voice_input_cd">Voice input</string>
+
+    <!-- Widget -->
+    <string name="widget_title">Today\'s Tasks</string>
+    <string name="widget_empty">No tasks due today</string>
+    <string name="widget_open">Open TaskVault →</string>
+
+    <!-- Smart Notifications / Daily Digest -->
+    <string name="notif_digest_channel">Daily Digest</string>
+    <string name="notif_digest_title">Your Daily Task Digest</string>
+    <string name="notif_digest_due_today">tasks due today</string>
+    <string name="notif_digest_overdue">overdue tasks</string>
+    <string name="notif_digest_active_total">active tasks total</string>
+
+    <!-- Settings — new sections -->
+    <string name="settings_section_tools">Tools &amp; Data</string>
+    <string name="settings_daily_digest">Daily Digest Notifications</string>
+    <string name="settings_daily_digest_sub">Get an 8 AM summary of your tasks</string>
+
+    <!-- Focus Mode new strings -->
+    <string name="pomodoro_start_session">Start Session</string>
+    <string name="pomodoro_stop">Stop</string>
+    <string name="dashboard_pomodoro_desc">Stay focused with timed sessions</string>
+
+    <!-- Statistics heatmap -->
+    <string name="stats_heatmap_title">30-Day Activity Heatmap</string>
+    <string name="stats_heatmap_less">Less</string>
+    <string name="stats_heatmap_more">More</string>
+
+    <!-- Dashboard info / tutorials -->
+    <string name="action_ok">OK</string>
+    <string name="dashboard_info_cd">Feature info</string>
+    <string name="tutorial_tasks">Manage all your to-do items here. Create tasks with priorities, due dates, subtasks, and recurrence rules. You can also use Quick Add or Voice Input for fast entry.</string>
+    <string name="tutorial_notes">Write and organise your notes. Notes support rich text and are synced to the cloud via Firebase so they\'re available on all your devices.</string>
+    <string name="tutorial_memoirs">Keep a personal journal. Each memoir entry is saved privately and synced to your account, letting you look back on your thoughts over time.</string>
+    <string name="tutorial_wallet">Track your income and expenses. Set a monthly budget and get alerts when you\'re close to your limit. View spending breakdowns by category.</string>
+    <string name="tutorial_calendar">See all your tasks with due dates laid out on a monthly calendar. Tap any day to view or add tasks due on that date.</string>
+    <string name="tutorial_statistics">Visualise your productivity with completion rates, priority breakdowns, streak counters, weekly activity charts, and a 30-day heatmap.</string>
+    <string name="tutorial_passwords">Store and manage your passwords securely. Entries are encrypted and synced to your private Firebase account — never leave them in plain text elsewhere.</string>
+    <string name="tutorial_habits">Build positive habits by tracking daily check-ins. The streak counter keeps you motivated to stay consistent day after day.</string>
+    <string name="tutorial_bills">Keep track of recurring bills and upcoming due dates so you never miss a payment. Bills due soon appear highlighted on the dashboard.</string>
+    <string name="tutorial_assign">Assign tasks to other users in your team or household. They will receive a notification and can accept, complete, or decline the task.</string>
+    <string name="tutorial_assigned_to_me">See all tasks that others have assigned to you. Update their status to keep everyone in the loop.</string>
+    <string name="tutorial_assign_stats">Review assignment statistics — how many tasks were assigned, completed on time, or declined — to understand your team\'s workload.</string>
+    <string name="tutorial_contacts">View and manage your contacts. Quickly assign tasks to contacts or reach out to collaborators from one place.</string>
+    <string name="tutorial_pomodoro">Use the Pomodoro technique to stay focused. Work in 25-minute sessions separated by short breaks. The timer tracks your completed sessions automatically.</string>
 </resources>

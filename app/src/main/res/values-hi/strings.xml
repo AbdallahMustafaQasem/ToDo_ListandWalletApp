@@ -489,19 +489,6 @@
     <!-- New feature strings -->
     <string name="filter_today">आज</string>
     <string name="filter_upcoming">आगामी</string>
-    <string name="quick_add">त्वरित जोड़ें</string>
-    <string name="quick_add_placeholder">उदा: कल 3 बजे डॉक्टर को फोन करें…</string>
-    <string name="full_add">पूर्ण जोड़ें</string>
-    <string name="sort_due_date">नियत तारीख</string>
-    <string name="sort_priority">प्राथमिकता</string>
-    <string name="sort_alphabetical">वर्णमाला</string>
-    <string name="fab_add_todo">कार्य जोड़ें</string>
-    <string name="menu_export">कार्य निर्यात करें</string>
-    <string name="delete_account_title">खाता हटाएं</string>
-    <string name="delete_account_message">आपका खाता और सभी डेटा स्थायी रूप से हटा दिया जाएगा। यह क्रिया पूर्ववत नहीं की जा सकती।</string>
-    <string name="delete_account_confirm">हमेशा के लिए हटाएं</string>
-    <string name="delete_account_button">खाता हटाएं</string>
-    <string name="delete_account_deleting">हटाया जा रहा है…</string>
     <string name="pomodoro_title">पोमोडोरो टाइमर</string>
     <string name="pomodoro_phase_work">फ़ोकस</string>
     <string name="pomodoro_phase_short_break">छोटा ब्रेक</string>
@@ -526,4 +513,22 @@
     <string name="onboard_skip">छोड़ें</string>
     <string name="onboard_next">अगला</string>
     <string name="onboard_get_started">शुरू करें</string>
+
+    <!-- Dashboard info / tutorials -->
+    <string name="action_ok">ठीक है</string>
+    <string name="dashboard_info_cd">फ़ीचर जानकारी</string>
+    <string name="tutorial_tasks">अपने सभी कार्य अवधियताओं, नियत तिथि, उपकार्य और पुनरावृत्ति नियमों के साथ प्रबंधित करें। त्वरित जोड़ें या वॉयस इनपुट का उपयोग करें।</string>
+    <string name="tutorial_notes">नोट्स लिखें और व्यवस्थित करें। Firebase के जरिए सभी डिवाइस पर सिंक होती हैं।</string>
+    <string name="tutorial_memoirs">निजी डायरी रखें। प्रत्येक रजिस्ट्री गोपनीय तरीके से सहेजी और सिंक होती है।</string>
+    <string name="tutorial_wallet">आय और खर्च ट्रैक करें। मासिक बजट निर्धारित करें और श्रेणी अनुसार खर्च देखें।</string>
+    <string name="tutorial_calendar">मासिक कैलेंडर पर नियत तिथि वाले कार्य। किसी दिन को टैप करें कार्य देखने या जोड़ने के लिए।</string>
+    <string name="tutorial_statistics">समाप्ति दर, अवधियताएं, स्ट्रीक, साप्ताहिक ग्राफ और 30-दिन हीटमैप से उत्पादकता देखें।</string>
+    <string name="tutorial_passwords">पासवर्ड सुरक्षित संग्रहीत करें। एन्क्रिप्ट किए और Firebase से सिंक।</string>
+    <string name="tutorial_habits">रोजाना की आदतें ट्रैक करें। स्ट्रीक काउंटर आपको प्रेरित रखता है।</string>
+    <string name="tutorial_bills">आवर्ती बिल और भुगतान तिथि ट्रैक करें ताकि कोई भुगतान न छूटे।</string>
+    <string name="tutorial_assign">अन्य उपयोगकर्ताओं को कार्य सौंपें। उन्हें सूचना मिलेगी और वे स्वीकार या अस्वीकार कर सकते हैं।</string>
+    <string name="tutorial_assigned_to_me">आपको सौंपे गए कार्य देखें और उनकी स्थिति अपडेट करें।</string>
+    <string name="tutorial_assign_stats">टीम की कार्य-भार समझने के लिए असाइनमेंट आंकड़े देखें।</string>
+    <string name="tutorial_contacts">संपर्क प्रबंधित करें और तुरंत कार्य सौंपें।</string>
+    <string name="tutorial_pomodoro">पोमोडोरो तकनीक उपयोग करें: 25 मिनट के सत्र और छोटे विराम। टाइमर स्वचालित रूप से सत्रों को रिकॉर्ड करता है।</string>
 </resources>

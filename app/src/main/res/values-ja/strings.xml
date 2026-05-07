@@ -489,19 +489,6 @@
     <!-- New feature strings -->
     <string name="filter_today">今日</string>
     <string name="filter_upcoming">近日中</string>
-    <string name="quick_add">クイック追加</string>
-    <string name="quick_add_placeholder">例: 明日3時に医者に電話…</string>
-    <string name="full_add">詳細追加</string>
-    <string name="sort_due_date">期限日</string>
-    <string name="sort_priority">優先度</string>
-    <string name="sort_alphabetical">アルファベット順</string>
-    <string name="fab_add_todo">タスクを追加</string>
-    <string name="menu_export">タスクをエクスポート</string>
-    <string name="delete_account_title">アカウントを削除</string>
-    <string name="delete_account_message">アカウントとすべてのデータが完全に削除されます。この操作は元に戻せません。</string>
-    <string name="delete_account_confirm">完全に削除</string>
-    <string name="delete_account_button">アカウントを削除</string>
-    <string name="delete_account_deleting">削除中…</string>
     <string name="pomodoro_title">ポモドーロタイマー</string>
     <string name="pomodoro_phase_work">集中</string>
     <string name="pomodoro_phase_short_break">短い休憩</string>
@@ -526,4 +513,22 @@
     <string name="onboard_skip">スキップ</string>
     <string name="onboard_next">次へ</string>
     <string name="onboard_get_started">始める</string>
+
+    <!-- Dashboard info / tutorials -->
+    <string name="action_ok">OK</string>
+    <string name="dashboard_info_cd">機能の説明</string>
+    <string name="tutorial_tasks">優先度、期限日、サブタスク、繰り返しルールでタスクを管理。クイック追加または音声入力も利用できます。</string>
+    <string name="tutorial_notes">メモを書き、整理します。Firebaseで全デバイスに同期されます。</string>
+    <string name="tutorial_memoirs">個人日記を付けましょう。各エントリはプライベートに保存され同期されます。</string>
+    <string name="tutorial_wallet">収入と支出を追跡。月次予算を設定し、カテゴリ別の内訳を確認できます。</string>
+    <string name="tutorial_calendar">期限付きタスクを月間カレンダーで表示。日付をタップしてタスクを表示または追加。</string>
+    <string name="tutorial_statistics">達成率、優先度、ストリーク、週次グラフ、30日間ヒートマップで生産性を可視化。</string>
+    <string name="tutorial_passwords">パスワードを安全に保管。暗号化され、Firebaseと同期されます。</string>
+    <string name="tutorial_habits">毎日の習慣を追跡。ストリークカウンターでモチベーションを維持。</string>
+    <string name="tutorial_bills">定期請求書と支払日を管理し、払い忘れを防じます。</string>
+    <string name="tutorial_assign">他のユーザーにタスクを割り当て。通知が届き、承認または拒否できます。</string>
+    <string name="tutorial_assigned_to_me">自分に割り当てられたタスクを確認し、ステータスを更新。</string>
+    <string name="tutorial_assign_stats">チームのワークロードを把握するために割り当て統計を確認。</string>
+    <string name="tutorial_contacts">連絡先を管理し、すばやくタスクを割り当てます。</string>
+    <string name="tutorial_pomodoro">ポモドーロテクニックで集中。25分間のセッションと短い休憩。タイマーがセッションを自動記録します。</string>
 </resources>

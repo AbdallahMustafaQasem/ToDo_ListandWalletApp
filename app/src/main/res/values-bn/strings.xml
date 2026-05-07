@@ -489,19 +489,6 @@
     <!-- New feature strings -->
     <string name="filter_today">আজ</string>
     <string name="filter_upcoming">আসন্ন</string>
-    <string name="quick_add">দ্রুত যোগ করুন</string>
-    <string name="quick_add_placeholder">যেমন: আগামীকাল বিকেল ৩টায় ডাক্তারকে ফোন করুন…</string>
-    <string name="full_add">সম্পূর্ণ যোগ করুন</string>
-    <string name="sort_due_date">নির্ধারিত তারিখ</string>
-    <string name="sort_priority">অগ্রাধিকার</string>
-    <string name="sort_alphabetical">বর্ণানুক্রমিক</string>
-    <string name="fab_add_todo">কাজ যোগ করুন</string>
-    <string name="menu_export">কাজ রপ্তানি করুন</string>
-    <string name="delete_account_title">অ্যাকাউন্ট মুছুন</string>
-    <string name="delete_account_message">আপনার অ্যাকাউন্ট এবং সমস্ত ডেটা স্থায়ীভাবে মুছে যাবে। এই ক্রিয়া পূর্বাবস্থায় ফেরানো যাবে না।</string>
-    <string name="delete_account_confirm">চিরতরে মুছুন</string>
-    <string name="delete_account_button">অ্যাকাউন্ট মুছুন</string>
-    <string name="delete_account_deleting">মুছে ফেলা হচ্ছে…</string>
     <string name="pomodoro_title">পোমোডোরো টাইমার</string>
     <string name="pomodoro_phase_work">মনোযোগ</string>
     <string name="pomodoro_phase_short_break">ছোট বিরতি</string>
@@ -525,5 +512,23 @@
     <string name="onboard_desc_4">কাজ বরাদ্দ করুন, অগ্রগতি ট্র্যাক করুন এবং দলের সাথে সমন্বিত থাকুন।</string>
     <string name="onboard_skip">এড়িয়ে যান</string>
     <string name="onboard_next">পরবর্তী</string>
-    <string name="onboard_get_started">শুরু করুন</string>
+    <string name="onboard_get_started">শুরু হোক</string>
+
+    <!-- Dashboard info / tutorials -->
+    <string name="action_ok">ঠিক আছে</string>
+    <string name="dashboard_info_cd">ফিচার তথ্য</string>
+    <string name="tutorial_tasks">আপনার সব কাজ অোলোবদ্ধতা, সময়সীমা, উপকাজ ও পুনরাবৃত্তি নিয়ম সহ পরিচালনা করুন। দ্রুত যোগ বা কণ্ঠস্বর ব্যবহার করুন।</string>
+    <string name="tutorial_notes">নোট লিখুন ও সাজান। Firebase-এর মাধ্যমে সব ডিভাইসে সিন্ক হয়।</string>
+    <string name="tutorial_memoirs">ব্যক্তিগত ডায়েরি রাখুন। প্রতিটি লেখা গোপনীয়ভাবে সংরক্ষিত দে সিন্ক হয়।</string>
+    <string name="tutorial_wallet">আয় ও ব্যয় ট্র্যাক করুন। মাসিক বাজেট নির্ধারণ করুন ও বিভাগ অনুযায়ী ব্যয় দেখুন।</string>
+    <string name="tutorial_calendar">মাসিক ক্যালেন্ডারে সময়সীমাসহ কাজ। দিন ট্যাপ করুন দেখতে বা যোগ করতে।</string>
+    <string name="tutorial_statistics">সমাপ্তির হার, অগ্রাধিকার, স্ট্রিক, সাপ্তাহিক গ্রাফ ও 30 দিনের হিটম্যাপ দিয়ে উৎপাদনশীলতা দেখুন।</string>
+    <string name="tutorial_passwords">পাসওয়ার্ড নিরাপদে সংরক্ষণ করুন। নিরাপদে সাইফার করা ও Firebase-এ সিন্ক হয়।</string>
+    <string name="tutorial_habits">প্রতিদিনের রুটিন ট্র্যাক করুন। স্ট্রিক কাউন্টার আপনাকে অনুপ্রাণিত রাখে।</string>
+    <string name="tutorial_bills">পুনরাবৃত্তি বিল ও পরিশোধের তারিখ হিসাব রাখুন যাতে কোনো পেমেন্ট মিস না হয়।</string>
+    <string name="tutorial_assign">অন্য ব্যবহারকারীদের কাজ দিন। তারা নোটিফিকেশন পাবেন ও গ্রহণ বা প্রত্যাখ্যান করতে পারবেন।</string>
+    <string name="tutorial_assigned_to_me">আপনাকে দেয়া কাজগুলো দেখুন ও তাদের অবস্থা আপডেট করুন।</string>
+    <string name="tutorial_assign_stats">টিমের কাজের চাপ বোঝতে অ্যাসাইনমেন্ট পরিসংখ্যান দেখুন।</string>
+    <string name="tutorial_contacts">যোগাযোগ পরিচালনা করুন ও দ্রুত কাজ বরাদ্দ করুন।</string>
+    <string name="tutorial_pomodoro">পোমোডোরো পদ্ধতি ব্যবহার করুন: 25 মিনিটের সেশন ও ছোট বিরতি। টাইমার আপনার সেশন স্বয়ংক্রিয়ভাবে ট্র্যাক করে।</string>
 </resources>

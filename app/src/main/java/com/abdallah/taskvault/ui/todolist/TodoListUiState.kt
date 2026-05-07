@@ -17,5 +17,8 @@ data class TodoListUiState(
     val showExactAlarmRationale: Boolean = false,
     val isDarkTheme: Boolean? = null,           // null = follow system
     val activeTodoCount: Int = 0,
-    val languageCode: String? = null
+    val languageCode: String? = null,
+    // Bulk-action selection
+    val isSelectionMode: Boolean = false,
+    val selectedIds: Set<Long> = emptySet()
 )

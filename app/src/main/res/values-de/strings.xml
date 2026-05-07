@@ -490,19 +490,6 @@
     <!-- New feature strings -->
     <string name="filter_today">Heute</string>
     <string name="filter_upcoming">Demnächst</string>
-    <string name="quick_add">Schnell hinzufügen</string>
-    <string name="quick_add_placeholder">z.B. Arzt morgen um 15 Uhr anrufen…</string>
-    <string name="full_add">Vollständig hinzufügen</string>
-    <string name="sort_due_date">Fälligkeitsdatum</string>
-    <string name="sort_priority">Priorität</string>
-    <string name="sort_alphabetical">Alphabetisch</string>
-    <string name="fab_add_todo">Aufgabe hinzufügen</string>
-    <string name="menu_export">Aufgaben exportieren</string>
-    <string name="delete_account_title">Konto löschen</string>
-    <string name="delete_account_message">Ihr Konto und alle Daten werden dauerhaft gelöscht. Diese Aktion kann nicht rückgängig gemacht werden.</string>
-    <string name="delete_account_confirm">Endgültig löschen</string>
-    <string name="delete_account_button">Konto löschen</string>
-    <string name="delete_account_deleting">Wird gelöscht…</string>
     <string name="pomodoro_title">Pomodoro-Timer</string>
     <string name="pomodoro_phase_work">Fokus</string>
     <string name="pomodoro_phase_short_break">Kurze Pause</string>
@@ -527,4 +514,22 @@
     <string name="onboard_skip">Überspringen</string>
     <string name="onboard_next">Weiter</string>
     <string name="onboard_get_started">Loslegen</string>
+
+    <!-- Dashboard info / tutorials -->
+    <string name="action_ok">OK</string>
+    <string name="dashboard_info_cd">Feature-Info</string>
+    <string name="tutorial_tasks">Verwalte hier alle deine Aufgaben mit Prioritäten, Fälligkeitsdaten, Unteraufgaben und Wiederholungsregeln.</string>
+    <string name="tutorial_notes">Schreibe und organisiere deine Notizen. Sie werden über Firebase mit allen deinen Geräten synchronisiert.</string>
+    <string name="tutorial_memoirs">Führe ein persönliches Tagebuch. Einträge werden privat gespeichert und synchronisiert.</string>
+    <string name="tutorial_wallet">Verfolge Einnahmen und Ausgaben. Lege ein Monatsbudget fest und sieh Ausgaben nach Kategorie.</string>
+    <string name="tutorial_calendar">Alle Aufgaben mit Fälligkeitsdaten im Monatskalender. Tippe auf einen Tag, um Aufgaben zu sehen oder hinzuzufügen.</string>
+    <string name="tutorial_statistics">Visualisiere deine Produktivität mit Abschlussraten, Prioritätsaufschlüsselungen, Streaks, Aktivitätsdiagrammen und einer 30-Tage-Heatmap.</string>
+    <string name="tutorial_passwords">Speichere Passwörter sicher. Einträge werden verschlüsselt und mit deinem Firebase-Konto synchronisiert.</string>
+    <string name="tutorial_habits">Verfolge tägliche Check-ins und baue positive Gewohnheiten auf. Der Streak-Zähler hält dich motiviert.</string>
+    <string name="tutorial_bills">Behalte Rechnungen und Fälligkeiten im Blick, damit du keine Zahlung verpasst.</string>
+    <string name="tutorial_assign">Weise anderen Benutzern Aufgaben zu. Sie können annehmen, abschließen oder ablehnen.</string>
+    <string name="tutorial_assigned_to_me">Alle dir zugewiesenen Aufgaben auf einen Blick. Aktualisiere den Status, um alle auf dem Laufenden zu halten.</string>
+    <string name="tutorial_assign_stats">Überprüfe Zuweisungsstatistiken, um die Arbeitslast deines Teams zu verstehen.</string>
+    <string name="tutorial_contacts">Verwalte deine Kontakte und weise ihnen schnell Aufgaben zu.</string>
+    <string name="tutorial_pomodoro">Nutze die Pomodoro-Technik: 25-Minuten-Sitzungen mit kurzen Pausen. Der Timer verfolgt abgeschlossene Sitzungen automatisch.</string>
 </resources>

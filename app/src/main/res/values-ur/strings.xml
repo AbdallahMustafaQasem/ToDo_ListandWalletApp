@@ -486,19 +486,6 @@
     <!-- New feature strings -->
     <string name="filter_today">آج</string>
     <string name="filter_upcoming">آنے والے</string>
-    <string name="quick_add">فوری اضافہ</string>
-    <string name="quick_add_placeholder">مثال: کل 3 بجے ڈاکٹر کو فون کریں…</string>
-    <string name="full_add">مکمل اضافہ</string>
-    <string name="sort_due_date">مقررہ تاریخ</string>
-    <string name="sort_priority">ترجیح</string>
-    <string name="sort_alphabetical">حروف تہجی</string>
-    <string name="fab_add_todo">کام شامل کریں</string>
-    <string name="menu_export">کام برآمد کریں</string>
-    <string name="delete_account_title">اکاؤنٹ حذف کریں</string>
-    <string name="delete_account_message">آپ کا اکاؤنٹ اور تمام ڈیٹا مستقل طور پر حذف ہو جائے گا۔ یہ عمل واپس نہیں ہو سکتا۔</string>
-    <string name="delete_account_confirm">ہمیشہ کے لیے حذف کریں</string>
-    <string name="delete_account_button">اکاؤنٹ حذف کریں</string>
-    <string name="delete_account_deleting">حذف ہو رہا ہے…</string>
     <string name="pomodoro_title">پوموڈورو ٹائمر</string>
     <string name="pomodoro_phase_work">توجہ</string>
     <string name="pomodoro_phase_short_break">مختصر وقفہ</string>
@@ -523,4 +510,22 @@
     <string name="onboard_skip">چھوڑیں</string>
     <string name="onboard_next">اگلا</string>
     <string name="onboard_get_started">شروع کریں</string>
+
+    <!-- Dashboard info / tutorials -->
+    <string name="action_ok">ٹھیک ہے</string>
+    <string name="dashboard_info_cd">فیچر معلومات</string>
+    <string name="tutorial_tasks">اپنے تمام کام ترجیحات، تاریخوں، ذیلی کام اور تکرار کے ساتھ منظم کریں۔ تیز اضافہ یا آواز انپٹ بھی استعمال کریں۔</string>
+    <string name="tutorial_notes">نوٹس لکھیں اور ترتیب دیں۔ Firebase سے تمام آلات پر سینک ہوتی ہیں۔</string>
+    <string name="tutorial_memoirs">ذاتی ڈائری رکھیں۔ ہر اینٹری نجی طور پر محفوظ اور سینک ہوتی ہے۔</string>
+    <string name="tutorial_wallet">آمدنی اور اخراجات ٹریک کریں۔ ماہانہ بجٹ مقرر کریں اور زمرہ وار اخراجات دیکھیں۔</string>
+    <string name="tutorial_calendar">ماہانہ کیلنڈر پر تاریخ والے کام۔ کسی دن پر ٹیپ کریں کام دیکھنے یا شامل کرنے کے لیے۔</string>
+    <string name="tutorial_statistics">تکمیلی شرح، ترجیحات، سٹریک، ہفتہ وار گراف اور  30 دنوں کے ہیٹ میپ سے پیداواری دیکھیں۔</string>
+    <string name="tutorial_passwords">پاس ورڈ محفوظ طریقے سے سٹور کریں۔ خفیہ اور Firebase سے سینک ہوتے ہیں۔</string>
+    <string name="tutorial_habits">روزانہ عادات کو ٹریک کریں۔ سٹریک کاؤنٹر آپ کو حوصلہ مند رکھتے ہے۔</string>
+    <string name="tutorial_bills">بار بار آنے والے بلوں اور ادائیگی کی تاریخیں کا خیال رکھیں۔</string>
+    <string name="tutorial_assign">دوسرے صارفین کو کام سونپیں۔ وہ اطلاع پایں گے اور قبول یا رد کر سکتے ہیں۔</string>
+    <string name="tutorial_assigned_to_me">آپ کو سونپے گئے کام دیکھیں اور ان کی حیثیت اپ ڈیٹ کریں۔</string>
+    <string name="tutorial_assign_stats">ٹیم کے کام کا بوجھ سمجھنے کے لیے اسائنمنٹ اسٹیٹس دیکھیں۔</string>
+    <string name="tutorial_contacts">رابطہ کار منظم کریں اور جلدی سے انہیں کام سونپیں۔</string>
+    <string name="tutorial_pomodoro">پوموڈورو تکنیک استعمال کریں: 25 منٹ کے سیشن اور مختصر وقفے۔ ٹائمر خودبخود سیشن ریکارڈ کرتہ ہے۔</string>
 </resources>

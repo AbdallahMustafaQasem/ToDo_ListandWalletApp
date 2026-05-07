@@ -57,6 +57,9 @@ import com.abdallah.taskvault.ui.search.SearchScreen
 import com.abdallah.taskvault.ui.settings.SettingsScreen
 import com.abdallah.taskvault.ui.lists.TodoListsScreen
 import com.abdallah.taskvault.ui.statistics.StatisticsScreen
+import com.abdallah.taskvault.ui.backup.BackupRestoreScreen
+import com.abdallah.taskvault.ui.focus.FocusModeScreen
+import com.abdallah.taskvault.ui.templates.TaskTemplatesScreen
 import com.abdallah.taskvault.ui.todolist.TodoListScreen
 import com.abdallah.taskvault.ui.trash.TrashScreen
 import com.abdallah.taskvault.ui.wallet.WalletCategoriesScreen
@@ -143,8 +146,12 @@ fun NavGraph(
             route     = Screen.Detail.route,
             arguments = listOf(navArgument("todoId") { type = NavType.LongType }),
             deepLinks = listOf(navDeepLink { uriPattern = "todoapp://detail/{todoId}" })
-        ) {
-            AddEditTodoScreen(onNavigateBack = { navController.popBackStack() })
+        ) { backStack ->
+            val todoId = backStack.arguments?.getLong("todoId") ?: -1L
+            AddEditTodoScreen(
+                onNavigateBack    = { navController.popBackStack() },
+                onNavigateToFocus = { id -> navController.navigate(Screen.FocusMode.createRoute(id)) }
+            )
         }
 
         composable(Screen.Statistics.route) {
@@ -187,9 +194,11 @@ fun NavGraph(
 
         composable(Screen.Settings.route) {
             SettingsScreen(
-                onBack              = { navController.popBackStack() },
-                onNavigateToAbout   = { navController.navigate(Screen.About.route) },
-                onNavigateToProfile = { navController.navigate(Screen.Profile.route) }
+                onBack                = { navController.popBackStack() },
+                onNavigateToAbout     = { navController.navigate(Screen.About.route) },
+                onNavigateToProfile   = { navController.navigate(Screen.Profile.route) },
+                onNavigateToBackup    = { navController.navigate(Screen.BackupRestore.route) },
+                onNavigateToTemplates = { navController.navigate(Screen.TaskTemplates.route) }
             )
         }
 
@@ -317,6 +326,30 @@ fun NavGraph(
 
         composable(Screen.Pomodoro.route) {
             PomodoroScreen(onNavigateBack = { navController.popBackStack() })
+        }
+
+        composable(
+            route = Screen.FocusMode.route,
+            arguments = listOf(navArgument("todoId") { type = NavType.LongType })
+        ) { backStack ->
+            val todoId = backStack.arguments?.getLong("todoId") ?: return@composable
+            FocusModeScreen(
+                todoId = todoId,
+                onNavigateBack = { navController.popBackStack() }
+            )
+        }
+
+        composable(Screen.TaskTemplates.route) {
+            TaskTemplatesScreen(
+                onNavigateBack = { navController.popBackStack() },
+                onApplyTemplate = { title, desc ->
+                    navController.navigate(Screen.Add.route)
+                }
+            )
+        }
+
+        composable(Screen.BackupRestore.route) {
+            BackupRestoreScreen(onNavigateBack = { navController.popBackStack() })
         }
     }
 }

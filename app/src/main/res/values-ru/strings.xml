@@ -489,19 +489,6 @@
     <!-- New feature strings -->
     <string name="filter_today">Сегодня</string>
     <string name="filter_upcoming">Предстоящие</string>
-    <string name="quick_add">Быстрое добавление</string>
-    <string name="quick_add_placeholder">Например: позвонить врачу завтра в 15:00…</string>
-    <string name="full_add">Полное добавление</string>
-    <string name="sort_due_date">Срок выполнения</string>
-    <string name="sort_priority">Приоритет</string>
-    <string name="sort_alphabetical">По алфавиту</string>
-    <string name="fab_add_todo">Добавить задачу</string>
-    <string name="menu_export">Экспорт задач</string>
-    <string name="delete_account_title">Удалить аккаунт</string>
-    <string name="delete_account_message">Ваш аккаунт и все данные будут удалены безвозвратно. Это действие нельзя отменить.</string>
-    <string name="delete_account_confirm">Удалить навсегда</string>
-    <string name="delete_account_button">Удалить аккаунт</string>
-    <string name="delete_account_deleting">Удаление…</string>
     <string name="pomodoro_title">Таймер Помодоро</string>
     <string name="pomodoro_phase_work">Фокус</string>
     <string name="pomodoro_phase_short_break">Короткий перерыв</string>
@@ -526,4 +513,22 @@
     <string name="onboard_skip">Пропустить</string>
     <string name="onboard_next">Далее</string>
     <string name="onboard_get_started">Начать</string>
+
+    <!-- Dashboard info / tutorials -->
+    <string name="action_ok">ОК</string>
+    <string name="dashboard_info_cd">Инфо о функции</string>
+    <string name="tutorial_tasks">Управляйте задачами с приоритетами, датами, подзадачами и правилами повторения. Используйте быстрое добавление или голосовой ввод.</string>
+    <string name="tutorial_notes">Пишите и организуйте заметки. Синхронизируются через Firebase на всех ваших устройствах.</string>
+    <string name="tutorial_memoirs">Ведите личный дневник. Каждая запись хранится приватно и синхронизируется.</string>
+    <string name="tutorial_wallet">Отслеживайте доходы и расходы. Установите месячный бюджет и смотрите расходы по категориям.</string>
+    <string name="tutorial_calendar">Задачи со сроками на месячном календаре. Нажмите на день, чтобы посмотреть или добавить задачи.</string>
+    <string name="tutorial_statistics">Визуализируйте продуктивность: выполнение, приоритеты, серии, еженедельная активность и 30-дневная теплокарта.</string>
+    <string name="tutorial_passwords">Храните пароли безопасно. Зашифрованы и синхронизированы с Firebase.</string>
+    <string name="tutorial_habits">Отслеживайте ежедневные привычки. Счётчик серий поддерживает мотивацию.</string>
+    <string name="tutorial_bills">Следите за счётами и сроками оплаты, чтобы не пропустить платёж.</string>
+    <string name="tutorial_assign">Назначайте задачи другим пользователям. Они получат уведомление и могут принять или отклонить.</string>
+    <string name="tutorial_assigned_to_me">Смотрите задачи, назначенные вам, и обновляйте их статус.</string>
+    <string name="tutorial_assign_stats">Просматривайте статистику назначений, чтобы оценить нагрузку команды.</string>
+    <string name="tutorial_contacts">Управляйте контактами и быстро назначайте им задачи.</string>
+    <string name="tutorial_pomodoro">Используйте технику Помодоро: сессии по 25 минут с короткими перерывами. Таймер автоматически записывает сессии.</string>
 </resources>

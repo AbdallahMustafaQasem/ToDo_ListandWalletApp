@@ -489,19 +489,6 @@
     <!-- New feature strings -->
     <string name="filter_today">Aujourd\'hui</string>
     <string name="filter_upcoming">À venir</string>
-    <string name="quick_add">Ajout rapide</string>
-    <string name="quick_add_placeholder">Ex : Appeler le médecin demain à 15h…</string>
-    <string name="full_add">Ajout complet</string>
-    <string name="sort_due_date">Date d\'échéance</string>
-    <string name="sort_priority">Priorité</string>
-    <string name="sort_alphabetical">Alphabétique</string>
-    <string name="fab_add_todo">Ajouter une tâche</string>
-    <string name="menu_export">Exporter les tâches</string>
-    <string name="delete_account_title">Supprimer le compte</string>
-    <string name="delete_account_message">Votre compte et toutes vos données seront supprimés définitivement. Cette action est irréversible.</string>
-    <string name="delete_account_confirm">Supprimer définitivement</string>
-    <string name="delete_account_button">Supprimer le compte</string>
-    <string name="delete_account_deleting">Suppression en cours…</string>
     <string name="pomodoro_title">Minuteur Pomodoro</string>
     <string name="pomodoro_phase_work">Concentration</string>
     <string name="pomodoro_phase_short_break">Pause courte</string>
@@ -526,4 +513,22 @@
     <string name="onboard_skip">Passer</string>
     <string name="onboard_next">Suivant</string>
     <string name="onboard_get_started">Commencer</string>
+
+    <!-- Dashboard info / tutorials -->
+    <string name="action_ok">OK</string>
+    <string name="dashboard_info_cd">Info sur la fonctionnalité</string>
+    <string name="tutorial_tasks">Gérez toutes vos tâches avec priorités, échéances, sous-tâches et règles de récurrence. Utilisez l\'ajout rapide ou la saisie vocale.</string>
+    <string name="tutorial_notes">Rédigez et organisez vos notes. Elles sont synchronisées via Firebase sur tous vos appareils.</string>
+    <string name="tutorial_memoirs">Tenez un journal personnel. Chaque entrée est sauvegardée et synchronisée de façon privée.</string>
+    <string name="tutorial_wallet">Suivez vos revenus et dépenses. Définissez un budget mensuel et consultez les dépenses par catégorie.</string>
+    <string name="tutorial_calendar">Toutes les tâches avec échéances sur un calendrier mensuel. Appuyez sur un jour pour voir ou ajouter des tâches.</string>
+    <string name="tutorial_statistics">Visualisez votre productivité avec taux de complétion, priorités, séries, graphiques hebdomadaires et carte thermique 30 jours.</string>
+    <string name="tutorial_passwords">Stockez vos mots de passe en toute sécurité, chiffrés et synchronisés avec Firebase.</string>
+    <string name="tutorial_habits">Construisez de bonnes habitudes grâce au suivi quotidien. Le compteur de série vous motive.</string>
+    <string name="tutorial_bills">Suivez les factures récurrentes et les échéances pour ne manquer aucun paiement.</string>
+    <string name="tutorial_assign">Assignez des tâches à d\'autres utilisateurs. Ils reçoivent une notification et peuvent accepter, terminer ou refuser.</string>
+    <string name="tutorial_assigned_to_me">Consultez toutes les tâches qui vous ont été assignées et mettez à jour leur statut.</string>
+    <string name="tutorial_assign_stats">Consultez les statistiques d\'assignation pour comprendre la charge de travail de votre équipe.</string>
+    <string name="tutorial_contacts">Gérez vos contacts et assignez-leur des tâches rapidement.</string>
+    <string name="tutorial_pomodoro">Utilisez la technique Pomodoro : sessions de 25 minutes avec courtes pauses. Le minuteur suit automatiquement vos sessions.</string>
 </resources>

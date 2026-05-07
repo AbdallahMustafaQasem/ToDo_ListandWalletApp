@@ -33,6 +33,7 @@ class UserPreferencesRepository @Inject constructor(
         val WALLET_CURRENCY_SYMBOL = stringPreferencesKey("wallet_currency_symbol")
         val APP_LOCK_ENABLED = booleanPreferencesKey("app_lock_enabled")
         val ONBOARDING_COMPLETE = booleanPreferencesKey("onboarding_complete")
+        val DAILY_DIGEST_ENABLED = booleanPreferencesKey("daily_digest_enabled")
     }
 
     val isDarkTheme: Flow<Boolean?> = context.dataStore.data.map { prefs ->
@@ -93,5 +94,13 @@ class UserPreferencesRepository @Inject constructor(
 
     suspend fun setOnboardingComplete(complete: Boolean) {
         context.dataStore.edit { it[Keys.ONBOARDING_COMPLETE] = complete }
+    }
+
+    val dailyDigestEnabled: Flow<Boolean> = context.dataStore.data.map { prefs ->
+        prefs[Keys.DAILY_DIGEST_ENABLED] ?: false
+    }
+
+    suspend fun setDailyDigestEnabled(enabled: Boolean) {
+        context.dataStore.edit { it[Keys.DAILY_DIGEST_ENABLED] = enabled }
     }
 }

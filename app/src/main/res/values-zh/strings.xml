@@ -486,19 +486,6 @@
     <!-- New feature strings -->
     <string name="filter_today">今天</string>
     <string name="filter_upcoming">即将到来</string>
-    <string name="quick_add">快速添加</string>
-    <string name="quick_add_placeholder">例如：明天下午3点给医生打电话…</string>
-    <string name="full_add">完整添加</string>
-    <string name="sort_due_date">截止日期</string>
-    <string name="sort_priority">优先级</string>
-    <string name="sort_alphabetical">字母顺序</string>
-    <string name="fab_add_todo">添加任务</string>
-    <string name="menu_export">导出任务</string>
-    <string name="delete_account_title">删除账户</string>
-    <string name="delete_account_message">您的账户和所有数据将被永久删除，此操作无法撤销。</string>
-    <string name="delete_account_confirm">永久删除</string>
-    <string name="delete_account_button">删除账户</string>
-    <string name="delete_account_deleting">删除中…</string>
     <string name="pomodoro_title">番茄计时器</string>
     <string name="pomodoro_phase_work">专注</string>
     <string name="pomodoro_phase_short_break">短休息</string>
@@ -523,4 +510,22 @@
     <string name="onboard_skip">跳过</string>
     <string name="onboard_next">下一步</string>
     <string name="onboard_get_started">开始使用</string>
+
+    <!-- Dashboard info / tutorials -->
+    <string name="action_ok">确定</string>
+    <string name="dashboard_info_cd">功能说明</string>
+    <string name="tutorial_tasks">用优先级、截止日期、子任务和重复规则管理所有任务。支持快速添加和语音输入。</string>
+    <string name="tutorial_notes">编写并整理您的笔记。通过 Firebase 在所有设备上同步。</string>
+    <string name="tutorial_memoirs">记录个人日记。每条条目私密保存并同步。</string>
+    <string name="tutorial_wallet">跟踪收入和支出。设定月度预算并按类别查看费用明细。</string>
+    <string name="tutorial_calendar">在月历视图中查看带截止日期的任务。点击某天可查看或添加任务。</string>
+    <string name="tutorial_statistics">通过完成率、优先级、连续天数、周活动图表和 30 天热力图可视化您的生产力。</string>
+    <string name="tutorial_passwords">安全存储密码。加密并与 Firebase 同步。</string>
+    <string name="tutorial_habits">追踪每日习惯。连续记录器让您保持动力。</string>
+    <string name="tutorial_bills">跟踪周期性账单和到期日，确保不遗漏任何付款。</string>
+    <string name="tutorial_assign">将任务分配给其他用户。他们收到通知并可接受或拒绝。</string>
+    <string name="tutorial_assigned_to_me">查看分配给您的任务并更新其状态。</string>
+    <string name="tutorial_assign_stats">查看分配统计以了解团队工作负荷。</string>
+    <string name="tutorial_contacts">管理联系人并快速分配任务。</string>
+    <string name="tutorial_pomodoro">使用番茄钟工作法：25 分钟专注加短暂休。计时器自动记录完成的工作居。</string>
 </resources>

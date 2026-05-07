@@ -155,7 +155,8 @@ fun DashboardScreen(
                         icon = Icons.Default.CheckCircle,
                         gradient = listOf(Color(0xFF6750A4), Color(0xFF9A82DB)),
                         onClick = onNavigateToTasks,
-                        modifier = Modifier.weight(1f)
+                        modifier = Modifier.weight(1f),
+                        tutorialText = stringResource(R.string.tutorial_tasks)
                     )
                     FeatureCard(
                         title = stringResource(R.string.dashboard_feature_notes),
@@ -163,7 +164,8 @@ fun DashboardScreen(
                         icon = Icons.Default.StickyNote2,
                         gradient = listOf(Color(0xFFB5515D), Color(0xFFE07A5F)),
                         onClick = onNavigateToNotes,
-                        modifier = Modifier.weight(1f)
+                        modifier = Modifier.weight(1f),
+                        tutorialText = stringResource(R.string.tutorial_notes)
                     )
                 }
                 Row(
@@ -176,7 +178,8 @@ fun DashboardScreen(
                         icon = Icons.Default.MenuBook,
                         gradient = listOf(Color(0xFF2E7D63), Color(0xFF81B29A)),
                         onClick = onNavigateToMemoirs,
-                        modifier = Modifier.weight(1f)
+                        modifier = Modifier.weight(1f),
+                        tutorialText = stringResource(R.string.tutorial_memoirs)
                     )
                     FeatureCard(
                         title = stringResource(R.string.menu_wallet),
@@ -184,7 +187,8 @@ fun DashboardScreen(
                         icon = Icons.Default.AccountBalanceWallet,
                         gradient = listOf(Color(0xFF1565C0), Color(0xFF457B9D)),
                         onClick = onNavigateToWallet,
-                        modifier = Modifier.weight(1f)
+                        modifier = Modifier.weight(1f),
+                        tutorialText = stringResource(R.string.tutorial_wallet)
                     )
                 }
                 Row(
@@ -197,7 +201,8 @@ fun DashboardScreen(
                         icon = Icons.Default.CalendarMonth,
                         gradient = listOf(Color(0xFFC77700), Color(0xFFF2CC8F)),
                         onClick = onNavigateToCalendar,
-                        modifier = Modifier.weight(1f)
+                        modifier = Modifier.weight(1f),
+                        tutorialText = stringResource(R.string.tutorial_calendar)
                     )
                     FeatureCard(
                         title = stringResource(R.string.menu_statistics),
@@ -205,7 +210,8 @@ fun DashboardScreen(
                         icon = Icons.Default.BarChart,
                         gradient = listOf(Color(0xFF3D405B), Color(0xFF6B7080)),
                         onClick = onNavigateToStatistics,
-                        modifier = Modifier.weight(1f)
+                        modifier = Modifier.weight(1f),
+                        tutorialText = stringResource(R.string.tutorial_statistics)
                     )
                 }
                 FeatureCard(
@@ -214,7 +220,8 @@ fun DashboardScreen(
                     icon = Icons.Default.Lock,
                     gradient = listOf(Color(0xFF6A0572), Color(0xFFAB47BC)),
                     onClick = onNavigateToPasswords,
-                    modifier = Modifier.fillMaxWidth()
+                    modifier = Modifier.fillMaxWidth(),
+                    tutorialText = stringResource(R.string.tutorial_passwords)
                 )
                 Row(
                     modifier = Modifier.fillMaxWidth(),
@@ -226,7 +233,8 @@ fun DashboardScreen(
                         icon = Icons.Default.SelfImprovement,
                         gradient = listOf(Color(0xFF2E7D32), Color(0xFF66BB6A)),
                         onClick = onNavigateToHabits,
-                        modifier = Modifier.weight(1f)
+                        modifier = Modifier.weight(1f),
+                        tutorialText = stringResource(R.string.tutorial_habits)
                     )
                     FeatureCard(
                         title = stringResource(R.string.bills_title),
@@ -234,7 +242,8 @@ fun DashboardScreen(
                         icon = Icons.Default.Receipt,
                         gradient = listOf(Color(0xFFD32F2F), Color(0xFFFF5252)),
                         onClick = onNavigateToBills,
-                        modifier = Modifier.weight(1f)
+                        modifier = Modifier.weight(1f),
+                        tutorialText = stringResource(R.string.tutorial_bills)
                     )
                 }
                 Row(
@@ -247,7 +256,8 @@ fun DashboardScreen(
                         icon = Icons.Default.PersonAdd,
                         gradient = listOf(Color(0xFF00695C), Color(0xFF26A69A)),
                         onClick = onNavigateToAssign,
-                        modifier = Modifier.weight(1f)
+                        modifier = Modifier.weight(1f),
+                        tutorialText = stringResource(R.string.tutorial_assign)
                     )
                     FeatureCard(
                         title = stringResource(R.string.assigned_to_me_title),
@@ -255,7 +265,8 @@ fun DashboardScreen(
                         icon = Icons.Default.AssignmentInd,
                         gradient = listOf(Color(0xFF4527A0), Color(0xFF7C4DFF)),
                         onClick = onNavigateToAssignedToMe,
-                        modifier = Modifier.weight(1f)
+                        modifier = Modifier.weight(1f),
+                        tutorialText = stringResource(R.string.tutorial_assigned_to_me)
                     )
                 }
                 Row(
@@ -268,7 +279,8 @@ fun DashboardScreen(
                         icon = Icons.Default.BarChart,
                         gradient = listOf(Color(0xFFE65100), Color(0xFFFF9800)),
                         onClick = onNavigateToAssignmentStats,
-                        modifier = Modifier.weight(1f)
+                        modifier = Modifier.weight(1f),
+                        tutorialText = stringResource(R.string.tutorial_assign_stats)
                     )
                     FeatureCard(
                         title = stringResource(R.string.contacts_title),
@@ -276,7 +288,8 @@ fun DashboardScreen(
                         icon = Icons.Default.People,
                         gradient = listOf(Color(0xFF37474F), Color(0xFF78909C)),
                         onClick = onNavigateToContacts,
-                        modifier = Modifier.weight(1f)
+                        modifier = Modifier.weight(1f),
+                        tutorialText = stringResource(R.string.tutorial_contacts)
                     )
                 }
                 FeatureCard(
@@ -285,7 +298,8 @@ fun DashboardScreen(
                     icon     = Icons.Default.Timer,
                     gradient = listOf(Color(0xFFAD1457), Color(0xFFEC407A)),
                     onClick  = onNavigateToPomodoro,
-                    modifier = Modifier.fillMaxWidth()
+                    modifier = Modifier.fillMaxWidth(),
+                    tutorialText = stringResource(R.string.tutorial_pomodoro)
                 )
             }
 
@@ -325,18 +339,36 @@ private fun FeatureCard(
     icon: ImageVector,
     gradient: List<Color>,
     onClick: () -> Unit,
-    modifier: Modifier = Modifier
+    modifier: Modifier = Modifier,
+    tutorialText: String = ""
 ) {
+    var showTutorial by remember { mutableStateOf(false) }
+
+    if (showTutorial && tutorialText.isNotBlank()) {
+        AlertDialog(
+            onDismissRequest = { showTutorial = false },
+            icon = { Icon(icon, contentDescription = null, tint = MaterialTheme.colorScheme.primary) },
+            title = { Text(title, fontWeight = FontWeight.Bold) },
+            text = { Text(tutorialText, style = MaterialTheme.typography.bodyMedium) },
+            confirmButton = {
+                TextButton(onClick = { showTutorial = false }) {
+                    Text(stringResource(R.string.action_ok))
+                }
+            }
+        )
+    }
+
     Box(
         modifier = modifier
             .height(130.dp)
             .clip(RoundedCornerShape(20.dp))
             .background(Brush.linearGradient(gradient))
             .clickable(onClick = onClick)
-            .padding(16.dp)
     ) {
         Column(
-            modifier = Modifier.fillMaxSize(),
+            modifier = Modifier
+                .fillMaxSize()
+                .padding(16.dp),
             verticalArrangement = Arrangement.SpaceBetween
         ) {
             Surface(
@@ -364,6 +396,23 @@ private fun FeatureCard(
                     subtitle,
                     style = MaterialTheme.typography.labelSmall,
                     color = Color.White.copy(alpha = 0.8f)
+                )
+            }
+        }
+        // Info button — top-right corner
+        if (tutorialText.isNotBlank()) {
+            IconButton(
+                onClick = { showTutorial = true },
+                modifier = Modifier
+                    .align(Alignment.TopEnd)
+                    .padding(4.dp)
+                    .size(32.dp)
+            ) {
+                Icon(
+                    Icons.Default.Info,
+                    contentDescription = stringResource(R.string.dashboard_info_cd),
+                    tint = Color.White.copy(alpha = 0.85f),
+                    modifier = Modifier.size(18.dp)
                 )
             }
         }

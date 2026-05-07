@@ -14,6 +14,7 @@ import com.abdallah.taskvault.domain.usecase.DeleteTodoUseCase
 import com.abdallah.taskvault.domain.usecase.ExportTodosUseCase
 import com.abdallah.taskvault.domain.usecase.GetAllTodosUseCase
 import com.abdallah.taskvault.domain.usecase.ToggleTodoCompletionUseCase
+import com.abdallah.taskvault.domain.usecase.UpdateTodoUseCase
 import com.abdallah.taskvault.util.NaturalLanguageParser
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Job
@@ -27,6 +28,7 @@ class TodoListViewModel @Inject constructor(
     private val getAllTodosUseCase: GetAllTodosUseCase,
     private val addTodoUseCase: AddTodoUseCase,
     private val deleteTodoUseCase: DeleteTodoUseCase,
+    private val updateTodoUseCase: UpdateTodoUseCase,
     private val toggleTodoCompletionUseCase: ToggleTodoCompletionUseCase,
     private val exportTodosUseCase: ExportTodosUseCase,
     private val alarmManager: AlarmManager,
@@ -147,6 +149,63 @@ class TodoListViewModel @Inject constructor(
     }
 
     suspend fun exportCsv(): String = exportTodosUseCase.asCsv()
+
+    // ── Bulk-action selection ─────────────────────────────────────────────────
+
+    fun onLongPressTodo(todoId: Long) {
+        _uiState.update { it.copy(isSelectionMode = true, selectedIds = setOf(todoId)) }
+    }
+
+    fun onToggleSelect(todoId: Long) {
+        _uiState.update { state ->
+            val updated = if (todoId in state.selectedIds)
+                state.selectedIds - todoId
+            else
+                state.selectedIds + todoId
+            state.copy(
+                selectedIds = updated,
+                isSelectionMode = updated.isNotEmpty()
+            )
+        }
+    }
+
+    fun onSelectAll() {
+        _uiState.update { state ->
+            state.copy(selectedIds = state.filteredTodos.map { it.id }.toSet())
+        }
+    }
+
+    fun onClearSelection() {
+        _uiState.update { it.copy(isSelectionMode = false, selectedIds = emptySet()) }
+    }
+
+    fun onBulkDelete() {
+        val ids = _uiState.value.selectedIds
+        viewModelScope.launch {
+            _uiState.value.allTodos.filter { it.id in ids }.forEach { deleteTodoUseCase(it) }
+        }
+        onClearSelection()
+    }
+
+    fun onBulkComplete() {
+        val ids = _uiState.value.selectedIds
+        viewModelScope.launch {
+            _uiState.value.allTodos.filter { it.id in ids && !it.isCompleted }
+                .forEach { toggleTodoCompletionUseCase(it, true) }
+        }
+        onClearSelection()
+    }
+
+    fun onBulkSetPriority(priority: Priority) {
+        val ids = _uiState.value.selectedIds
+        viewModelScope.launch {
+            _uiState.value.allTodos.filter { it.id in ids }.forEach { todo ->
+                val updated = todo.copy(priority = priority, updatedAtMillis = System.currentTimeMillis())
+                updateTodoUseCase(updated)
+            }
+        }
+        onClearSelection()
+    }
 
     fun onUndoDelete() {
         undoJob?.cancel()

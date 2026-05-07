@@ -489,19 +489,6 @@
     <!-- New feature strings -->
     <string name="filter_today">Hoy</string>
     <string name="filter_upcoming">Próximas</string>
-    <string name="quick_add">Agregar rápido</string>
-    <string name="quick_add_placeholder">Ej: Llamar al médico mañana a las 3 pm…</string>
-    <string name="full_add">Agregar completo</string>
-    <string name="sort_due_date">Fecha de vencimiento</string>
-    <string name="sort_priority">Prioridad</string>
-    <string name="sort_alphabetical">Alfabético</string>
-    <string name="fab_add_todo">Agregar tarea</string>
-    <string name="menu_export">Exportar tareas</string>
-    <string name="delete_account_title">Eliminar cuenta</string>
-    <string name="delete_account_message">Se eliminarán permanentemente tu cuenta y todos tus datos. Esta acción no se puede deshacer.</string>
-    <string name="delete_account_confirm">Eliminar para siempre</string>
-    <string name="delete_account_button">Eliminar cuenta</string>
-    <string name="delete_account_deleting">Eliminando…</string>
     <string name="pomodoro_title">Temporizador Pomodoro</string>
     <string name="pomodoro_phase_work">Enfoque</string>
     <string name="pomodoro_phase_short_break">Descanso corto</string>
@@ -526,4 +513,22 @@
     <string name="onboard_skip">Omitir</string>
     <string name="onboard_next">Siguiente</string>
     <string name="onboard_get_started">Comenzar</string>
+
+    <!-- Dashboard info / tutorials -->
+    <string name="action_ok">Aceptar</string>
+    <string name="dashboard_info_cd">Info de función</string>
+    <string name="tutorial_tasks">Gestiona tus tareas con prioridades, fechas límite, subtareas y reglas de recurrencia. Usa Agregar rápido o Entrada de voz.</string>
+    <string name="tutorial_notes">Escribe y organiza tus notas. Se sincronizan con la nube a través de Firebase en todos tus dispositivos.</string>
+    <string name="tutorial_memoirs">Lleva un diario personal. Cada entrada se guarda privadamente y se sincroniza con tu cuenta.</string>
+    <string name="tutorial_wallet">Registra ingresos y gastos. Establece un presupuesto mensual y ve el desglose por categoría.</string>
+    <string name="tutorial_calendar">Tareas con fecha límite en un calendario mensual. Toca un día para ver o agregar tareas.</string>
+    <string name="tutorial_statistics">Visualiza tu productividad con tasas de finalización, prioridades, rachas, gráficos semanales y mapa de calor de 30 días.</string>
+    <string name="tutorial_passwords">Almacena contraseñas de forma segura, cifradas y sincronizadas con Firebase.</string>
+    <string name="tutorial_habits">Construye hábitos positivos con seguimiento diario. El contador de racha te mantiene constante.</string>
+    <string name="tutorial_bills">Controla facturas recurrentes y vencimientos para no perder ningún pago.</string>
+    <string name="tutorial_assign">Asigna tareas a otros usuarios. Recibirán una notificación y podrán aceptar, completar o rechazar.</string>
+    <string name="tutorial_assigned_to_me">Ve todas las tareas que otros te han asignado y actualiza su estado.</string>
+    <string name="tutorial_assign_stats">Revisa estadísticas de asignación para entender la carga de trabajo de tu equipo.</string>
+    <string name="tutorial_contacts">Gestiona tus contactos y asígnales tareas rápidamente.</string>
+    <string name="tutorial_pomodoro">Usa la técnica Pomodoro: sesiones de 25 minutos con descansos. El temporizador registra tus sesiones completadas.</string>
 </resources>

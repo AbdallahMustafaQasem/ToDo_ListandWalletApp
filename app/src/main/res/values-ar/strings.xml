@@ -489,19 +489,6 @@
     <!-- New feature strings -->
     <string name="filter_today">اليوم</string>
     <string name="filter_upcoming">قادمة</string>
-    <string name="quick_add">إضافة سريعة</string>
-    <string name="quick_add_placeholder">مثال: اتصل بالطبيب غداً الساعة 3م…</string>
-    <string name="full_add">إضافة كاملة</string>
-    <string name="sort_due_date">تاريخ الاستحقاق</string>
-    <string name="sort_priority">الأولوية</string>
-    <string name="sort_alphabetical">أبجدي</string>
-    <string name="fab_add_todo">إضافة مهمة</string>
-    <string name="menu_export">تصدير المهام</string>
-    <string name="delete_account_title">حذف الحساب</string>
-    <string name="delete_account_message">سيؤدي هذا إلى حذف حسابك وجميع بياناتك نهائياً. لا يمكن التراجع عن هذا الإجراء.</string>
-    <string name="delete_account_confirm">حذف نهائي</string>
-    <string name="delete_account_button">حذف الحساب</string>
-    <string name="delete_account_deleting">جارٍ الحذف…</string>
     <string name="pomodoro_title">مؤقت بومودورو</string>
     <string name="pomodoro_phase_work">تركيز</string>
     <string name="pomodoro_phase_short_break">استراحة قصيرة</string>
@@ -526,4 +513,22 @@
     <string name="onboard_skip">تخطي</string>
     <string name="onboard_next">التالي</string>
     <string name="onboard_get_started">ابدأ الآن</string>
+
+    <!-- Dashboard info / tutorials -->
+    <string name="action_ok">حسناً</string>
+    <string name="dashboard_info_cd">معلومات الميزة</string>
+    <string name="tutorial_tasks">أدر جميع مهامك بالأولويات والمواعيد والمهام الفرعية وقواعد التكرار. استخدم الإضافة السريعة أو الإدخال الصوتي.</string>
+    <string name="tutorial_notes">اكتب ملاحظاتك ونظّمها. تتزامن عبر Firebase على جميع أجهزتك.</string>
+    <string name="tutorial_memoirs">احتفظ بيومياتك الشخصية. كل مدخل محفوظ بشكل خاص ومتزامن.</string>
+    <string name="tutorial_wallet">تتبع الدخل والنفقات. حدد ميزانية شهرية واطلع على تفصيل الإنفاق حسب الفئة.</string>
+    <string name="tutorial_calendar">جميع المهام ذات المواعيد على تقويم شهري. اضغط على يوم لعرض مهامه أو إضافة مهام جديدة.</string>
+    <string name="tutorial_statistics">تصوّر إنتاجيتك بمعدلات الإنجاز وتوزيع الأولويات وعدادات التسلسل والمخطط الحراري 30 يوماً.</string>
+    <string name="tutorial_passwords">خزّن كلمات المرور بأمان. مشفّرة ومتزامنة مع Firebase.</string>
+    <string name="tutorial_habits">تتبع عاداتك اليومية. عداد التسلسل يحافظ على دافعيتك.</string>
+    <string name="tutorial_bills">تابع الفواتير المتكررة والمواعيد حتى لا تفوتك أي دفعة.</string>
+    <string name="tutorial_assign">أسند مهاماً للآخرين. يتلقون إشعاراً ويمكنهم القبول أو الرفض.</string>
+    <string name="tutorial_assigned_to_me">اطلع على المهام المسندة إليك وحدّث حالتها.</string>
+    <string name="tutorial_assign_stats">استعرض إحصائيات التكليف لفهم حجم عمل فريقك.</string>
+    <string name="tutorial_contacts">أدر جهات الاتصال وأسند إليهم المهام بسرعة.</string>
+    <string name="tutorial_pomodoro">استخدم تقنية بومودورو: جلسات 25 دقيقة مع استراحات قصيرة. يتتبع المؤقت جلساتك تلقائياً.</string>
 </resources>

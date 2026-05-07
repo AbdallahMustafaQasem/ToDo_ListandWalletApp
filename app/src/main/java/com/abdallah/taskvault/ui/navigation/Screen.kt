@@ -43,4 +43,9 @@ sealed class Screen(val route: String) {
     object AssignedToMe : Screen("assigned_to_me")
     object AssignmentStats : Screen("assign_stats")
     object Pomodoro : Screen("pomodoro")
+    object FocusMode : Screen("focus/{todoId}") {
+        fun createRoute(todoId: Long) = "focus/$todoId"
+    }
+    object TaskTemplates : Screen("templates")
+    object BackupRestore : Screen("backup")
 }

@@ -5,6 +5,8 @@ import androidx.compose.animation.core.*
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
 import androidx.compose.foundation.clickable
+import androidx.compose.foundation.combinedClickable
+import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.layout.IntrinsicSize
 import androidx.compose.foundation.shape.CircleShape
@@ -73,7 +75,7 @@ private fun DueDateStatus.chipColor(): Color = when (this) {
     DueDateStatus.UPCOMING -> UpcomingColor
 }
 
-@OptIn(ExperimentalMaterial3Api::class)
+@OptIn(ExperimentalMaterial3Api::class, ExperimentalFoundationApi::class)
 @Composable
 fun TodoItem(
     todo: Todo,
@@ -81,6 +83,8 @@ fun TodoItem(
     onClick: () -> Unit,
     onDismiss: () -> Unit,
     onComplete: () -> Unit = { onCheckedChange(!todo.isCompleted) },
+    onLongClick: () -> Unit = {},
+    isSelected: Boolean = false,
     modifier: Modifier = Modifier
 ) {
     val dismissState = rememberSwipeToDismissBoxState(
@@ -103,17 +107,33 @@ fun TodoItem(
     SwipeToDismissBox(
         state = dismissState,
         modifier = modifier,
-        enableDismissFromStartToEnd = true,
-        enableDismissFromEndToStart = true,
+        enableDismissFromStartToEnd = !isSelected,
+        enableDismissFromEndToStart = !isSelected,
         backgroundContent = {
             SwipeBackground(dismissState = dismissState, isCompleted = todo.isCompleted)
         }
     ) {
-        TodoCardContent(
-            todo           = todo,
-            onCheckedChange = onCheckedChange,
-            onClick        = onClick
-        )
+        Box(
+            modifier = Modifier.combinedClickable(
+                onClick = onClick,
+                onLongClick = onLongClick
+            )
+        ) {
+            TodoCardContent(
+                todo            = todo,
+                onCheckedChange = onCheckedChange,
+                onClick         = onClick
+            )
+            if (isSelected) {
+                Box(
+                    modifier = Modifier
+                        .matchParentSize()
+                        .clip(RoundedCornerShape(12.dp))
+                        .background(MaterialTheme.colorScheme.primary.copy(alpha = 0.18f))
+                        .border(2.dp, MaterialTheme.colorScheme.primary, RoundedCornerShape(12.dp))
+                )
+            }
+        }
     }
 }
 

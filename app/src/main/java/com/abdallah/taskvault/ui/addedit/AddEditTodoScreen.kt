@@ -9,9 +9,15 @@ import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.filled.ArrowBack
 import androidx.compose.material.icons.filled.Add
+import androidx.compose.material.icons.filled.Block
+import androidx.compose.material.icons.filled.CalendarMonth
+import androidx.compose.material.icons.filled.CenterFocusStrong
 import androidx.compose.material.icons.filled.Check
+import androidx.compose.material.icons.filled.CheckCircle
 import androidx.compose.material.icons.filled.Clear
+import androidx.compose.material.icons.filled.DateRange
 import androidx.compose.material.icons.filled.Delete
+import androidx.compose.material.icons.filled.Today
 import androidx.compose.material3.*
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
@@ -36,6 +42,7 @@ import java.util.Locale
 @Composable
 fun AddEditTodoScreen(
     onNavigateBack: () -> Unit,
+    onNavigateToFocus: (Long) -> Unit = {},
     viewModel: AddEditTodoViewModel = hiltViewModel()
 ) {
     val uiState by viewModel.uiState.collectAsStateWithLifecycle()
@@ -134,6 +141,15 @@ fun AddEditTodoScreen(
                     }
                 },
                 actions = {
+                    if (uiState.isEditMode) {
+                        IconButton(onClick = { onNavigateToFocus(uiState.id) }) {
+                            Icon(
+                                Icons.Default.CenterFocusStrong,
+                                contentDescription = "Focus Mode",
+                                tint = MaterialTheme.colorScheme.primary
+                            )
+                        }
+                    }
                     TextButton(
                         onClick = viewModel::onSave,
                         enabled = uiState.isSaveEnabled
@@ -385,27 +401,73 @@ private fun RecurrenceCard(
     selected: RecurrenceRule,
     onSelected: (RecurrenceRule) -> Unit
 ) {
+    data class RuleOption(
+        val rule: RecurrenceRule,
+        val labelRes: Int,
+        val icon: androidx.compose.ui.graphics.vector.ImageVector,
+        val descRes: Int
+    )
+    val options = listOf(
+        RuleOption(RecurrenceRule.NONE,    R.string.recurrence_none,    Icons.Default.Block,         R.string.recurrence_none_desc),
+        RuleOption(RecurrenceRule.DAILY,   R.string.recurrence_daily,   Icons.Default.Today,         R.string.recurrence_daily_desc),
+        RuleOption(RecurrenceRule.WEEKLY,  R.string.recurrence_weekly,  Icons.Default.DateRange,     R.string.recurrence_weekly_desc),
+        RuleOption(RecurrenceRule.MONTHLY, R.string.recurrence_monthly, Icons.Default.CalendarMonth, R.string.recurrence_monthly_desc)
+    )
+
     ElevatedCard(
         shape = RoundedCornerShape(24.dp),
         colors = CardDefaults.elevatedCardColors(containerColor = MaterialTheme.colorScheme.surface)
     ) {
-        Column(modifier = Modifier.padding(20.dp), verticalArrangement = Arrangement.spacedBy(12.dp)) {
+        Column(modifier = Modifier.padding(20.dp), verticalArrangement = Arrangement.spacedBy(10.dp)) {
             Text(stringResource(R.string.recurrence_label), style = MaterialTheme.typography.titleMedium)
-            SingleChoiceSegmentedButtonRow(modifier = Modifier.fillMaxWidth()) {
-                RecurrenceRule.entries.forEachIndexed { index, rule ->
-                    SegmentedButton(
-                        selected = selected == rule,
-                        onClick = { onSelected(rule) },
-                        shape = SegmentedButtonDefaults.itemShape(index = index, count = RecurrenceRule.entries.size),
-                        label = {
-                            Text(stringResource(when (rule) {
-                                RecurrenceRule.NONE    -> R.string.recurrence_none
-                                RecurrenceRule.DAILY   -> R.string.recurrence_daily
-                                RecurrenceRule.WEEKLY  -> R.string.recurrence_weekly
-                                RecurrenceRule.MONTHLY -> R.string.recurrence_monthly
-                            }))
+            options.forEach { opt ->
+                val isSelected = selected == opt.rule
+                Surface(
+                    shape = RoundedCornerShape(12.dp),
+                    color = if (isSelected) MaterialTheme.colorScheme.primaryContainer
+                            else MaterialTheme.colorScheme.surfaceVariant.copy(alpha = 0.5f),
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .clickable(
+                            indication = null,
+                            interactionSource = remember { MutableInteractionSource() }
+                        ) { onSelected(opt.rule) }
+                ) {
+                    Row(
+                        modifier = Modifier.padding(horizontal = 16.dp, vertical = 10.dp),
+                        verticalAlignment = Alignment.CenterVertically,
+                        horizontalArrangement = Arrangement.spacedBy(12.dp)
+                    ) {
+                        Icon(
+                            opt.icon,
+                            contentDescription = null,
+                            tint = if (isSelected) MaterialTheme.colorScheme.primary
+                                   else MaterialTheme.colorScheme.onSurfaceVariant,
+                            modifier = Modifier.size(22.dp)
+                        )
+                        Column(modifier = Modifier.weight(1f)) {
+                            Text(
+                                stringResource(opt.labelRes),
+                                style = MaterialTheme.typography.bodyMedium,
+                                fontWeight = if (isSelected) FontWeight.SemiBold else FontWeight.Normal,
+                                color = if (isSelected) MaterialTheme.colorScheme.primary
+                                        else MaterialTheme.colorScheme.onSurface
+                            )
+                            Text(
+                                stringResource(opt.descRes),
+                                style = MaterialTheme.typography.bodySmall,
+                                color = MaterialTheme.colorScheme.onSurfaceVariant
+                            )
                         }
-                    )
+                        if (isSelected) {
+                            Icon(
+                                Icons.Default.CheckCircle,
+                                contentDescription = null,
+                                tint = MaterialTheme.colorScheme.primary,
+                                modifier = Modifier.size(20.dp)
+                            )
+                        }
+                    }
                 }
             }
         }

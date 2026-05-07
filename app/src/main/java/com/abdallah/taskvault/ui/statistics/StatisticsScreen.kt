@@ -2,6 +2,7 @@ package com.abdallah.taskvault.ui.statistics
 
 import androidx.compose.animation.core.*
 import androidx.compose.foundation.Canvas
+import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.RoundedCornerShape
@@ -125,6 +126,11 @@ fun StatisticsScreen(
                 streakDays        = uiState.streakDays,
                 mostProductiveDay = uiState.mostProductiveDay
             )
+
+            // ── 6. 30-day heatmap ─────────────────────────────────────────
+            if (uiState.heatmap30Days.isNotEmpty()) {
+                HeatmapCard(counts = uiState.heatmap30Days)
+            }
 
             Spacer(Modifier.height(16.dp))
         }
@@ -628,6 +634,81 @@ private fun InsightCard(
                 style = MaterialTheme.typography.bodySmall,
                 color = contentColor.copy(alpha = 0.7f)
             )
+        }
+    }
+}
+
+// ── 6. 30-day Activity Heatmap ────────────────────────────────────────────────
+
+@Composable
+private fun HeatmapCard(counts: List<Int>) {
+    val maxCount  = counts.maxOrNull()?.coerceAtLeast(1) ?: 1
+    val baseColor = MaterialTheme.colorScheme.primary
+    val emptyColor = MaterialTheme.colorScheme.surfaceVariant
+
+    Card(
+        modifier  = Modifier.fillMaxWidth(),
+        shape     = RoundedCornerShape(24.dp),
+        colors    = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.surface),
+        elevation = CardDefaults.cardElevation(defaultElevation = 5.dp)
+    ) {
+        Column(modifier = Modifier.padding(20.dp), verticalArrangement = Arrangement.spacedBy(12.dp)) {
+            Text(
+                text       = stringResource(R.string.stats_heatmap_title),
+                style      = MaterialTheme.typography.titleMedium,
+                fontWeight = FontWeight.Bold
+            )
+            // 6 rows × 5 cols = 30 cells
+            val cols = 6
+            val rows = 5
+            Column(verticalArrangement = Arrangement.spacedBy(5.dp)) {
+                for (row in 0 until rows) {
+                    Row(
+                        modifier              = Modifier.fillMaxWidth(),
+                        horizontalArrangement = Arrangement.spacedBy(5.dp)
+                    ) {
+                        for (col in 0 until cols) {
+                            val idx   = row * cols + col
+                            val count = if (idx < counts.size) counts[idx] else 0
+                            val alpha = if (count == 0) 0f else (count.toFloat() / maxCount).coerceIn(0.15f, 1f)
+                            val color = if (count == 0) emptyColor else baseColor.copy(alpha = alpha)
+                            Box(
+                                modifier = Modifier
+                                    .weight(1f)
+                                    .aspectRatio(1f)
+                                    .clip(RoundedCornerShape(4.dp))
+                                    .background(color)
+                            )
+                        }
+                    }
+                }
+            }
+            // Legend
+            Row(
+                modifier              = Modifier.fillMaxWidth(),
+                horizontalArrangement = Arrangement.SpaceBetween
+            ) {
+                Text(
+                    text  = stringResource(R.string.stats_heatmap_less),
+                    style = MaterialTheme.typography.labelSmall,
+                    color = MaterialTheme.colorScheme.onSurfaceVariant
+                )
+                Row(horizontalArrangement = Arrangement.spacedBy(3.dp)) {
+                    listOf(0.15f, 0.35f, 0.55f, 0.75f, 1.0f).forEach { a ->
+                        Box(
+                            modifier = Modifier
+                                .size(12.dp)
+                                .clip(RoundedCornerShape(2.dp))
+                                .background(baseColor.copy(alpha = a))
+                        )
+                    }
+                }
+                Text(
+                    text  = stringResource(R.string.stats_heatmap_more),
+                    style = MaterialTheme.typography.labelSmall,
+                    color = MaterialTheme.colorScheme.onSurfaceVariant
+                )
+            }
         }
     }
 }

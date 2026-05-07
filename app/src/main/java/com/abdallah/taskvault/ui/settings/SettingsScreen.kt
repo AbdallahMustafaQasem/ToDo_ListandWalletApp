@@ -26,6 +26,8 @@ fun SettingsScreen(
     onBack: () -> Unit,
     onNavigateToAbout: () -> Unit,
     onNavigateToProfile: () -> Unit,
+    onNavigateToBackup: () -> Unit = {},
+    onNavigateToTemplates: () -> Unit = {},
     viewModel: SettingsViewModel = hiltViewModel()
 ) {
     val uiState by viewModel.uiState.collectAsStateWithLifecycle()
@@ -143,6 +145,34 @@ fun SettingsScreen(
                     ),
                     checked  = uiState.appLockEnabled,
                     onToggle = { viewModel.setAppLock(it) }
+                )
+            }
+
+            // ── Tools ────────────────────────────────────────────────
+            item { SettingsSectionHeader(stringResource(R.string.settings_section_tools)) }
+            item {
+                SettingsItem(
+                    icon    = Icons.Default.ContentCopy,
+                    title   = stringResource(R.string.templates_title),
+                    subtitle = stringResource(R.string.templates_subtitle),
+                    onClick = onNavigateToTemplates
+                )
+            }
+            item {
+                SettingsItem(
+                    icon    = Icons.Default.CloudUpload,
+                    title   = stringResource(R.string.backup_title),
+                    subtitle = stringResource(R.string.backup_subtitle),
+                    onClick = onNavigateToBackup
+                )
+            }
+            item {
+                SettingsToggleItem(
+                    icon     = Icons.Default.Notifications,
+                    title    = stringResource(R.string.settings_daily_digest),
+                    subtitle = stringResource(R.string.settings_daily_digest_sub),
+                    checked  = uiState.dailyDigestEnabled,
+                    onToggle = { viewModel.setDailyDigest(it) }
                 )
             }
 

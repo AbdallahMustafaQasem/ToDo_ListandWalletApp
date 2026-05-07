@@ -20,7 +20,7 @@ data class DayActivity(
 )
 
 data class StatisticsUiState(
-    // ── Existing ────────────────────────────────────────────────────────────
+    // ── Existing ────────────────────────────────────────────────────────────────
     val totalCount: Int = 0,
     val completedCount: Int = 0,
     val activeCount: Int = 0,
@@ -30,9 +30,11 @@ data class StatisticsUiState(
     val overdueTodos: Int = 0,
     val isLoading: Boolean = true,
 
-    // ── NEW ─────────────────────────────────────────────────────────────────
+    // ── NEW ───────────────────────────────────────────────────────────────────
     val weeklyActivity: List<DayActivity> = emptyList(),
-    val mostProductiveDay: String = ""
+    val mostProductiveDay: String = "",
+    // 30-day heatmap: index 0 = 29 days ago, index 29 = today
+    val heatmap30Days: List<Int> = emptyList()
 )
 
 @HiltViewModel
@@ -85,6 +87,8 @@ class StatisticsViewModel @Inject constructor(
                 // ── Most Productive Day (all-time) ─────────────────────────
                 val mostProductiveDay = computeMostProductiveDay(todos.filter { it.isCompleted })
 
+                val heatmap = buildHeatmap30Days(todos.filter { it.isCompleted })
+
                 _uiState.update {
                     it.copy(
                         totalCount        = total,
@@ -96,11 +100,27 @@ class StatisticsViewModel @Inject constructor(
                         overdueTodos      = overdue,
                         weeklyActivity    = weeklyActivity,
                         mostProductiveDay = mostProductiveDay,
+                        heatmap30Days     = heatmap,
                         isLoading         = false
                     )
                 }
             }
         }
+    }
+
+    /** Returns a list of 30 ints: index 0 = 29 days ago, index 29 = today. */
+    private fun buildHeatmap30Days(completedTodos: List<Todo>): List<Int> {
+        val result = mutableListOf<Int>()
+        for (daysBack in 29 downTo 0) {
+            val ref = Calendar.getInstance()
+            ref.set(Calendar.HOUR_OF_DAY, 0); ref.set(Calendar.MINUTE, 0)
+            ref.set(Calendar.SECOND, 0); ref.set(Calendar.MILLISECOND, 0)
+            ref.add(Calendar.DAY_OF_YEAR, -daysBack)
+            val dayStart = ref.timeInMillis
+            val dayEnd   = dayStart + 86_400_000L - 1L
+            result.add(completedTodos.count { it.updatedAtMillis in dayStart..dayEnd })
+        }
+        return result
     }
 
     /** Returns a list of 7 [DayActivity] items: index 0 = 6 days ago, index 6 = today. */
